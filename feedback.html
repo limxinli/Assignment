@@ -18,7 +18,7 @@
 </head>
 <body > 
    
-        <div class="navbar navbar-inverse navbar-fixed-top " >
+                <div class="navbar navbar-inverse navbar-fixed-top " >
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -30,59 +30,99 @@
             </div>
             <div class="navbar-collapse collapse move-me">
                 <ul class="nav navbar-nav navbar-right set-links">
-                    <li><a href="index.html" >HOME</a></li>
+                    <li><a href="index.html" class="active-menu-item">HOME</a></li>
                      <li><a href="about.html">ABOUT</a></li>
-                   <li><a href="gamesbygenre.html">GAMES BY GENRE</a></li>
-                   <li><a href="feedback.html" class="active-menu-item">FEEDBACK</a></li>
-                    <li><a href="blank.html" >BLANK</a></li>
+                     <li><a href="gamesbygenre.html">GAMES BY GENRE</a></li>
+                     <li><a href="feedback.html">FEEDBACK</a></li>
+                    <li><a href="blank.html">BLANK</a></li>
                 </ul>
             </div>
 
         </div>
     </div>
-    <!--MENU SECTION END-->
-    <section class="headline-sec">
-        <div class="overlay ">
-            <h3 >BLANK PAGE <i class="fa fa-angle-double-right "></i></h3>
 
+    <!--MENU SECTION END-->
+    <section id="home-sec">
+        <div class="overlay text-center">
+            <h1 >SP Games Store</h1>
+            <hr class="hr-set"/>
+
+            <p>Provides Affordable Games to SP Students</p>
         </div>
     </section>
     <!--HOME SECTION END-->
-    <section>
+    <section id="search-domain" >
         <div class="container">
             <div class="row">
-                 <div class="col-md-6" >
-                     <h2><strong> LOCATION </strong></h2>
-                     <br />
-                    <h4>345/DC, New York State,</h4>
-                     <h4>The Lane Tower Road,</h4>
-                    <h4>United States-201-900-590.</h4>
-                     <br />
-                    <h4><i>Email: </i>info@domain.com</h4>
-                      <h4><i>Call:</i> +1-908-78-55-5555</h4>
-                </div>
-                <div class="col-md-6" >
-                    
-                    <div class="alert alert-info" >
-                        <div class="form-group">
-                            <strong>QUICK QUERY FORM</strong>
-                            <br />
-                        <label></label>
-                        <input type="text" class="form-control" placeholder="Enter Your Name"/>
-                            <label></label>
-                        <input type="text" class="form-control" placeholder="Enter Your Email" />
-                            <label></label>
-                           <textarea  class="form-control" placeholder="Enter Your Project Details and Budget in USD" rows="5" ></textarea>
-                           <br />
-                            <a href="#" class="btn btn-primary">SEND QUERY</a>
-                            </div>
+<div class="col-md-8">
+        <input type="text" class="form-control input-cls"    />
 
-                    </div>
+</div>
+                <div class="col-md-4">
+                    <input type="button" class="btn btn-info btn-lg btn-set"  value="SEARCH DOMAIN" />
                 </div>
             </div>
         </div>
     </section>
+     <!--SEARCH SECTION END-->
+   
+    <div id="testimonial-sec">
 
+   
+        <div class="container">
+              <div class="row ">
+            <div class="col-md-12">
+                <div id="carousel-example" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example" data-slide-to="1"></li>
+                        <li data-target="#carousel-example" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="container center">
+                                <div class="col-md-6 col-md-offset-3 slide-custom">
+                                   
+                                    <h4><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit onec molestie non sem vel condimentum. <i class="fa fa-quote-right"></i></h4>
+                                     <div class="user-img pull-right">
+						<img src="assets/img/user.gif" alt="" class="img-u image-responsive"  />
+					</div>
+                                    <h5 class="pull-right"><strong class="c-black">Lorem Dolor</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="container center">
+                                <div class="col-md-6 col-md-offset-3 slide-custom">
+                                    <h4> <i class="fa fa-quote-left"></i> Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc. <i class="fa fa-quote-right"></i></h4>
+                                         <div class="user-img pull-right">
+						<img src="assets/img/user2.png" alt="" class="img-u image-responsive"  />
+					</div>
+                                    <h5 class="pull-right"><strong class="c-black">Faucibus luctus</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="container center">
+                                <div class="col-md-6 col-md-offset-3 slide-custom">
+                                    <h4><i class="fa fa-quote-left"></i>Sed ultricies, libero ut adipiscing a egestas dui metus a arcu condimentum. <i class="fa fa-quote-right"></i></h4>
+                                        <div class="user-img pull-right">
+						<img src="assets/img/user.gif" alt="" class="img-u image-responsive"  />
+					</div>
+                                    <h5 class="pull-right"><strong class="c-black">Sed ultricies</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+         </div>
+    <!--TESTIMONIAL SECTION END-->
+  
     <div class="copy-txt">
          <div class="container">
         <div class="row">
@@ -100,6 +140,5 @@
     <script src="assets/js/bootstrap.js"></script>
     <!-- CUSTOM SCRIPTS  -->
     <script src="assets/js/custom.js"></script>
-    
 </body>
 </html>
