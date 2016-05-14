@@ -214,6 +214,10 @@ color:#fff;
     -moz-border-radius:0px;
 }
 
+.radio-button {
+	display: inline-block;
+}
+
    /* =============================================================
    FEATURED GAMES  -IN HOME / INDEX.HTML 
  ============================================================ */
