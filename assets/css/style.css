@@ -179,6 +179,11 @@ color:#fff;
 /* =============================================================
    SEARCH GAMES SECTION STYLES  -IN HOME / INDEX.HTML 
  ============================================================ */
+
+#searchforgame {
+	margin-right: 100px;	
+}
+
 .input-cls {
     height: 55px;
     border: 3px solid #2EB1D0;
@@ -201,9 +206,17 @@ color:#fff;
 	color: black;
 }
 
-.btn-group {
-	margin-left: 30px;
-	margin-top: 5px;
+#genre-drop {
+	width: 150px;
+	height: 25px;
+	font-size: 15px;
+	padding-left: 10px;
+	padding-right: auto;
+	margin-left: 10px;
+}
+
+.genre-drop {
+	margin-top: 0px;	
 }
 
 .btn-set {
@@ -215,7 +228,17 @@ color:#fff;
 }
 
 .radio-button {
-	display: inline-block;
+	margin-top: 0px;
+	margin-left: 20px;
+}
+
+#new, #preowned {
+	margin-left: 10px;
+}
+
+#submit {
+	margin-top: -95px;
+	margin-right: 20px;
 }
 
    /* =============================================================

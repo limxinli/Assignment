@@ -136,38 +136,38 @@
 	<!--HOME SECTION END-->
 
 	<section id="search-game">
-		<div class="col-md-6">
-			<input type="text" id="search" value="Enter game title"
-				onfocus="if(this.value==this.defaultValue)this.value='';"
-				onblur="if(this.value=='')this.value=this.defaultValue;"
-				class="form-control input-cls" />
-		</div>
+		<div class="container">
+			<div id="searchforgame">
+				<div class="col-md-6">
+					<input type="text" id="search" value="Enter game title"
+						onfocus="if(this.value==this.defaultValue)this.value='';"
+						onblur="if(this.value=='')this.value=this.defaultValue;"
+						class="form-control input-cls" />
+				</div>
 
-		<div class="btn-group">
-			<button type="button" class="btn btn-default btn-lg dropdown-toggle"
-				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Genre <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-right">
-				<li><a href="#">Action</a></li>
-				<li><a href="#">Adventure</a></li>
-				<li><a href="#">Horror</a></li>
-				<li><a href="#">RPG</a></li>
-				<li><a href="#">Shooter</a></li>
-			</ul>
-		</div>
+				<div class="genre-drop">
+					<select name="genre-drop" id="genre-drop">
+						<option value="action">Action</option>
+						<option value="adventure">Adventure</option>
+						<option value="horror">Horror</option>
+						<option value="rpg">RPG</option>
+						<option value="shooter">Shooter</option>
+					</select>
+				</div>
 
-		<div class="radio-button">
-			<input type="radio" name="new" value="new"> New<br> <input
-				type="radio" name="pre-owned" value="pre-owned"> Pre-owned<br>
-		</div>
+				<div class="radio-button">
+					<input type="radio" id="new" name="type" value="new"> New <input
+						type="radio" id="preowned" name="type" value="pre-owned">
+					Pre-owned
+				</div>
 
+				<div class="col-md-4">
+					<input type="button" id="submit"
+						class="btn btn-info btn-lg btn-set" value="SEARCH GAME" />
+				</div>
+			</div>
+		</div>
 	</section>
-
-	<div class="col-md-4">
-		<input type="button" class="btn btn-info btn-lg btn-set"
-			value="SEARCH GAME" />
-	</div>
 	<!--SEARCH SECTION END-->
 
 	<div id="new-release">
@@ -191,6 +191,7 @@
 			</div>
 		</div>
 	</div>
+
 	<!-- COPY TEXT SECTION END-->
 	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 	<!-- CORE JQUERY  -->
