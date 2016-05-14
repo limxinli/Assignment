@@ -73,10 +73,11 @@ cursor:pointer;
 .navbar-inverse .navbar-brand,.navbar-inverse .navbar-brand:hover {
 color: #FFF;
 font-size: 35px;
-letter-spacing: 5px;
+letter-spacing: 3px;
 font-weight: 900;
 background-color:rgba(20, 152, 152, 1);
-padding-bottom: 60px;
+padding-top: 28px;
+padding-bottom: 50px;
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
@@ -154,10 +155,10 @@ border-width: 0 0 0px;
 }
 
   /* =============================================================
-   HOME SECTION STYLES -IN HOME / INDEX.HTML 
+   ABOUT SECTION STYLES -IN HOME / INDEX.HTML 
  ============================================================ */
-#home-sec {
-      background: url(../img/header.jpg) no-repeat center center;
+#about-sec {
+background: url(../img/header.jpg) no-repeat center center;
 padding: 0;
 -webkit-background-size: cover;
 background-size: cover;
@@ -165,21 +166,20 @@ background-size: cover;
 color:#fff;
 }
 
-    #home-sec .overlay {
-        background-color:rgba(20, 152, 152, 0.9);
+    #about-sec .overlay {
         min-height:350px;
     }
-    #home-sec h1 {
+    #about-sec h1 {
         padding-top:150px;
         font-weight:900;
     }
-#home-sec p {
+#about-sec p {
     padding:10px;
 }
 /* =============================================================
-   SEARCH DOMAIN SECTION STYLES  -IN HOME / INDEX.HTML 
+   SEARCH GAMES SECTION STYLES  -IN HOME / INDEX.HTML 
  ============================================================ */
-#search-domain {
+#search-game {
     padding-bottom:50px;
     padding-top:50px;
 }
@@ -200,17 +200,9 @@ color:#fff;
     -webkit-border-radius:0px;
     -moz-border-radius:0px;
 }
-/* =============================================================
-   SERVICES SECTION STYLES  -IN HOME / INDEX.HTML 
- ============================================================ */
-
-#services-sec {
-    background-color:#202020;
-    color:#fff;
-}
 
    /* =============================================================
-   CLIENT TESTIMONIAL SECTION STYLES  -IN HOME / INDEX.HTML 
+   FEATURED GAMES  -IN HOME / INDEX.HTML 
  ============================================================ */
 #testimonial-sec {
   background-color:#43698E;
@@ -271,12 +263,7 @@ max-width: 90px;
 font-size: 20px;
 padding: 5px;
 }
-/* =============================================================
-   FEATURES SECTION STYLES  -IN HOME / INDEX.HTML 
- ============================================================ */
-#features-sec {
-    background-color:#EFEFEF;
-}
+
 /* =============================================================
    FOOTER SECTION STYLES
  ============================================================ */
@@ -302,7 +289,6 @@ padding: 5px;
    PAGE HEADLINE STYLES
  ============================================================ */
 .headline-sec {
-      background: url(../img/header.jpg) no-repeat center center;
 padding: 0;
 -webkit-background-size: cover;
 background-size: cover;
@@ -311,41 +297,10 @@ color:#fff;
 }
 .headline-sec .overlay {
         background-color:rgba(20, 152, 152, 0.9);
-        min-height:170px;
+        min-height:150px;
     }
     .headline-sec h3 {
-        padding-top:100px;
+        padding-top:87px;
         font-weight:900;
         padding-left:100px;
     }
-
-     /* =============================================================
-   PRICING STYLES --pricing.html page
- ============================================================ */
-
-#pricing-sec h3 {
-   color:#2784DF;
-}
-.pricing-div ul{
-    padding-top:30px;
-    list-style:none;
-    
-    
-}
-
-    .pricing-div ul li {
-        padding-left:0px;
-        padding-bottom:20px;
-        
-    }
-        .pricing-div ul li i {
-            padding-right:10px;
-        }
-.pricing-div  .price {
-    font-size:30px;
-    font-weight:800;
-    display:block;
-}
-.set-wth {
-    max-width:400px;
-}
