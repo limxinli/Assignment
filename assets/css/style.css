@@ -19,7 +19,7 @@ body {
 
 section {
     padding-bottom:80px;
-    padding-top:75px;
+    padding-top:45px;
 }
  
 .hr-set {
@@ -176,10 +176,10 @@ color:#fff;
 #about-sec p {
     padding:10px;
 }
+
 /* =============================================================
    SEARCH GAMES SECTION STYLES  -IN HOME / INDEX.HTML 
  ============================================================ */
-
 #searchforgame {
 	margin-right: 100px;	
 }
@@ -325,6 +325,22 @@ a.new-release-font:hover, a.sales-font:hover {
   #sales {
  	padding-left: 100px;
  	font-size: 20px;
+ }
+ 
+ /* =============================================================
+   LOGIN.HTML 
+ ============================================================ */
+ .login {
+ 	width: 200px;
+ 	margin-left: 800px;
+ }
+ 
+ #username {
+ 	margin-bottom: 10px;
+ }
+ 
+ #submit-button {
+ 	margin-left: 85px;
  }
 
 /* =============================================================
