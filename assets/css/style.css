@@ -67,7 +67,7 @@ cursor:pointer;
 }
 
  /* =============================================================
-   MESU STYLES 
+   MENU STYLES 
  ============================================================ */
 
 .navbar-inverse .navbar-brand,.navbar-inverse .navbar-brand:hover {
@@ -119,12 +119,12 @@ border-width: 0 0 0px;
     cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-	display: block;
+.dropbtn:hover, .dropbtn:focus, .caret:hover {
     color:rgba(20, 152, 152, 1);
 }
 
 .dropbtn {
+	outline: none;
 	font-weight: 900;
     background-color: #202020;
     color: #fff;
@@ -179,22 +179,35 @@ color:#fff;
 /* =============================================================
    SEARCH GAMES SECTION STYLES  -IN HOME / INDEX.HTML 
  ============================================================ */
-#search-game {
-    padding-bottom:50px;
-    padding-top:50px;
-}
 .input-cls {
-    height: 70px;
+    height: 55px;
     border: 3px solid #2EB1D0;
-    font-size:30px;
-    color:#2EB1D0;
-    padding-left:40px;
+    font-size: 20px;
+    padding-left:20px;
     border-radius:0px;
     -webkit-border-radius:0px;
     -moz-border-radius:0px;
 }
+
+#search-game {
+	padding-bottom: 30px;
+}
+
+#search {
+	color: #b3b3b3;
+}
+
+#search:focus {
+	color: black;
+}
+
+.btn-group {
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
 .btn-set {
-    font-size:30px;
+    font-size:20px;
     border: 5px double #fff;
     border-radius:0px;
     -webkit-border-radius:0px;
@@ -204,7 +217,7 @@ color:#fff;
    /* =============================================================
    FEATURED GAMES  -IN HOME / INDEX.HTML 
  ============================================================ */
-#testimonial-sec {
+#feature-sec {
   background-color:#43698E;
 }
 
@@ -263,6 +276,29 @@ max-width: 90px;
 font-size: 20px;
 padding: 5px;
 }
+
+   /* =============================================================
+   NEW RELEASES & SALES  -IN HOME / INDEX.HTML 
+ ============================================================ */
+ #new-release {
+ 	padding-left: 100px;
+ 	font-size: 20px;
+ }
+
+a.new-release-font, a.sales-font {
+	color: rgba(20, 152, 152, 0.9);
+	display: inline;
+}
+ 
+a.new-release-font:hover, a.sales-font:hover {
+ 	color: #43698E;
+ 	text-decoration: none;
+ }
+ 
+  #sales {
+ 	padding-left: 100px;
+ 	font-size: 20px;
+ }
 
 /* =============================================================
    FOOTER SECTION STYLES

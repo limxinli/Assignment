@@ -686,8 +686,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.2.0'
-
+  Dropdown.VERSION = '3.2.0'  
+	  
   Dropdown.prototype.toggle = function (e) {
     var $this = $(this)
 
@@ -816,6 +816,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     .on('keydown.bs.dropdown.data-api', toggle + ', [role="menu"], [role="listbox"]', Dropdown.prototype.keydown)
 
 }(jQuery);
+
+$(".dropdown-menu li a").click(function(){
+	  $(this).parents(".btn-group").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+	  $(this).parents(".btn-group").find('.btn').val($(this).data('value'));
+	});
 
 /* ========================================================================
  * Bootstrap: modal.js v3.2.0
