@@ -12,186 +12,204 @@
    GENERAL STYLES
  ============================================================ */
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height:30px;
-    font-size:16px;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 30px;
+	font-size: 16px;
 }
 
 section {
-    padding-bottom:80px;
-    padding-top:45px;
-}
- 
-.hr-set {
-    border-top:2px solid #000;
-    max-width:300px;
-}
-h3 {
-    padding:15px 5px;
-    font-weight:900;
-    text-transform:uppercase;
-}
-h4 {
-    padding:15px 5px;
-    font-weight:900;
-    text-transform:uppercase;
-}
-.icon-custom-1 {
-    background-color: #fff;
-padding: 25px;
-border-radius: 10px;
-cursor:pointer;
-}
-.icon-custom-2 {
-      background-color: #49CD7D;
-padding: 25px;
-border-radius:50%;
-width:100px;
-height:100px;
-cursor:pointer;
-}
-.icon-custom-1:hover {
-     background-color: #000;
-}
-.icon-custom-2:hover {
-     background-color: #000;
-}
-.color-1 {
-    color: #49CD7D;
-}
-.color-2 {
-    color: #fff;
-}
-.p-top-row {
-    padding-top:40px;
+	padding-bottom: 80px;
+	padding-top: 45px;
 }
 
- /* =============================================================
+.hr-set {
+	border-top: 2px solid #000;
+	max-width: 300px;
+}
+
+h3 {
+	padding: 15px 5px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+h4 {
+	padding: 15px 5px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.icon-custom-1 {
+	background-color: #fff;
+	padding: 25px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.icon-custom-2 {
+	background-color: #49CD7D;
+	padding: 25px;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+}
+
+.icon-custom-1:hover {
+	background-color: #000;
+}
+
+.icon-custom-2:hover {
+	background-color: #000;
+}
+
+.color-1 {
+	color: #49CD7D;
+}
+
+.color-2 {
+	color: #fff;
+}
+
+.p-top-row {
+	padding-top: 40px;
+}
+
+/* =============================================================
    MENU STYLES 
  ============================================================ */
-
 .navbar-inverse .navbar-brand,.navbar-inverse .navbar-brand:hover {
-color: #FFF;
-font-size: 35px;
-letter-spacing: 3px;
-font-weight: 900;
-background-color:rgba(20, 152, 152, 1);
-padding-top: 28px;
-padding-bottom: 50px;
+	color: #FFF;
+	font-size: 35px;
+	letter-spacing: 3px;
+	font-weight: 900;
+	background-color: rgba(20, 152, 152, 1);
+	padding-top: 28px;
+	padding-bottom: 50px;
 }
 
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-border-color: rgba(16, 16, 16, 0);
+.navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form {
+	border-color: rgba(16, 16, 16, 0);
 }
+
 .navbar-inverse {
-border-color: rgba(16, 16, 16, 0);
+	border-color: rgba(16, 16, 16, 0);
 }
+
 .navbar-fixed-top {
-top: 0;
-border-width: 0 0 0px;
+	top: 0;
+	border-width: 0 0 0px;
 }
+
 .set-links {
-    padding: 15px 20px 10px 20px;
+	padding: 15px 20px 10px 20px;
 }
-.navbar-inverse .navbar-nav > li > a {
-    color:#fff;
-    font-weight:900;
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+	font-weight: 900;
 }
-.navbar-inverse .navbar-nav > li > a:hover {
-    color:rgba(20, 152, 152, 1);
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	color: rgba(20, 152, 152, 1);
 }
+
 .active-menu-item {
-    color:rgba(20, 152, 152, 1)!important;
+	color: rgba(20, 152, 152, 1) !important;
 }
+
 .navbar-brand small {
-    font-size:12px;
-    font-weight:normal;
-    letter-spacing:1px;
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 1px;
 }
 
 .dropdown:hover .dropbtn {
 	font-weight: 900;
-    background-color: #202020;
-    color:rgba(20, 152, 152, 1);
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+	background-color: #202020;
+	color: rgba(20, 152, 152, 1);
+	padding: 10px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus, .caret:hover {
-    color:rgba(20, 152, 152, 1);
+.dropbtn:hover,.dropbtn:focus,.caret:hover {
+	color: rgba(20, 152, 152, 1);
 }
 
 .dropbtn {
 	outline: none;
 	font-weight: 900;
-    background-color: #202020;
-    color: #fff;
+	background-color: #202020;
+	color: #fff;
 }
+
 .dropdown {
-    position: relative;
-    display: block;
+	position: relative;
+	display: block;
 }
 
 .dropdown-content {
 	font-weight: 600;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 180px;
-    box-shadow: 4px 5px #d9d9d9;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 180px;
+	box-shadow: 4px 5px #d9d9d9;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 7px 16px;
-    text-decoration: none;
-    display: block;
+	color: black;
+	padding: 7px 16px;
+	text-decoration: none;
+	display: block;
 }
 
 .dropdown-content a:hover {
 	background-color: #2EB1D0;
 }
 
-  /* =============================================================
+/* =============================================================
    ABOUT SECTION STYLES -IN HOME / INDEX.HTML 
  ============================================================ */
 #about-sec {
-background: url(../img/header.jpg) no-repeat center center;
-padding: 0;
--webkit-background-size: cover;
-background-size: cover;
--moz-background-size:cover;
-color:#fff;
+	background: url(../img/header.jpg) no-repeat center center;
+	padding: 0;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-moz-background-size: cover;
+	color: #fff;
 }
 
-    #about-sec .overlay {
-        min-height:350px;
-    }
-    #about-sec h1 {
-        padding-top:150px;
-        font-weight:900;
-    }
+#about-sec .overlay {
+	min-height: 350px;
+}
+
+#about-sec h1 {
+	padding-top: 150px;
+	font-weight: 900;
+}
+
 #about-sec p {
-    padding:10px;
+	padding: 10px;
 }
 
 /* =============================================================
    SEARCH GAMES SECTION STYLES  -IN HOME / INDEX.HTML 
  ============================================================ */
 #searchforgame {
-	margin-right: 100px;	
+	margin-right: 100px;
 }
 
 .input-cls {
-    height: 55px;
-    border: 3px solid #2EB1D0;
-    font-size: 20px;
-    padding-left:20px;
-    border-radius:0px;
-    -webkit-border-radius:0px;
-    -moz-border-radius:0px;
+	height: 55px;
+	border: 3px solid #2EB1D0;
+	font-size: 20px;
+	padding-left: 20px;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
 }
 
 #search-game {
@@ -216,15 +234,15 @@ color:#fff;
 }
 
 .genre-drop {
-	margin-top: 0px;	
+	margin-top: 0px;
 }
 
 .btn-set {
-    font-size:20px;
-    border: 5px double #fff;
-    border-radius:0px;
-    -webkit-border-radius:0px;
-    -moz-border-radius:0px;
+	font-size: 20px;
+	border: 5px double #fff;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
 }
 
 .radio-button {
@@ -232,7 +250,7 @@ color:#fff;
 	margin-left: 20px;
 }
 
-#new, #preowned {
+#new,#preowned {
 	margin-left: 10px;
 }
 
@@ -241,145 +259,151 @@ color:#fff;
 	margin-right: 20px;
 }
 
-   /* =============================================================
+/* =============================================================
    FEATURED GAMES  -IN HOME / INDEX.HTML 
  ============================================================ */
 #feature-sec {
-  background-color:#43698E;
+	background-color: #43698E;
 }
 
 .carousel-indicators .active {
-width: 25px;
-height: 25px;
-background-color: #fff;
+	width: 25px;
+	height: 25px;
+	background-color: #fff;
 }
+
 .carousel-indicators li {
-width: 25px;
-height: 25px;
-border: 1px solid #fff;
-}
-   #carousel-example .slide-custom {
-    min-height:300px;
-    padding:20px;
-    line-height:30px;
+	width: 25px;
+	height: 25px;
+	border: 1px solid #fff;
 }
 
-#carousel-example h1, h2 {
-    color:#000;
+#carousel-example .slide-custom {
+	min-height: 300px;
+	padding: 20px;
+	line-height: 30px;
 }
+
+#carousel-example h1,h2 {
+	color: #000;
+}
+
 #carousel-example h4 {
-    line-height:30px;
-    font-size:14px;
-    color: #fff;
+	line-height: 30px;
+	font-size: 14px;
+	color: #fff;
 }
-#carousel-example h4 i{
-   padding:5px;
-}
-#carousel-example .pad-top {
-     padding-top:80px;
-}
-#carousel-example {
-    margin-top:50px;
 
+#carousel-example h4 i {
+	padding: 5px;
+}
+
+#carousel-example .pad-top {
+	padding-top: 80px;
+}
+
+#carousel-example {
+	margin-top: 50px;
 }
 
 #carousel-example .user-img {
-border: 5px solid #49CD7D;
-overflow: hidden;
-border-radius: 50%;
-display: inline-block;
-margin-left:20px;
+	border: 5px solid #49CD7D;
+	overflow: hidden;
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 20px;
 }
 
 #carousel-example .img-u {
-   max-height: 90px;
-max-width: 90px;
-
+	max-height: 90px;
+	max-width: 90px;
 }
 
 #carousel-example .c-black {
-    color:#49CD7D;
-    font-style: italic;
-font-size: 20px;
-padding: 5px;
+	color: #49CD7D;
+	font-style: italic;
+	font-size: 20px;
+	padding: 5px;
 }
 
-   /* =============================================================
+/* =============================================================
    NEW RELEASES & SALES  -IN HOME / INDEX.HTML 
  ============================================================ */
- #new-release {
- 	padding-left: 100px;
- 	font-size: 20px;
- }
+#new-release {
+	padding-left: 100px;
+	font-size: 20px;
+}
 
-a.new-release-font, a.sales-font {
+a.new-release-font,a.sales-font {
 	color: rgba(20, 152, 152, 0.9);
 	display: inline;
 }
- 
-a.new-release-font:hover, a.sales-font:hover {
- 	color: #43698E;
- 	text-decoration: none;
- }
- 
-  #sales {
- 	padding-left: 100px;
- 	font-size: 20px;
- }
- 
- /* =============================================================
+
+a.new-release-font:hover,a.sales-font:hover {
+	color: #43698E;
+	text-decoration: none;
+}
+
+#sales {
+	padding-left: 100px;
+	font-size: 20px;
+}
+
+/* =============================================================
    LOGIN.HTML 
  ============================================================ */
- .login {
- 	width: 200px;
- 	margin-left: 800px;
- }
- 
- #username {
- 	margin-bottom: 10px;
- }
- 
- #submit-button {
- 	margin-left: 85px;
- }
+.login {
+	width: 200px;
+	margin-left: 800px;
+}
+
+#username {
+	margin-bottom: 10px;
+}
+
+#submit-button {
+	margin-left: 85px;
+}
 
 /* =============================================================
    FOOTER SECTION STYLES
  ============================================================ */
 #footer-sec {
-    background-color:#121212;
-    padding-bottom:30px;
-    padding-top:30px;
-    color: #DFD1D1;
+	background-color: #121212;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	color: #DFD1D1;
 }
 
 .copy-txt {
-    background-color:#202020;
-    padding:15px;
-    color:#7C7C7C;
+	background-color: #202020;
+	padding: 15px;
+	color: #7C7C7C;
 }
 
 .set-foot {
-    text-align:right;
-    padding-right:50px;
+	text-align: right;
+	padding-right: 50px;
 }
 
 /* =============================================================
    PAGE HEADLINE STYLES
  ============================================================ */
 .headline-sec {
-padding: 0;
--webkit-background-size: cover;
-background-size: cover;
--moz-background-size:cover;
-color:#fff;
+	padding: 0;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-moz-background-size: cover;
+	color: #fff;
 }
+
 .headline-sec .overlay {
-        background-color:rgba(20, 152, 152, 0.9);
-        min-height:150px;
-    }
-    .headline-sec h3 {
-        padding-top:87px;
-        font-weight:900;
-        padding-left:100px;
-    }
+	background-color: rgba(20, 152, 152, 0.9);
+	min-height: 150px;
+}
+
+.headline-sec h3 {
+	padding-top: 87px;
+	font-weight: 900;
+	padding-left: 100px;
+}
