@@ -31,7 +31,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><strong style=""></strong>Game
+				<a class="navbar-brand"><strong style=""></strong>Game
 					Store<small> Singapore Polytechnic</small></a>
 
 			</div>
@@ -41,10 +41,10 @@
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							VIEW</a></li>
 					<li><div class="dropdown">
-							<a href="#"><button class="dropbtn">
+							<button class="dropbtn">
 									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 									EDIT <span class="caret"></span>
-								</button></a>
+								</button>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="editgames.jsp">Games</a> <a href="editgenres.jsp">Genres</a>
 							</div>

@@ -31,8 +31,8 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><strong style=""></strong>Game
-					Store<small> Singapore Polytechnic</small></a>
+				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
+						Singapore Polytechnic</small></a>
 
 			</div>
 			<div class="navbar-collapse collapse move-me">
@@ -41,10 +41,10 @@
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							VIEW</a></li>
 					<li><div class="dropdown">
-							<a href="#"><button class="dropbtn">
-									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-									EDIT <span class="caret"></span>
-								</button></a>
+							<button class="dropbtn">
+								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+								EDIT <span class="caret"></span>
+							</button>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="editgames.jsp" class="active-menu-item">Games</a> <a
 									href="editgenres.jsp">Genres</a>
@@ -69,11 +69,13 @@
 	</div>
 	</section>
 	<!--TOP SECTION END-->
-	
+
 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	<a href="addgame.html" class="new-release-font"> ADD</a><br>
+	<a href="addgame.html" class="new-release-font"> ADD</a>
+	<br>
 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	<a href="updategame.html" class="new-release-font"> UPDATE</a><br>
+	<a href="updategame.html" class="new-release-font"> UPDATE</a>
+	<br>
 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 	<a href="deletegame.html" class="new-release-font"> DELETE</a>
 
