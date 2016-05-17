@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -16,8 +20,6 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
 <link href="assets/css/style.css" rel="stylesheet" />
-<!-- Favicon -->
-<link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body>
 
@@ -35,22 +37,21 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.html"><span
-							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
+					<li><a href="welcome.jsp"><span
+							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> VIEW</a></li>
 					<li><div class="dropdown">
-							<a href="genre.html"><button class="dropbtn">
-									GAMES <span class="caret"></span>
+							<a href="#"><button class="dropbtn"><span
+							class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+									EDIT <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.html">Action</a> <a href="adventure.html">Adventure</a>
-								<a href="horror.html">Horror</a> <a href="rpg.html">RPG</a> <a
-									href="shooter.html">Shooter</a>
+								<a href="editgames.jsp">Games</a>
+								<a href="editgenres.jsp" class="active-menu-item">Genres</a>
 							</div>
 						</div></li>
-					<li><a href="about.html">ABOUT</a></li>
-					<li><a href="login.html" class="active-menu-item"> <span
-							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-							LOGIN
+					<li><a href="login.html"> <span
+							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+							LOGOUT
 					</a></li>
 				</ul>
 			</div>
@@ -59,25 +60,18 @@
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-		<div class="overlay ">
-			<h3>
-				LOGIN <i class="fa fa-angle-double-right "></i>
-			</h3>
+	<div class="overlay ">
+		<h3>
+			EDIT GENRES <i class="fa fa-angle-double-right "></i>
+		</h3>
 
-		</div>
+	</div>
 	</section>
-
 	<!--TOP SECTION END-->
 	<section>
-		<form action="verification.jsp">
-			<div class="login">
-				Username: <input type="text" name="username" id="username"
-					class="form-control"> Password: <input type="password"
-					name="password" id="password" class="form-control"><br>
-				<input type="submit" class="btn btn-info" id="submit-button"
-					value="Submit">
-			</div>
-		</form>
+	<div class="tables">
+		<!-- INSERT TABLES HERE -->
+	</div>
 	</section>
 
 	<div class="copy-txt">
@@ -99,6 +93,5 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
-
 </body>
 </html>

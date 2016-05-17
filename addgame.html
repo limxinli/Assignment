@@ -35,49 +35,70 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.html"><span
-							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
+					<li><a href="welcome.jsp"><span
+							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+							VIEW</a></li>
 					<li><div class="dropdown">
-							<a href="genre.html"><button class="dropbtn">
-									GAMES <span class="caret"></span>
+							<a href="#"><button class="dropbtn">
+									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+									EDIT <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.html">Action</a> <a href="adventure.html">Adventure</a>
-								<a href="horror.html">Horror</a> <a href="rpg.html">RPG</a> <a
-									href="shooter.html">Shooter</a>
+								<a href="editgames.jsp" class="active-menu-item">Games</a> <a
+									href="editgenres.jsp">Genres</a>
 							</div>
 						</div></li>
-					<li><a href="about.html">ABOUT</a></li>
-					<li><a href="login.html" class="active-menu-item"> <span
-							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-							LOGIN
+					<li><a href="login.html"> <span
+							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+							LOGOUT
 					</a></li>
 				</ul>
 			</div>
-
 		</div>
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-		<div class="overlay ">
-			<h3>
-				LOGIN <i class="fa fa-angle-double-right "></i>
-			</h3>
+	<div class="overlay ">
+		<h3>
+			ADD GENRE <i class="fa fa-angle-double-right "></i>
+		</h3>
 
-		</div>
+	</div>
 	</section>
-
 	<!--TOP SECTION END-->
 	<section>
-		<form action="verification.jsp">
-			<div class="login">
-				Username: <input type="text" name="username" id="username"
-					class="form-control"> Password: <input type="password"
-					name="password" id="password" class="form-control"><br>
-				<input type="submit" class="btn btn-info" id="submit-button"
-					value="Submit">
-			</div>
-		</form>
+	<div class="gamedata">
+		Game Title: <input type="text" name="title" id="title"
+			class="form-control"> <br> Company: <input type="text"
+			name="company" id="company" class="form-control"> <br>
+		Release Date: <input type="text" name="date" id="date"
+			value="Type in this format (yyyy-mm-dd)"
+			onfocus="if(this.value==this.defaultValue)this.value='';"
+			onblur="if(this.value=='')this.value=this.defaultValue;"
+			class="form-control"> <br> Description:
+		<textarea class="form-control" rows="5" id="description"></textarea>
+		<br> Price: <input type="text" name="price" id="price"
+			class="form-control"> <br> Image Location: <input
+			type="text" name="img" id="img" value="Link of the image"
+			onfocus="if(this.value==this.defaultValue)this.value='';"
+			onblur="if(this.value=='')this.value=this.defaultValue;"
+			class="form-control"> <br> Genre:
+		<div class="genre-drop">
+			<select name="genre-drop" id="genre-drop">
+				<option value="action">Action</option>
+				<option value="adventure">Adventure</option>
+				<option value="horror">Horror</option>
+				<option value="rpg">RPG</option>
+				<option value="shooter">Shooter</option>
+			</select>
+		</div>
+		<div class="radio-button2">
+			Is it pre-owned? <br> <input type="radio" id="new" name="type"
+				value="yes"> Yes <input type="radio" id="preowned"
+				name="type" value="no"> No
+		</div>
+	</div>
+	<input type="submit" class="btn btn-info" id="add" value="Add">
 	</section>
 
 	<div class="copy-txt">
@@ -99,6 +120,5 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
-
 </body>
 </html>

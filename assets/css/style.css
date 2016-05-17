@@ -366,9 +366,27 @@ a.new-release-font:hover,a.sales-font:hover {
 }
 
 /* =============================================================
-   EDIT.JSP 
+   ADMINISTRATOR
  ============================================================ */
+.gamedata {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
+.radio-button2 {
+	margin-top: 30px;
+}
+
+#add {
+	float: right;
+	margin-top: 30px;
+	margin-right: 130px;
+}
+
+#date, #img {
+	color: #b3b3b3;
+}
 
 /* =============================================================
    FOOTER SECTION STYLES

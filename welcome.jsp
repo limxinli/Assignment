@@ -37,19 +37,19 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="view.jsp" class="active-menu-item"><span
-							class="glyphicon glyphicon-home" aria-hidden="true"></span> VIEW</a></li>
+					<li><a href="welcome.jsp" class="active-menu-item"><span
+							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+							VIEW</a></li>
 					<li><div class="dropdown">
-							<a href="edit.jsp"><button class="dropbtn"><span
-							class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+							<a href="#"><button class="dropbtn">
+									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 									EDIT <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="editgames.jsp">Games</a>
-								<a href="editgenres.jsp">Genres</a>
+								<a href="editgames.jsp">Games</a> <a href="editgenres.jsp">Genres</a>
 							</div>
 						</div></li>
-					<li><a href="logout.html"> <span
+					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
 							LOGOUT
 					</a></li>
@@ -61,35 +61,29 @@
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
-		<h3>
-			WELCOME! </i>
-		</h3>
+		<h3>WELCOME ADMINISTRATOR!</h3>
 
 	</div>
 	</section>
 	<!--TOP SECTION END-->
-	<section> <%
- 	Connection conn = DatabaseConnection.getConnection();
+	<%
+		Connection conn = DatabaseConnection.getConnection();
 
- 	String inputusername = request.getParameter("username");
- 	String inputpassword = request.getParameter("password");
+		String inputusername = request.getParameter("username");
+		String inputpassword = request.getParameter("password");
 
- 	String sql = "Select * from administrator";
+		String sql = "Select * from administrator";
 
- 	PreparedStatement pstmt = conn.prepareStatement(sql);
+		PreparedStatement pstmt = conn.prepareStatement(sql);
 
- 	ResultSet rs = pstmt.executeQuery();
+		ResultSet rs = pstmt.executeQuery();
 
- 	while (rs.next()) {
- 		String dbusername = rs.getString("username");
- 		String dbpassword = rs.getString("password");
- 	}
- 	conn.close();
- %>
-	<div class="tables">
-		<!-- INSERT TABLES HERE -->
-	</div>
-	</section>
+		while (rs.next()) {
+			String dbusername = rs.getString("username");
+			String dbpassword = rs.getString("password");
+		}
+		conn.close();
+	%>
 
 	<div class="copy-txt">
 		<div class="container">
