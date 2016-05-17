@@ -20,6 +20,8 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
 <link href="assets/css/style.css" rel="stylesheet" />
+<!-- Favicon -->
+<link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
 <body>
 
