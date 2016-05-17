@@ -20,6 +20,8 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
 <link href="assets/css/style.css" rel="stylesheet" />
+<!-- Favicon -->
+<link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
 <body>
 
@@ -69,19 +71,50 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String inputusername = request.getParameter("username");
-		String inputpassword = request.getParameter("password");
-
-		String sql = "Select * from administrator";
+		String sql = "Select * from game_data";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		ResultSet rs = pstmt.executeQuery();
-
+		out.println("<table border='3'>");
+		%>
+		<caption><h2>Games Data<h2></caption>
+		<tr>
+		<th>Game ID</th>
+		<th>Game Title</th>
+		<th>Company</th>
+		<th>Release Date</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Image Location</th>
+		<th>Pre-owned</th>
+		</tr>
+		<%
 		while (rs.next()) {
-			String dbusername = rs.getString("username");
-			String dbpassword = rs.getString("password");
+			int dbgameid = rs.getInt("game_id");
+			String dbgametitle = rs.getString("game_title");
+			String dbcompany = rs.getString("company");
+			Date dbdate = rs.getDate("release_date");
+			String dbdescription = rs.getString("description");
+			double dbprice = rs.getDouble("price");
+			String dbimageloc = rs.getString("image_loc");
+			int dbpreowned = rs.getInt("preowned");
+			
+			%>
+			<tr>
+				<td><%=dbgameid%></td>
+				<td><%=dbgametitle%></td>
+				<td><%=dbcompany%></td>
+				<td><%=dbdate%></td>
+				<td><%=dbdescription%></td>
+				<td><%=dbprice%></td>
+				<td><%=dbimageloc%></td>
+				<td><%=dbpreowned%></td>
+			</tr>
+			<%
 		}
+		out.println("</table>");
+
 		conn.close();
 	%>
 

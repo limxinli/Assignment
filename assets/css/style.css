@@ -260,10 +260,10 @@ h4 {
 }
 
 /* =============================================================
-   FEATURED GAMES  -IN HOME / INDEX.HTML 
+   FEATURED/EDITORS' CHOICE/UPCOMING GAMES  -IN HOME / INDEX.HTML 
  ============================================================ */
 #feature-sec {
-	background-color: #43698E;
+	background-color: black;
 }
 
 .carousel-indicators .active {
@@ -280,7 +280,6 @@ h4 {
 
 #carousel-example .slide-custom {
 	min-height: 300px;
-	padding: 20px;
 	line-height: 30px;
 }
 
@@ -290,16 +289,9 @@ h4 {
 
 #carousel-example h4 {
 	line-height: 30px;
-	font-size: 14px;
+	font-size: 30px;
 	color: #fff;
-}
-
-#carousel-example h4 i {
-	padding: 5px;
-}
-
-#carousel-example .pad-top {
-	padding-top: 80px;
+	padding-top: 25px;
 }
 
 #carousel-example {
@@ -315,8 +307,10 @@ h4 {
 }
 
 #carousel-example .img-u {
-	max-height: 90px;
-	max-width: 90px;
+	max-height: 100%;
+	max-width: 100%;
+	float: right;
+	margin: 0px;
 }
 
 #carousel-example .c-black {
@@ -324,6 +318,15 @@ h4 {
 	font-style: italic;
 	font-size: 20px;
 	padding: 5px;
+}
+
+.slideshow {
+	position: absolute;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
 }
 
 /* =============================================================
@@ -390,6 +393,19 @@ a.new-release-font:hover,a.sales-font:hover {
 
 #date, #img {
 	color: #b3b3b3;
+}
+
+th, td {
+	border: 2px solid black;
+    border-collapse: collapse;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+table {
+	border: 2px solid black;
+	width: 90%;
+	margin-left: 60px;
 }
 
 /* =============================================================
