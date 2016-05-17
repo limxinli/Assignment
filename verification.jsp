@@ -14,22 +14,18 @@
 		String inputusername = request.getParameter("username");
 		String inputpassword = request.getParameter("password");
 
-		String sql = "Select * from administrator";
+		String sql = "Select * from administrator where username=? and password=?";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, inputusername);
+		pstmt.setString(2, inputpassword);
 
 		ResultSet rs = pstmt.executeQuery();
 
-		while (rs.next()) {
-			String dbusername = rs.getString("username");
-			String dbpassword = rs.getString("password");
-
-			if (inputusername.equals(dbusername)
-					&& inputpassword.equals(dbpassword)) {
-				response.sendRedirect("edit.html");
-			} else {
-				response.sendRedirect("login.html");
-			}
+		if (rs.next()) {
+			response.sendRedirect("welcome.jsp");
+		} else {
+			response.sendRedirect("login.html");
 		}
 		conn.close();
 	%>
