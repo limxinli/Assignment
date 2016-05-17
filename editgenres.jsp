@@ -31,7 +31,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
+				<a class="navbar-brand" href="#"><strong style=""></strong>Game
 					Store<small> Singapore Polytechnic</small></a>
 
 			</div>
