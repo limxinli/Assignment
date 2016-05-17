@@ -362,7 +362,9 @@ a.new-release-font:hover,a.sales-font:hover {
 }
 
 #submit-button {
-	margin-left: 85px;
+	margin-left: 115px;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 
 /* =============================================================
@@ -382,6 +384,8 @@ a.new-release-font:hover,a.sales-font:hover {
 	float: right;
 	margin-top: 30px;
 	margin-right: 130px;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 
 #date, #img {
