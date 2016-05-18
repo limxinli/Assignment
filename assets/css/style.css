@@ -71,8 +71,17 @@ h4 {
 	color: #fff;
 }
 
+.row {
+	width: 90%;
+	margin-left: 50px;
+}
+
 .p-top-row {
-	padding-top: 40px;
+	padding-top: -10px;
+}
+
+.middleword {
+	padding-left: 20px;	
 }
 
 /* =============================================================
