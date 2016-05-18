@@ -33,8 +33,8 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand"><strong style=""></strong>Game
-					Store<small> Singapore Polytechnic</small></a>
+				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
+						Singapore Polytechnic</small></a>
 
 			</div>
 			<div class="navbar-collapse collapse move-me">
@@ -44,9 +44,9 @@
 							VIEW</a></li>
 					<li><div class="dropdown">
 							<button class="dropbtn">
-									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-									EDIT <span class="caret"></span>
-								</button>
+								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+								EDIT <span class="caret"></span>
+							</button>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="editgames.jsp">Games</a> <a href="editgenres.jsp">Genres</a>
 							</div>
@@ -71,16 +71,20 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql="Select * from game_data, genre";
+		String sql = "Select * from game_data, genre";
 
-		PreparedStatement pstmt=conn.prepareStatement(sql);
-		
-		ResultSet rs=pstmt.executeQuery();
-		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+
+		ResultSet rs = pstmt.executeQuery();
+
 		out.println("<table border='3'>");
-		%>
-		<caption><h2>Games Data<h2></caption>
-		<tr>
+	%>
+	<caption>
+		<h2>
+			Games Data
+			<h2>
+	</caption>
+	<tr>
 		<th>Game ID</th>
 		<th>Game Title</th>
 		<th>Company</th>
@@ -91,8 +95,8 @@
 		<th>Pre-owned</th>
 		<th>Genre ID</th>
 		<th>Genre Name</th>
-		</tr>
-		<%
+	</tr>
+	<%
 		while (rs.next()) {
 			int dbgameid = rs.getInt("game_id");
 			String dbgametitle = rs.getString("game_title");
@@ -104,27 +108,26 @@
 			int dbpreowned = rs.getInt("preowned");
 			String dbgenreid = rs.getString("genre_id");
 			String dbgenrename = rs.getString("genre_name");
-			
-			%>
-			<tr>
-				<td><%=dbgameid%></td>
-				<td><%=dbgametitle%></td>
-				<td><%=dbcompany%></td>
-				<td><%=dbdate%></td>
-				<td><%=dbdescription%></td>
-				<td><%=dbprice%></td>
-				<td><%=dbimageloc%></td>
-				<%
-				if (dbpreowned==1) {
-				out.println("<td>yes</td>");
-			}
-			else {
-				out.println("<td>no</td>");
-				}%>
-				<td><%=dbgenreid%></td>
-				<td><%=dbgenrename%></td>
-			</tr>
-			<%
+	%>
+	<tr>
+		<td><%=dbgameid%></td>
+		<td><%=dbgametitle%></td>
+		<td><%=dbcompany%></td>
+		<td><%=dbdate%></td>
+		<td><%=dbdescription%></td>
+		<td><%=dbprice%></td>
+		<td><%=dbimageloc%></td>
+		<%
+			if (dbpreowned == 1) {
+					out.println("<td>yes</td>");
+				} else {
+					out.println("<td>no</td>");
+				}
+		%>
+		<td><%=dbgenreid%></td>
+		<td><%=dbgenrename%></td>
+	</tr>
+	<%
 		}
 		out.println("</table>");
 
@@ -135,8 +138,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 set-foot">
-					&copy 2016 Singapore Polytechnic | All rights reserved | Design by
-					: <a href="http://www.binarytheme.com" target="_blank"
+					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
+					All rights reserved | Design by : <a
+						href="http://www.binarytheme.com" target="_blank"
 						style="color: #7C7C7C;">binarytheme.com</a>
 				</div>
 			</div>
