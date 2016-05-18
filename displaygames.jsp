@@ -17,18 +17,15 @@
 		PreparedStatement pstmt = conn
 				.prepareStatement("Select * from bali");
 
-		pstmt.setString(1, "%" + name + "%");
+		pstmt.setString(1, name);
 
 		ResultSet rs = pstmt.executeQuery();
 
 		out.println("<table border='1'>");
 
-		//it will move from row1 to other row till no rows and it will force stop 
 		while (rs.next()) {
 
 			name = rs.getString("Name");
-			String diploma = rs.getString("Diploma");
-			int age = rs.getInt("Age");
 
 			out.println("<tr>");
 			out.println("<td>" + name + "</td>");
