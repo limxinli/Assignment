@@ -391,8 +391,8 @@ a.new-release-font:hover,a.sales-font:hover {
 	padding-right: 25px;
 }
 
-#date,#img {
-	color: #b3b3b3;
+#date:focus, #img:focus, #title:focus, #company:focus, #description:focus, #price:focus {
+	color: black;
 }
 
 th,td {

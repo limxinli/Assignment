@@ -71,11 +71,12 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select * from game_data";
+		String sql="Select * from game_data, genre";
 
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-
-		ResultSet rs = pstmt.executeQuery();
+		PreparedStatement pstmt=conn.prepareStatement(sql);
+		
+		ResultSet rs=pstmt.executeQuery();
+		
 		out.println("<table border='3'>");
 		%>
 		<caption><h2>Games Data<h2></caption>
@@ -88,6 +89,8 @@
 		<th>Price</th>
 		<th>Image Location</th>
 		<th>Pre-owned</th>
+		<th>Genre ID</th>
+		<th>Genre Name</th>
 		</tr>
 		<%
 		while (rs.next()) {
@@ -99,6 +102,8 @@
 			double dbprice = rs.getDouble("price");
 			String dbimageloc = rs.getString("image_loc");
 			int dbpreowned = rs.getInt("preowned");
+			String dbgenreid = rs.getString("genre_id");
+			String dbgenrename = rs.getString("genre_name");
 			
 			%>
 			<tr>
@@ -109,7 +114,15 @@
 				<td><%=dbdescription%></td>
 				<td><%=dbprice%></td>
 				<td><%=dbimageloc%></td>
-				<td><%=dbpreowned%></td>
+				<%
+				if (dbpreowned==1) {
+				out.println("<td>yes</td>");
+			}
+			else {
+				out.println("<td>no</td>");
+				}%>
+				<td><%=dbgenreid%></td>
+				<td><%=dbgenrename%></td>
 			</tr>
 			<%
 		}
