@@ -74,10 +74,7 @@ h4 {
 .row {
 	width: 90%;
 	margin-left: 50px;
-}
-
-.p-top-row {
-	padding-top: -10px;
+	padding-bottom: 10px;
 }
 
 .middleword {
