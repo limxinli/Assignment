@@ -391,15 +391,15 @@ a.new-release-font:hover,a.sales-font:hover {
 	padding-right: 25px;
 }
 
-#date, #img {
+#date,#img {
 	color: #b3b3b3;
 }
 
-th, td {
+th,td {
 	border: 2px solid black;
-    border-collapse: collapse;
-    padding-left: 5px;
-    padding-right: 5px;
+	border-collapse: collapse;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 table {
@@ -415,6 +415,7 @@ table {
 	background-color: #121212;
 	padding-bottom: 30px;
 	padding-top: 30px;
+	position: absolute; 
 	color: #DFD1D1;
 }
 
