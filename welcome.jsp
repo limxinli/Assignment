@@ -71,7 +71,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql="Select * from game_data, genre";
+		String sql="Select * from game_data gd, game_genre gg, genre g where gd.game_id = gg.game_id and gg.genre_id = g.genre_id order by gd.game_id";
 
 		PreparedStatement pstmt=conn.prepareStatement(sql);
 		
@@ -103,6 +103,8 @@
 			String dbimageloc = rs.getString("image_loc");
 			int dbpreowned = rs.getInt("preowned");
 			String dbgenreid = rs.getString("genre_id");
+			String dbgenreid2 = rs.getString("genre_id2");
+			String dbgenreid3 = rs.getString("genre_id3");
 			String dbgenrename = rs.getString("genre_name");
 			
 			%>
@@ -120,8 +122,10 @@
 			}
 			else {
 				out.println("<td>no</td>");
-				}%>
-				<td><%=dbgenreid%></td>
+				}
+				%>
+				
+				<td><%=dbgenreid + dbgenreid2 + dbgenreid3%></td>
 				<td><%=dbgenrename%></td>
 			</tr>
 			<%
