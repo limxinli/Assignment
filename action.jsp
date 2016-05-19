@@ -99,7 +99,7 @@
 		String rdate = rs.getString("release_date");
 		String desc = rs.getString("description");
 		String price = rs.getString("price");
-		String powned = rs.getString("preowned")
+		String powned = rs.getString("preowned");
 
 		out.println("<tr>");
 		out.println("<td>" + gametitle + "</td>");
