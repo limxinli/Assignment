@@ -71,7 +71,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql="SELECT gd.game_id, game_title, company, release_date, description, price, image_loc, preowned, GROUP_CONCAT(gg.genre_id SEPARATOR ', ') as genre_id, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_id;";
+		String sql="Select * from game_genre gg, genre g where gg.genre_id = g.genre_id order by gg.game_id";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
@@ -86,55 +86,19 @@
 	</caption>
 	<tr>
 		<th>Game ID</th>
-		<th>Game Title</th>
-		<th>Company</th>
-		<th>Release Date</th>
-		<th>Description</th>
-		<th>Price</th>
-		<th>Image Location</th>
-		<th>Pre-owned</th>
 		<th>Genre ID</th>
 		<th>Genre Name</th>
 	</tr>
 	<%
 		while (rs.next()) {
 			int dbgameid = rs.getInt("game_id");
-			String dbgametitle = rs.getString("game_title");
-			String dbcompany = rs.getString("company");
-			Date dbdate = rs.getDate("release_date");
-			String dbdescription = rs.getString("description");
-			double dbprice = rs.getDouble("price");
-			String newdbprice = String.format("%.2f", dbprice);
-			String dbimageloc = rs.getString("image_loc");
-			int dbpreowned = rs.getInt("preowned");
 			String dbgenreid = rs.getString("genre_id");
 			String dbgenrename = rs.getString("genre_name");
 	%>
-	<tr>
-		<td><%=dbgameid%></td>
-		<td><%=dbgametitle%></td>
-		<td><%=dbcompany%></td>
-		<td><%=dbdate%></td>
-		<td><%=dbdescription%></td>
-		<%
-			if (dbprice == 0) {
-				out.println("<td>TBC</td>");
-			} else {
-				%><td><%="$" + newdbprice%></td>
-		<%
-			}
-		%>
-		<td><%=dbimageloc%></td>
-		<%
-			if (dbpreowned == 1) {
-					out.println("<td>yes</td>");
-				} else {
-					out.println("<td>no</td>");
-				}
-
-		%>
-		    <td><%=dbgenreid%></td>
-		    <td><%=dbgenrename%></td>
+  <tr>
+    <td><%=dbgameid%></td>
+    <td><%=dbgenreid%></td>
+    <td><%=dbgenrename%></td>	    
  </tr>
     
 
