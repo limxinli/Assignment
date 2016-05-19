@@ -18,7 +18,7 @@
         {
             ($)(function () {
                 $('#carousel-example').carousel({
-                    interval: 3000 //TIME IN MILLI SECONDS
+                    interval: 3000 // TIME IN MILLI SECONDS
                 });
             });
 
@@ -26,14 +26,6 @@
      
         custom_fun:function()
         {
-
-
-            /*====================================
-             WRITE YOUR   SCRIPTS  BELOW
-            ======================================*/
-
-
-
 
         },
 
