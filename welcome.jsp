@@ -33,8 +33,8 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand"><strong style=""></strong>Game
-					Store<small> Singapore Polytechnic</small></a>
+				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
+						Singapore Polytechnic</small></a>
 
 			</div>
 			<div class="navbar-collapse collapse move-me">
@@ -44,9 +44,9 @@
 							VIEW</a></li>
 					<li><div class="dropdown">
 							<button class="dropbtn">
-									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-									EDIT <span class="caret"></span>
-								</button>
+								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+								EDIT <span class="caret"></span>
+							</button>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="editgames.jsp">Games</a> <a href="editgenres.jsp">Genres</a>
 							</div>
@@ -71,28 +71,32 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql="Select * from game_data gd, game_genre gg, genre g where gd.game_id = gg.game_id and gg.genre_id = g.genre_id order by gd.game_id";
+		String sql = "Select * from game_data gd, game_genre gg, genre g where gd.game_id = gg.game_id and gg.genre_id = g.genre_id order by gd.game_id";
 
-		PreparedStatement pstmt=conn.prepareStatement(sql);
-		
-		ResultSet rs=pstmt.executeQuery();
-		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+
+		ResultSet rs = pstmt.executeQuery();
+
 		out.println("<table border='3'>");
-		%>
-		<caption><h2>Games Data<h2></caption>
-		<tr>
-		<th>Game ID</th>
-		<th>Game Title</th>
-		<th>Company</th>
-		<th>Release Date</th>
-		<th>Description</th>
-		<th>Price</th>
-		<th>Image Location</th>
-		<th>Pre-owned</th>
-		<th>Genre ID</th>
-		<th>Genre Name</th>
-		</tr>
-		<%
+	%>
+	<caption>
+		<h2>
+			Games Data
+			<h2>
+	</caption>
+	<tr>
+		<th id="gameid">Game ID</th>
+		<th id="gametitle">Game Title</th>
+		<th id="company">Company</th>
+		<th id="release">Release Date</th>
+		<th id="desc">Description</th>
+		<th id="price">Price</th>
+		<th id="img_loc">Image Location</th>
+		<th id="preowned">Pre-owned</th>
+		<th id="genreid">Genre ID</th>
+		<th id="genrename">Genre Name</th>
+	</tr>
+	<%
 		while (rs.next()) {
 			int dbgameid = rs.getInt("game_id");
 			String dbgametitle = rs.getString("game_title");
@@ -100,35 +104,51 @@
 			Date dbdate = rs.getDate("release_date");
 			String dbdescription = rs.getString("description");
 			double dbprice = rs.getDouble("price");
+			String newdbprice = String.format("%.2f", dbprice);
 			String dbimageloc = rs.getString("image_loc");
 			int dbpreowned = rs.getInt("preowned");
 			String dbgenreid = rs.getString("genre_id");
 			String dbgenreid2 = rs.getString("genre_id2");
 			String dbgenreid3 = rs.getString("genre_id3");
 			String dbgenrename = rs.getString("genre_name");
-			
-			%>
-			<tr>
-				<td><%=dbgameid%></td>
-				<td><%=dbgametitle%></td>
-				<td><%=dbcompany%></td>
-				<td><%=dbdate%></td>
-				<td><%=dbdescription%></td>
-				<td><%=dbprice%></td>
-				<td><%=dbimageloc%></td>
-				<%
-				if (dbpreowned==1) {
-				out.println("<td>yes</td>");
+	%>
+	<tr>
+		<td><%=dbgameid%></td>
+		<td><%=dbgametitle%></td>
+		<td><%=dbcompany%></td>
+		<td><%=dbdate%></td>
+		<td><%=dbdescription%></td>
+		<%
+			if (dbprice == 0) {
+				out.println("<td>TBC</td>");
+			} else {
+				%><td><%="$" + newdbprice%></td>
+		<%
 			}
-			else {
-				out.println("<td>no</td>");
+		%>
+		<td><%=dbimageloc%></td>
+		<%
+			if (dbpreowned == 1) {
+					out.println("<td>yes</td>");
+				} else {
+					out.println("<td>no</td>");
 				}
-				%>
-				
-				<td><%=dbgenreid + dbgenreid2 + dbgenreid3%></td>
-				<td><%=dbgenrename%></td>
-			</tr>
-			<%
+
+				if (dbgenreid2 == null) {
+		%><td><%=dbgenreid%></td>
+		<%
+			} else if (dbgenreid3 == null) {
+		%><td><%=dbgenreid + ", " + dbgenreid2%></td>
+		<%
+			} else {
+		%><td><%=dbgenreid + ", " + dbgenreid2 + ", " + dbgenreid3%></td>
+		<%
+			}
+		%>
+
+		<td><%=dbgenrename%></td>
+	</tr>
+	<%
 		}
 		out.println("</table>");
 
