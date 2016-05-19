@@ -107,7 +107,7 @@
 		out.println("<td>" + desc + "</td>");
 		out.println("<td>" + price + "</td>");
 		out.println("<td>" + powned + "</td>");
-		out.println("<td> <img src=" +image+ "/ </td>");
+		/* out.println("<td> <img src=" +image+ "</td>"); --> this to display image*/
 	%>
 	<%
 		}
