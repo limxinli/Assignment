@@ -39,7 +39,7 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="welcome.jsp"><span
+					<li><a href="searchgame.jsp"><span
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							VIEW</a></li>
 					<li><div class="dropdown">

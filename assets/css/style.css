@@ -415,9 +415,33 @@ table {
 	width: 90%;
 	font-size: 12px;
 	margin-left: 60px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
+.searchgames {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#enter-button {
+	margin-left: 520px;
+	margin-top: -34.5px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+#linkback {
+	float: left;
+	font-size: 15px;
+}
+
+#linkbackbottom {
+	float: left;
+	font-size: 15px;
+	margin-left: 60px;
+	margin-top: -30px;
+}
 /* =============================================================
    FOOTER SECTION STYLES
  ============================================================ */

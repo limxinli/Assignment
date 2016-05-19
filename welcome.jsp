@@ -39,7 +39,7 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="welcome.jsp" class="active-menu-item"><span
+					<li><a href="searchgame.jsp" class="active-menu-item"><span
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							VIEW</a></li>
 					<li><div class="dropdown">
@@ -63,18 +63,33 @@
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
-		<h3>WELCOME ADMINISTRATOR!</h3>
+		<h3>GAMES</h3>
 
 	</div>
 	</section>
+	<!-- BACK TO TOP BUTTON -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://arrow.scrolltotop.com/arrow92.js"></script>
+	<noscript>
+		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
+			Button</a>? Go to our FAQ page for more info.
+	</noscript>
 	<!--TOP SECTION END-->
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql="SELECT gd.game_id, game_title, company, release_date, description, price, image_loc, preowned, GROUP_CONCAT(gg.genre_id SEPARATOR ', ') as genre_id, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_id;";
+		String searchString = request.getParameter("searchString");
+
+		String sql = "Select * from allgame where game_title like ? or company like ? or release_date like ? or price like ? or genre_name like ?";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-
+		pstmt.setString(1, "%" + searchString + "%");
+		pstmt.setString(2, "%" + searchString + "%");
+		pstmt.setString(3, "%" + searchString + "%");
+		pstmt.setString(4, "%" + searchString + "%");
+		pstmt.setString(5, "%" + searchString + "%");
 		ResultSet rs = pstmt.executeQuery();
 
 		out.println("<table border='3'>");
@@ -82,7 +97,11 @@
 	<caption>
 		<h2>
 			Games Data
-			<h2>
+			</h2>
+				<div id="linkback">
+					<a href="searchgame.jsp" class="new-release-font"> Search for
+						others</a>
+				</div>
 	</caption>
 	<tr>
 		<th>Game ID</th>
@@ -118,9 +137,9 @@
 		<td><%=dbdescription%></td>
 		<%
 			if (dbprice == 0) {
-				out.println("<td>TBC</td>");
-			} else {
-				%><td><%="$" + newdbprice%></td>
+					out.println("<td>TBC</td>");
+				} else {
+		%><td><%="$" + newdbprice%></td>
 		<%
 			}
 		%>
@@ -131,20 +150,20 @@
 				} else {
 					out.println("<td>no</td>");
 				}
-
 		%>
-		    <td><%=dbgenreid%></td>
-		    <td><%=dbgenrename%></td>
- </tr>
-    
-
-
+		<td><%=dbgenreid%></td>
+		<td><%=dbgenrename%></td>
+	</tr>
 	<%
 		}
 		out.println("</table>");
 
 		conn.close();
 	%>
+		<div id="linkbackbottom">
+		<a href="searchgame.jsp" class="new-release-font"> Search for
+			others</a>
+	</div>
 
 	<div class="copy-txt">
 		<div class="container">

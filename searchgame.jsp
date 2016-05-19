@@ -39,7 +39,7 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="welcome.jsp" class="active-menu-item"><span
+					<li><a href="searchgame.jsp" class="active-menu-item"><span
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							VIEW</a></li>
 					<li><div class="dropdown">
@@ -63,18 +63,33 @@
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
-		<h3>WELCOME ADMINISTRATOR!</h3>
+		<h3>GAMES</h3>
 
 	</div>
 	</section>
+	<div class="searchgames">
+	<form action="welcome.jsp" method="post">
+		Search: <input type="text" name="searchString" id="searchgames" placeholder="Search by game title, company, release date, price or genre name" class="form-control"> <input
+			type="submit" id="enter-button" class="btn btn-info" value="Enter">
+	</form>
+	</div>
+	<!-- BACK TO TOP BUTTON -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://arrow.scrolltotop.com/arrow92.js"></script>
+	<noscript>
+		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
+			Button</a>? Go to our FAQ page for more info.
+	</noscript>
 	<!--TOP SECTION END-->
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql="Select * from game_genre gg, genre g where gg.genre_id = g.genre_id order by gg.game_id";
-
+		String sql = "Select * from allgame";
+		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-
+		
 		ResultSet rs = pstmt.executeQuery();
 
 		out.println("<table border='3'>");
@@ -86,19 +101,55 @@
 	</caption>
 	<tr>
 		<th>Game ID</th>
+		<th>Game Title</th>
+		<th>Company</th>
+		<th>Release Date</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Image Location</th>
+		<th>Pre-owned</th>
 		<th>Genre ID</th>
 		<th>Genre Name</th>
 	</tr>
 	<%
 		while (rs.next()) {
 			int dbgameid = rs.getInt("game_id");
+			String dbgametitle = rs.getString("game_title");
+			String dbcompany = rs.getString("company");
+			Date dbdate = rs.getDate("release_date");
+			String dbdescription = rs.getString("description");
+			double dbprice = rs.getDouble("price");
+			String newdbprice = String.format("%.2f", dbprice);
+			String dbimageloc = rs.getString("image_loc");
+			int dbpreowned = rs.getInt("preowned");
 			String dbgenreid = rs.getString("genre_id");
 			String dbgenrename = rs.getString("genre_name");
 	%>
-  <tr>
-    <td><%=dbgameid%></td>
-    <td><%=dbgenreid%></td>
-    <td><%=dbgenrename%></td>	    
+	<tr>
+		<td><%=dbgameid%></td>
+		<td><%=dbgametitle%></td>
+		<td><%=dbcompany%></td>
+		<td><%=dbdate%></td>
+		<td><%=dbdescription%></td>
+		<%
+			if (dbprice == 0) {
+				out.println("<td>TBC</td>");
+			} else {
+				%><td><%="$" + newdbprice%></td>
+		<%
+			}
+		%>
+		<td><%=dbimageloc%></td>
+		<%
+			if (dbpreowned == 1) {
+					out.println("<td>yes</td>");
+				} else {
+					out.println("<td>no</td>");
+				}
+
+		%>
+		    <td><%=dbgenreid%></td>
+		    <td><%=dbgenrename%></td>
  </tr>
     
 

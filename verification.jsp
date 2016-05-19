@@ -23,7 +23,7 @@
 		ResultSet rs = pstmt.executeQuery();
 
 		if (rs.next()) {
-			response.sendRedirect("welcome.jsp");
+			response.sendRedirect("searchgame.jsp");
 		} else {
 			response.sendRedirect("login.html");
 		}
