@@ -91,13 +91,26 @@
 		<th id="price">Price</th>
 		<th id="img_loc">Image</th>
 		<th id="preowned">Pre-owned</th>
-		<th id="genrename">Genre Name</th>
+		<th id="img_loc">Image</th>
 	</tr>
 	<%
-		
+		while (rs.next()) {
+		String gametitle = rs.getString("game_title");
+		String rdate = rs.getString("release_date");
+		String desc = rs.getString("description");
+		String price = rs.getString("price");
+		String powned = rs.getString("preowned")
+
+		out.println("<tr>");
+		out.println("<td>" + gametitle + "</td>");
+		out.println("<td>" + rdate + "</td>");
+		out.println("<td>" + desc + "</td>");
+		out.println("<td>" + price + "</td>");
+		out.println("<td>" + powned + "</td>");
+		out.println("<td> <img src=" +image+ "/ </td>");
 	%>
 	<%
-		
+		}
 		out.println("</table>");
 
 		conn.close();
