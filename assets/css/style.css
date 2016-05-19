@@ -466,8 +466,8 @@ table {
    OTHERS STYLES
  ============================================================ */
  #box {
-  width: 42em;
-  padding: 1em;
+  width: 75em;
+  padding: 3em;
   margin: 0 auto; 
   background: white;
   border: 5px solid black;
