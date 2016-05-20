@@ -506,3 +506,11 @@ table {
   background: white;
   border: 5px solid black;
   }
+  
+/* =============================================================
+   HORIZONTAL LINE STYLES
+ ============================================================ */  
+  .horizontal_line {
+    border-top: medium solid #bdc0ba;
+    padding: 20px 0;
+    content: "";
