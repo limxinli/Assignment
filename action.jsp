@@ -71,7 +71,7 @@
 
 	</div>
 	</section>
-	<!--HOME SECTION END-->
+	<!-- HOME SECTION END -->
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
