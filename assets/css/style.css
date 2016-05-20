@@ -78,7 +78,7 @@ h4 {
 }
 
 .middleword {
-	padding-left: 20px;	
+	padding-left: 20px;
 }
 
 /* =============================================================
@@ -363,7 +363,7 @@ a.new-release-font:hover,a.sales-font:hover {
 	margin-top: -15px;
 }
 
-#nickname:focus, #comment:focus {
+#nickname:focus,#comment:focus {
 	color: black;
 }
 
@@ -406,7 +406,8 @@ a.new-release-font:hover,a.sales-font:hover {
 	padding-right: 25px;
 }
 
-#date:focus, #img:focus, #title:focus, #company:focus, #description:focus, #price:focus {
+#date:focus,#img:focus,#title:focus,#company:focus,#description:focus,#price:focus
+	{
 	color: black;
 }
 
@@ -498,19 +499,36 @@ table {
 /* =============================================================
    BOX STYLES
  ============================================================ */
-
 #box {
-  width: 42em;
-  padding: 1em;
-  margin: 0 auto; 
-  background: white;
-  border: 5px solid black;
-  }
-  
+	width: 42em;
+	padding: 1em;
+	margin: 0 auto;
+	background: white;
+	border: 5px solid black;
+}
+
 /* =============================================================
    HORIZONTAL LINE STYLES
- ============================================================ */  
-  .horizontal_line {
-    border-top: medium solid #bdc0ba;
-    padding: 20px 0;
-    content: "";
+ ============================================================ */
+.horizontal_line {
+	border-top: medium solid #bdc0ba;
+	padding: 20px 0;
+	content: ""; # img_cont { display : table;
+	width: 90%;
+	margin: 20px auto;
+}
+
+/* =============================================================
+   NEW RELEASE STYLES
+ ============================================================ */
+
+#img_cont a {
+	display: table-cell;
+	text-align: center;
+	width: 16%;
+}
+
+#img_cont img {
+	width: 100%;
+	max-width: 150px;
+}
