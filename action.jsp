@@ -102,53 +102,52 @@
 
 	<!-- Main Background -->
 	<section>
-	<div id="box" onclick="location.href='adventure.html';">
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<img src="assets\img\Battleborn\img1.jpg"
-				class="img-responsive img-rounded" alt="" height="270" width="190" />	
-		</div>
-	</div>
-	</div>
-	
-	<div id="box" onclick="location.href='adventure.html';">
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<img src="assets\img\DyingLight\img3.jpg" alt="" height="270"
-				width="190" />
-		</div>
-	</div>
-	</div>
-
-	<div id="box" onclick="location.href='adventure.html';">
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<img src="assets\img\MirrorEdgeCatalyst\img7.jpg" alt="" height="270"
-				width="190" />
-		</div>
-	</div>
-	</div>
-
-	<div id="box" onclick="location.href='adventure.html';">
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\RyseSonofRome\img1.jpg" alt="" height="270"
-					width="190" />
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+				<a href="adventure.html" target="_black">
+					<img src="assets\img\Battleborn\img1.jpg"
+						class="img-responsive img-rounded" alt="" height="270" width="190" />
+						</a>
+				</div>
 			</div>
-		</div>
-	</div>
-	</div>
-	
-	<div id="box" onclick="location.href='adventure.html';">
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<img src="assets\img\StarWarsBattlefront\img7.jpg" alt=""
-				height="270" width="190" />
-		</div>
-	</div>
-	</div>
-	
+			
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+				<a href="adventure.html" target="_black">
+					<img src="assets\img\DyingLight\img3.jpg" alt="" height="270"
+						width="190" />
+						</a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+				<a href="adventure.html" target="_black">
+					<img src="assets\img\MirrorEdgeCatalyst\img7.jpg" alt=""
+						height="270" width="190" />
+						</a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<div class="col-md-4 p-top-row">
+					<a href="adventure.html" target="_black">
+						<img src="assets\img\RyseSonofRome\img1.jpg" alt="" height="270"
+							width="190" />
+							</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+				<a href="adventure.html" target="_black">
+					<img src="assets\img\StarWarsBattlefront\img7.jpg" alt=""
+						height="270" width="190" />
+						</a>
+				</div>
+			</div>
 	</section>
 
 	<!-- End Main Background -->

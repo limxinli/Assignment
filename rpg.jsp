@@ -62,7 +62,7 @@
 
 		</div>
 	</div>
-		<!--MENU SECTION END-->
+	<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
@@ -70,26 +70,21 @@
 		</h3>
 
 	</div>
-	<!-- HOME SECTION END -->
-	<%
-		Connection conn = DatabaseConnection.getConnection();
+	<!-- HOME SECTION END --> <%
+ 	Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select game_title from game_data WHERE game_title='action'";
+ 	String sql = "Select game_title from game_data WHERE game_title='action'";
 
-		PreparedStatement pstmt = conn.prepareStatement(sql);
+ 	PreparedStatement pstmt = conn.prepareStatement(sql);
 
-		ResultSet rs = pstmt.executeQuery();
+ 	ResultSet rs = pstmt.executeQuery();
 
-		while (rs.next()) {
-			String gametitle = rs.getString("game_title");
-			%>
-			<%=gametitle%>
-		<%
-		}
-		conn.close();
-	%>
-	<!-- BACK TO TOP BUTTON -->
-	<script
+ 	while (rs.next()) {
+ 		String gametitle = rs.getString("game_title");
+ %> <%=gametitle%> <%
+ 	}
+ 	conn.close();
+ %> <!-- BACK TO TOP BUTTON --> <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="http://arrow.scrolltotop.com/arrow92.js"></script>
@@ -97,54 +92,50 @@
 		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
 			Button</a>? Go to our FAQ page for more info.
 	</noscript>
-	<!-- BACK TO TOP BUTTON END -->
-	<!-- Main Background -->
-	<section>
-		<div id="box" onclick="location.href='action.html';">
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-					<img src="assets\img\Fallout3\img1.jpg" alt="" height="270"
-						width="190" />
-				</div>
+	<!-- BACK TO TOP BUTTON END --> <!-- Main Background --> <section>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="action.html" target="_black"> <img
+				src="assets\img\Fallout3\img1.jpg" alt="" height="270" width="190" />
+			</a>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="action.html" target="_black"> <img
+				src="assets\img\Fallout4\img1.jpg" alt="" height="270" width="190" />
+			</a>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+		<a href="action.html" target="_black">
+			<img src="assets\img\Goliath\img1.jpg" alt="" height="270"
+				width="190" />
+				</a>
+		</div>
+	</div>
+
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+			<a href="action.html" target="_black">
+				<img src="assets\img\LISLimitedEdition\img1.jpg" alt="" height="270"
+					width="190" />
+					</a>
 			</div>
 		</div>
 
-		<div id="box" onclick="location.href='shooter.html';">
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-					<img src="assets\img\Fallout4\img1.jpg" alt="" height="270"
-						width="190" />
-				</div>
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+			<a href="action.html" target="_black">
+				<img src="assets\img\TheWalkingDead\img1.jpg" alt="" height="270"
+					width="190" />
+					</a>
 			</div>
 		</div>
-
-		<div id="box" onclick="location.href='horror.html';">
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-					<img src="assets\img\Goliath\img1.jpg" alt="" height="270"
-						width="190" />
-				</div>
-			</div>
-		</div>
-
-		<div id="box" onclick="location.href='adventure.html';">
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-					<img src="assets\img\LISLimitedEdition\img1.jpg" alt=""
-						height="270" width="190" />
-				</div>
-			</div>
-		</div>
-
-		<div id="box" onclick="location.href='action.html';">
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-					<img src="assets\img\TheWalkingDead\img1.jpg" alt="" height="270"
-						width="190" />
-				</div>
-			</div>
-		</div>
-	</section>
+		</section>
 	<!-- End Main Background -->
 
 	<div class="copy-txt">
@@ -159,15 +150,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- COPY TEXT SECTION END-->
-	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-	<!-- CORE JQUERY  -->
-	<script src="assets/js/jquery-1.11.1.js"></script>
-	<!-- BOOTSTRAP SCRIPTS  -->
-	<script src="assets/js/bootstrap.js"></script>
-	<!-- CUSTOM SCRIPTS  -->
-	<script src="assets/js/custom.js"></script>
-
+	<!-- COPY TEXT SECTION END--> <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY  --> <script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  --> <script src="assets/js/bootstrap.js"></script>
+	<!-- CUSTOM SCRIPTS  --> <script src="assets/js/custom.js"></script>
 </body>
 </html>
-	
