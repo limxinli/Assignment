@@ -75,7 +75,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select * from game_genre WHERE genre_name=action";
+		String sql = "Select * from genre WHERE genre_name='action' ";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
