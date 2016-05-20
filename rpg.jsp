@@ -100,39 +100,48 @@
 	<!-- BACK TO TOP BUTTON END -->
 	<!-- Main Background -->
 	<section>
-
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\Fallout3\img1.jpg" alt="" height="270"
-				width="190" />
+		<div id="box" onclick="location.href='action.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\Fallout3\img1.jpg" alt="" height="270"
+						width="190" />
+				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\Fallout4\img1.jpg" alt="" height="270"
-				width="190" />
+		<div id="box" onclick="location.href='shooter.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\Fallout4\img1.jpg" alt="" height="270"
+						width="190" />
+				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\Goliath\img1.jpg" alt="" height="270"
-				width="190" />
+		<div id="box" onclick="location.href='horror.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\Goliath\img1.jpg" alt="" height="270"
+						width="190" />
+				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\LISLimitedEdition\img1.jpg" alt="" height="270"
-				width="190" />
-		</div>
+		<div id="box" onclick="location.href='adventure.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\LISLimitedEdition\img1.jpg" alt=""
+						height="270" width="190" />
+				</div>
+			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\TheWalkingDead\img1.jpg" alt=""
-				height="270" width="190" />
+		<div id="box" onclick="location.href='action.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\TheWalkingDead\img1.jpg" alt="" height="270"
+						width="190" />
+				</div>
 			</div>
 		</div>
 	</section>

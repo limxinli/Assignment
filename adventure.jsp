@@ -100,41 +100,51 @@
 	<!-- BACK TO TOP BUTTON END -->
 	<!-- Main Background -->
 	<section>
-
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\BetterLateThanDead\img1.jpg" alt="" height="270"
-				width="190" />
+		<div id="box" onclick="location.href='horror.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\BetterLateThanDead\img1.jpg" alt=""
+						height="270" width="190" />
+				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\RiseOfTheTombRaider\img2.jpg" alt="" height="270"
-				width="190" />
+		<div id="box" onclick="location.href='action.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\RiseOfTheTombRaider\img2.jpg" alt=""
+						height="270" width="190" />
+				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\SPTheStickofTruth\img1.jpg" alt="" height="270"
-				width="190" />
+		<div id="box" onclick="location.href='shooter.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\SPTheStickofTruth\img1.jpg" alt=""
+						height="270" width="190" />
+				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\TheEvilWithin\img1.jpg" alt="" height="270"
-				width="190" />
-		</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-				<img src="assets\img\Thief\img1.jpg" alt=""
-				height="270" width="190" />
+		<div id="box" onclick="location.href='action.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\TheEvilWithin\img1.jpg" alt="" height="270"
+						width="190" />
+				</div>
 			</div>
 		</div>
+
+		<div id="box" onclick="location.href='horror.html';">
+			<div class="row">
+				<div class="col-md-4 p-top-row">
+					<img src="assets\img\Thief\img1.jpg" alt="" height="270"
+						width="190" />
+				</div>
+			</div>
+		</div>
+	</section>
 	</section>
 
 	<!-- End Main Background -->

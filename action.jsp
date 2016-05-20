@@ -102,7 +102,7 @@
 
 	<!-- Main Background -->
 	<section>
-	<div class="box">
+	<div id="box" onclick="location.href='adventure.html';">
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<img src="assets\img\Battleborn\img1.jpg"
@@ -111,7 +111,7 @@
 	</div>
 	</div>
 	
-	<div class="box">
+	<div id="box" onclick="location.href='adventure.html';">
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<img src="assets\img\DyingLight\img3.jpg" alt="" height="270"
@@ -120,7 +120,7 @@
 	</div>
 	</div>
 
-	<div class="box">
+	<div id="box" onclick="location.href='adventure.html';">
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<img src="assets\img\MirrorEdgeCatalyst\img7.jpg" alt="" height="270"
@@ -129,7 +129,7 @@
 	</div>
 	</div>
 
-	<div class="box">
+	<div id="box" onclick="location.href='adventure.html';">
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<div class="col-md-4 p-top-row">
@@ -140,7 +140,7 @@
 	</div>
 	</div>
 	
-	<div class="box">
+	<div id="box" onclick="location.href='adventure.html';">
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<img src="assets\img\StarWarsBattlefront\img7.jpg" alt=""
