@@ -60,48 +60,19 @@
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			ADD GAME <i class="fa fa-angle-double-right "></i>
+			ADD GENRE <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
 	</section>
 	<!--TOP SECTION END-->
-		<div class="genre-drop">
-		<select name="genre-drop" id="genre-drop"
-			onChange="window.location.href=this.value">
-			<option value="addgame.html">Add</option>
-			<option value="updategame.html">Update</option>
-			<option value="deletegame.html">Delete</option>
-		</select>
-	</div>
 	
 	<section>
 	<div class="gamedata">
-		Game Title: <input type="text" name="title" id="title"
-			class="form-control"> <br> Company: <input type="text"
-			name="company" id="company" class="form-control"> <br>
-		Release Date: <input type="text" name="date" id="date"
-			placeholder="Type in this format (yyyy-mm-dd)"
-			class="form-control"> <br> Description:
-		<textarea class="form-control" rows="5" id="description"></textarea>
-		<br> Price: <input type="text" name="price" id="price"
-			class="form-control"> <br> Image Location: <input
-			type="text" name="img" id="img" placeholder="Path of the image (assets/img/)"
-			class="form-control"> <br> Genre:
-		<div class="genre-drop">
-			<select name="genre-drop" id="genre-drop">
-				<option value="action">Action</option>
-				<option value="adventure">Adventure</option>
-				<option value="horror">Horror</option>
-				<option value="rpg">RPG</option>
-				<option value="shooter">Shooter</option>
-			</select>
-		</div>
-		<div class="radio-button2">
-			Is it pre-owned? <br> <input type="radio" id="new" name="type"
-				value="yes"> Yes <input type="radio" id="preowned"
-				name="type" value="no"> No
-		</div>
+		Genre ID: <input type="text" name="id" id="id"
+			class="form-control"> <br>
+		Genre Name: <input type="text" name="name" id="name"
+			class="form-control">
 	</div>
 	<input type="submit" class="btn btn-info" id="add" value="Add">
 	</section>

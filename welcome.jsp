@@ -82,7 +82,7 @@
 
 		String searchString = request.getParameter("searchString");
 
-		String sql = "Select * from allgame where game_title like ? or company like ? or release_date like ? or price like ? or genre_name like ?";
+		String sql = "SELECT * from (SELECT gd.game_id, game_title, company, release_date, description, price, image_loc, preowned, GROUP_CONCAT(gg.genre_id SEPARATOR ', ') as genre_id, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_id) AS allgames WHERE game_title like ? or company like ? or release_date like ? or price like ? or genre_name like ?;";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, "%" + searchString + "%");

@@ -358,6 +358,15 @@ a.new-release-font:hover,a.sales-font:hover {
 	font-size: 20px;
 }
 
+#comment-button {
+	float: right;
+	margin-top: -15px;
+}
+
+#nickname:focus, #comment:focus {
+	color: black;
+}
+
 /* =============================================================
    LOGIN.HTML 
  ============================================================ */

@@ -86,7 +86,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select * from allgame";
+		String sql = "SELECT gd.game_id, game_title, company, release_date, description, price, image_loc, preowned, GROUP_CONCAT(gg.genre_id SEPARATOR ', ') as genre_id, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_id";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		

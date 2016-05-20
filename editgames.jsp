@@ -72,13 +72,14 @@
 	</section>
 	<!--TOP SECTION END-->
 
-	<div class="genre-drop">
-					<select name="genre-drop" id="genre-drop" onChange="window.location.href=this.value">
-						<option value="addgame.html">Add</option>
-						<option value="updategame.html">Update</option>
-						<option value="deletegame.html">Delete</option>
-					</select>
-				</div>
+	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	<a href="addgame.html" class="new-release-font"> ADD</a>
+	<br>
+	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	<a href="updategame.html" class="new-release-font"> UPDATE</a>
+	<br>
+	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	<a href="deletegame.html" class="new-release-font"> DELETE</a>
 
 
 	<div class="copy-txt">
