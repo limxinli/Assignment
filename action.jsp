@@ -75,43 +75,76 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select * from game_data WHERE genre_name=action";
+		String sql = "Select * from game_genre WHERE genre_name=action";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		ResultSet rs = pstmt.executeQuery();
-
-		out.println("<table border='3'>");
 	%>
 
-	<tr>
-		<th id="gametitle">Game Title</th>
-		<th id="release">Release Date</th>
-		<th id="desc">Description</th>
-		<th id="price">Price</th>
-		<th id="img_loc">Image</th>
-		<th id="preowned">Pre-owned</th>
-		<th id="img_loc">Image</th>
-	</tr>
+	<!-- BACK TO TOP BUTTON -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://arrow.scrolltotop.com/arrow92.js"></script>
+	<noscript>
+		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
+			Button</a>? Go to our FAQ page for more info.
+	</noscript>
+	<!-- BACK TO TOP BUTTON END -->
+
 	<%
 		while (rs.next()) {
-		String gametitle = rs.getString("game_title");
-		String rdate = rs.getString("release_date");
-		String desc = rs.getString("description");
-		String price = rs.getString("price");
-		String powned = rs.getString("preowned");
-
-		out.println("<tr>");
-		out.println("<td>" + gametitle + "</td>");
-		out.println("<td>" + rdate + "</td>");
-		out.println("<td>" + desc + "</td>");
-		out.println("<td>" + price + "</td>");
-		out.println("<td>" + powned + "</td>");
-		/* out.println("<td> <img src=" +image+ "</td>"); --> this to display image*/
+			String gametitle = rs.getString("game_title");
+			String rdate = rs.getString("release_date");
+			String desc = rs.getString("description");
+			String price = rs.getString("price");
+			String preowned = rs.getString("preowned");
 	%>
+	<!-- Main Background -->
+	<section>
+
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<img src="assets\img\Battleborn\img1.jpg"
+				class="img-responsive img-rounded" alt="" height="270" width="190" />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<img src="assets\img\DyingLight\img3.jpg" alt="" height="270"
+				width="190" />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<img src="assets\img\MirrorEdgeCatalyst\img7.jpg" alt="" height="270"
+				width="190" />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\RyseSonofRome\img1.jpg" alt="" height="270"
+					width="190" />
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<img src="assets\img\StarWarsBattlefront\img7.jpg" alt=""
+				height="270" width="190" />
+		</div>
+	</div>
+	</section>
+
+	<!-- End Main Background -->
 	<%
 		}
-		out.println("</table>");
 
 		conn.close();
 	%>
