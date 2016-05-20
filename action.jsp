@@ -47,7 +47,7 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.html" class="active-menu-item">Action</a> <a
+								<a href="action.jsp" class="active-menu-item">Action</a> <a
 									href="adventure.html">Adventure</a> <a href="horror.html">Horror</a>
 								<a href="rpg.html">RPG</a> <a href="shooter.html">Shooter</a>
 							</div>
@@ -75,13 +75,20 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select * from genre WHERE genre_name='action' ";
+		String sql = "Select game_title from game_data WHERE game_title='action'";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		ResultSet rs = pstmt.executeQuery();
-	%>
 
+		while (rs.next()) {
+			String gametitle = rs.getString("game_title");
+			%>
+			<%=gametitle%>
+		<%
+		}
+		conn.close();
+	%>
 	<!-- BACK TO TOP BUTTON -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -93,14 +100,6 @@
 	</noscript>
 	<!-- BACK TO TOP BUTTON END -->
 
-	<%
-		while (rs.next()) {
-			String gametitle = rs.getString("game_title");
-			String rdate = rs.getString("release_date");
-			String desc = rs.getString("description");
-			String price = rs.getString("price");
-			String preowned = rs.getString("preowned");
-	%>
 	<!-- Main Background -->
 	<section>
 
@@ -143,11 +142,7 @@
 	</section>
 
 	<!-- End Main Background -->
-	<%
-		}
 
-		conn.close();
-	%>
 	<div class="copy-txt">
 		<div class="container">
 			<div class="row">
