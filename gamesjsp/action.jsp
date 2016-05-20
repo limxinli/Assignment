@@ -102,7 +102,7 @@
 
 	<!-- Main Background -->
 	<section>
-
+	
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<img src="assets\img\Battleborn\img1.jpg"
