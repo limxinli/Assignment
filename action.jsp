@@ -83,12 +83,9 @@
 
 		while (rs.next()) {
 			String gametitle = rs.getString("game_title");
-			%>
-			<%=gametitle%>
-		<%
-		}
-		conn.close();
 	%>
+
+
 	<!-- BACK TO TOP BUTTON -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -107,6 +104,7 @@
 		<div class="col-md-4 p-top-row">
 			<img src="assets\img\Battleborn\img1.jpg"
 				class="img-responsive img-rounded" alt="" height="270" width="190" />
+			<%=gametitle%>
 		</div>
 	</div>
 
@@ -154,6 +152,10 @@
 			</div>
 		</div>
 	</div>
+	<%
+		}
+		conn.close();
+	%>
 	<!-- COPY TEXT SECTION END-->
 	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 	<!-- CORE JQUERY  -->
