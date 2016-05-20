@@ -37,20 +37,13 @@
 						Singapore Polytechnic</small></a>
 
 			</div>
-			<div class="navbar-collapse collapse move-me">
+		<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
 					<li><a href="searchgame.jsp" class="active-menu-item"><span
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							VIEW</a></li>
-					<li><div class="dropdown">
-							<button class="dropbtn">
-								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-								EDIT <span class="caret"></span>
-							</button>
-							<div id="myDropdown" class="dropdown-content">
-								<a href="editgames.html">Games</a> <a href="editgenres.html">Genres</a>
-							</div>
-						</div></li>
+					<li><a href="editall.jsp"><span
+							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
 					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
 							LOGOUT

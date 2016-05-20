@@ -42,15 +42,8 @@
 					<li><a href="searchgame.jsp" class="active-menu-item"><span
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							VIEW</a></li>
-					<li><div class="dropdown">
-							<button class="dropbtn">
-								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-								EDIT <span class="caret"></span>
-							</button>
-							<div id="myDropdown" class="dropdown-content">
-								<a href="editgames.html">Games</a> <a href="editgenres.html">Genres</a>
-							</div>
-						</div></li>
+					<li><a href="editall.jsp"><span
+							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
 					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
 							LOGOUT
@@ -95,13 +88,11 @@
 		out.println("<table border='3'>");
 	%>
 	<caption>
-		<h2>
-			Games Data
-			</h2>
-				<div id="linkback">
-					<a href="searchgame.jsp" class="new-release-font"> Search for
-						others</a>
-				</div>
+		<h2>Games Data</h2>
+		<div id="linkback">
+			<a href="searchgame.jsp" class="new-release-font"> Search for
+				others</a>
+		</div>
 	</caption>
 	<tr>
 		<th>Game ID</th>
@@ -160,7 +151,7 @@
 
 		conn.close();
 	%>
-		<div id="linkbackbottom">
+	<div id="linkbackbottom">
 		<a href="searchgame.jsp" class="new-release-font"> Search for
 			others</a>
 	</div>
