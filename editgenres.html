@@ -1,10 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*,db.*"%>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -48,8 +44,8 @@
 								EDIT <span class="caret"></span>
 							</button>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="editgames.jsp" class="active-menu-item">Games</a> <a
-									href="editgenres.jsp">Genres</a>
+								<a href="editgames.html">Games</a> <a
+									href="editgenres.html" class="active-menu-item">Genres</a>
 							</div>
 						</div></li>
 					<li><a href="login.html"> <span
@@ -65,7 +61,7 @@
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			EDIT GAMES <i class="fa fa-angle-double-right "></i>
+			EDIT GENRES <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
@@ -73,13 +69,13 @@
 	<!--TOP SECTION END-->
 
 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	<a href="addgame.html" class="new-release-font"> ADD</a>
+	<a href="addgenre.html" class="new-release-font"> ADD</a>
 	<br>
 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	<a href="updategame.html" class="new-release-font"> UPDATE</a>
+	<a href="updategenre.html" class="new-release-font"> UPDATE</a>
 	<br>
 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	<a href="deletegame.html" class="new-release-font"> DELETE</a>
+	<a href="deletegenre.html" class="new-release-font"> DELETE</a>
 
 
 	<div class="copy-txt">

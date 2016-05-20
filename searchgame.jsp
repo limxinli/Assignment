@@ -48,7 +48,7 @@
 								EDIT <span class="caret"></span>
 							</button>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="editgames.jsp">Games</a> <a href="editgenres.jsp">Genres</a>
+								<a href="editgames.html">Games</a> <a href="editgenres.html">Genres</a>
 							</div>
 						</div></li>
 					<li><a href="login.html"> <span
