@@ -485,3 +485,14 @@ table {
 	font-weight: 900;
 	padding-left: 100px;
 }
+
+/* =============================================================
+   BOX STYLES
+ ============================================================ */
+#box {
+  width: 42em;
+  padding: 1em;
+  margin: 0 auto; 
+  background: white;
+  border: 5px solid blue;
+  }

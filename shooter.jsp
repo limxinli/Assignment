@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -31,22 +35,24 @@
 				</button>
 				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
 					Store<small> Singapore Polytechnic</small></a>
+
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
 					<li><a href="index.html"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
-							<a href="genre.html"><button class="dropbtn">
+							<a href="genre.html" class="active-menu-item"><button
+									class="dropbtn">
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.html">Action</a> <a href="adventure.html">Adventure</a>
-								<a href="horror.html">Horror</a> <a href="rpg.html">RPG</a> <a
-									href="shooter.html">Shooter</a>
+								<a href="action.jsp" class="active-menu-item">Action</a> <a
+									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
+								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
-					<li><a href="about.html" class="active-menu-item">ABOUT</a></li>
+					<li><a href="about.html">ABOUT</a></li>
 					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
 							LOGIN
@@ -56,8 +62,33 @@
 
 		</div>
 	</div>
-	<!--MENU SECTION END-->
-		<!-- BACK TO TOP BUTTON -->
+		<!--MENU SECTION END-->
+	<section class="headline-sec">
+	<div class="overlay ">
+		<h3>
+			SHOOTER GAMES <i class="fa fa-angle-double-right "></i>
+		</h3>
+
+	</div>
+	<!-- HOME SECTION END -->
+	<%
+		Connection conn = DatabaseConnection.getConnection();
+
+		String sql = "Select game_title from game_data WHERE game_title='action'";
+
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			String gametitle = rs.getString("game_title");
+			%>
+			<%=gametitle%>
+		<%
+		}
+		conn.close();
+	%>
+	<!-- BACK TO TOP BUTTON -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript"
@@ -67,82 +98,46 @@
 			Button</a>? Go to our FAQ page for more info.
 	</noscript>
 	<!-- BACK TO TOP BUTTON END -->
-	<section class="headline-sec">
-		<div class="overlay ">
-			<h3>
-				ABOUT US <i class="fa fa-angle-double-right "></i>
-			</h3>
-
-		</div>
-	</section>
-	<!--TOP SECTION END-->
+	<!-- Main Background -->
 	<section>
-		<div class="container">
-			<div class="row">
-				<div class="row p-top-row">
-					<div class="col-md-8">
-						<h3>
-							<strong>Overview Of Company</strong>
-						</h3>
-						<p>
-							<strong>SP Games Store</strong> is an online game portal that
-							allows the public to <strong>view the games</strong> and their <strong>information</strong>
-							as well as to give their <strong>comments on the recent
-								brand new games. </strong>
-						</p>
-					</div>
-					<div class="col-md-4 p-top-row ">
-						<img src="assets/img/overviewcom.jpg"
-							class="img-responsive img-rounded" alt="" height="230"
-							width="330" />
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="row p-top-row">
-					<div class="p-top-row ">
-						<img src="assets/img/fscope.jpg"
-							class="img-responsive img-rounded" alt="" height="230"
-							width="330" align="left" />
 
-						<div class="col-md-8 middleword">
-							<h3>
-								<strong>Future Scope</strong>
-							</h3>
-							<p>
-								In <strong>SP Game Store</strong>, we make sure that it provides
-								sufficient information to provide knowledge of games to the
-								public.<br> In the future, <strong>SP Game Store</strong>
-								will become an online game portal that enables public to create
-								their own accounts and purchase the games they desire at an
-								affordable price.
-							</p>
-						</div>
-					</div>
-				</div>
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\DeadIslandRiptide\img1.jpg" alt="" height="270"
+				width="190" />
 			</div>
+		</div>
 
-			<div class="row">
-				<div class="row p-top-row">
-					<div class="col-md-8">
-						<h3>
-							<strong>Our Quality Policy</strong>
-						</h3>
-						<p>
-							In <strong>SP Game Store</strong>, we make sure that we provide
-							accurate information as well as screen captures on the wide range
-							of games. <strong>SP Game Store</strong> will give the public <strong>100%</strong> satisfaction guarantee.
-						</p>
-					</div>
-					<div class="col-md-4 p-top-row">
-						<img src="assets/img/gamepolicy.jpg"
-							class="img-responsive img-rounded" alt="" height="230"
-							width="330" />
-					</div>
-				</div>
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\Doom\img1.jpg" alt="" height="270"
+				width="190" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\EnemyFront\img1.jpg" alt="" height="270"
+				width="190" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\FCPCollectorsEdition\img1.jpg" alt="" height="270"
+				width="190" />
+		</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\MetroRedux\img1.jpg" alt=""
+				height="270" width="190" />
 			</div>
 		</div>
 	</section>
+
+	<!-- End Main Background -->
 
 	<div class="copy-txt">
 		<div class="container">
@@ -163,5 +158,7 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
+
 </body>
 </html>
+	

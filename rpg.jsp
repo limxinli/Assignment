@@ -48,8 +48,8 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp" class="active-menu-item">Action</a> <a
-									href="adventure.html">Adventure</a> <a href="horror.html">Horror</a>
-								<a href="rpg.html">RPG</a> <a href="shooter.html">Shooter</a>
+									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
+								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -62,15 +62,14 @@
 
 		</div>
 	</div>
-	<!--MENU SECTION END-->
+		<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			ACTION GAMES <i class="fa fa-angle-double-right "></i>
+			ROLE-PLAYING GAMES (RPG) <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
-	</section>
 	<!-- HOME SECTION END -->
 	<%
 		Connection conn = DatabaseConnection.getConnection();
@@ -99,56 +98,53 @@
 			Button</a>? Go to our FAQ page for more info.
 	</noscript>
 	<!-- BACK TO TOP BUTTON END -->
-
 	<!-- Main Background -->
 	<section>
-	
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<img src="assets\img\Battleborn\img1.jpg"
-				class="img-responsive img-rounded" alt="" height="270" width="190" />	
-		</div>
-	</div>
 
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<img src="assets\img\DyingLight\img3.jpg" alt="" height="270"
-				width="190" />
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<img src="assets\img\MirrorEdgeCatalyst\img7.jpg" alt="" height="270"
-				width="190" />
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4 p-top-row">
+		<div class="row">
 			<div class="col-md-4 p-top-row">
-				<img src="assets\img\RyseSonofRome\img1.jpg" alt="" height="270"
-					width="190" />
+				<img src="assets\img\Fallout3\img1.jpg" alt="" height="270"
+				width="190" />
 			</div>
 		</div>
-	</div>
 
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<img src="assets\img\StarWarsBattlefront\img7.jpg" alt=""
-				height="270" width="190" />
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\Fallout4\img1.jpg" alt="" height="270"
+				width="190" />
+			</div>
 		</div>
-	</div>
-	</section>
 
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\Goliath\img1.jpg" alt="" height="270"
+				width="190" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\LISLimitedEdition\img1.jpg" alt="" height="270"
+				width="190" />
+		</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 p-top-row">
+				<img src="assets\img\TheWalkingDead\img1.jpg" alt=""
+				height="270" width="190" />
+			</div>
+		</div>
+	</section>
 	<!-- End Main Background -->
 
 	<div class="copy-txt">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 set-foot">
-					&copy 2016 Singapore Polytechnic | All rights reserved | Design by
-					: <a href="http://www.binarytheme.com" target="_blank"
+					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
+					All rights reserved | Design by : <a
+						href="http://www.binarytheme.com" target="_blank"
 						style="color: #7C7C7C;">binarytheme.com</a>
 				</div>
 			</div>
@@ -162,5 +158,7 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
+
 </body>
 </html>
+	
