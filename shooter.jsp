@@ -47,9 +47,9 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp">Action</a> <a
-									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
-								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp" class="active-menu-item">Shooter</a>
+								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
+								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
+									href="shooter.jsp" class="active-menu-item">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -75,21 +75,16 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String gametitle = request.getParameter("game_title");
-
 		String sql = "Select game_title from game_data";
-		
+
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		ResultSet rs = pstmt.executeQuery();
 
 		while (rs.next()) {
-			gametitle = rs.getString("game_title");
+		String gametitle = rs.getString("game_title");
 	%>
-	<%
-		}
-		conn.close();
-	%>
+
 	<!-- BACK TO TOP BUTTON -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -149,7 +144,10 @@
 		</div>
 		<%=gametitle%>
 	</div>
-	</section> 
+	<%
+		}
+		conn.close();
+	%> </section>
 	<!-- End Main Background -->
 
 	<div class="copy-txt">
@@ -164,9 +162,13 @@
 			</div>
 		</div>
 	</div>
-	<!-- COPY TEXT SECTION END--> <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-	<!-- CORE JQUERY  --> <script src="assets/js/jquery-1.11.1.js"></script>
-	<!-- BOOTSTRAP SCRIPTS  --> <script src="assets/js/bootstrap.js"></script>
-	<!-- CUSTOM SCRIPTS  --> <script src="assets/js/custom.js"></script>
+	<!-- COPY TEXT SECTION END-->
+	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY  -->
+	<script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  -->
+	<script src="assets/js/bootstrap.js"></script>
+	<!-- CUSTOM SCRIPTS  -->
+	<script src="assets/js/custom.js"></script>
 </body>
 </html>
