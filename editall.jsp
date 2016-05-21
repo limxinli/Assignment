@@ -64,15 +64,17 @@
 	</section>
 	<!--TOP SECTION END-->
 
-	<section> <select id="tablechoice" name="tablechoice">
-		<option>Game</option>
-		<option>Genre</option>
-	</select> <select id="commands" name="commands">
-		<option>Add</option>
-		<option>Update</option>
-		<option>Delete</option>
-		<input type="submit" class="btn btn-info" id="add" value="Enter">
-	</select> </section>
+	<form action="processchoice.jsp">
+		<select id="tablechoice" name="tablechoice">
+			<option>Game</option>
+			<option>Genre</option>
+		</select> <select id="commands" name="commands">
+			<option>Add</option>
+			<option>Update</option>
+			<option>Delete</option>
+			<input type="submit" class="btn btn-info" id="add" value="Enter">
+		</select>
+	</form>
 
 	<div class="copy-txt">
 		<div class="container">
