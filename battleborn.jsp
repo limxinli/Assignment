@@ -85,7 +85,7 @@
 										<h4 class="slideshow">Featured</h4>
 										<a href="upcoming.html"> <img
 											src="assets\img\Battleborn\img5.jpg"
-											alt="Salt and sanctuary"
+											alt="Salt and sanctuary" width="800" height="300" border="1"
 											class="img-u">
 										</a>
 									</div>
