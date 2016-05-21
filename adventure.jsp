@@ -13,7 +13,7 @@
 <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-<title>SP Game Store</title>
+<title>Adventure Games</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
@@ -47,8 +47,8 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp">Action</a> <a href="adventure.jsp"
-									class="active-menu-item">Adventure</a> <a href="horror.jsp">Horror</a>
+								<a href="action.jsp">Action</a> <a
+									href="adventure.jsp" class="active-menu-item">Adventure</a> <a href="horror.jsp">Horror</a>
 								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
@@ -70,25 +70,28 @@
 		</h3>
 
 	</div>
+	</section>
 	<!-- HOME SECTION END -->
 	<%
-	Connection conn = DatabaseConnection.getConnection();
+		Connection conn = DatabaseConnection.getConnection();
 
-	String gametitle = request.getParameter("game_title");
+		String gametitle = request.getParameter("game_title");
 
-	String sql = "Select game_title from game_data";
+		String sql = "Select game_title from game_data";
+		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
 
-	PreparedStatement pstmt = conn.prepareStatement(sql);
+		ResultSet rs = pstmt.executeQuery();
 
-	ResultSet rs = pstmt.executeQuery();
-
-	while (rs.next()) {
-		gametitle = rs.getString("game_title");
-%>
-<%
-	}
-	conn.close();
-%> <!-- BACK TO TOP BUTTON --> <script
+		while (rs.next()) {
+			gametitle = rs.getString("game_title");
+	%>
+	<%
+		}
+		conn.close();
+	%>
+	<!-- BACK TO TOP BUTTON -->
+	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="http://arrow.scrolltotop.com/arrow92.js"></script>
@@ -96,7 +99,10 @@
 		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
 			Button</a>? Go to our FAQ page for more info.
 	</noscript>
-	<!-- BACK TO TOP BUTTON END --> <!-- Main Background --> <section>
+	<!-- BACK TO TOP BUTTON END -->
+
+	<!-- Main Background -->
+	<section>
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<a href="dead.jsp" target="_black"> <img
@@ -104,7 +110,7 @@
 				width="190" />
 			</a>
 		</div>
-		
+		<%=gametitle%>
 	</div>
 
 	<div class="row">
