@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -61,48 +65,66 @@
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-		<div class="overlay ">
-			<h3>
-				ADD GAME <i class="fa fa-angle-double-right "></i>
-			</h3>
+	<div class="overlay ">
+		<h3>
+			ADD GAME <i class="fa fa-angle-double-right "></i>
+		</h3>
 
-		</div>
+	</div>
 	</section>
 	<!--TOP SECTION END-->
 
 	<section>
-		<div class="gamedata">
+	<div class="gamedata">
+		<form action="addgameprocess.jsp">
 			Game Title: <input type="text" name="title" id="title"
 				class="form-control"> <br> Company: <input type="text"
 				name="company" id="company" class="form-control"> <br>
 			Release Date: <input type="text" name="date" id="date"
 				placeholder="Type in this format (yyyy-mm-dd)" class="form-control">
 			<br> Description:
-			<textarea class="form-control" rows="5" id="description"></textarea>
+			<textarea class="form-control" rows="5" name="description" id="description"></textarea>
 			<br> Price: <input type="text" name="price" id="price"
 				class="form-control"> <br> Image Location: <input
 				type="text" name="img" id="img"
 				placeholder="Path of the image (assets/img/)" class="form-control">
 			<br> Genre:
-				<div class="genre-drop">
-					<select data-placeholder="Select the genre(s)"
-						class="chosen-select" multiple style="width: 350px;" tabindex="4"
-						name="genre-drop" id="genre-drop">
-						<option value=""></option>
-						<option>Action</option>
-						<option>Adventure</option>
-						<option>Horror</option>
-						<option>RPG</option>
-						<option>Shooter</option>
-					</select>
-				</div>
-			<div class="radio-button2">
-				Is it pre-owned? <br> <input type="radio" id="new" name="new"
-					value="yes"> Yes <input type="radio" id="preowned"
-					name="preowned" value="no"> No
-			</div>
+			<div class="genre-drop">
+				<select data-placeholder="Select the genre(s)" class="chosen-select"
+					multiple style="width: 350px;" tabindex="4" name="genre-drop"
+					id="genre-drop">
 
+					<%
+						Connection conn = DatabaseConnection.getConnection();
+
+						String searchString = request.getParameter("searchString");
+
+						String sql = "SELECT * from genre;";
+
+						PreparedStatement pstmt = conn.prepareStatement(sql);
+
+						ResultSet rs = pstmt.executeQuery();
+
+						while (rs.next()) {
+							String dbgenreid = rs.getString("genre_id");
+							String dbgenrename = rs.getString("genre_name");
+					%>
+					<option><%=dbgenrename%>, <%=dbgenreid%></option>
+					<%
+						}
+
+						conn.close();
+					%>
+				</select>
+			</div>
+			<div class="radio-button2">
+				Is it pre-owned? <br> <input type="radio" id="new" name="type"
+					value="no"> No <input type="radio" id="preowned"
+					name="type" value="yes"> Yes
+			</div>
 			<input type="submit" class="btn btn-info" id="add" value="Add">
+		</form>
+	</div>
 	</section>
 
 	<div class="copy-txt">

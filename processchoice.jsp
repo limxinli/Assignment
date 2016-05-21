@@ -13,7 +13,7 @@
 	String command = request.getParameter("commands");
 
 	 if(table.equals("Game") && command.equals("Add")) {
-	      response.sendRedirect("addgame.html");
+	      response.sendRedirect("addgame.jsp");
 	   }
 	 else if(table.equals("Game") && command.equals("Update")){
 		 response.sendRedirect("updategame.html");
