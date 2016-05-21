@@ -75,6 +75,8 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
+		String gametitle = request.getParameter("game_title");
+
 		String sql = "Select game_title from game_data WHERE game_title='action'";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -82,10 +84,9 @@
 		ResultSet rs = pstmt.executeQuery();
 
 		while (rs.next()) {
-			String gametitle = rs.getString("game_title");
-			%>
-			<%=gametitle%>
-		<%
+			gametitle = rs.getString("game_title");
+	%>
+	<%
 		}
 		conn.close();
 	%>
@@ -102,52 +103,52 @@
 
 	<!-- Main Background -->
 	<section>
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="battleborn.jsp" target="_black">
-					<img src="assets\img\Battleborn\img1.jpg"
-						class="img-responsive img-rounded" alt="" height="270" width="190" />
-						</a>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="dyinglight.jsp" target="_black">
-					<img src="assets\img\DyingLight\img3.jpg" alt="" height="270"
-						width="190" />
-						</a>
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="battleborn.jsp" target="_black"> <img
+				src="assets\img\Battleborn\img1.jpg"
+				class="img-responsive img-rounded" alt="" height="270" width="190" />
+			</a>
+		</div>
+		<%=gametitle%>
+	</div>
 
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="mirror.jsp" target="_black">
-					<img src="assets\img\MirrorEdgeCatalyst\img7.jpg" alt=""
-						height="270" width="190" />
-						</a>
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="dyinglight.jsp" target="_black"> <img
+				src="assets\img\DyingLight\img3.jpg" alt="" height="270" width="190" />
+			</a>
+		</div>
+	</div>
 
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-					<div class="col-md-4 p-top-row">
-					<a href="rome.jsp" target="_black">
-						<img src="assets\img\RyseSonofRome\img1.jpg" alt="" height="270"
-							width="190" />
-							</a>
-					</div>
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="mirror.jsp" target="_black"> <img
+				src="assets\img\MirrorEdgeCatalyst\img7.jpg" alt="" height="270"
+				width="190" />
+			</a>
+		</div>
+	</div>
 
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="battle.jsp" target="_black">
-					<img src="assets\img\StarWarsBattlefront\img7.jpg" alt=""
-						height="270" width="190" />
-						</a>
-				</div>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<div class="col-md-4 p-top-row">
+				<a href="rome.jsp" target="_black"> <img
+					src="assets\img\RyseSonofRome\img1.jpg" alt="" height="270"
+					width="190" />
+				</a>
 			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="battle.jsp" target="_black"> <img
+				src="assets\img\StarWarsBattlefront\img7.jpg" alt="" height="270"
+				width="190" />
+			</a>
+		</div>
+	</div>
 	</section>
 
 	<!-- End Main Background -->
