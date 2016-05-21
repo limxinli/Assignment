@@ -338,6 +338,7 @@ h4 {
 /* =============================================================
    NEW RELEASES & SALES  -IN HOME / INDEX.HTML 
  ============================================================ */
+
 #new-release {
 	padding-left: 100px;
 	font-size: 20px;
@@ -365,6 +366,11 @@ a.new-release-font:hover,a.sales-font:hover {
 
 #nickname:focus,#comment:focus {
 	color: black;
+}
+
+.indeximages {
+	margin-left: 100px;
+	margin-bottom: 20px;
 }
 
 /* =============================================================
@@ -525,17 +531,7 @@ table {
  ============================================================ */
 .horizontal_line {
 	border-top: medium solid #bdc0ba;
-	padding: 20px 0;
-	content: ""; # img_cont { display : table;
+	padding: 10px 0;
 	width: 90%;
-	margin: 20px auto;
-}
-
-/* =============================================================
-   NEW RELEASE & ON SALE NOW STYLES
- ============================================================ */
-div img {
-	display: inline-block;
-	float: left;
-	margin-right: 5px;
+	margin-top: 20px;
 }
