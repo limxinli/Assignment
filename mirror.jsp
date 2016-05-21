@@ -24,7 +24,6 @@
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
 <body>
-
 	<div class="navbar navbar-inverse navbar-fixed-top ">
 		<div class="container">
 			<div class="navbar-header">
@@ -62,114 +61,58 @@
 
 		</div>
 	</div>
+
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			ACTION GAMES <i class="fa fa-angle-double-right "></i>
+			MIRROR'S EDGE: CATALYST <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
 	</section>
 	<!-- HOME SECTION END -->
+
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select game_title from game_data WHERE game_title='action'";
+		String sql = "Select * from game_data where game_title='Mirror's Edge: Catalyst'";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		ResultSet rs = pstmt.executeQuery();
+		out.println("<table border='3'>");
+	%>
 
+	<tr>
+		<th>Game Title</th>
+		<th>Company</th>
+		<th>Release Date</th>
+		<th>Description</th>
+		<th>Price</th>
+	</tr>
+
+	<%
 		while (rs.next()) {
-			String gametitle = rs.getString("game_title");
-			%>
-			<%=gametitle%>
-		<%
+			String name = rs.getString("game_title");
+			String com = rs.getString("company");
+			Date redate = rs.getDate("release_date");
+			String desc = rs.getString("description");
+			double price = rs.getDouble("price");
+	%>
+	<tr>
+		<td><%=name%></td>
+		<td><%=com%></td>
+		<td><%=redate%></td>
+		<td><%=desc%></td>
+		<td><%=price%></td>
+	</tr>
+	<%
 		}
+		out.println("</table>");
+
 		conn.close();
 	%>
-	<!-- BACK TO TOP BUTTON -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript"
-		src="http://arrow.scrolltotop.com/arrow92.js"></script>
-	<noscript>
-		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
-			Button</a>? Go to our FAQ page for more info.
-	</noscript>
-	<!-- BACK TO TOP BUTTON END -->
 
-	<!-- Main Background -->
-	<section>
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="battleborn.jsp" target="_black">
-					<img src="assets\img\Battleborn\img1.jpg"
-						class="img-responsive img-rounded" alt="" height="270" width="190" />
-						</a>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="dyinglight.jsp" target="_black">
-					<img src="assets\img\DyingLight\img3.jpg" alt="" height="270"
-						width="190" />
-						</a>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="mirror.jsp" target="_black">
-					<img src="assets\img\MirrorEdgeCatalyst\img7.jpg" alt=""
-						height="270" width="190" />
-						</a>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-					<div class="col-md-4 p-top-row">
-					<a href="rome.jsp" target="_black">
-						<img src="assets\img\RyseSonofRome\img1.jpg" alt="" height="270"
-							width="190" />
-							</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="battle.jsp" target="_black">
-					<img src="assets\img\StarWarsBattlefront\img7.jpg" alt=""
-						height="270" width="190" />
-						</a>
-				</div>
-			</div>
-	</section>
-
-	<!-- End Main Background -->
-
-	<div class="copy-txt">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 set-foot">
-					&copy 2016 Singapore Polytechnic | All rights reserved | Design by
-					: <a href="http://www.binarytheme.com" target="_blank"
-						style="color: #7C7C7C;">binarytheme.com</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- COPY TEXT SECTION END-->
-	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-	<!-- CORE JQUERY  -->
-	<script src="assets/js/jquery-1.11.1.js"></script>
-	<!-- BOOTSTRAP SCRIPTS  -->
-	<script src="assets/js/bootstrap.js"></script>
-	<!-- CUSTOM SCRIPTS  -->
-	<script src="assets/js/custom.js"></script>
 </body>
 </html>
