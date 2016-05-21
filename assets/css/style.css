@@ -338,7 +338,6 @@ h4 {
 /* =============================================================
    NEW RELEASES & SALES  -IN HOME / INDEX.HTML 
  ============================================================ */
-
 #new-release {
 	padding-left: 100px;
 	font-size: 20px;
@@ -524,6 +523,26 @@ table {
 	margin: 0 auto;
 	background: white;
 	border: 5px solid black;
+}
+
+.insidebox {
+	margin-bottom: 20px;
+	line-height: 30px;
+	width: 100%;
+	display: inline-block;
+}
+
+.boxaround {
+	border: 3px;
+	border-style: solid;
+	width: 230px;
+	height: 400px;
+	display: block;
+}
+
+.boxaround img {
+	margin-left: 15px;
+	display: inline-block;
 }
 
 /* =============================================================

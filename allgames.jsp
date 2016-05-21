@@ -47,9 +47,9 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp">Action</a> <a
-									href="adventure.jsp" class="active-menu-item">Adventure</a> <a href="horror.jsp">Horror</a>
-								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
+								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
+									href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -65,17 +65,11 @@
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
-	<h3>
-		ALL GAMES <i class="fa fa-angle-double-right "></i>
+		<h3>
+			ALL GAMES <i class="fa fa-angle-double-right "></i>
 		</h3>
 	</div>
 	</section>
-	<div class="searchgames">
-	<form action="welcome.jsp">
-		Search: <input type="text" name="searchString" id="searchgames" placeholder="Search by game title, company, release date, price or genre name" class="form-control"> <input
-			type="submit" id="enter-button" class="btn btn-info" value="Enter">
-	</form>
-	</div>
 	<!-- BACK TO TOP BUTTON -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -85,82 +79,44 @@
 		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
 			Button</a>? Go to our FAQ page for more info.
 	</noscript>
+
 	<!--TOP SECTION END-->
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select * from all_games";
-		
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		
-		ResultSet rs = pstmt.executeQuery();
+		String sql = "SELECT gd.game_id, game_title,price, image_loc, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_title";
 
-		out.println("<table border='3'>");
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+
+		ResultSet rs = pstmt.executeQuery();
 	%>
-	<caption>
-		<h2>
-			Games Data
-			<h2>
-	</caption>
-	<tr>
-		<th>Game ID</th>
-		<th>Game Title</th>
-		<th>Company</th>
-		<th>Release Date</th>
-		<th>Description</th>
-		<th>Price</th>
-		<th>Image Location</th>
-		<th>Pre-owned</th>
-		<th>Genre ID</th>
-		<th>Genre Name</th>
-	</tr>
 	<%
 		while (rs.next()) {
 			int dbgameid = rs.getInt("game_id");
 			String dbgametitle = rs.getString("game_title");
-			String dbcompany = rs.getString("company");
-			Date dbdate = rs.getDate("release_date");
-			String dbdescription = rs.getString("description");
 			double dbprice = rs.getDouble("price");
 			String newdbprice = String.format("%.2f", dbprice);
 			String dbimageloc = rs.getString("image_loc");
-			int dbpreowned = rs.getInt("preowned");
-			String dbgenreid = rs.getString("genre_id");
 			String dbgenrename = rs.getString("genre_name");
 	%>
-	<tr>
-		<td><%=dbgameid%></td>
-		<td><%=dbgametitle%></td>
-		<td><%=dbcompany%></td>
-		<td><%=dbdate%></td>
-		<td><%=dbdescription%></td>
-		<%
+	<div class="boxaround">
+			<a href="<%=dbgameid%>.jsp"><img
+				src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
+		<div class="insidebox">
+			Game Title:
+			<%=dbgametitle%><br> Price:
+			<%
 			if (dbprice == 0) {
-				out.println("<td>TBC</td>");
-			} else {
-				%><td><%="$" + newdbprice%></td>
-		<%
-			}
-		%>
-		<td><%=dbimageloc%></td>
-		<%
-			if (dbpreowned == 1) {
-					out.println("<td>yes</td>");
+					out.println("<td>TBC</td>");
 				} else {
-					out.println("<td>no</td>");
+		%><%="$" + newdbprice%>
+			<%
 				}
-
-		%>
-		    <td><%=dbgenreid%></td>
-		    <td><%=dbgenrename%></td>
- </tr>
-    
-
-
+			%><br> Genre Name: <%=dbgenrename%>
+		</div>
+			</div>
 	<%
 		}
-		out.println("</table>");
-
 		conn.close();
 	%>
 

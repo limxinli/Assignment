@@ -123,7 +123,7 @@
 		<form action="searchgame.jsp">
 			<div id="searchforgame">
 				<div class="col-md-6">
-					<input type="text" id="search" value="Enter game title"
+					<input type="text" id="search" name="gametitle" value="Enter game title"
 						onfocus="if(this.value==this.defaultValue)this.value='';"
 						onblur="if(this.value=='')this.value=this.defaultValue;"
 						class="form-control input-cls" />
@@ -131,6 +131,7 @@
 
 				<div class="genre-drop">
 					<select name="genre-drop" id="genre-drop">
+					<option value="none">None</option>
 						<option value="action">Action</option>
 						<option value="adventure">Adventure</option>
 						<option value="horror">Horror</option>

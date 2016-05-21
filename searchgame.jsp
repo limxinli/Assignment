@@ -39,7 +39,7 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.html"><span
+					<li><a href="index.html" class="active-menu-item"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
 							<a href="allgames.jsp" class="active-menu-item"><button
@@ -48,7 +48,7 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a
-									href="adventure.jsp" class="active-menu-item">Adventure</a> <a href="horror.jsp">Horror</a>
+									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
 								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
@@ -82,15 +82,20 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String searchString = request.getParameter("Enter game title");
+		String searchString = request.getParameter("gametitle");
 		String genre = request.getParameter("genre-drop");
 		String preowned = request.getParameter("type");
 
-		String sql = "SELECT * from all_games WHERE game_title like ? or genre_name like ? or preowned like ?;";
+		String sql = "SELECT * from(SELECT gd.game_id, game_title, company, release_date, description, price, image_loc, preowned, GROUP_CONCAT(gg.genre_id SEPARATOR ', ') as genre_id, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_id) AS allgames WHERE game_title like ? or genre_name like ? or preowned like ?";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, "%" + searchString + "%");
 		pstmt.setString(2, genre);
+		if ("no".equals(preowned)) {
+		    preowned = "0";
+		} else if ("yes".equals(preowned)) {
+		    preowned = "1";
+		}
 		pstmt.setString(3, preowned);
 	
 		ResultSet rs = pstmt.executeQuery();
