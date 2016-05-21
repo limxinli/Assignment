@@ -77,8 +77,8 @@
 
 		String gametitle = request.getParameter("game_title");
 
-		String sql = "Select game_title from game_data WHERE game_title='action'";
-
+		String sql = "SELECT * from (SELECT game_title, GROUP_CONCAT(gg.genre_id SEPARATOR ', ') as genre_id, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_id) AS allgames WHERE game_title like ?;";
+		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		ResultSet rs = pstmt.executeQuery();

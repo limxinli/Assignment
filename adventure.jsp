@@ -76,7 +76,7 @@
 
 	String gametitle = request.getParameter("game_title");
 
-	String sql = "Select game_title from game_data WHERE game_title='action'";
+	String sql = "Select game_title from game_data WHERE game_title='Battleborn'";
 
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 
