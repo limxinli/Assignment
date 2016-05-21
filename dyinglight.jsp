@@ -63,15 +63,67 @@
 	</div>
 
 	<!--MENU SECTION END-->
-	<section class="headline-sec">
-	<div class="overlay ">
-		<h3>
-			DYING LIGHT <i class="fa fa-angle-double-right "></i>
-		</h3>
+	<!--MENU SECTION END-->
 
+	<div id="feature-sec">
+		<div class="container">
+			<div class="row ">
+				<div class="col-md-12">
+					<div id="carousel-example" class="carousel slide"
+						data-ride="carousel">
+
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example" data-slide-to="0"
+								class="active"></li>
+							<li data-target="#carousel-example" data-slide-to="1"></li>
+							<li data-target="#carousel-example" data-slide-to="2"></li>
+						</ol>
+
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="container center">
+									<div class="container col-md-offset-3 slide-custom">
+										<h4 class="slideshow">Featured</h4>
+										<a href="upcoming.html"> <img
+											src="assets\img\Battleborn\img5.jpg"
+											alt="Salt and sanctuary" width="700" height="300" border="1"
+											class="img-u">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="container center">
+									<div class="container col-md-offset-3 slide-custom">
+										<h4 class="slideshow">Upcoming</h4>
+										<a href="upcoming.html"> <img
+											src="assets\img\Battleborn\img6.jpg"
+											alt="Salt and sanctuary" width="700" height="300" border="1"
+											class="img-u">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="container center">
+									<div class="container col-md-offset-3 slide-custom">
+										<h4 class="slideshow">Editors' Choice</h4>
+										<a href="upcoming.html"> <img
+											src="assets\img\Battleborn\img4.jpg"
+											alt="Salt and sanctuary" width="700" height="300" border="1"
+											class="img-u">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	</section>
-	<!-- HOME SECTION END -->
+	<br />
+	<!--HOME SECTION END-->
 
 	<%
 		Connection conn = DatabaseConnection.getConnection();
