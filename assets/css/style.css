@@ -401,7 +401,7 @@ a.new-release-font:hover,a.sales-font:hover {
 #add {
 	float: right;
 	margin-top: 30px;
-	margin-right: 130px;
+	margin-right: -70px;
 	padding-left: 25px;
 	padding-right: 25px;
 }

@@ -38,3 +38,6 @@
 
     });
 }(jQuery));
+jQuery(document).ready(function(){
+	jQuery(".chosen").data("placeholder","Select the genre(s)").chosen();
+});

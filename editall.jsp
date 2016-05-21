@@ -42,7 +42,7 @@
 					<li><a href="searchgame.jsp" class="active-menu-item"><span
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							VIEW</a></li>
-					<li><a href="editall.html"><span
+					<li><a href="editall.jsp"><span
 							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
 					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>

@@ -18,6 +18,9 @@
 <link href="assets/css/style.css" rel="stylesheet" />
 <!-- Favicon -->
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
+<!-- CHOSEN CSS -->
+<link rel="stylesheet" href="assets/chosen_v1.5.1/docsupport/prism.css">
+<link rel="stylesheet" href="assets/chosen_v1.5.1/chosen.css">
 </head>
 <body>
 
@@ -29,8 +32,8 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand"><strong style=""></strong>Game
-					Store<small> Singapore Polytechnic</small></a>
+				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
+						Singapore Polytechnic</small></a>
 
 			</div>
 			<div class="navbar-collapse collapse move-me">
@@ -40,9 +43,9 @@
 							VIEW</a></li>
 					<li><div class="dropdown">
 							<button class="dropbtn">
-									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-									EDIT <span class="caret"></span>
-								</button>
+								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+								EDIT <span class="caret"></span>
+							</button>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="editgames.jsp" class="active-menu-item">Games</a> <a
 									href="editgenres.jsp">Genres</a>
@@ -58,44 +61,48 @@
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-	<div class="overlay ">
-		<h3>
-			ADD GAME <i class="fa fa-angle-double-right "></i>
-		</h3>
+		<div class="overlay ">
+			<h3>
+				ADD GAME <i class="fa fa-angle-double-right "></i>
+			</h3>
 
-	</div>
+		</div>
 	</section>
 	<!--TOP SECTION END-->
-	
+
 	<section>
-	<div class="gamedata">
-		Game Title: <input type="text" name="title" id="title"
-			class="form-control"> <br> Company: <input type="text"
-			name="company" id="company" class="form-control"> <br>
-		Release Date: <input type="text" name="date" id="date"
-			placeholder="Type in this format (yyyy-mm-dd)"
-			class="form-control"> <br> Description:
-		<textarea class="form-control" rows="5" id="description"></textarea>
-		<br> Price: <input type="text" name="price" id="price"
-			class="form-control"> <br> Image Location: <input
-			type="text" name="img" id="img" placeholder="Path of the image (assets/img/)"
-			class="form-control"> <br> Genre:
-		<div class="genre-drop">
-			<select name="genre-drop" id="genre-drop">
-				<option value="action">Action</option>
-				<option value="adventure">Adventure</option>
-				<option value="horror">Horror</option>
-				<option value="rpg">RPG</option>
-				<option value="shooter">Shooter</option>
-			</select>
-		</div>
-		<div class="radio-button2">
-			Is it pre-owned? <br> <input type="radio" id="new" name="type"
-				value="yes"> Yes <input type="radio" id="preowned"
-				name="type" value="no"> No
-		</div>
-	</div>
-	<input type="submit" class="btn btn-info" id="add" value="Add">
+		<div class="gamedata">
+			Game Title: <input type="text" name="title" id="title"
+				class="form-control"> <br> Company: <input type="text"
+				name="company" id="company" class="form-control"> <br>
+			Release Date: <input type="text" name="date" id="date"
+				placeholder="Type in this format (yyyy-mm-dd)" class="form-control">
+			<br> Description:
+			<textarea class="form-control" rows="5" id="description"></textarea>
+			<br> Price: <input type="text" name="price" id="price"
+				class="form-control"> <br> Image Location: <input
+				type="text" name="img" id="img"
+				placeholder="Path of the image (assets/img/)" class="form-control">
+			<br> Genre:
+				<div class="genre-drop">
+					<select data-placeholder="Select the genre(s)"
+						class="chosen-select" multiple style="width: 350px;" tabindex="4"
+						name="genre-drop" id="genre-drop">
+						<option value=""></option>
+						<option>Action</option>
+						<option>Adventure</option>
+						<option>Horror</option>
+						<option>RPG</option>
+						<option>Shooter</option>
+					</select>
+				</div>
+			<div class="radio-button2">
+				Is it pre-owned? <br> <input type="radio" id="new" name="new"
+					value="yes"> Yes <input type="radio" id="preowned"
+					name="preowned" value="no"> No
+			</div>
+
+			<input type="submit" class="btn btn-info" id="add" value="Add">
 	</section>
 
 	<div class="copy-txt">
@@ -103,7 +110,8 @@
 			<div class="row">
 				<div class="col-md-12 set-foot">
 					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
-					All rights reserved | Design by : <a href="http://www.binarytheme.com" target="_blank"
+					All rights reserved | Design by : <a
+						href="http://www.binarytheme.com" target="_blank"
 						style="color: #7C7C7C;">binarytheme.com</a>
 				</div>
 			</div>
@@ -117,5 +125,29 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
+	<!-- CHOSEN SCRIPTS -->
+	<script src="assets/chosen_v1.5.1/chosen.jquery.js"></script>
+	<script src="assets/chosen_v1.5.1/docsupport/prism.js"
+		type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var config = {
+			'.chosen-select' : {},
+			'.chosen-select-deselect' : {
+				allow_single_deselect : true
+			},
+			'.chosen-select-no-single' : {
+				disable_search_threshold : 10
+			},
+			'.chosen-select-no-results' : {
+				no_results_text : 'Oops, nothing found!'
+			},
+			'.chosen-select-width' : {
+				width : "95%"
+			}
+		}
+		for ( var selector in config) {
+			$(selector).chosen(config[selector]);
+		}
+	</script>
 </body>
 </html>
