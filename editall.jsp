@@ -87,6 +87,7 @@
 		<th>Price</th>
 		<th>Image Location</th>
 		<th>Pre-owned</th>
+		<th colspan='2'>Actions</th>
 	</tr>
 	<%
 		while (rs.next()) {
@@ -123,7 +124,20 @@
 				}
 
 		%>
- </tr>
+ 
+ <td>
+		<form action="deletegameprocess.jsp" method="get">
+			<input type="hidden" name="hiddenID" value="<%=dbgameid%>"> <input
+				type="submit" value="Delete">
+		</form>
+	</td>
+	<td>
+		<form action="updategame.jsp" method="get">
+			<input type="hidden" name="hiddenID" value="<%=dbgameid%>"> <input
+				type="submit" value="Update">
+		</form>
+	</td>
+	</tr>
 
 	<%
 		}
