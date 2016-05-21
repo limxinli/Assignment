@@ -82,16 +82,17 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String searchString = request.getParameter("searchString");
+		String searchString = request.getParameter("Enter game title");
+		String genre = request.getParameter("genre-drop");
+		String preowned = request.getParameter("type");
 
-		String sql = "SELECT * from all_games WHERE game_title like ? or company like ? or release_date like ? or price like ? or genre_name like ?";
+		String sql = "SELECT * from all_games WHERE game_title like ? or genre_name like ? or preowned like ?;";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, "%" + searchString + "%");
-		pstmt.setString(2, "%" + searchString + "%");
-		pstmt.setString(3, "%" + searchString + "%");
-		pstmt.setString(4, "%" + searchString + "%");
-		pstmt.setString(5, "%" + searchString + "%");
+		pstmt.setString(2, genre);
+		pstmt.setString(3, preowned);
+	
 		ResultSet rs = pstmt.executeQuery();
 
 		out.println("<table border='3'>");

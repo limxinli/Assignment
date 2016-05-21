@@ -532,6 +532,6 @@ table {
 .horizontal_line {
 	border-top: medium solid #bdc0ba;
 	padding: 10px 0;
-	width: 90%;
+	width: 100%;
 	margin-top: 20px;
 }

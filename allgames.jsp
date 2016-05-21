@@ -71,7 +71,7 @@
 	</div>
 	</section>
 	<div class="searchgames">
-	<form action="welcome.jsp" method="post">
+	<form action="welcome.jsp">
 		Search: <input type="text" name="searchString" id="searchgames" placeholder="Search by game title, company, release date, price or genre name" class="form-control"> <input
 			type="submit" id="enter-button" class="btn btn-info" value="Enter">
 	</form>
