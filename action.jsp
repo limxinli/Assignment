@@ -104,7 +104,7 @@
 	<section>
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="adventure.html" target="_black">
+				<a href="battleborn.jsp" target="_black">
 					<img src="assets\img\Battleborn\img1.jpg"
 						class="img-responsive img-rounded" alt="" height="270" width="190" />
 						</a>
