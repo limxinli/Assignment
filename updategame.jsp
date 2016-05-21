@@ -60,7 +60,7 @@
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			ADD GAME <i class="fa fa-angle-double-right "></i>
+			UPDATE GAME <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
@@ -117,7 +117,7 @@
 			</div>
 			<br>Genre ID: <input type="text" name="genreid" id="genreid"
 				class="form-control">
-			<input type="submit" class="btn btn-info" id="add" value="Add">
+			<input type="submit" class="btn btn-info" id="add" value="Update">
 		</form>
 	</div>
 	</section>

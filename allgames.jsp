@@ -33,20 +33,29 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
-						Singapore Polytechnic</small></a>
+				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
+					Store<small> Singapore Polytechnic</small></a>
 
 			</div>
-		<div class="navbar-collapse collapse move-me">
+			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="searchgame.jsp" class="active-menu-item"><span
-							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-							VIEW</a></li>
-					<li><a href="editall.jsp"><span
-							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
+					<li><a href="index.html"><span
+							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
+					<li><div class="dropdown">
+							<a href="allgames.jsp" class="active-menu-item"><button
+									class="dropbtn">
+									GAMES <span class="caret"></span>
+								</button></a>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="action.jsp">Action</a> <a
+									href="adventure.jsp" class="active-menu-item">Adventure</a> <a href="horror.jsp">Horror</a>
+								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+							</div>
+						</div></li>
+					<li><a href="about.html">ABOUT</a></li>
 					<li><a href="login.html"> <span
-							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-							LOGOUT
+							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+							LOGIN
 					</a></li>
 				</ul>
 			</div>
@@ -56,8 +65,9 @@
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
-		<h3>GAMES</h3>
-
+	<h3>
+		ALL GAMES <i class="fa fa-angle-double-right "></i>
+		</h3>
 	</div>
 	</section>
 	<div class="searchgames">
@@ -79,7 +89,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "SELECT gd.game_id, game_title, company, release_date, description, price, image_loc, preowned, GROUP_CONCAT(gg.genre_id SEPARATOR ', ') as genre_id, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_id";
+		String sql = "Select * from all_games";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		

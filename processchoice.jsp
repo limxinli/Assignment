@@ -16,7 +16,7 @@
 	      response.sendRedirect("addgame.jsp");
 	   }
 	 else if(table.equals("Game") && command.equals("Update")){
-		 response.sendRedirect("updategame.html");
+		 response.sendRedirect("updategame.jsp");
 	 }
 	 else if(table.equals("Game") && command.equals("Delete")){
 		 response.sendRedirect("deletegame.html");

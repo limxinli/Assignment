@@ -42,7 +42,7 @@
 					<li><a href="index.html"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
-							<a href="genre.html" class="active-menu-item"><button
+							<a href="allgames.jsp" class="active-menu-item"><button
 									class="dropbtn">
 									GAMES <span class="caret"></span>
 								</button></a>

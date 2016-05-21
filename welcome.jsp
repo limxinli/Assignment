@@ -113,7 +113,7 @@
 			String dbcompany = rs.getString("company");
 			Date dbdate = rs.getDate("release_date");
 			String dbdescription = rs.getString("description");
-			double dbprice = rs.getDouble("price");
+			String dbprice = rs.getString("price");
 			String newdbprice = String.format("%.2f", dbprice);
 			String dbimageloc = rs.getString("image_loc");
 			int dbpreowned = rs.getInt("preowned");
@@ -127,7 +127,7 @@
 		<td><%=dbdate%></td>
 		<td><%=dbdescription%></td>
 		<%
-			if (dbprice == 0) {
+			if (dbprice == null) {
 					out.println("<td>TBC</td>");
 				} else {
 		%><td><%="$" + newdbprice%></td>
