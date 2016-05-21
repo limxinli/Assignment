@@ -47,9 +47,9 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp" class="active-menu-item">Action</a> <a
+								<a href="action.jsp">Action</a> <a
 									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
-								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp" class="active-menu-item">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
