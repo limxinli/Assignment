@@ -452,6 +452,22 @@ table {
 	margin-left: 60px;
 	margin-top: -30px;
 }
+
+#dropdownlist {
+	margin-left: 500px;	
+}
+
+#tablechoice, #commands {
+	margin-left: 10px;
+}
+
+#enter-button2 {
+	margin-left: 190px;
+	margin-top: 30px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
 /* =============================================================
    FOOTER SECTION STYLES
  ============================================================ */
