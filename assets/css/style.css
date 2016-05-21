@@ -519,16 +519,10 @@ table {
 }
 
 /* =============================================================
-   NEW RELEASE STYLES
+   NEW RELEASE & ON SALE NOW STYLES
  ============================================================ */
-
-#img_cont a {
-	display: table-cell;
-	text-align: center;
-	width: 16%;
-}
-
-#img_cont img {
-	width: 100%;
-	max-width: 150px;
+div img {
+	display: inline-block;
+	float: left;
+	margin-right: 5px;
 }
