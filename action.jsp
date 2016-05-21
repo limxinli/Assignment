@@ -13,7 +13,7 @@
 <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-<title>Action Games</title>
+<title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
@@ -75,21 +75,16 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String gametitle = request.getParameter("game_title");
+		String sql = "SELECT gd.game_id, game_title, gg.genre_id FROM game_genre gg, game_data gd WHERE gg.game_id = gd.game_id";
 
-		String sql = "Select game_title from game_data";
-		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		ResultSet rs = pstmt.executeQuery();
 
 		while (rs.next()) {
-			gametitle = rs.getString("game_title");
+			String gametitle = rs.getString("game_title");
 	%>
-	<%
-		}
-		conn.close();
-	%>
+
 	<!-- BACK TO TOP BUTTON -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -153,7 +148,10 @@
 		</div>
 		<%=gametitle%>
 	</div>
-	</section>
+	<%
+		}
+		conn.close();
+	%> </section>
 
 	<!-- End Main Background -->
 
