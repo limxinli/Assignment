@@ -21,7 +21,7 @@
 		while (rs.next()) {
 			String name = rs.getString("game_title");
 			String com = rs.getString("company");
-			date redate = rs.getDate("release_date");
+			Date redate = rs.getDate("release_date");
 			String desc = rs.getString("description");
 			double price = rs.getDouble("price");
 	%>
