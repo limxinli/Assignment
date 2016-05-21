@@ -61,9 +61,9 @@
 
 		</div>
 	</div>
-
-	<!--MENU SECTION END-->
 	</section>
+	<!--MENU SECTION END-->
+
 	<div id="feature-sec">
 		<div class="container">
 			<div class="row ">
