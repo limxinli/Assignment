@@ -11,7 +11,7 @@
 <%
 		Connection conn=DatabaseConnection.getConnection();
 
-		String sql = "Select * from game_data where game_title=Battleborn";
+		String sql = "Select * from game_data where game_title='Battleborn'";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
