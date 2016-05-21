@@ -83,8 +83,7 @@
 
  	while (rs.next()) {
  		gametitle = rs.getString("game_title");
- %> 
-  <%
+ %> <%
  	}
  	conn.close();
  %> <!-- BACK TO TOP BUTTON --> <script
@@ -142,8 +141,7 @@
 		</div>
 		<%=gametitle%>
 	</div>
-	</section> 
-	<!-- End Main Background -->
+	</section> <!-- End Main Background -->
 	<div class="copy-txt">
 		<div class="container">
 			<div class="row">

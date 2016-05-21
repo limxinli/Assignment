@@ -70,23 +70,26 @@
 		</h3>
 
 	</div>
-	<!-- HOME SECTION END --> <%
- 	Connection conn = DatabaseConnection.getConnection();
+	<!-- HOME SECTION END -->
+		<%
+		Connection conn = DatabaseConnection.getConnection();
 
- 	String gametitle = request.getParameter("game_title");
+		String gametitle = request.getParameter("game_title");
 
- 	String sql = "Select game_title from game_data WHERE game_title='action'";
+		String sql = "Select game_title from game_data WHERE game_title='action'";
 
- 	PreparedStatement pstmt = conn.prepareStatement(sql);
+		PreparedStatement pstmt = conn.prepareStatement(sql);
 
- 	ResultSet rs = pstmt.executeQuery();
+		ResultSet rs = pstmt.executeQuery();
 
- 	while (rs.next()) {
- 		gametitle = rs.getString("game_title");
- %> <%
- 	}
- 	conn.close();
- %> <!-- BACK TO TOP BUTTON --> <script
+		while (rs.next()) {
+			gametitle = rs.getString("game_title");
+	%>
+	<%
+		}
+		conn.close();
+	%>
+	 <!-- BACK TO TOP BUTTON --> <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="http://arrow.scrolltotop.com/arrow92.js"></script>
