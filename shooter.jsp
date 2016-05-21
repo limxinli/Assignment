@@ -102,7 +102,7 @@
 	<section>
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="horror.html" target="_black">
+				<a href="island.jsp" target="_black">
 					<img src="assets\img\DeadIslandRiptide\img1.jpg" alt=""
 						height="270" width="190" />
 						</a>
@@ -111,7 +111,7 @@
 
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="horror.html" target="_black">
+				<a href="doom.jsp" target="_black">
 					<img src="assets\img\Doom\img1.jpg" alt="" height="270" width="190" />
 					</a>
 				</div>
@@ -119,7 +119,7 @@
 
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="horror.html" target="_black">
+				<a href="enemy.jsp" target="_black">
 					<img src="assets\img\EnemyFront\img1.jpg" alt="" height="270"
 						width="190" />
 						</a>
@@ -128,7 +128,7 @@
 
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="horror.html" target="_black">
+				<a href="farcry.jsp" target="_black">
 					<img src="assets\img\FCPCollectorsEdition\img1.jpg" alt=""
 						height="270" width="190" />
 						</a>
@@ -137,7 +137,7 @@
 
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="horror.html" target="_black">
+				<a href="metro.jsp" target="_black">
 					<img src="assets\img\MetroRedux\img1.jpg" alt="" height="270"
 						width="190" />
 						</a>
