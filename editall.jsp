@@ -126,7 +126,7 @@
 		%>
  
  <td>
-		<form action="deletegameprocess.jsp" method="get">
+		<form action="deletegame.html" method="get">
 			<input type="hidden" name="hiddenID" value="<%=dbgameid%>"> <input
 				type="submit" value="Delete">
 		</form>
