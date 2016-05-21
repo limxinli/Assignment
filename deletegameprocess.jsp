@@ -28,6 +28,9 @@
 		Connection conn = DatabaseConnection.getConnection();
 
 			int gameid = Integer.parseInt(request.getParameter("id"));
+			
+			PreparedStatement pstmt = conn
+					.prepareStatement("DELETE FROM BaLi WHERE id =?");
 
 			String sql="call deleteAndSelect(?)";
 			
