@@ -27,24 +27,24 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		int game_id = Integer.parseInt(request.getParameter("gameid"));
-		String game_title = request.getParameter("title");
+		int gameid = Integer.parseInt(request.getParameter("game_id"));
+		String title = request.getParameter("game_title");
 		String company = request.getParameter("company");
-		String release_date = request.getParameter("date");
-		String description = request.getParameter("description");
+		String date = request.getParameter("release_date");
+		String desc = request.getParameter("description");
 		String price = request.getParameter("price");
-		String image_loc = request.getParameter("img");
-		String preowned = request.getParameter("type");
-		String genre_id = request.getParameter("genreid");
+		String img = request.getParameter("img_loc");
+		String type = request.getParameter("preowned");
+		String genreid = request.getParameter("genre_id");
 
 		String sql = "call addAndSelect(?,?,?,?,?,?,?,?,?)";
 
 		CallableStatement cs = conn.prepareCall(sql);
-		cs.setInt(1, game_id);
-		cs.setString(2, game_title);
+		cs.setInt(1, gameid);
+		cs.setString(2, title);
 		cs.setString(3, company);
-		cs.setString(4, release_date);
-		cs.setString(5, description);
+		cs.setString(4, date);
+		cs.setString(5, desc);
 		cs.setString(6, price);
 		if (price.isEmpty()){
 			cs.setInt(6, 0);
@@ -52,13 +52,13 @@
 		else {
 			cs.setString(6, price);
 		}
-		cs.setString(7, image_loc);
-		if ("no".equals(preowned)) {
+		cs.setString(7, img);
+		if ("no".equals(type)) {
 			cs.setInt(8, 0);
-		} else if ("yes".equals(preowned)) {
+		} else if ("yes".equals(type)) {
 			cs.setInt(8, 1);
 		}
-		cs.setString(9, genre_id);
+		cs.setString(9, genreid);
 		cs.execute();
 
 		ResultSet rs = cs.getResultSet();
@@ -85,24 +85,24 @@
 	</tr>
 	<%
 		while (rs.next()) {
-			game_id = rs.getInt("game_id");
-			game_title = rs.getString("game_title");
+			gameid = rs.getInt("game_id");
+			title = rs.getString("game_title");
 			company = rs.getString("company");
 			Date dbdate = rs.getDate("release_date");
-			description = rs.getString("description");
+			desc = rs.getString("description");
 			double dbprice = rs.getDouble("price");
 			String newdbprice = String.format("%.2f", dbprice);
-			image_loc = rs.getString("image_loc");
+			img = rs.getString("image_loc");
 			int dbpreowned = rs.getInt("preowned");
-			genre_id = rs.getString("genre_id");
+			genreid = rs.getString("genre_id");
 			String dbgenrename = rs.getString("genre_name");
 	%>
 	<tr>
-		<td><%=game_id%></td>
-		<td><%=game_title%></td>
+		<td><%=gameid%></td>
+		<td><%=title%></td>
 		<td><%=company%></td>
 		<td><%=dbdate%></td>
-		<td><%=description%></td>
+		<td><%=desc%></td>
 		<%
 			if (dbprice == 0) {
 					out.println("<td>TBC</td>");
@@ -111,7 +111,7 @@
 		<%
 			}
 		%>
-		<td><%=image_loc%></td>
+		<td><%=img%></td>
 		<%
 			if (dbpreowned == 1) {
 					out.println("<td>yes</td>");
@@ -119,7 +119,7 @@
 					out.println("<td>no</td>");
 				}
 		%>
-		<td><%=genre_id%></td>
+		<td><%=genreid%></td>
 		<td><%=dbgenrename%></td>
 	</tr>
 

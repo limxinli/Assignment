@@ -27,10 +27,10 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-			int gameid = Integer.parseInt(request.getParameter("id"));
+			int gameid = Integer.parseInt(request.getParameter("game_id"));
 			
 			PreparedStatement pstmt = conn
-					.prepareStatement("DELETE FROM BaLi WHERE id =?");
+					.prepareStatement("DELETE FROM game_data WHERE game_id =?");
 
 			String sql="call deleteAndSelect(?)";
 			
