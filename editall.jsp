@@ -39,9 +39,6 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="searchgame.jsp" class="active-menu-item"><span
-							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-							VIEW</a></li>
 					<li><a href="editall.jsp"><span
 							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
 					<li><a href="login.html"> <span
@@ -59,23 +56,81 @@
 		<h3>
 			EDIT <i class="fa fa-angle-double-right "></i>
 		</h3>
-
+	</div>
+	<div id="genrelink">
+	<a href="editgenre.jsp">Click here to edit genre</a>
 	</div>
 	</section>
 	<!--TOP SECTION END-->
-	<section id="dropdownlist">
-	<form action="processchoice.jsp">
-		Table:<select id="tablechoice" name="tablechoice">
-			<option>Game</option>
-			<option>Genre</option>
-		</select><br> Command:<select id="commands" name="commands">
-			<option>Add</option>
-			<option>Update</option>
-			<option>Delete</option>
-		</select>
-		<input type="submit" class="btn btn-info" id="enter-button2" value="Enter">
-	</form>
-	</section>
+	<%
+		Connection conn = DatabaseConnection.getConnection();
+
+		String sql="Select * from game_data";
+		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		
+		ResultSet rs = pstmt.executeQuery();
+
+		out.println("<table border='3'>");
+	%>
+	<caption>
+		<h2>
+			Games Data
+			<h2>
+	</caption>
+	<tr>
+		<th>Game ID</th>
+		<th>Game Title</th>
+		<th>Company</th>
+		<th>Release Date</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Image Location</th>
+		<th>Pre-owned</th>
+	</tr>
+	<%
+		while (rs.next()) {
+			int dbgameid = rs.getInt("game_id");
+			String dbgametitle = rs.getString("game_title");
+			String dbcompany = rs.getString("company");
+			Date dbdate = rs.getDate("release_date");
+			String dbdescription = rs.getString("description");
+			double dbprice = rs.getDouble("price");
+			String newdbprice = String.format("%.2f", dbprice);
+			String dbimageloc = rs.getString("image_loc");
+			int dbpreowned = rs.getInt("preowned");
+	%>
+	<tr>
+		<td><%=dbgameid%></td>
+		<td><%=dbgametitle%></td>
+		<td><%=dbcompany%></td>
+		<td><%=dbdate%></td>
+		<td><%=dbdescription%></td>
+		<%
+			if (dbprice == 0) {
+				out.println("<td>TBC</td>");
+			} else {
+				%><td><%="$" + newdbprice%></td>
+		<%
+			}
+		%>
+		<td><%=dbimageloc%></td>
+		<%
+			if (dbpreowned == 1) {
+					out.println("<td>yes</td>");
+				} else {
+					out.println("<td>no</td>");
+				}
+
+		%>
+ </tr>
+
+	<%
+		}
+		out.println("</table>");
+
+		conn.close();
+	%>
 
 	<div class="copy-txt">
 		<div class="container">

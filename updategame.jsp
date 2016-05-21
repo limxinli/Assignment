@@ -42,9 +42,6 @@
 			</div>
 				<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="searchgame.jsp"><span
-							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-							VIEW</a></li>
 					<li><a href="editall.jsp" class="active-menu-item"><span
 							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
 					<li><a href="login.html"> <span

@@ -460,6 +460,11 @@ table {
 	margin-left: 60px;
 	margin-top: -30px;
 }
+
+#genrelink {
+	float: right;
+	margin-right: 10px;
+}
 /* =============================================================
    FOOTER SECTION STYLES
  ============================================================ */

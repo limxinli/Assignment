@@ -39,14 +39,23 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="searchgame.jsp" class="active-menu-item"><span
-							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-							VIEW</a></li>
-					<li><a href="editall.jsp"><span
-							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
+					<li><a href="index.html"><span
+							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
+					<li><div class="dropdown">
+							<a href="allgames.jsp" class="active-menu-item"><button
+									class="dropbtn">
+									GAMES <span class="caret"></span>
+								</button></a>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="action.jsp">Action</a> <a
+									href="adventure.jsp" class="active-menu-item">Adventure</a> <a href="horror.jsp">Horror</a>
+								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+							</div>
+						</div></li>
+					<li><a href="about.html">ABOUT</a></li>
 					<li><a href="login.html"> <span
-							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-							LOGOUT
+							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+							LOGIN
 					</a></li>
 				</ul>
 			</div>
