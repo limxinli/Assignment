@@ -47,9 +47,9 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp">Action</a> <a
-									href="adventure.jsp">Adventure</a> <a href="horror.jsp" class="active-menu-item">Horror</a>
-								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
+								<a href="horror.jsp" class="active-menu-item">Horror</a> <a
+									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -62,7 +62,7 @@
 
 		</div>
 	</div>
-		<!--MENU SECTION END-->
+	<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
@@ -70,26 +70,24 @@
 		</h3>
 
 	</div>
-	<!-- HOME SECTION END -->
-	<%
-		Connection conn = DatabaseConnection.getConnection();
+	<!-- HOME SECTION END --> <%
+ 	Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select game_title from game_data WHERE game_title='action'";
+ 	String gametitle = request.getParameter("game_title");
 
-		PreparedStatement pstmt = conn.prepareStatement(sql);
+ 	String sql = "Select game_title from game_data WHERE game_title='action'";
 
-		ResultSet rs = pstmt.executeQuery();
+ 	PreparedStatement pstmt = conn.prepareStatement(sql);
 
-		while (rs.next()) {
-			String gametitle = rs.getString("game_title");
-			%>
-			<%=gametitle%>
-		<%
-		}
-		conn.close();
-	%>
-	<!-- BACK TO TOP BUTTON -->
-	<script
+ 	ResultSet rs = pstmt.executeQuery();
+
+ 	while (rs.next()) {
+ 		gametitle = rs.getString("game_title");
+ %> 
+  <%
+ 	}
+ 	conn.close();
+ %> <!-- BACK TO TOP BUTTON --> <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="http://arrow.scrolltotop.com/arrow92.js"></script>
@@ -97,55 +95,54 @@
 		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
 			Button</a>? Go to our FAQ page for more info.
 	</noscript>
-	<!-- BACK TO TOP BUTTON END -->
-	<!-- Main Background -->
-	<section>
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="corpse.jsp" target="_black">
-					<img src="assets\img\CorpseParty\img1.jpg" alt="" height="270"
-						width="190" />
-						</a>
-				</div>
-			</div>
+	<!-- BACK TO TOP BUTTON END --> <!-- Main Background --> <section>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="corpse.jsp" target="_black"> <img
+				src="assets\img\CorpseParty\img1.jpg" alt="" height="270"
+				width="190" />
+			</a>
+		</div>
+		<%=gametitle%>
+	</div>
 
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="alone.jsp" target="_black">
-					<img src="assets\img\LeftAlone\img6.jpg" alt="" height="270"
-						width="190" />
-						</a>
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="alone.jsp" target="_black"> <img
+				src="assets\img\LeftAlone\img6.jpg" alt="" height="270" width="190" />
+			</a>
+		</div>
+		<%=gametitle%>
+	</div>
 
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="nightcry.jsp" target="_black">
-					<img src="assets\img\NightCry\img7.jpg" alt="" height="270"
-						width="190" />
-						</a>
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="nightcry.jsp" target="_black"> <img
+				src="assets\img\NightCry\img7.jpg" alt="" height="270" width="190" />
+			</a>
+		</div>
+		<%=gametitle%>
+	</div>
 
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="share.jsp" target="_black">
-					<img src="assets\img\Share\img7.jpg" alt="" height="270"
-						width="190" />
-						</a>
-				</div>
-			</div>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="share.jsp" target="_black"> <img
+				src="assets\img\Share\img7.jpg" alt="" height="270" width="190" />
+			</a>
+		</div>
+		<%=gametitle%>
+	</div>
 
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="gfather.jsp" target="_black">
-					<img src="assets\img\TheGrandfather\img1.jpg" alt="" height="270"
-						width="190" />
-						</a>
-				</div>
-			</div>
-	</section>
-
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="gfather.jsp" target="_black"> <img
+				src="assets\img\TheGrandfather\img1.jpg" alt="" height="270"
+				width="190" />
+			</a>
+		</div>
+		<%=gametitle%>
+	</div>
+	</section> 
 	<!-- End Main Background -->
 	<div class="copy-txt">
 		<div class="container">
@@ -159,14 +156,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- COPY TEXT SECTION END-->
-	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-	<!-- CORE JQUERY  -->
-	<script src="assets/js/jquery-1.11.1.js"></script>
-	<!-- BOOTSTRAP SCRIPTS  -->
-	<script src="assets/js/bootstrap.js"></script>
-	<!-- CUSTOM SCRIPTS  -->
-	<script src="assets/js/custom.js"></script>
-
+	<!-- COPY TEXT SECTION END--> <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY  --> <script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  --> <script src="assets/js/bootstrap.js"></script>
+	<!-- CUSTOM SCRIPTS  --> <script src="assets/js/custom.js"></script>
 </body>
 </html>

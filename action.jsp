@@ -119,6 +119,7 @@
 				src="assets\img\DyingLight\img3.jpg" alt="" height="270" width="190" />
 			</a>
 		</div>
+		<%=gametitle%>
 	</div>
 
 	<div class="row">
@@ -128,6 +129,7 @@
 				width="190" />
 			</a>
 		</div>
+		<%=gametitle%>
 	</div>
 
 	<div class="row">
@@ -139,6 +141,7 @@
 				</a>
 			</div>
 		</div>
+		<%=gametitle%>
 	</div>
 
 	<div class="row">
@@ -148,6 +151,7 @@
 				width="190" />
 			</a>
 		</div>
+		<%=gametitle%>
 	</div>
 	</section>
 

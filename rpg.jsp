@@ -47,9 +47,9 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp">Action</a> <a
-									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
-								<a href="rpg.jsp" class="active-menu-item">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
+								<a href="horror.jsp">Horror</a> <a href="rpg.jsp"
+									class="active-menu-item">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -73,6 +73,8 @@
 	<!-- HOME SECTION END --> <%
  	Connection conn = DatabaseConnection.getConnection();
 
+ 	String gametitle = request.getParameter("game_title");
+
  	String sql = "Select game_title from game_data WHERE game_title='action'";
 
  	PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -80,8 +82,8 @@
  	ResultSet rs = pstmt.executeQuery();
 
  	while (rs.next()) {
- 		String gametitle = rs.getString("game_title");
- %> <%=gametitle%> <%
+ 		gametitle = rs.getString("game_title");
+ %> <%
  	}
  	conn.close();
  %> <!-- BACK TO TOP BUTTON --> <script
@@ -99,6 +101,7 @@
 				src="assets\img\Fallout3\img1.jpg" alt="" height="270" width="190" />
 			</a>
 		</div>
+		<%=gametitle%>
 	</div>
 
 	<div class="row">
@@ -107,36 +110,38 @@
 				src="assets\img\Fallout4\img1.jpg" alt="" height="270" width="190" />
 			</a>
 		</div>
+		<%=gametitle%>
 	</div>
 
 	<div class="row">
 		<div class="col-md-4 p-top-row">
-		<a href="goliath.jsp" target="_black">
-			<img src="assets\img\Goliath\img1.jpg" alt="" height="270"
-				width="190" />
-				</a>
+			<a href="goliath.jsp" target="_black"> <img
+				src="assets\img\Goliath\img1.jpg" alt="" height="270" width="190" />
+			</a>
 		</div>
+		<%=gametitle%>
 	</div>
 
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-			<a href="life.jsp" target="_black">
-				<img src="assets\img\LISLimitedEdition\img1.jpg" alt="" height="270"
-					width="190" />
-					</a>
-			</div>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="life.jsp" target="_black"> <img
+				src="assets\img\LISLimitedEdition\img1.jpg" alt="" height="270"
+				width="190" />
+			</a>
 		</div>
+		<%=gametitle%>
+	</div>
 
-		<div class="row">
-			<div class="col-md-4 p-top-row">
-			<a href="walkingdead.jsp" target="_black">
-				<img src="assets\img\TheWalkingDead\img1.jpg" alt="" height="270"
-					width="190" />
-					</a>
-			</div>
+	<div class="row">
+		<div class="col-md-4 p-top-row">
+			<a href="walkingdead.jsp" target="_black"> <img
+				src="assets\img\TheWalkingDead\img1.jpg" alt="" height="270"
+				width="190" />
+			</a>
 		</div>
-		</section>
-	<!-- End Main Background -->
+		<%=gametitle%>
+	</div>
+	</section> <!-- End Main Background -->
 
 	<div class="copy-txt">
 		<div class="container">
