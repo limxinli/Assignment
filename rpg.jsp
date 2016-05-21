@@ -95,7 +95,7 @@
 	<!-- BACK TO TOP BUTTON END --> <!-- Main Background --> <section>
 	<div class="row">
 		<div class="col-md-4 p-top-row">
-			<a href="action.html" target="_black"> <img
+			<a href="fallout3.jsp" target="_black"> <img
 				src="assets\img\Fallout3\img1.jpg" alt="" height="270" width="190" />
 			</a>
 		</div>
@@ -103,7 +103,7 @@
 
 	<div class="row">
 		<div class="col-md-4 p-top-row">
-			<a href="action.html" target="_black"> <img
+			<a href="fallout4.jsp" target="_black"> <img
 				src="assets\img\Fallout4\img1.jpg" alt="" height="270" width="190" />
 			</a>
 		</div>
@@ -111,7 +111,7 @@
 
 	<div class="row">
 		<div class="col-md-4 p-top-row">
-		<a href="action.html" target="_black">
+		<a href="goliath.jsp" target="_black">
 			<img src="assets\img\Goliath\img1.jpg" alt="" height="270"
 				width="190" />
 				</a>
@@ -120,7 +120,7 @@
 
 		<div class="row">
 			<div class="col-md-4 p-top-row">
-			<a href="action.html" target="_black">
+			<a href="life.jsp" target="_black">
 				<img src="assets\img\LISLimitedEdition\img1.jpg" alt="" height="270"
 					width="190" />
 					</a>
@@ -129,7 +129,7 @@
 
 		<div class="row">
 			<div class="col-md-4 p-top-row">
-			<a href="action.html" target="_black">
+			<a href="walkingdead.jsp" target="_black">
 				<img src="assets\img\TheWalkingDead\img1.jpg" alt="" height="270"
 					width="190" />
 					</a>

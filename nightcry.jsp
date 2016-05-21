@@ -13,7 +13,7 @@
 <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-<title>Ryse: Son of Rome</title>
+<title>Night Cry</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
@@ -46,9 +46,9 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp" class="active-menu-item">Action</a> <a
-									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
-								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
+								<a href="horror.jsp" class="active-menu-item">Horror</a> <a
+									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -66,7 +66,7 @@
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			RYSE: SON OF ROME <i class="fa fa-angle-double-right "></i>
+			NIGHT CRY <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
@@ -76,7 +76,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select * from game_data where game_title='Ryse: Son of Rome'";
+		String sql = "Select * from game_data where game_title='Night Cry'";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 

@@ -102,7 +102,7 @@
 	<section>
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="shooter.html" target="_black">
+				<a href="corpse.jsp" target="_black">
 					<img src="assets\img\CorpseParty\img1.jpg" alt="" height="270"
 						width="190" />
 						</a>
@@ -111,7 +111,7 @@
 
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="shooter.html" target="_black">
+				<a href="alone.jsp" target="_black">
 					<img src="assets\img\LeftAlone\img6.jpg" alt="" height="270"
 						width="190" />
 						</a>
@@ -120,7 +120,7 @@
 
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="shooter.html" target="_black">
+				<a href="nightcry.jsp" target="_black">
 					<img src="assets\img\NightCry\img7.jpg" alt="" height="270"
 						width="190" />
 						</a>
@@ -129,7 +129,7 @@
 
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="shooter.html" target="_black">
+				<a href="share.jsp" target="_black">
 					<img src="assets\img\Share\img7.jpg" alt="" height="270"
 						width="190" />
 						</a>
@@ -138,7 +138,7 @@
 
 			<div class="row">
 				<div class="col-md-4 p-top-row">
-				<a href="shooter.html" target="_black">
+				<a href="gfather.jsp" target="_black">
 					<img src="assets\img\TheGrandfather\img1.jpg" alt="" height="270"
 						width="190" />
 						</a>

@@ -13,7 +13,7 @@
 <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-<title>SP Game Store</title>
+<title>Rise of The Tomb Raider</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
@@ -24,7 +24,6 @@
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
 <body>
-
 	<div class="navbar navbar-inverse navbar-fixed-top ">
 		<div class="container">
 			<div class="navbar-header">
@@ -62,113 +61,58 @@
 
 		</div>
 	</div>
-		<!--MENU SECTION END-->
+
+	<!--MENU SECTION END-->
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			ADVENTURE GAMES <i class="fa fa-angle-double-right "></i>
+			RISE OF THE THOMB RAIDER <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
+	</section>
 	<!-- HOME SECTION END -->
+
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select game_title from game_data WHERE game_title='action'";
+		String sql = "Select * from game_data where game_title='Rise of The Tomb Raider'";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		ResultSet rs = pstmt.executeQuery();
+		out.println("<table border='3'>");
+	%>
 
+	<tr>
+		<th>Game Title</th>
+		<th>Company</th>
+		<th>Release Date</th>
+		<th>Description</th>
+		<th>Price</th>
+	</tr>
+
+	<%
 		while (rs.next()) {
-			String gametitle = rs.getString("game_title");
-			%>
-			<%=gametitle%>
-		<%
+			String name = rs.getString("game_title");
+			String com = rs.getString("company");
+			Date redate = rs.getDate("release_date");
+			String desc = rs.getString("description");
+			double price = rs.getDouble("price");
+	%>
+	<tr>
+		<td><%=name%></td>
+		<td><%=com%></td>
+		<td><%=redate%></td>
+		<td><%=desc%></td>
+		<td><%=price%></td>
+	</tr>
+	<%
 		}
+		out.println("</table>");
+
 		conn.close();
 	%>
-	<!-- BACK TO TOP BUTTON -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript"
-		src="http://arrow.scrolltotop.com/arrow92.js"></script>
-	<noscript>
-		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
-			Button</a>? Go to our FAQ page for more info.
-	</noscript>
-	<!-- BACK TO TOP BUTTON END -->
-	<!-- Main Background -->
-	<section>
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="dead.jsp" target="_black">
-					<img src="assets\img\BetterLateThanDead\img1.jpg" alt=""
-						height="270" width="190" />
-						</a>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="rise.jsp" target="_black">
-					<img src="assets\img\RiseOfTheTombRaider\img2.jpg" alt=""
-						height="270" width="190" />
-						</a>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="southpark.jsp" target="_black">
-					<img src="assets\img\SPTheStickofTruth\img1.jpg" alt=""
-						height="270" width="190" />
-						</a>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="evilwithin.jsp" target="_black">
-					<img src="assets\img\TheEvilWithin\img1.jpg" alt="" height="270"
-						width="190" />
-						</a>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4 p-top-row">
-				<a href="thief.jsp" target="_black">
-					<img src="assets\img\Thief\img1.jpg" alt="" height="270"
-						width="190" />
-						</a>
-				</div>
-			</div>
-	</section>
-
-	<!-- End Main Background -->
-
-	<div class="copy-txt">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 set-foot">
-					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
-					All rights reserved | Design by : <a
-						href="http://www.binarytheme.com" target="_blank"
-						style="color: #7C7C7C;">binarytheme.com</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- COPY TEXT SECTION END-->
-	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-	<!-- CORE JQUERY  -->
-	<script src="assets/js/jquery-1.11.1.js"></script>
-	<!-- BOOTSTRAP SCRIPTS  -->
-	<script src="assets/js/bootstrap.js"></script>
-	<!-- CUSTOM SCRIPTS  -->
-	<script src="assets/js/custom.js"></script>
 
 </body>
 </html>
-	
