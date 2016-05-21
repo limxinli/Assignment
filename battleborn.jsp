@@ -84,7 +84,7 @@
 									<div class="container col-md-offset-3 slide-custom">
 										<h4 class="slideshow">Featured</h4>
 										<a href="upcoming.html"> <img
-											src="assets/img/saltandsanctuary.jpg"
+											src="assets\img\Battleborn\img5.jpg"
 											alt="Salt and sanctuary" width="700" height="300" border="1"
 											class="img-u">
 										</a>
@@ -96,7 +96,7 @@
 									<div class="container col-md-offset-3 slide-custom">
 										<h4 class="slideshow">Upcoming</h4>
 										<a href="upcoming.html"> <img
-											src="assets/img/saltandsanctuary.jpg"
+											src="assets\img\Battleborn\img6.jpg"
 											alt="Salt and sanctuary" width="700" height="300" border="1"
 											class="img-u">
 										</a>
@@ -108,7 +108,7 @@
 									<div class="container col-md-offset-3 slide-custom">
 										<h4 class="slideshow">Editors' Choice</h4>
 										<a href="upcoming.html"> <img
-											src="assets/img/saltandsanctuary.jpg"
+											src="assets\img\Battleborn\img4.jpg"
 											alt="Salt and sanctuary" width="700" height="300" border="1"
 											class="img-u">
 										</a>
