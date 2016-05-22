@@ -75,12 +75,13 @@
 			<div class="col-md-8">
 				<div class="alert alert-info">
 					<div class="form-group">
+					<form action="addgameprocess.jsp">
 						<strong>COMMENT BOX</strong> <br /> <label></label> <input
 							type="text" class="form-control" id="nickname"
 							placeholder="Enter Your Nickname" /> <label></label>
 						<textarea class="form-control" id="comment"
 							placeholder="Enter Your Comment" rows="10"></textarea>
-						<br /> <a href="comment.jsp" class="btn btn-primary"
+						<br /> </form> <a href="comment.jsp" class="btn btn-primary"
 							id="comment-button">COMMENT</a>
 					</div>
 
