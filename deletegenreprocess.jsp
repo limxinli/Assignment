@@ -27,13 +27,13 @@
 			<%
 			Connection conn = DatabaseConnection.getConnection();
 
-			String game_id = request.getParameter("gameid");
+			String genre_id = request.getParameter("genreid");
 			
-			String sql="Delete from game_data where game_id=?";
+			String sql="Delete from genre where genre_id=?";
 			
 			PreparedStatement pstmt=conn.prepareStatement(sql);
 
-			pstmt.setString(1, game_id);
+			pstmt.setString(1, genre_id);
 
 			int recsModified = pstmt.executeUpdate();
 
@@ -41,6 +41,6 @@
 			
 			conn.close();
 	%>
-	<a href="editall.jsp">Return</a>
+	<a href="editgenre.jsp">Return</a>
 </body>
 </html>

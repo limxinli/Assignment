@@ -87,7 +87,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "select * from game_data gd, genre g, game_genre gg where gd.game_id=gg.game_id and gg.genre_id=g.genre_id and datediff(curdate(), release_date) < 180 AND release_date <= curdate()";
+		String sql = "select * from game_data gd, genre g, game_genre gg where gd.game_id=gg.game_id and gg.genre_id=g.genre_id group by release_date having datediff(curdate(), release_date) < 180 AND release_date <= curdate()";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 

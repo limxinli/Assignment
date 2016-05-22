@@ -78,8 +78,8 @@
 	</p>
 	<div class="updatedelete">
 		<a href="addgenre.html">Add</a> |
-		<a href="deletegenreprocess.jsp">Delete</a> |
-		<a href="updategenre.jsp">Update</a>
+		<a href="deletegenre.html">Delete</a> |
+		<a href="updategenre.html">Update</a>
 		</div>
 	<tr>
 		<th>Genre ID</th>

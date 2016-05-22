@@ -24,23 +24,25 @@
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
 <body>
-			<%
-			Connection conn = DatabaseConnection.getConnection();
+	<%
+		Connection conn = DatabaseConnection.getConnection();
 
-			String game_id = request.getParameter("gameid");
-			
-			String sql="Delete from game_data where game_id=?";
-			
-			PreparedStatement pstmt=conn.prepareStatement(sql);
+		String genre_id = request.getParameter("genreid");
+		String genre_name = request.getParameter("genrename");
 
-			pstmt.setString(1, game_id);
+		String sql = "update genre set genre_name=? where genre_id=?";
 
-			int recsModified = pstmt.executeUpdate();
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		
+		pstmt.setString(1, genre_name);
+		pstmt.setString(2, genre_id);
+		
+		int recsModified = pstmt.executeUpdate();
 
-			out.println(recsModified + " record deleted");
-			
-			conn.close();
+		out.println(recsModified + " record updated");
+		
+		conn.close();
 	%>
-	<a href="editall.jsp">Return</a>
+	<a href="editgenre.jsp">Return</a>
 </body>
 </html>

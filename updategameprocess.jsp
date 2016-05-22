@@ -27,103 +27,44 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		int gameid = Integer.parseInt(request.getParameter("game_id"));
-		String title = request.getParameter("game_title");
+		String game_id = request.getParameter("id");
+		String game_title = request.getParameter("title");
 		String company = request.getParameter("company");
-		String date = request.getParameter("release_date");
-		String desc = request.getParameter("description");
-		Double price = Double.parseDouble(request.getParameter("price"));
-		String img = request.getParameter("img_loc");
-		String genrename = request.getParameter("genre_name");
-		String type = request.getParameter("preowned");
-		String genreid = request.getParameter("genre_id");
+		String release_date = request.getParameter("date");
+		String description = request.getParameter("description");
+		String price = request.getParameter("price");
+		String image_loc = request.getParameter("img");
+		String preowned = request.getParameter("type");
+		String genre_name = request.getParameter("genre-drop");
 
-		String sql = "call addAndSelect(?,?,?,?,?,?,?,?,?,?)";
+		String sql = "update game_data set game_title=?, company=?, release_date=?, description=?, price=?, image_loc=?, preowned=? where game_id=?";
 
-		CallableStatement cs = conn.prepareCall(sql);
-		cs.setInt(1, gameid);
-		cs.setString(2, title);
-		cs.setString(3, company);
-		cs.setString(4, date);
-		cs.setString(5, desc);
-		cs.setDouble(6, price);
-		cs.setString(7, img);
-		cs.setString(8, genrename);
-		cs.setString(9, type);
-		cs.setString(10, genreid);
+		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
-		cs.execute();
-
-		ResultSet rs = cs.getResultSet();
-		cs.getResultSet();
-
-		out.println("<table border='1'>");
-	%>
-	<caption>
-		<h2>
-			Updated table:
-			<h2>
-	</caption>
-	<tr>
-		<th>Game ID</th>
-		<th>Game Title</th>
-		<th>Company</th>
-		<th>Release Date</th>
-		<th>Description</th>
-		<th>Price</th>
-		<th>Image Location</th>
-		<th>Pre-owned</th>
-		<th>Genre ID</th>
-		<th>Genre Name</th>
-	</tr>
-	<%
-		while (rs.next()) {
-			gameid = rs.getInt("game_id");
-			title = rs.getString("game_title");
-			company = rs.getString("company");
-			Date dbdate = rs.getDate("release_date");
-			desc = rs.getString("description");
-			double dbprice = rs.getDouble("price");
-			String newdbprice = String.format("%.2f", dbprice);
-			img = rs.getString("image_loc");
-			int dbpreowned = rs.getInt("preowned");
-			genreid = rs.getString("genre_id");
-			String dbgenrename = rs.getString("genre_name");
-	%>
-	<tr>
-		<td><%=gameid%></td>
-		<td><%=title%></td>
-		<td><%=company%></td>
-		<td><%=dbdate%></td>
-		<td><%=desc%></td>
-		<%
-			if (dbprice == 0) {
-					out.println("<td>TBC</td>");
-				} else {
-		%><td><%="$" + newdbprice%></td>
-		<%
-			}
-		%>
-		<td><%=img%></td>
-		<%
-			if (dbpreowned == 1) {
-					out.println("<td>yes</td>");
-				} else {
-					out.println("<td>no</td>");
-				}
-		%>
-		<td><%=genreid%></td>
-		<td><%=dbgenrename%></td>
-	</tr>
-
-
-
-	<%
+		pstmt.setString(1, game_title);
+		pstmt.setString(2, company);
+		pstmt.setString(3, release_date);
+		pstmt.setString(4, description);
+		if (price.isEmpty()){
+			pstmt.setInt(5, 0);
 		}
-		out.println("</table>");
+		else {
+			pstmt.setString(5, price);
+		}
+		pstmt.setString(6, image_loc);
+		if ("no".equals(preowned)) {
+			pstmt.setInt(7, 0);
+		} else if ("yes".equals(preowned)) {
+			pstmt.setInt(7, 1);
+		}
+		pstmt.setString(8, game_id);
+		
+		int recsModified = pstmt.executeUpdate();
 
+		out.println(recsModified + " record updated");
+		
 		conn.close();
 	%>
-	<a href="searchgame.jsp">Return</a>
+	<a href="editall.jsp">Return</a>
 </body>
 </html>

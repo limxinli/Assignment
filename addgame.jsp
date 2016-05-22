@@ -67,8 +67,6 @@
 	<section>
 	<div class="gamedata">
 		<form action="addgameprocess.jsp">
-		Game ID: <input type="text" name="gameid" id="gameid"
-				class="form-control"> <br>
 			Game Title: <input type="text" name="title" id="title"
 				class="form-control"> <br> Company: <input type="text"
 				name="company" id="company" class="form-control"> <br>

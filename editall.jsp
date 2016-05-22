@@ -57,6 +57,15 @@
 			EDIT <i class="fa fa-angle-double-right "></i>
 		</h3>
 	</div>
+		<!-- BACK TO TOP BUTTON -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://arrow.scrolltotop.com/arrow92.js"></script>
+	<noscript>
+		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
+			Button</a>? Go to our FAQ page for more info.
+	</noscript>
 	<div id="genrelink">
 	<a href="editgenre.jsp">Click here to edit genre</a>
 	</div>
@@ -78,7 +87,7 @@
 	</p>
 	<div class="updatedelete">
 		<a href="addgame.jsp">Add</a> |
-		<a href="deletegameprocess.jsp">Delete</a> |
+		<a href="deletegame.html">Delete</a> |
 		<a href="updategame.jsp">Update</a>
 		</div>
 	<tr>

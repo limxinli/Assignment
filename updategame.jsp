@@ -66,22 +66,22 @@
 	<section>
 	<div class="gamedata">
 		<form action="updategameprocess.jsp">
-			Game ID: <input type="text" name="id"
-				class="form-control"> <br> Game Title: <input
+			Enter Game ID to update: <input type="text" name="id"
+				class="form-control"> <br> New Game Title: <input
 				type="text" name="title" class="form-control">
-			<br> Company: <input type="text" name="company"
-				 class="form-control"> <br> Release
+			<br> New Company: <input type="text" name="company"
+				 class="form-control"> <br> New Release
 			Date: <input type="text" name="date"
 				placeholder="Type in this format (yyyy-mm-dd)" class="form-control">
-			<br> Description:
+			<br> New Description:
 			<textarea class="form-control" rows="5"
 				name="description"></textarea>
-			<br> Price: <input type="text" name="price"
+			<br> New Price: <input type="text" name="price"
 				 id="price" class="form-control"> <br>
-			Image Location: <input type="text" name="img"
+			New Image Location: <input type="text" name="img"
 				placeholder="Path of the image (assets/img/)" class="form-control">
 			<br> 
-				Genre:
+				New Genre:
 			<div class="genre-drop">
 				<select data-placeholder="Select the genre(s)" class="chosen-select"
 					multiple style="width: 350px;" tabindex="4" name="genre-drop"

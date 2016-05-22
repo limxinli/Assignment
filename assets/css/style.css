@@ -411,6 +411,12 @@ a.new-release-font:hover,a.sales-font:hover {
 	padding-right: 25px;
 }
 
+#delete {
+	float: right;
+	margin-top: 20px;
+	margin-right: 300px;
+}
+
 #date:focus,#img:focus,#title:focus,#company:focus,#description:focus,#price:focus
 	{
 	color: black;
@@ -491,6 +497,15 @@ table {
 	background-color: #202020;
 	padding: 15px;
 	color: #7C7C7C;
+}
+
+.deletecopy-txt {
+	background-color: #202020;
+	padding: 15px;
+	color: #7C7C7C;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 .set-foot {
