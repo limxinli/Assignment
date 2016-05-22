@@ -571,6 +571,8 @@ table {
 }
 
 .inside p {
+	margin-top: auto;
+	margin-bottom: auto;
 	padding-top: 20px;
 }
 
