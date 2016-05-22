@@ -64,7 +64,7 @@
 	<section class="headline-sec">
 		<div class="overlay ">
 			<h3>
-				VIEW ALL COMMENTS <i class="fa fa-angle-double-right "></i>
+				NEW RELEASES <i class="fa fa-angle-double-right "></i>
 			</h3>
 
 		</div>
@@ -72,7 +72,7 @@
 	<!--TOP SECTION END--> <%
  	Connection conn = DatabaseConnection.getConnection();
 
-	String sql = "insert into comment_id(nickname, comment) values (?,?)";
+ 	String sql = "Select * from comment_box";
 
  	PreparedStatement pstmt = conn.prepareStatement(sql);
 
@@ -105,7 +105,6 @@
 
 		conn.close();
 	%>
-<a href="addcomment.jsp">Return</a>
 
 	<div class="copy-txt">
 		<div class="container">
