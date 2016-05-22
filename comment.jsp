@@ -68,68 +68,23 @@
 			</h3>
 		</div>
 	</section>
-	<!--TOP SECTION END--> <%
- 	Connection conn = DatabaseConnection.getConnection();
+	<!--TOP SECTION END--> 
 	
-	String id = request.getParameter("comment_id");
-	String name = request.getParameter("nickname");
-	String comment = request.getParameter("comment");
-
-	PreparedStatement pstmt = conn
-			.prepareStatement("SELECT * FROM comment_box");
-
-	String sql = "call insertAndSelect(?,?,?)";
-
-	CallableStatement cs = conn.prepareCall(sql);
-	cs.setString(1, id);
-	cs.setString(2, name);
-	cs.setString(3, comment);
-
-	cs.execute();
-
-	ResultSet rs = cs.getResultSet();
-	cs.getResultSet();
-
- 	out.println("<table border='3'>");
- %>
-	<p id="caption">All Comments</p>
-
-	<tr>
-		<th>Comment ID</th>
-		<th>Name</th>
-		<th>Comment</th>
-	</tr>
 	<%
-		while (rs.next()) {
-			id = rs.getString("comment_id");
-			name = rs.getString("nickname");
-			comment = rs.getString("comment");
+		Connection conn = DatabaseConnection.getConnection();
+
+		String name = request.getParameter("nickname");
+		String comment = request.getParameter("comment");
+
+		PreparedStatement pstmt = conn
+				.prepareStatement("insert into comment_box(nickname, comment) values (?,?)");
+
+		ResultSet rs = pstmt.executeQuery();
 	%>
-	<tr>
-		<td><%=id%></td>
-		<td><%=name%></td>
-		<td><%=comment%></td>
-	</tr>
-
 	<%
-		}
-		out.println("</table>");
-
 		conn.close();
 	%>
 
-	<div class="copy-txt">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 set-foot">
-					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
-					All rights reserved | Design by : <a
-						href="http://www.binarytheme.com" target="_blank"
-						style="color: #7C7C7C;">binarytheme.com</a>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- COPY TEXT SECTION END--> <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 	<!-- CORE JQUERY  --> <script src="assets/js/jquery-1.11.1.js"></script>
 	<!-- BOOTSTRAP SCRIPTS  --> <script src="assets/js/bootstrap.js"></script>
