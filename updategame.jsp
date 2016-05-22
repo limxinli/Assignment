@@ -70,7 +70,7 @@
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 
 				ResultSet rs = pstmt.executeQuery();
-				if (rs.next()) {
+				while (rs.next()) {
 					int gameid = rs.getInt("game_id");
 					String title = rs.getString("game_title");
 					String company = rs.getString("company");
