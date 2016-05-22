@@ -81,7 +81,7 @@
 
  	out.println("<table border='3'>");
  %>
-	<p id="caption">ALL Comments</p>
+	<p id="caption">All Comments</p>
 
 	<tr>
 		<th>Comment ID</th>
@@ -91,7 +91,7 @@
 	<%
 		while (rs.next()) {
 			int id = rs.getInt("comment_id");
-			String name = rs.getString("nickename");
+			String name = rs.getString("nickname");
 			String comment = rs.getString("comment");
 	%>
 	<tr>
