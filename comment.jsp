@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -29,21 +33,22 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
-					Store<small> Singapore Polytechnic</small></a>
+				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
+						Singapore Polytechnic</small></a>
+
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.html"><span
+					<li><a href="index.html" class="active-menu-item"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
 							<a href="allgames.jsp"><button class="dropbtn">
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.html">Action</a> <a href="adventure.html">Adventure</a>
-								<a href="horror.html">Horror</a> <a href="rpg.html">RPG</a> <a
-									href="shooter.html">Shooter</a>
+								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
+								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
+									href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -58,32 +63,11 @@
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-		<div class="overlay ">
-			<h3>
-				NEW RELEASES <i class="fa fa-angle-double-right "></i>
-			</h3>
-
-		</div>
-	</section>
-	<!--HOME SECTION END-->
-	<section>
-		<div class="container">
-			<div class="col-md-8">
-				<div class="alert alert-info">
-					<div class="form-group">
-						<strong>COMMENT BOX</strong> <br /> <label></label> <input
-							type="text" class="form-control" id="nickname"
-							placeholder="Enter Your Nickname" /> <label></label>
-						<textarea class="form-control" id="comment" placeholder="Enter Your Comment"
-							rows="10"></textarea>
-						<br /> <a href="comment.jsp" class="btn btn-primary" id="comment-button">COMMENT</a>
-					</div>
-
-				</div>
-			</div>
-		</div>
-		</div>
-	</section>
+	<div class="overlay ">
+		<h3>
+			VIEW ALL COMMENTS <i class="fa fa-angle-double-right "></i>
+		</h3>
+	</div>
 
 	<div class="copy-txt">
 		<div class="container">
@@ -105,6 +89,5 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
-
 </body>
 </html>
