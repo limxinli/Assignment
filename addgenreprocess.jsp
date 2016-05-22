@@ -43,6 +43,6 @@
 
 		conn.close();
 	%>
-	<a href="searchgame.jsp">Return</a>
+	<a href="editgenre.jsp">Return</a>
 </body>
 </html>
