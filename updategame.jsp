@@ -112,43 +112,6 @@
 		}
 		conn.close();
 	%>
-	<section>
-	<div class="gamedata">
-		<form action="updategame.jsp">
-			Game ID: <input type="text" name="id" value="<%=rs.getInt("ID")%>"
-				class="form-control"> <br> Game Title: <input
-				type="text" name="title" id="title" class="form-control"> <br>
-			Company: <input type="text" name="company" id="company"
-				class="form-control"> <br> Release Date: <input
-				type="text" name="date" id="date"
-				placeholder="Type in this format (yyyy-mm-dd)" class="form-control">
-			<br> Description:
-			<textarea class="form-control" rows="5" name="description"
-				id="description"></textarea>
-			<br> Price: <input type="text" name="price" id="price"
-				class="form-control"> <br> Image Location: <input
-				type="text" name="img" id="img"
-				placeholder="Path of the image (assets/img/)" class="form-control">
-			<br> Genre:
-			<div class="genre-drop">
-				<select data-placeholder="Select the genre(s)" class="chosen-select"
-					multiple style="width: 350px;" tabindex="4" name="genre-drop"
-					id="genre-drop">
-
-				</select>
-			</div>
-			<div class="radio-button2">
-				Is it pre-owned? <br> <input type="radio" id="new" name="type"
-					value="no"> No <input type="radio" id="preowned"
-					name="type" value="yes"> Yes
-			</div>
-			<br>Genre ID: <input type="text" name="genreid" id="genreid"
-				class="form-control"> <input type="submit"
-				class="btn btn-info" id="add" value="Update">
-		</form>
-	</div>
-	</section>
-
 	<div class="copy-txt">
 		<div class="container">
 			<div class="row">
