@@ -33,9 +33,8 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
-						Singapore Polytechnic</small></a>
-
+				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
+					Store<small> Singapore Polytechnic</small></a>
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
@@ -46,9 +45,9 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
-									href="shooter.jsp">Shooter</a>
+								<a href="action.html">Action</a> <a href="adventure.html">Adventure</a>
+								<a href="horror.html">Horror</a> <a href="rpg.html">RPG</a> <a
+									href="shooter.html">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -61,15 +60,15 @@
 
 		</div>
 	</div>
-
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-	<div class="overlay ">
-		<h3>
-			VIEW ALL COMMENTS <i class="fa fa-angle-double-right "></i>
-		</h3>
-	</div>
+		<div class="overlay ">
+			<h3>
+				VIEW ALL COMMENTS <i class="fa fa-angle-double-right "></i>
+			</h3>
 
+		</div>
+	</section>
 	<!--TOP SECTION END--> <%
  	Connection conn = DatabaseConnection.getConnection();
 
@@ -106,6 +105,7 @@
 
 		conn.close();
 	%>
+<a href="addcomment.jsp">Return</a>
 
 	<div class="copy-txt">
 		<div class="container">
