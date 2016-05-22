@@ -64,9 +64,8 @@
 	<section class="headline-sec">
 		<div class="overlay ">
 			<h3>
-				NEW RELEASES <i class="fa fa-angle-double-right "></i>
+				COMMENT <i class="fa fa-angle-double-right "></i>
 			</h3>
-
 		</div>
 	</section>
 	<!--TOP SECTION END--> <%
