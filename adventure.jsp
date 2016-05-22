@@ -111,7 +111,7 @@
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<a href="rise.jsp" target="_black"> <img
-				src="assets\img\RiseOfTheTombRaider\img2.jpg" alt="" height="270"
+				src="assets\img\RiseOfTheTombRaider\img1.jpg" alt="" height="270"
 				width="190" />
 			</a>
 		</div>

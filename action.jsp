@@ -111,7 +111,7 @@
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<a href="dyinglight.jsp" target="_black"> <img
-				src="assets\img\DyingLight\img3.jpg" alt="" height="270" width="190" />
+				src="assets\img\DyingLight\img1.jpg" alt="" height="270" width="190" />
 			</a>
 		</div>
 		<%=gametitle%>
@@ -120,7 +120,7 @@
 	<div class="row">
 		<div class="col-md-4 p-top-row">
 			<a href="mirror.jsp" target="_black"> <img
-				src="assets\img\MirrorEdgeCatalyst\img7.jpg" alt="" height="270"
+				src="assets\img\MirrorEdgeCatalyst\img1.jpg" alt="" height="270"
 				width="190" />
 			</a>
 		</div>
@@ -141,8 +141,8 @@
 
 	<div class="row">
 		<div class="col-md-4 p-top-row">
-			<a href="battle.jsp" target="_black"> <img
-				src="assets\img\StarWarsBattlefront\img7.jpg" alt="" height="270"
+			<a href="<%=dbgameid%>.jsp" target="_black"> <img
+				src="assets\img\StarWarsBattlefront\img1.jpg" alt="" height="270"
 				width="190" />
 			</a>
 		</div>
