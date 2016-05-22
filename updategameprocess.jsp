@@ -32,7 +32,7 @@
 		String company = request.getParameter("company");
 		String date = request.getParameter("release_date");
 		String desc = request.getParameter("description");
-		String price = request.getParameter("price");
+		Double price = Double.parseDouble(request.getParameter("price"));
 		String img = request.getParameter("img_loc");
 		String genrename = request.getParameter("genre_name");
 		String type = request.getParameter("preowned");
@@ -46,17 +46,12 @@
 		cs.setString(3, company);
 		cs.setString(4, date);
 		cs.setString(5, desc);
-		cs.setString(6, price);
-		if (price.isEmpty()){
-			cs.setInt(6, 0);
-		}
-		else {
-			cs.setString(6, price);
-		}
+		cs.setDouble(6, price);
 		cs.setString(7, img);
 		cs.setString(8, genrename);
 		cs.setString(9, type);
 		cs.setString(10, genreid);
+		
 		cs.execute();
 
 		ResultSet rs = cs.getResultSet();
