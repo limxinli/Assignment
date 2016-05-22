@@ -35,7 +35,7 @@
 		String price = request.getParameter("price");
 		String image_loc = request.getParameter("img");
 		String preowned = request.getParameter("type");
-		String genre_id = request.getParameter("genreid");
+		String genre_name = request.getParameter("genre-drop");
 
 		String sql = "call addAndSelect(?,?,?,?,?,?,?,?,?)";
 
@@ -58,7 +58,6 @@
 		} else if ("yes".equals(preowned)) {
 			cs.setInt(8, 1);
 		}
-		cs.setString(9, genre_id);
 		cs.execute();
 
 		ResultSet rs = cs.getResultSet();

@@ -112,8 +112,6 @@
 					value="no"> No <input type="radio" id="preowned"
 					name="type" value="yes"> Yes
 			</div>
-			<br>Genre ID: <input type="text" name="genreid" id="genreid"
-				class="form-control">
 			<input type="submit" class="btn btn-info" id="add" value="Add">
 		</form>
 	</div>
