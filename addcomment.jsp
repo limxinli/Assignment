@@ -62,32 +62,33 @@
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-		<div class="overlay ">
-			<h3>
-				NEW RELEASES <i class="fa fa-angle-double-right "></i>
-			</h3>
+	<div class="overlay ">
+		<h3>
+			NEW RELEASES <i class="fa fa-angle-double-right "></i>
+		</h3>
 
-		</div>
+	</div>
 	</section>
 	<!--HOME SECTION END-->
 	<section>
-		<div class="container">
-			<div class="col-md-8">
-				<div class="alert alert-info">
-					<div class="form-group">
+	<div class="container">
+		<div class="col-md-8">
+			<div class="alert alert-info">
+				<div class="form-group">
 					<form action="commentprocess.jsp">
 						<strong>COMMENT BOX</strong> <br /> <label></label> <input
 							type="text" class="form-control" id="nickname"
 							placeholder="Enter Your Nickname" /> <label></label>
 						<textarea class="form-control" id="comment"
 							placeholder="Enter Your Comment" rows="10"></textarea>
-						<br /> </form> <a href="comment.jsp" class="btn btn-primary"
-							id="comment-button">COMMENT</a>
-					</div>
-
+						<br />
+					</form>
+					<a href="comment.jsp" class="btn btn-primary" id="comment-button">COMMENT</a>
 				</div>
+
 			</div>
 		</div>
+	</div>
 	</section>
 
 	<!--TOP SECTION END-->
@@ -95,13 +96,13 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "SELECT * FROM comment_box";
+		String name = request.getParameter("nickname");
+		String comment = request.getParameter("comment");
 
-		
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		
+		PreparedStatement pstmt = conn
+				.prepareStatement("insert into comment_box(nickname, comment) values (?,?)");
+
 		ResultSet rs = pstmt.executeQuery();
-
 	%>
 	<%
 		conn.close();
