@@ -71,12 +71,25 @@
 	</section>
 	<!--TOP SECTION END--> <%
  	Connection conn = DatabaseConnection.getConnection();
+	
+	String id = request.getParameter("comment_id");
+	String name = request.getParameter("nickname");
+	String comment = request.getParameter("comment");
 
- 	String sql = "Select * from comment_box";
+	PreparedStatement pstmt = conn
+			.prepareStatement("SELECT * FROM comment_box");
 
- 	PreparedStatement pstmt = conn.prepareStatement(sql);
+	String sql = "call insertAndSelect(?,?,?)";
 
- 	ResultSet rs = pstmt.executeQuery();
+	CallableStatement cs = conn.prepareCall(sql);
+	cs.setString(1, id);
+	cs.setString(2, name);
+	cs.setString(3, comment);
+
+	cs.execute();
+
+	ResultSet rs = cs.getResultSet();
+	cs.getResultSet();
 
  	out.println("<table border='3'>");
  %>
@@ -89,9 +102,9 @@
 	</tr>
 	<%
 		while (rs.next()) {
-			int id = rs.getInt("comment_id");
-			String name = rs.getString("nickname");
-			String comment = rs.getString("comment");
+			id = rs.getString("comment_id");
+			name = rs.getString("nickname");
+			comment = rs.getString("comment");
 	%>
 	<tr>
 		<td><%=id%></td>
