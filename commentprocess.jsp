@@ -32,7 +32,7 @@
 		String nickname = request.getParameter("nickname");
 		String comment = request.getParameter("company");
 
-		String sql = "call add2AndSelect(?,?,?)";
+		String sql = "call add2AndUpdate(?,?,?)";
 
 		CallableStatement cs = conn.prepareCall(sql);
 		cs.setInt(1, comment_id);
@@ -44,7 +44,7 @@
 		ResultSet rs = cs.getResultSet();
 		cs.getResultSet();
 		
-		out.println("<table border='1'>");
+		out.println("<table border='3'>");
 	%>
 	<caption>
 		<h2>
