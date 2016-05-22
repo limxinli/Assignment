@@ -72,7 +72,7 @@
 	<!--TOP SECTION END--> <%
  	Connection conn = DatabaseConnection.getConnection();
 
- 	String sql = "Select * from comment_box";
+	String sql = "insert into comment_id(nickname, comment) values (?,?)";
 
  	PreparedStatement pstmt = conn.prepareStatement(sql);
 
