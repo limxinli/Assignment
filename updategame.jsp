@@ -67,8 +67,6 @@
 		Connection conn = DatabaseConnection.getConnection();
 
 		int id = Integer.parseInt(request.getParameter("id"));
-		
-		String searchString = request.getParameter("searchString");
 
 		String sql = "SELECT game_id FROM game_data";
 
