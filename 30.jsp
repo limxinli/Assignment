@@ -66,7 +66,7 @@
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			THE GRANDFATHER <i class="fa fa-angle-double-right "></i>
+			CALL OF DUTY: INFINITE WARFARE LEGACY EDITION <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
@@ -76,7 +76,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select *,genre_name from game_data gd, genre g, game_genre gg WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id AND game_title='The Grandfather'";
+		String sql = "Select *,genre_name from game_data gd, genre g, game_genre gg WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id AND game_title='Call of Duty: Infinite Warfare Legacy Edition'";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
@@ -124,7 +124,6 @@
 			<img src="<%=dbimageloc%>/img3.jpg" alt="" height="230" width="230" />
 			<img src="<%=dbimageloc%>/img4.jpg" alt="" height="230" width="230" />
 			<img src="<%=dbimageloc%>/img5.jpg" alt="" height="230" width="230" />
-			<img src="<%=dbimageloc%>/img6.jpg" alt="" height="230" width="230" />
 	</div>		
 <% 		
 	}
