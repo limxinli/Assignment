@@ -79,6 +79,11 @@
 		if (rs.next()) {
 	%>
 
+	<%
+		}
+		conn.close();
+	%>
+	
 	<section>
 	<div class="gamedata">
 		<form action="updategame.jsp">
@@ -107,11 +112,8 @@
 		</form>
 	</div>
 	</section>
-
-	<%
-		}
-		conn.close();
-	%>
+	
+	
 	<div class="copy-txt">
 		<div class="container">
 			<div class="row">
