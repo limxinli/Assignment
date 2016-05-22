@@ -66,11 +66,6 @@
 	<div class="overlay ">
 		<h3>
 			FALLOUT 3: GOTY <i class="fa fa-angle-double-right"></i>
-			<a href="rpg.jsp"> <span
-					class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-			</a>
-		</h3>
-
 	</div>
 	</section>
 	<!-- HOME SECTION END -->
