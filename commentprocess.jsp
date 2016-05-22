@@ -27,17 +27,14 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		int comment_id = Integer.parseInt(request
-				.getParameter("id"));
 		String nickname = request.getParameter("nickname");
 		String comment = request.getParameter("company");
 
-		String sql = "call add2AndUpdate(?,?,?)";
+		String sql = "insert into comment_id(nickname, comment) values (?,?)";
 
 		CallableStatement cs = conn.prepareCall(sql);
-		cs.setInt(1, comment_id);
-		cs.setString(2, nickname);
-		cs.setString(3, comment);
+		cs.setString(1, nickname);
+		cs.setString(2, comment);
 
 		cs.execute();
 
