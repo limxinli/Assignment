@@ -79,22 +79,16 @@
 		if (rs.next()) {
 	%>
 
-	<%
-		}
-		conn.close();
-	%>
-	
 	<section>
-	<div class="gamedata">
 		<form action="updategame.jsp">
 		<input type ="hidden" name="id" value="<%=id%>">
 			Game ID: <input type="text" name="id" value="<%=rs.getString("game_id")%>"> <br> 
 			Game Title: <input type="text" name="title" value="<%=rs.getString("game_title")%>"> <br>
 			Company: <input type="text" name="company" value="<%=rs.getString("company")%>"> <br> 
-			Release Date: <input type="text" name="date" value="<%=rs.getString("release_date")%>" placeholder="Type in this format (yyyy-mm-dd)"> <br> 
+			Release Date: <input type="text" name="date" value="<%=rs.getString("release_date")%>"> <br> 
 			Description: <textarea class="form-control" rows="5" name="description"	value="<%=rs.getString("description")%>"></textarea> <br> 
 			Price: <input type="text" name="price" id="price" class="form-control"> <br> 
-			Image Location: <input type="text" name="img" value="<%=rs.getString("img_loc")%>" placeholder="Path of the image (assets/img/)"> <br> 
+			Image Location: <input type="text" name="img" value="<%=rs.getString("img_loc")%>"> <br> 
 			Genre:<div class="genre-drop" >
 			<select data-placeholder="Select the genre(s)" class="chosen-select"
 					multiple style="width: 350px;" tabindex="4" name="genre-drop"
@@ -108,12 +102,14 @@
 					name="type" value="yes"> Yes
 			</div>
 			<br>Genre ID: <input type="text" name="genreid" value="<%=rs.getString("genre_id")%>"> 
-			<input type="submit" lass="btn btn-info" id="add" value="Update">
+			<input type="submit" class="btn btn-info" id="add" value="Update">
 		</form>
-	</div>
 	</section>
-	
-	
+
+	<%
+		}
+		conn.close();
+	%>
 	<div class="copy-txt">
 		<div class="container">
 			<div class="row">
