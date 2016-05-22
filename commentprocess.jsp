@@ -28,7 +28,7 @@
 		Connection conn = DatabaseConnection.getConnection();
 
 		String nickname = request.getParameter("nickname");
-		String comment = request.getParameter("company");
+		String comment = request.getParameter("comment");
 
 		String sql = "insert into comment_id(nickname, comment) values (?,?)";
 
