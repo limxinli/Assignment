@@ -72,18 +72,6 @@
 	</div>
 	</section>
 	<!-- HOME SECTION END -->
-	<%
-		Connection conn = DatabaseConnection.getConnection();
-
-	String sql = "SELECT gd.game_id, gd.game_title, gg.genre_id FROM game_genre gg, game_data gd, genre g WHERE gg.game_id = gd.game_id AND gg.genre_id = g.genre_id AND genre_name='Adventure'";
-
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-
-		ResultSet rs = pstmt.executeQuery();
-
-		while (rs.next()) {
-			String gametitle = rs.getString("game_title");
-	%>
 
 	<!-- BACK TO TOP BUTTON -->
 	<script
@@ -97,59 +85,46 @@
 	<!-- BACK TO TOP BUTTON END -->
 
 	<!-- Main Background -->
-	<section>
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<a href="dead.jsp" target="_black"> <img
-				src="assets\img\BetterLateThanDead\img1.jpg" alt="" height="270"
-				width="190" />
-			</a>
-		</div>
-		<%=gametitle%>
-	</div>
+<%
+		Connection conn = DatabaseConnection.getConnection();
 
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<a href="rise.jsp" target="_black"> <img
-				src="assets\img\RiseOfTheTombRaider\img1.jpg" alt="" height="270"
-				width="190" />
-			</a>
-		</div>
-		<%=gametitle%>
-	</div>
+		String sql = "SELECT gd.game_id, game_title,price, image_loc, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_title HAVING genre_name LIKE '%Adventure%'";
 
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<a href="southpark.jsp" target="_black"> <img
-				src="assets\img\SPTheStickofTruth\img1.jpg" alt="" height="270"
-				width="190" />
-			</a>
-		</div>
-		<%=gametitle%>
-	</div>
+		PreparedStatement pstmt = conn.prepareStatement(sql);
 
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<a href="evilwithin.jsp" target="_black"> <img
-				src="assets\img\TheEvilWithin\img1.jpg" alt="" height="270"
-				width="190" />
-			</a>
-		</div>
-		<%=gametitle%>
-	</div>
+		ResultSet rs = pstmt.executeQuery();
 
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<a href="thief.jsp" target="_black"> <img
-				src="assets\img\Thief\img1.jpg" alt="" height="270" width="190" />
-			</a>
+		while (rs.next()) {
+			int dbgameid = rs.getInt("game_id");
+			String dbgametitle = rs.getString("game_title");
+			double dbprice = rs.getDouble("price");
+			String newdbprice = String.format("%.2f", dbprice);
+			String dbimageloc = rs.getString("image_loc");
+			String dbgenrename = rs.getString("genre_name");
+			%>
+			<div class="boxaround">
+	<a href="<%=dbgameid%>.jsp">
+			<img
+				src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" />
+		<div class="insidebox">
+			Game Title:
+			<%=dbgametitle%><br> Price:
+			<%
+			if (dbprice == 0) {
+					out.println("<td>TBC</td>");
+				} else {
+		%><%="$" + newdbprice%>
+			<%
+				}
+			%><br> Genre Name: <%=dbgenrename%>
 		</div>
-		<%=gametitle%>
-	</div>
-	<%
+		</a>
+			</div>
+			
+	<% 		
 		}
 		conn.close();
-	%> </section>
+	%>
 	<!-- End Main Background -->
 
 	<div class="copy-txt">
