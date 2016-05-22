@@ -65,7 +65,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql="Select * from game_data";
+		String sql="Select * from game_data order by game_id";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
@@ -73,11 +73,14 @@
 
 		out.println("<table border='3'>");
 	%>
-	<caption>
-		<h2>
+	<p id="caption">
 			Games Data
-			<h2>
-	</caption>
+	</p>
+	<div class="updatedelete">
+		<a href="addgame.jsp">Add</a> |
+		<a href="deletegameprocess.jsp">Delete</a> |
+		<a href="updategame.jsp">Update</a>
+		</div>
 	<tr>
 		<th>Game ID</th>
 		<th>Game Title</th>
@@ -87,7 +90,6 @@
 		<th>Price</th>
 		<th>Image Location</th>
 		<th>Pre-owned</th>
-		<th colspan='2'>Actions</th>
 	</tr>
 	<%
 		while (rs.next()) {
@@ -124,19 +126,7 @@
 				}
 
 		%>
- 
- <td>
-		<form action="deletegame.jsp" method="get">
-			<input type="hidden" name="hiddenID" value="<%=dbgameid%>"> <input
-				type="submit" value="Delete">
-		</form>
-	</td>
-	<td>
-		<form action="updategame.jsp" method="get">
-			<input type="hidden" name="hiddenID" value="<%=dbgameid%>"> <input
-				type="submit" value="Update">
-		</form>
-	</td>
+
 	</tr>
 
 	<%

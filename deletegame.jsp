@@ -64,22 +64,16 @@
 	</section>
 	<!--TOP SECTION END-->
 	<section>
-	<form action="deletegameprocess.jsp">
-		<div class="gamedata">
-			Game ID: <input type="text" name="id" id="id" class="form-control">
-		</div>
-		<input type="submit" class="btn btn-info" id="delete" value="Delete">
-	</form>
-	</section>
 
 	<%
 		Connection conn = DatabaseConnection.getConnection();
+	
+		String searchString = request.getParameter("delete");
 
-		String searchString = request.getParameter("searchString");
-
-		String sql = "SELECT game_id FROM game_data ";
+		String sql = "DELETE FROM game_data WHERE game_id =?";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, game_id);
 
 		ResultSet rs = pstmt.executeQuery();
 

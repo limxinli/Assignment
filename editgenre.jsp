@@ -73,11 +73,14 @@
 
 		out.println("<table border='3'>");
 	%>
-	<caption>
-		<h2>
+	<p id="caption">
 			Genre Data
-			<h2>
-	</caption>
+	</p>
+	<div class="updatedelete">
+		<a href="addgenre.html">Add</a> |
+		<a href="deletegenreprocess.jsp">Delete</a> |
+		<a href="updategenre.jsp">Update</a>
+		</div>
 	<tr>
 		<th>Genre ID</th>
 		<th>Genre Name</th>

@@ -411,14 +411,6 @@ a.new-release-font:hover,a.sales-font:hover {
 	padding-right: 25px;
 }
 
-#delete {
-	float: right;
-	margin-top: 30px;
-	margin-right: 250px;
-	padding-left: 25px;
-	padding-right: 25px;
-}
-
 #date:focus,#img:focus,#title:focus,#company:focus,#description:focus,#price:focus
 	{
 	color: black;
@@ -470,6 +462,20 @@ table {
 	float: right;
 	margin-right: 10px;
 }
+
+#caption {
+	font-size: 40px;
+	margin-left: 550px;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+.updatedelete {
+	float: right;
+	margin-top: -30px;
+	margin-right: 70px;
+}
+
 /* =============================================================
    FOOTER SECTION STYLES
  ============================================================ */

@@ -63,53 +63,37 @@
 	</div>
 	</section>
 	<!--TOP SECTION END-->
-	<%
-				Connection conn = DatabaseConnection.getConnection();
-				String sql = "SELECT * FROM game_data";
-
-				PreparedStatement pstmt = conn.prepareStatement(sql);
-
-				ResultSet rs = pstmt.executeQuery();
-				while (rs.next()) {
-					int gameid = rs.getInt("game_id");
-					String title = rs.getString("game_title");
-					String company = rs.getString("company");
-					Date dbdate = rs.getDate("release_date");
-					String desc = rs.getString("description");
-					double dbprice = rs.getDouble("price");
-					String newdbprice = String.format("%.2f", dbprice);
-					String img = rs.getString("image_loc");
-			%>
 	<section>
 	<div class="gamedata">
 		<form action="updategameprocess.jsp">
-			Game ID: <input type="text" name="id" value="<%=gameid%>"
+			Game ID: <input type="text" name="id"
 				class="form-control"> <br> Game Title: <input
-				type="text" name="title" value="<%=title%>" class="form-control">
+				type="text" name="title" class="form-control">
 			<br> Company: <input type="text" name="company"
-				value="<%=company%>" class="form-control"> <br> Release
-			Date: <input type="text" name="date" value="<%=dbdate%>"
+				 class="form-control"> <br> Release
+			Date: <input type="text" name="date"
 				placeholder="Type in this format (yyyy-mm-dd)" class="form-control">
 			<br> Description:
 			<textarea class="form-control" rows="5"
-				name="description"><%=desc%></textarea>
+				name="description"></textarea>
 			<br> Price: <input type="text" name="price"
-				value="<%=newdbprice%>" id="price" class="form-control"> <br>
-			Image Location: <input type="text" name="img" value="<%=img%>"
+				 id="price" class="form-control"> <br>
+			Image Location: <input type="text" name="img"
 				placeholder="Path of the image (assets/img/)" class="form-control">
-			<br> Genre:
+			<br> 
+				Genre:
 			<div class="genre-drop">
 				<select data-placeholder="Select the genre(s)" class="chosen-select"
 					multiple style="width: 350px;" tabindex="4" name="genre-drop"
 					id="genre-drop">
 					<option value=""></option>
 						<%
-				conn = DatabaseConnection.getConnection();
-				String sql2 = "SELECT genre_name FROM genre";
+				Connection conn = DatabaseConnection.getConnection();
+				String sql = "SELECT genre_name FROM genre";
 
-				pstmt = conn.prepareStatement(sql2);
+				PreparedStatement pstmt = conn.prepareStatement(sql);
 
-				rs = pstmt.executeQuery();
+				ResultSet rs = pstmt.executeQuery();
 				while (rs.next()) {
 					String dbgenrename = rs.getString("genre_name");
 			%>
@@ -128,9 +112,6 @@
 			<br>
 			<input type="submit" class="btn btn-info" id="add" value="Update">
 		</form>
-		
-		<%}
-				conn.close();%>
 	</div>
 	</section>
 
