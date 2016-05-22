@@ -27,48 +27,18 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String nickname = request.getParameter("nickname");
+		String name = request.getParameter("nickname");
 		String comment = request.getParameter("comment");
 
-		String sql = "insert into comment_id(nickname, comment) values (?,?)";
+		String sql = "insert into comment_box set name=?,date=curdate(),comment=?";
 
-		CallableStatement cs = conn.prepareCall(sql);
-		cs.setString(1, nickname);
-		cs.setString(2, comment);
-
-		cs.execute();
-
-		ResultSet rs = cs.getResultSet();
-		cs.getResultSet();
+		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
-		out.println("<table border='3'>");
-	%>
-	<caption>
-		<h2>
-			Updated table:
-			<h2>
-	</caption>
-	<tr>
-		<th>CommentID</th>
-		<th>Nickname</th>
-		<th>Comments</th>
-	</tr>
-	<%
-		while (rs.next()) {
-			nickname = rs.getString("nickname");
-			comment = rs.getString("comment");
-	%>
-	<tr>
-		<td><%=nickname%></td>
-		<td><%=comment%></td>
-</tr>
-
-	<%
-		}
-		out.println("</table>");
+		pstmt.setString(1, name);
+		pstmt.setString(2, comment);
 
 		conn.close();
 	%>
-	<a href="addcomment.jsp">Return</a>
+
 </body>
 </html>
