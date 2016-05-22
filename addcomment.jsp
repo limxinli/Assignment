@@ -75,7 +75,7 @@
 			<div class="col-md-8">
 				<div class="alert alert-info">
 					<div class="form-group">
-					<form action="comment.jsp">
+					<form action="commentprocess.jsp">
 						<strong>COMMENT BOX</strong> <br /> <label></label> <input
 							type="text" class="form-control" id="nickname"
 							placeholder="Enter Your Nickname" /> <label></label>
@@ -95,8 +95,10 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "SELECT * FROM comment_box";
+		String sql = "insert into comment_id(nickname, comment) values (?,?)";
 
+		sql = "SELECT * FROM comment_box";
+		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
 		ResultSet rs = pstmt.executeQuery();
