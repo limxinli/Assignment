@@ -95,9 +95,8 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "insert into comment_id(nickname, comment) values (?,?)";
+		String sql = "SELECT * FROM comment_box";
 
-		sql = "SELECT * FROM comment_box";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
