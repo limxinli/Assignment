@@ -75,7 +75,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select game_title from game_data";
+	String sql = "SELECT gd.game_id, gd.game_title, gg.genre_id FROM game_genre gg, game_data gd, genre g WHERE gg.game_id = gd.game_id AND gg.genre_id = g.genre_id AND genre_name='RPG'";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
