@@ -55,12 +55,10 @@
 	</tr>
 	<%
 		while (rs.next()) {
-			comment_id = rs.getInt("comment_id");
 			nickname = rs.getString("nickname");
 			comment = rs.getString("comment");
 	%>
 	<tr>
-		<td><%=comment_id%></td>
 		<td><%=nickname%></td>
 		<td><%=comment%></td>
 </tr>
