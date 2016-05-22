@@ -76,43 +76,80 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select * from game_data where game_title='Fallout 3: GOTY'";
+		String sql = "Select *,genre_name from game_data gd, genre g, game_genre gg WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id AND game_title='Fallout 3: GOTY'";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		ResultSet rs = pstmt.executeQuery();
-		out.println("<table border='3'>");
-	%>
 
-	<tr>
-		<th>Game Title</th>
-		<th>Company</th>
-		<th>Release Date</th>
-		<th>Description</th>
-		<th>Price</th>
-	</tr>
+	while (rs.next()) {
+		int dbgameid = rs.getInt("game_id");
+		String dbgametitle = rs.getString("game_title");
+		String dbcompany = rs.getString("company");
+		Date dbdate = rs.getDate("release_date");
+		String dbdescription = rs.getString("description");
+		double dbprice = rs.getDouble("price");
+		String newdbprice = String.format("%.2f", dbprice);
+		String dbimageloc = rs.getString("image_loc");
+		String dbgenrename = rs.getString("genre_name");
+		int dbpreowned = rs.getInt("preowned");
+		%>
+	<img
+			src="<%=dbimageloc%>/img1.jpg" alt="" id="first" height="470" width="390" />
+	<div class="inside">
+		<p>Game Title:
+		<%=dbgametitle%><br></p>
+		<p>Company: <%=dbcompany%><br></p>
+		<p>Release Date: <%=dbdate%><br></p>
+		<p>Description: <%=dbdescription%><br></p>
+		<p>Price:
+		<%
+		if (dbprice == 0) {
+				out.println("<td>TBC</td>");
+			} else {
+	%><%="$" + newdbprice%>
+		<%
+			}
+		%><br></p> <p>Genre Name: <%=dbgenrename%><br></p>
+		<p>
+		<%
+		if (dbpreowned == 1) {
+					out.println("<td>Pre-owned</td>");
+				} else {
+					out.println("<td>Brand new</td>");
+				}%></p>
+	</div>
+		<div class="ingame">
+			<img src="<%=dbimageloc%>/img2.jpg" alt="" height="230" width="230" />
+			<img src="<%=dbimageloc%>/img3.jpg" alt="" height="230" width="230" />
+			<img src="<%=dbimageloc%>/img4.jpg" alt="" height="230" width="230" />
+			<img src="<%=dbimageloc%>/img5.jpg" alt="" height="230" width="230" />
+			<img src="<%=dbimageloc%>/img6.jpg" alt="" height="230" width="230" />
+	</div>		
+<% 		
+	}
+	conn.close();
+%>
+<div class="copy-txt">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 set-foot">
+					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
+					All rights reserved | Design by : <a
+						href="http://www.binarytheme.com" target="_blank"
+						style="color: #7C7C7C;">binarytheme.com</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<%
-		while (rs.next()) {
-			String name = rs.getString("game_title");
-			String com = rs.getString("company");
-			Date redate = rs.getDate("release_date");
-			String desc = rs.getString("description");
-			double price = rs.getDouble("price");
-	%>
-	<tr>
-		<td><%=name%></td>
-		<td><%=com%></td>
-		<td><%=redate%></td>
-		<td><%=desc%></td>
-		<td><%=price%></td>
-	</tr>
-	<%
-		}
-		out.println("</table>");
-
-		conn.close();
-	%>
-
+	<!-- COPY TEXT SECTION END-->
+	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY  -->
+	<script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  -->
+	<script src="assets/js/bootstrap.js"></script>
+	<!-- CUSTOM SCRIPTS  -->
+	<script src="assets/js/custom.js"></script>
 </body>
 </html>

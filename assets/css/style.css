@@ -558,3 +558,30 @@ table {
 	width: 100%;
 	margin-top: 20px;
 }
+
+/* =============================================================
+   GAMES
+ ============================================================ */
+ .inside {
+ 	position: absolute;
+ 	margin-top: -480px;
+	margin-bottom: 20px;
+	width: 60%;
+	margin-left: 430px;
+}
+
+.inside p {
+	padding-top: 20px;
+}
+
+.ingame img {
+	margin-top: 30px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+}
+
+#first {
+	position: absoulute;
+	margin-top: 20px;
+	margin-left: 20px;
+}
