@@ -33,9 +33,8 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
-						Singapore Polytechnic</small></a>
-
+				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
+					Store<small> Singapore Polytechnic</small></a>
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
@@ -46,9 +45,9 @@
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
-									href="shooter.jsp">Shooter</a>
+								<a href="action.html">Action</a> <a href="adventure.html">Adventure</a>
+								<a href="horror.html">Horror</a> <a href="rpg.html">RPG</a> <a
+									href="shooter.html">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -61,49 +60,49 @@
 
 		</div>
 	</div>
-
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-	<div class="overlay ">
-		<h3>
-			VIEW ALL COMMENTS <i class="fa fa-angle-double-right "></i>
-		</h3>
-	</div>
+		<div class="overlay ">
+			<h3>
+				NEW RELEASES <i class="fa fa-angle-double-right "></i>
+			</h3>
 
-	<!--TOP SECTION END--> <%
- 	Connection conn = DatabaseConnection.getConnection();
+		</div>
+	</section>
+	<!--HOME SECTION END-->
+	<section>
+		<div class="container">
+			<div class="col-md-8">
+				<div class="alert alert-info">
+					<div class="form-group">
+						<strong>COMMENT BOX</strong> <br /> <label></label> <input
+							type="text" class="form-control" id="nickname"
+							placeholder="Enter Your Nickname" /> <label></label>
+						<textarea class="form-control" id="comment"
+							placeholder="Enter Your Comment" rows="10"></textarea>
+						<br /> <a href="comment.jsp" class="btn btn-primary"
+							id="comment-button">COMMENT</a>
+					</div>
 
- 	String sql = "Select * from comment_box";
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
 
- 	PreparedStatement pstmt = conn.prepareStatement(sql);
+	<!--TOP SECTION END-->
 
- 	ResultSet rs = pstmt.executeQuery();
-
- 	out.println("<table border='3'>");
- %>
-	<p id="caption">ALL Comments</p>
-
-	<tr>
-		<th>Comment ID</th>
-		<th>Name</th>
-		<th>Comment</th>
-	</tr>
 	<%
-		while (rs.next()) {
-			int id = rs.getInt("comment_id");
-			String name = rs.getString("nickename");
-			String comment = rs.getString("comment");
+		Connection conn = DatabaseConnection.getConnection();
+
+		String sql = "SELECT * FROM comment_box";
+
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		
+		ResultSet rs = pstmt.executeQuery();
+
 	%>
-	<tr>
-		<td><%=id%></td>
-		<td><%=name%></td>
-		<td><%=comment%></td>
-	</tr>
-
 	<%
-		}
-		out.println("</table>");
-
 		conn.close();
 	%>
 
@@ -119,9 +118,14 @@
 			</div>
 		</div>
 	</div>
-	<!-- COPY TEXT SECTION END--> <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-	<!-- CORE JQUERY  --> <script src="assets/js/jquery-1.11.1.js"></script>
-	<!-- BOOTSTRAP SCRIPTS  --> <script src="assets/js/bootstrap.js"></script>
-	<!-- CUSTOM SCRIPTS  --> <script src="assets/js/custom.js"></script>
+	<!-- COPY TEXT SECTION END-->
+	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY  -->
+	<script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  -->
+	<script src="assets/js/bootstrap.js"></script>
+	<!-- CUSTOM SCRIPTS  -->
+	<script src="assets/js/custom.js"></script>
+
 </body>
 </html>
