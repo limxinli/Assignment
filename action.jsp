@@ -118,8 +118,7 @@
 			%><br> Genre Name: <%=dbgenrename%>
 		</div>
 		</a>
-			</div>
-			
+			</div>			
 	<% 		
 		}
 		conn.close();

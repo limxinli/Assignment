@@ -528,7 +528,7 @@ table {
 .insidebox {
 	margin-bottom: 20px;
 	line-height: 30px;
-	width: 65%;
+	width: 75%;
 	margin-left: 220px;
 	margin-top: -180px;
 	display: inline-block;
@@ -537,7 +537,7 @@ table {
 .boxaround {
 	border: 3px;
 	border-style: solid;
-	width: 50%;
+	width: 75%;
 	height: 300px;
 	margin-left: 300px;
 	display: inline-block;
