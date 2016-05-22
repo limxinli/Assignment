@@ -27,7 +27,7 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-			int gameid = Integer.parseInt(request.getParameter("game_id"));
+			int gameid = Integer.parseInt(request.getParameter("id"));
 			
 			PreparedStatement pstmt = conn
 					.prepareStatement("DELETE FROM game_data WHERE game_id =?");
