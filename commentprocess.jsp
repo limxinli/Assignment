@@ -28,7 +28,7 @@
 		Connection conn = DatabaseConnection.getConnection();
 
 		int comment_id = Integer.parseInt(request
-				.getParameter("comment_id"));
+				.getParameter("id"));
 		String nickname = request.getParameter("nickname");
 		String comment = request.getParameter("company");
 

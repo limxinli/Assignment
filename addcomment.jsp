@@ -80,7 +80,7 @@
 							placeholder="Enter Your Nickname" /> <label></label>
 						<textarea class="form-control" id="comment"
 							placeholder="Enter Your Comment" rows="10"></textarea>
-						<br /> <a href="commentprocess.jsp" class="btn btn-primary"
+						<br /> <a href="comment.jsp" class="btn btn-primary"
 							id="comment-button">COMMENT</a>
 					</div>
 
