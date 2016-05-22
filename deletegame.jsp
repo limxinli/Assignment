@@ -40,7 +40,7 @@
 						Singapore Polytechnic</small></a>
 
 			</div>
-				<div class="navbar-collapse collapse move-me">
+			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
 					<li><a href="editall.jsp" class="active-menu-item"><span
 							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
@@ -64,13 +64,33 @@
 	</section>
 	<!--TOP SECTION END-->
 	<section>
-		<form action="deletegameprocess.jsp">
-			<div class="gamedata">
-				Game ID: <input type="text" name="id" id="id" class="form-control">
-			</div>
-			<input type="submit" class="btn btn-info" id="delete" value="Delete">
-		</form>
+	<form action="deletegameprocess.jsp">
+		<div class="gamedata">
+			Game ID: <input type="text" name="id" id="id" class="form-control">
+		</div>
+		<input type="submit" class="btn btn-info" id="delete" value="Delete">
+	</form>
 	</section>
+
+	<%
+		Connection conn = DatabaseConnection.getConnection();
+
+		String searchString = request.getParameter("searchString");
+
+		String sql = "SELECT game_id FROM game_data ";
+
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			String gameid = rs.getString("game_id");
+	%>
+	<option><%=gameid%></option>
+	<%
+		}
+		conn.close();
+	%>
 
 	<div class="copy-txt">
 		<div class="container">
