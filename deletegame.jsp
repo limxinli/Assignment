@@ -83,12 +83,8 @@
 
 		ResultSet rs = pstmt.executeQuery();
 
-		while (rs.next()) {
-			String gameid = rs.getString("game_id");
 	%>
-	<option><%=gameid%></option>
 	<%
-		}
 		conn.close();
 	%>
 
