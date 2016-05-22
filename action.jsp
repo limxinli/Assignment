@@ -72,19 +72,6 @@
 	</div>
 	</section>
 	<!-- HOME SECTION END -->
-	<%
-		Connection conn = DatabaseConnection.getConnection();
-
-		String sql = "SELECT gd.game_id, gd.game_title, gg.genre_id FROM game_genre gg, game_data gd, genre g WHERE gg.game_id = gd.game_id AND gg.genre_id = g.genre_id AND genre_name='Action'";
-
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-
-		ResultSet rs = pstmt.executeQuery();
-
-		while (rs.next()) {
-			String gametitle = rs.getString("game_title");
-	%>
-
 	<!-- BACK TO TOP BUTTON -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -97,61 +84,46 @@
 	<!-- BACK TO TOP BUTTON END -->
 
 	<!-- Main Background -->
-	<section>
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<a href="battleborn.jsp" target="_black"> <img
-				src="assets\img\Battleborn\img1.jpg"
-				class="img-responsive img-rounded" alt="" height="270" width="190" />
-			</a>
-		</div>
-		<%=gametitle%>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<a href="dyinglight.jsp" target="_black"> <img
-				src="assets\img\DyingLight\img1.jpg" alt="" height="270" width="190" />
-			</a>
-		</div>
-		<%=gametitle%>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<a href="mirror.jsp" target="_black"> <img
-				src="assets\img\MirrorEdgeCatalyst\img1.jpg" alt="" height="270"
-				width="190" />
-			</a>
-		</div>
-		<%=gametitle%>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<div class="col-md-4 p-top-row">
-				<a href="rome.jsp" target="_black"> <img
-					src="assets\img\RyseSonofRome\img1.jpg" alt="" height="270"
-					width="190" />
-				</a>
-			</div>
-		</div>
-		<%=gametitle%>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4 p-top-row">
-			<a href="<%=dbgameid%>.jsp" target="_black"> <img
-				src="assets\img\StarWarsBattlefront\img1.jpg" alt="" height="270"
-				width="190" />
-			</a>
-		</div>
-		<%=gametitle%>
-	</div>
 	<%
+		Connection conn = DatabaseConnection.getConnection();
+
+		String sql = "SELECT gd.game_id, game_title,price, image_loc, GROUP_CONCAT(g.genre_name SEPARATOR ', ') as genre_name FROM game_genre gg, genre g, game_data gd WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id GROUP BY game_title HAVING genre_name LIKE '%Action%'";
+
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			int dbgameid = rs.getInt("game_id");
+			String dbgametitle = rs.getString("game_title");
+			double dbprice = rs.getDouble("price");
+			String newdbprice = String.format("%.2f", dbprice);
+			String dbimageloc = rs.getString("image_loc");
+			String dbgenrename = rs.getString("genre_name");
+			%>
+			<div class="boxaround">
+	<a href="<%=dbgameid%>.jsp">
+			<img
+				src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" />
+		<div class="insidebox">
+			Game Title:
+			<%=dbgametitle%><br> Price:
+			<%
+			if (dbprice == 0) {
+					out.println("<td>TBC</td>");
+				} else {
+		%><%="$" + newdbprice%>
+			<%
+				}
+			%><br> Genre Name: <%=dbgenrename%>
+		</div>
+		</a>
+			</div>
+			
+	<% 		
 		}
 		conn.close();
-	%> </section>
+	%>
 
 	<!-- End Main Background -->
 

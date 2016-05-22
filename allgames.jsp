@@ -99,9 +99,11 @@
 			String dbimageloc = rs.getString("image_loc");
 			String dbgenrename = rs.getString("genre_name");
 	%>
+	
 	<div class="boxaround">
-			<a href="<%=dbgameid%>.jsp"><img
-				src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
+	<a href="<%=dbgameid%>.jsp">
+			<img
+				src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" />
 		<div class="insidebox">
 			Game Title:
 			<%=dbgametitle%><br> Price:
@@ -114,6 +116,7 @@
 				}
 			%><br> Genre Name: <%=dbgenrename%>
 		</div>
+		</a>
 			</div>
 	<%
 		}

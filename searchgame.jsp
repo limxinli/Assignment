@@ -105,7 +105,7 @@
 	<caption>
 		<h2>Games Data</h2>
 		<div id="linkback">
-			<a href="allgames.jsp" class="new-release-font"> Search for
+			<a href="index.html" class="new-release-font"> Search for
 				others</a>
 		</div>
 	</caption>
@@ -167,7 +167,7 @@
 		conn.close();
 	%>
 	<div id="linkbackbottom">
-		<a href="allgames.jsp" class="new-release-font"> Search for
+		<a href="index.html" class="new-release-font"> Search for
 			others</a>
 	</div>
 
