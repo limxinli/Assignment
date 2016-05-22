@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -31,19 +35,21 @@
 				</button>
 				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
 					Store<small> Singapore Polytechnic</small></a>
+
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
 					<li><a href="index.html"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
-							<a href="allgames.jsp"><button class="dropbtn">
+							<a href="allgames.jsp" class="active-menu-item"><button
+									class="dropbtn">
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.html">Action</a> <a href="adventure.html">Adventure</a>
-								<a href="horror.html">Horror</a> <a href="rpg.html">RPG</a> <a
-									href="shooter.html">Shooter</a>
+								<a href="action.jsp" class="active-menu-item">Action</a> <a
+									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
+								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -58,40 +64,74 @@
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-		<div class="overlay ">
-			<h3>
-				NEW RELEASES <i class="fa fa-angle-double-right "></i>
-			</h3>
+	<div class="overlay ">
+		<h3>
+			NEW RELEASES <i class="fa fa-angle-double-right "></i>
+		</h3>
 
-		</div>
+	</div>
 	</section>
-	<!--HOME SECTION END-->
-	<section>
-		<div class="container">
-			<div class="col-md-8">
-				<div class="alert alert-info">
-					<div class="form-group">
-						<strong>COMMENT BOX</strong> <br /> <label></label> <input
-							type="text" class="form-control" id="nickname"
-							placeholder="Enter Your Nickname" /> <label></label>
-						<textarea class="form-control" id="comment" placeholder="Enter Your Comment"
-							rows="10"></textarea>
-						<br /> <a href="comment.jsp" class="btn btn-primary" id="comment-button">COMMENT</a>
-					</div>
+	<!-- HOME SECTION END -->
+	<!-- BACK TO TOP BUTTON -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://arrow.scrolltotop.com/arrow92.js"></script>
+	<noscript>
+		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
+			Button</a>? Go to our FAQ page for more info.
+	</noscript>
+	<!-- BACK TO TOP BUTTON END -->
 
-				</div>
-			</div>
+	<!-- Main Background -->
+	<%
+		Connection conn = DatabaseConnection.getConnection();
+
+		String sql = "select * from game_data gd, genre g, game_genre gg where gd.game_id=gg.game_id and gg.genre_id=g.genre_id and datediff(curdate(), release_date) < 180 AND release_date <= curdate()";
+
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			int dbgameid = rs.getInt("game_id");
+			String dbgametitle = rs.getString("game_title");
+			double dbprice = rs.getDouble("price");
+			String newdbprice = String.format("%.2f", dbprice);
+			String dbimageloc = rs.getString("image_loc");
+			String dbgenrename = rs.getString("genre_name");
+			%>
+			<div class="boxaround">
+	<a href="<%=dbgameid%>.jsp">
+			<img
+				src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" />
+		<div class="insidebox">
+			Game Title:
+			<%=dbgametitle%><br> Price:
+			<%
+			if (dbprice == 0) {
+					out.println("<td>TBC</td>");
+				} else {
+		%><%="$" + newdbprice%>
+			<%
+				}
+			%><br> Genre Name: <%=dbgenrename%>
 		</div>
-		</div>
-	</section>
+		</a>
+			</div>			
+	<% 		
+		}
+		conn.close();
+	%>
+
+	<!-- End Main Background -->
 
 	<div class="copy-txt">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 set-foot">
-					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
-					All rights reserved | Design by : <a
-						href="http://www.binarytheme.com" target="_blank"
+					&copy 2016 Singapore Polytechnic | All rights reserved | Design by
+					: <a href="http://www.binarytheme.com" target="_blank"
 						style="color: #7C7C7C;">binarytheme.com</a>
 				</div>
 			</div>
@@ -105,6 +145,5 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
-
 </body>
 </html>
