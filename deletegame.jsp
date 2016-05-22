@@ -57,7 +57,7 @@
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			UPDATE GAME <i class="fa fa-angle-double-right "></i>
+			DELETE GAME <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>

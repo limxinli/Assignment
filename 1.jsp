@@ -97,7 +97,7 @@
 	<img
 			src="<%=dbimageloc%>/img1.jpg" alt="" id="first" height="470" width="390" />
 	<div class="inside">
-		<p>Game Title:
+		<p>Title:
 		<%=dbgametitle%><br></p>
 		<p>Company: <%=dbcompany%><br></p>
 		<p>Release Date: <%=dbdate%><br></p>
