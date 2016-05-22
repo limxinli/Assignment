@@ -34,10 +34,11 @@
 		String desc = request.getParameter("description");
 		String price = request.getParameter("price");
 		String img = request.getParameter("img_loc");
+		String genrename = request.getParameter("genre_name");
 		String type = request.getParameter("preowned");
 		String genreid = request.getParameter("genre_id");
 
-		String sql = "call addAndSelect(?,?,?,?,?,?,?,?,?)";
+		String sql = "call addAndSelect(?,?,?,?,?,?,?,?,?,?)";
 
 		CallableStatement cs = conn.prepareCall(sql);
 		cs.setInt(1, gameid);
@@ -53,12 +54,9 @@
 			cs.setString(6, price);
 		}
 		cs.setString(7, img);
-		if ("no".equals(type)) {
-			cs.setInt(8, 0);
-		} else if ("yes".equals(type)) {
-			cs.setInt(8, 1);
-		}
-		cs.setString(9, genreid);
+		cs.setString(8, genrename);
+		cs.setString(9, type);
+		cs.setString(10, genreid);
 		cs.execute();
 
 		ResultSet rs = cs.getResultSet();
