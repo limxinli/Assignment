@@ -66,13 +66,9 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		int id = Integer.parseInt(request.getParameter("id"));
-
 		String sql = "SELECT game_id FROM game_data";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		
-		pstmt.setInt(1,id);
 
 		ResultSet rs = pstmt.executeQuery();
 
@@ -81,7 +77,6 @@
 
 	<section>
 		<form action="updategame.jsp">
-		<input type ="hidden" name="id" value="<%=id%>">
 			Game ID: <input type="text" name="id" value="<%=rs.getString("game_id")%>"> <br> 
 			Game Title: <input type="text" name="title" value="<%=rs.getString("game_title")%>"> <br>
 			Company: <input type="text" name="company" value="<%=rs.getString("company")%>"> <br> 
