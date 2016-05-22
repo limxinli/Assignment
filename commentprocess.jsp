@@ -49,7 +49,7 @@
 			<h2>
 	</caption>
 	<tr>
-		<th>User ID</th>
+		<th>CommentID</th>
 		<th>Nickname</th>
 		<th>Comments</th>
 	</tr>
