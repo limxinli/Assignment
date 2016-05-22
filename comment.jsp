@@ -25,59 +25,16 @@
 </head>
 <body>
 
-	<div class="navbar navbar-inverse navbar-fixed-top ">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
-					Store<small> Singapore Polytechnic</small></a>
-			</div>
-			<div class="navbar-collapse collapse move-me">
-				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.html"><span
-							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
-					<li><div class="dropdown">
-							<a href="allgames.jsp"><button class="dropbtn">
-									GAMES <span class="caret"></span>
-								</button></a>
-							<div id="myDropdown" class="dropdown-content">
-								<a href="action.html">Action</a> <a href="adventure.html">Adventure</a>
-								<a href="horror.html">Horror</a> <a href="rpg.html">RPG</a> <a
-									href="shooter.html">Shooter</a>
-							</div>
-						</div></li>
-					<li><a href="about.html">ABOUT</a></li>
-					<li><a href="login.html"> <span
-							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-							LOGIN
-					</a></li>
-				</ul>
-			</div>
-
-		</div>
-	</div>
-	<!--MENU SECTION END-->
-	<section class="headline-sec">
-		<div class="overlay ">
-			<h3>
-				COMMENT <i class="fa fa-angle-double-right "></i>
-			</h3>
-		</div>
-	</section>
-	<!--TOP SECTION END--> 
-	
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String name = request.getParameter("nickname");
+		String name = request.getParameter("name");
+		String rate = request.getParameter("rating");
+		Date date = request.getParameter("date");
 		String comment = request.getParameter("comment");
 
 		PreparedStatement pstmt = conn
-				.prepareStatement("insert into comment_box(nickname, comment) values (?,?)");
+				.prepareStatement("insert into comment_box SET name=?, rating=?,date=curdate(),comment=?");
 
 		ResultSet rs = pstmt.executeQuery();
 	%>
@@ -85,9 +42,5 @@
 		conn.close();
 	%>
 
-	<!-- COPY TEXT SECTION END--> <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-	<!-- CORE JQUERY  --> <script src="assets/js/jquery-1.11.1.js"></script>
-	<!-- BOOTSTRAP SCRIPTS  --> <script src="assets/js/bootstrap.js"></script>
-	<!-- CUSTOM SCRIPTS  --> <script src="assets/js/custom.js"></script>
 </body>
 </html>
