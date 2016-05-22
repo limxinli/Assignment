@@ -41,14 +41,13 @@
 					<li><a href="index.html"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
-							<a href="allgames.jsp"><button
-									class="dropbtn">
+							<a href="allgames.jsp"><button class="dropbtn">
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp">Horror</a> <a
-									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
+									href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
@@ -66,7 +65,10 @@
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			FALLOUT 3: GOTY <i class="fa fa-angle-double-right "></i>
+			FALLOUT 3: GOTY <i class="fa fa-angle-double-right"></i>
+			<a href="rpg.jsp"> <span
+					class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+			</a>
 		</h3>
 
 	</div>
@@ -82,55 +84,74 @@
 
 		ResultSet rs = pstmt.executeQuery();
 
-	if (rs.next()) {
-		int dbgameid = rs.getInt("game_id");
-		String dbgametitle = rs.getString("game_title");
-		String dbcompany = rs.getString("company");
-		Date dbdate = rs.getDate("release_date");
-		String dbdescription = rs.getString("description");
-		double dbprice = rs.getDouble("price");
-		String newdbprice = String.format("%.2f", dbprice);
-		String dbimageloc = rs.getString("image_loc");
-		String dbgenrename = rs.getString("genre_name");
-		int dbpreowned = rs.getInt("preowned");
-		%>
-	<img
-			src="<%=dbimageloc%>/img1.jpg" alt="" id="first" height="470" width="390" />
+		if (rs.next()) {
+			int dbgameid = rs.getInt("game_id");
+			String dbgametitle = rs.getString("game_title");
+			String dbcompany = rs.getString("company");
+			Date dbdate = rs.getDate("release_date");
+			String dbdescription = rs.getString("description");
+			double dbprice = rs.getDouble("price");
+			String newdbprice = String.format("%.2f", dbprice);
+			String dbimageloc = rs.getString("image_loc");
+			String dbgenrename = rs.getString("genre_name");
+			int dbpreowned = rs.getInt("preowned");
+	%>
+	<img src="<%=dbimageloc%>/img1.jpg" alt="" id="first" height="470"
+		width="390" />
 	<div class="inside">
-		<p>Title:
-		<%=dbgametitle%><br></p>
-		<p>Company: <%=dbcompany%><br></p>
-		<p>Release Date: <%=dbdate%><br></p>
-		<p>Description: <%=dbdescription%><br></p>
-		<p>Price:
-		<%
-		if (dbprice == 0) {
-				out.println("<td>TBC</td>");
-			} else {
-	%><%="$" + newdbprice%>
-		<%
-			}
-		%><br></p> <p>Genre Name: <%=dbgenrename%><br></p>
 		<p>
-		<%
-		if (dbpreowned == 1) {
-					out.println("<td>Pre-owned</td>");
+			Title:
+			<%=dbgametitle%><br>
+		</p>
+		<p>
+			Company:
+			<%=dbcompany%><br>
+		</p>
+		<p>
+			Release Date:
+			<%=dbdate%><br>
+		</p>
+		<p>
+			Description:
+			<%=dbdescription%><br>
+		</p>
+		<p>
+			Price:
+			<%
+			if (dbprice == 0) {
+					out.println("<td>TBC</td>");
 				} else {
-					out.println("<td>Brand new</td>");
-				}%></p>
+		%><%="$" + newdbprice%>
+			<%
+				}
+			%><br>
+		</p>
+		<p>
+			Genre Name:
+			<%=dbgenrename%><br>
+		</p>
+		<p>
+			<%
+				if (dbpreowned == 1) {
+						out.println("<td>Pre-owned</td>");
+					} else {
+						out.println("<td>Brand new</td>");
+					}
+			%>
+		</p>
 	</div>
-		<div class="ingame">
-			<img src="<%=dbimageloc%>/img2.jpg" alt="" height="230" width="230" />
-			<img src="<%=dbimageloc%>/img3.jpg" alt="" height="230" width="230" />
-			<img src="<%=dbimageloc%>/img4.jpg" alt="" height="230" width="230" />
-			<img src="<%=dbimageloc%>/img5.jpg" alt="" height="230" width="230" />
-			<img src="<%=dbimageloc%>/img6.jpg" alt="" height="230" width="230" />
-	</div>		
-<% 		
-	}
-	conn.close();
-%>
-<div class="copy-txt">
+	<div class="ingame">
+		<img src="<%=dbimageloc%>/img2.jpg" alt="" height="230" width="230" />
+		<img src="<%=dbimageloc%>/img3.jpg" alt="" height="230" width="230" />
+		<img src="<%=dbimageloc%>/img4.jpg" alt="" height="230" width="230" />
+		<img src="<%=dbimageloc%>/img5.jpg" alt="" height="230" width="230" />
+		<img src="<%=dbimageloc%>/img6.jpg" alt="" height="230" width="230" />
+	</div>
+	<%
+		}
+		conn.close();
+	%>
+	<div class="copy-txt">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 set-foot">
