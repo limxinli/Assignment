@@ -62,25 +62,19 @@
 	</div>
 
 	<!--MENU SECTION END-->
-	<section class="headline-sec">
-	<div class="overlay ">
-		<h3>
-			FALLOUT 3: GOTY <i class="fa fa-angle-double-right"></i>
-	</div>
-	</section>
-	<!-- HOME SECTION END -->
-
 	<%
+		String id = request.getParameter("hiddenID");
+	
 		Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select *,genre_name from game_data gd, genre g, game_genre gg WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id AND game_title='Fallout 3: GOTY'";
+		String sql = "Select *,genre_name from game_data gd, genre g, game_genre gg WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id AND gd.game_id=?";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, id);
 
 		ResultSet rs = pstmt.executeQuery();
 
 		if (rs.next()) {
-			int dbgameid = rs.getInt("game_id");
 			String dbgametitle = rs.getString("game_title");
 			String dbcompany = rs.getString("company");
 			Date dbdate = rs.getDate("release_date");
@@ -91,6 +85,14 @@
 			String dbgenrename = rs.getString("genre_name");
 			int dbpreowned = rs.getInt("preowned");
 	%>
+	<section class="headline-sec">
+	<div class="overlay ">
+		<h3>
+			<%=dbgametitle%> <i class="fa fa-angle-double-right"></i>
+	</div>
+	</section>
+	<!-- HOME SECTION END -->
+
 	<img src="<%=dbimageloc%>/img1.jpg" alt="" id="first" height="470"
 		width="390" />
 	<div class="inside">
