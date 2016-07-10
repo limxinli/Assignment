@@ -103,7 +103,10 @@
 			String dbgenrename = rs.getString("genre_name");
 			%>
 			<div class="boxaround">
-	<a href="<%=dbgameid%>.jsp">
+	<form action="ingame.jsp" method="get">
+		<input type="hidden" name="hiddenID"/>
+	</form>
+	<a href="ingame.jsp?hiddenID=<%=dbgameid%>">
 			<img
 				src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" />
 		<div class="insidebox">
