@@ -11,19 +11,21 @@
 	<%
 		Connection conn = DatabaseConnection.getConnection();
 
-		String inputusername = request.getParameter("userid");
-		String inputpassword = request.getParameter("passwd");
+		String userID = request.getParameter("userid");
+		String pwd = request.getParameter("passwd");
+		String email = request.getParameter("email");
 
-		String sql = "Select * from administrator where username=? and password=?";
+		String sql = "Select * from administrator WHERE Name=? and Password=? OR Email=? AND Password=? ";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, inputusername);
-		pstmt.setString(2, inputpassword);
+		pstmt.setString(1, userID);
+		pstmt.setString(2, pwd);
+		pstmt.setString(3, email);
 
 		ResultSet rs = pstmt.executeQuery();
 
 		if (rs.next()) {
-			response.sendRedirect("editall.jsp");
+			response.sendRedirect("mempage.jsp");
 		} else {
 			response.sendRedirect("memLogin.html");
 		}
