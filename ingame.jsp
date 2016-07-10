@@ -118,18 +118,18 @@
 			Price:
 			<%
 			if (dbprice == 0) {
-					out.println("<td>TBC</td>");
+					out.println("<td>TBC</td><br>");
 				} else {
 		%><%="$" + newdbprice%><br>
 			<%
 				}
 		
-			if (!newdbsprice.equals(null)){
+			if (dbsprice != 0){
 				out.println("<b> On sale now! </b>");
 				%><br><%="<b> Price: $" + newdbsprice + "</b>"%>
 			<%
 			}
-			%><br>
+			%>
 		</p>
 		<p>
 			Genre Name:

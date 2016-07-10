@@ -25,12 +25,12 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
+				<a class="navbar-brand" href="index.jsp"><strong style=""></strong>Game
 					Store<small> Singapore Polytechnic</small></a>
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.html" class="active-menu-item"><span
+					<li><a href="index.jsp" class="active-menu-item"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
 							<a href="allgames.jsp"><button class="dropbtn">
@@ -208,7 +208,7 @@
 
 	<div class="indeximages">
 	<%
-	String sql2 = "select * from game_data where sale_price IS NOT NULL";
+	String sql2 = "select * from game_data where sale_price != '0'";
 
 	pstmt = conn.prepareStatement(sql2);
 
