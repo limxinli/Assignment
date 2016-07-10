@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -182,31 +178,55 @@
 	</div>
 
 	<div class="indeximages">
-		<a href="13.jsp"><img
-			src="assets/img/StarWarsBattlefront/img1.jpg" alt="" height="270"
-			width="190" /></a> <a href="12.jsp"><img
-			src="assets/img/Fallout4/img1.jpg" alt="" height="270" width="190" /></a>
-		<a href="18.jsp"><img
-			src="assets/img/BetterLateThanDead/img1.jpg" alt="" height="270"
-			width="190" /></a> <a href="15.jsp"><img
-			src="assets/img/RiseOfTheTombRaider/img2.jpg" alt="" height="270"
-			width="190" /></a> <a href="19.jsp"><img
-			src="assets/img/NightCry/img1.jpg" alt="" height="270" width="190" /></a>
-	</div>
+	<%
+	Connection conn = DatabaseConnection.getConnection();
 
+	String sql = "select * from game_data gd, genre g, game_genre gg where gd.game_id=gg.game_id and gg.genre_id=g.genre_id group by release_date having datediff(curdate(), release_date) < 180 AND release_date <= curdate()";
+
+	PreparedStatement pstmt = conn.prepareStatement(sql);
+
+	ResultSet rs = pstmt.executeQuery();
+
+	while (rs.next()) {
+		int dbgameid = rs.getInt("game_id");
+		String dbimageloc = rs.getString("image_loc");
+			
+	%>
+	<form action="ingame.jsp" method="get">
+		<input type="hidden" name="hiddenID"/>
+	
+	<a href="ingame.jsp?hiddenID=<%=dbgameid%>">
+	<img src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
+	<% }%>
+	</form>
+	</div>
+	
 	<div class="horizontal_line"></div>
 	<div id="sales">
 		<span class="glyphicon glyphicon-usd" aria-hidden="true"></span><class="sales-font"> On Sale Now
 	</div>
 
 	<div class="indeximages">
-		<a href="11.jsp"><img src="assets/img/Battleborn/img1.jpg"
-			alt="" height="270" width="190" /></a> <a href="8.jsp"><img
-			src="assets/img/TheEvilWithin/img1.jpg" alt="" height="270"
-			width="190" /></a> <a href="23.jsp"><img
-			src="assets/img/Share/img1.jpg" alt="" height="270" width="190" /> <a href="14.jsp"><img src="assets/img/LISLimitedEdition/img1.jpg"
-				alt="" height="270" width="190" /></a> <a href="7.jsp"><img
-				src="assets/img/MetroRedux/img1.jpg" alt="" height="270" width="190" /></a>
+	<%
+	String sql2 = "select * from game_data where sale_price IS NOT NULL";
+
+	pstmt = conn.prepareStatement(sql2);
+
+	rs = pstmt.executeQuery();
+
+	while (rs.next()) {
+		int dbgameid = rs.getInt("game_id");
+		double dbsprice = rs.getDouble("sale_price");
+		String dbimageloc = rs.getString("image_loc");
+			
+	%>
+	<form action="ingame.jsp" method="get">
+		<input type="hidden" name="hiddenID"/>
+	
+	<a href="ingame.jsp?hiddenID=<%=dbgameid%>">
+	<img src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
+	<% }%>
+	</form>
 	</div>
 
 	<div class="copy-txt">

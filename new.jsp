@@ -33,13 +33,13 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
+				<a class="navbar-brand" href="index.jsp"><strong style=""></strong>Game
 					Store<small> Singapore Polytechnic</small></a>
 
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.html"><span
+					<li><a href="index.jsp"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
 							<a href="allgames.jsp" class="active-menu-item"><button
@@ -112,7 +112,10 @@
 			String dbgenrename = rs.getString("genre_name");
 			%>
 			<div class="boxaround">
-	<a href="<%=dbgameid%>.jsp">
+	<form action="ingame.jsp" method="get">
+		<input type="hidden" name="hiddenID"/>
+	</form>
+	<a href="ingame.jsp?hiddenID=<%=dbgameid%>">
 			<img
 				src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" />
 		<div class="insidebox">

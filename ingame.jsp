@@ -32,13 +32,13 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"><strong style=""></strong>Game
+				<a class="navbar-brand" href="index.jsp"><strong style=""></strong>Game
 					Store<small> Singapore Polytechnic</small></a>
 
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.html"><span
+					<li><a href="index.jsp"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
 							<a href="allgames.jsp"><button class="dropbtn">
@@ -81,6 +81,8 @@
 			String dbdescription = rs.getString("description");
 			double dbprice = rs.getDouble("price");
 			String newdbprice = String.format("%.2f", dbprice);
+			double dbsprice = rs.getDouble("sale_price");
+			String newdbsprice = String.format("%.2f", dbsprice);
 			String dbimageloc = rs.getString("image_loc");
 			String dbgenrename = rs.getString("genre_name");
 			int dbpreowned = rs.getInt("preowned");
@@ -118,9 +120,15 @@
 			if (dbprice == 0) {
 					out.println("<td>TBC</td>");
 				} else {
-		%><%="$" + newdbprice%>
+		%><%="$" + newdbprice%><br>
 			<%
 				}
+		
+			if (!newdbsprice.equals(null)){
+				out.println("<b> On sale now! </b>");
+				%><br><%="<b> Price: $" + newdbsprice + "</b>"%>
+			<%
+			}
 			%><br>
 		</p>
 		<p>
