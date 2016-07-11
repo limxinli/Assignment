@@ -15,7 +15,7 @@
 		String pwd = request.getParameter("passwd");
 		String email = request.getParameter("email");
 
-		String sql = "Select * from administrator WHERE Name=? and Password=? OR Email=? AND Password=? ";
+		String sql = "Select * from member WHERE Name=? and Password=? OR Email=? AND Password=? ";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, userID);
