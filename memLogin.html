@@ -69,14 +69,18 @@
 
 	<!--TOP SECTION END-->
 	<section>
-		<form action="authentication.jsp">
+		<form action="Authentication" method="post">
 			<div class="login">
-				User ID / Email:  <input type="text" name="username / email" id="userid" placeholder="User ID / Email"
-					class="form-control"> Password: <input type="password" 
-					name="password" id="passwd" placeholder="Password" class="form-control"><br>
-				<input type="submit" class="btn btn-info" id="submit-button"
-					value="Login"> <br /> <br /> <input type="submit" class="btn btn-info" id="submit-button"
-					value="Sign Up">
+				User ID / Email: <input type="text" name="username / email"
+					id="userid" placeholder="User ID / Email" class="form-control">
+				Password: <input type="password" name="password" id="passwd"
+					placeholder="Password" class="form-control"><br> <input
+					type="submit" class="btn btn-info" id="submit-button" value="Login">
+				<br /> <br />
+				<form action="addacc.jsp">
+					<input type="submit" class="btn btn-info" id="submit-button"
+						value="Sign Up">
+				</form>
 			</div>
 		</form>
 	</section>
@@ -86,7 +90,8 @@
 			<div class="row">
 				<div class="col-md-12 set-foot">
 					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
-					All rights reserved | Design by : <a href="http://www.binarytheme.com" target="_blank"
+					All rights reserved | Design by : <a
+						href="http://www.binarytheme.com" target="_blank"
 						style="color: #7C7C7C;">binarytheme.com</a>
 				</div>
 			</div>
