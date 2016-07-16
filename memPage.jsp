@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -9,7 +13,7 @@
 <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-<title>Member Login</title>
+<title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
@@ -29,34 +33,18 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp"><strong style=""></strong>Game
-					Store<small> Singapore Polytechnic</small></a>
+				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
+						Singapore Polytechnic</small></a>
 
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.jsp"><span
-							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
-					<li><div class="dropdown">
-							<a href="allgames.jsp"><button class="dropbtn">
-									GAMES <span class="caret"></span>
-								</button></a>
-							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp" class="active-menu-item">Horror</a> <a
-									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
-							</div>
-						</div></li>
-					<li><a href="about.html">ABOUT</a></li>
-					<li><div class="dropdown">
-							<a href=""><button class="dropbtn">
-									Login <span class="caret"></span>
-								</button></a>
-							<div id="myDropdown" class="dropdown-content">
-								<a href="login.html">Admin</a>
-								<a href="memLogin.html">Member</a>
-							</div>
-						</div></li>
+					<li><a href="editall.jsp"><span
+							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
+					<li><a href="login.html"> <span
+							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+							LOGOUT
+					</a></li>
 				</ul>
 			</div>
 
@@ -64,31 +52,21 @@
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-		<div class="overlay ">
-			<h3>
-				MEMBER LOGIN <i class="fa fa-angle-double-right "></i>
-			</h3>
-
-		</div>
-	</section>
-
+	<div class="overlay ">
+		<h3>
+			Welcome Member <i class="fa fa-angle-double-right "></i>
+		</h3>
+	</div>
+		<!-- BACK TO TOP BUTTON -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://arrow.scrolltotop.com/arrow92.js"></script>
+	<noscript>
+		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
+			Button</a>? Go to our FAQ page for more info.
+	</noscript>
 	<!--TOP SECTION END-->
-	<section>
-		<form action="Authentication" method="post">
-			<div class="login">
-				User ID / Email: <input type="text" name="username / email"
-					id="userid" placeholder="User ID / Email" class="form-control">
-				Password: <input type="password" name="password" id="passwd"
-					placeholder="Password" class="form-control"><br> <input
-					type="submit" class="btn btn-info" id="submit-button" value="Login">
-				<br /> <br />
-				<form action="addacc.jsp">
-					<input type="submit" class="btn btn-info" id="submit-button"
-						value="Sign Up">
-				</form>
-			</div>
-		</form>
-	</section>
 
 	<div class="copy-txt">
 		<div class="container">
@@ -110,6 +88,5 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
-
 </body>
 </html>
