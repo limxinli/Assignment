@@ -40,7 +40,7 @@
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
 					<li><a href="editall.jsp"><span
-							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
+							class="glyphicon glyphicon-edit" aria-hidden="true"></span> View</a></li>
 					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
 							LOGOUT
