@@ -129,6 +129,12 @@
 			<%
 				}
 			%><br> Genre Name: <%=dbgenrename%>
+			
+			<form action="addprocess.jsp">
+					<input type="submit" class="btn btn-info" id="submit-button"
+						value="Add To Cart">
+				</form>
+			
 		</div>
 		</a>
 			</div>			
