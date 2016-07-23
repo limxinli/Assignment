@@ -39,7 +39,7 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-				<li><div class="dropdown">
+					<li><div class="dropdown">
 							<a href="allgames.jsp" class="active-menu-item"><button
 									class="dropbtn">
 									GAMES <span class="caret"></span>
@@ -50,15 +50,16 @@
 								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
+					<li><a href="about.html">ABOUT</a></li>
 					<li><a href="shoppingcart.jsp"><span
-							class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Shopping Cart</a></li>
+							class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+							Shopping Cart</a></li>
 					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
 							LOGOUT
 					</a></li>
 				</ul>
 			</div>
-
 		</div>
 	</div>
 	<!--MENU SECTION END-->
@@ -68,8 +69,7 @@
 			Welcome Member <i class="fa fa-angle-double-right "></i>
 		</h3>
 	</div>
-		<!-- BACK TO TOP BUTTON -->
-	<script
+	<!-- BACK TO TOP BUTTON --> <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="http://arrow.scrolltotop.com/arrow92.js"></script>
@@ -91,13 +91,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- COPY TEXT SECTION END-->
-	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-	<!-- CORE JQUERY  -->
-	<script src="assets/js/jquery-1.11.1.js"></script>
-	<!-- BOOTSTRAP SCRIPTS  -->
-	<script src="assets/js/bootstrap.js"></script>
-	<!-- CUSTOM SCRIPTS  -->
-	<script src="assets/js/custom.js"></script>
+	<!-- COPY TEXT SECTION END--> <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY  --> <script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  --> <script src="assets/js/bootstrap.js"></script>
+	<!-- CUSTOM SCRIPTS  --> <script src="assets/js/custom.js"></script>
 </body>
 </html>
