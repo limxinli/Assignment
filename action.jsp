@@ -120,7 +120,7 @@
 				}
 			%><br> Genre Name: <%=dbgenrename%>
 			
-			<form action="add2cart.jsp" method="post">
+			<form action="Add2Cart" method="post">
 					<input type="submit" class="btn btn-info" id="submit-button"
 						value="Add To Cart">
 				</form>

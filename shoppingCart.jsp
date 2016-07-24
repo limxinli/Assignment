@@ -15,7 +15,7 @@
 		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("login-status");
 			
 		PreparedStatement pstmt = conn
-			.prepareStatement("SELECT * FROM game_data ORDER BY game_id");
+			.prepareStatement("SELECT * FROM shopping_cart ORDER BY gameid");
 		
 		ResultSet rs = pstmt.executeQuery();
 
