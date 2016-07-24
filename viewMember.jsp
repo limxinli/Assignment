@@ -10,7 +10,7 @@
 <!-- FONTAWESOME STYLE CSS -->
 <link href="assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
-<link href="assets/css/style.css" rel="stylesheet" />
+<link href="Assignment/assets/css/style.css" rel="stylesheet" />
 <!-- Favicon -->
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
@@ -38,7 +38,7 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp" class="active-menu-item">Horror</a> <a
+								<a href="horror.jsp">Horror</a> <a
 									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>

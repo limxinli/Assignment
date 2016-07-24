@@ -1,0 +1,630 @@
+/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% Free To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+   
+    ========================================================  */
+/* =============================================================
+   GENERAL STYLES
+ ============================================================ */
+body {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 30px;
+	font-size: 16px;
+}
+
+section {
+	padding-bottom: 80px;
+	padding-top: 45px;
+}
+
+.hr-set {
+	border-top: 2px solid #000;
+	max-width: 300px;
+}
+
+h3 {
+	padding: 15px 5px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+h4 {
+	padding: 15px 5px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.icon-custom-1 {
+	background-color: #fff;
+	padding: 25px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.icon-custom-2 {
+	background-color: #49CD7D;
+	padding: 25px;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+}
+
+.icon-custom-1:hover {
+	background-color: #000;
+}
+
+.icon-custom-2:hover {
+	background-color: #000;
+}
+
+.color-1 {
+	color: #49CD7D;
+}
+
+.color-2 {
+	color: #fff;
+}
+
+.row {
+	width: 90%;
+	margin-left: 50px;
+}
+
+.middleword {
+	padding-left: 20px;
+}
+
+/* =============================================================
+   MENU STYLES 
+ ============================================================ */
+.navbar-inverse .navbar-brand,.navbar-inverse .navbar-brand:hover {
+	color: #FFF;
+	font-size: 35px;
+	letter-spacing: 3px;
+	font-weight: 900;
+	background-color: rgba(20, 152, 152, 1);
+	padding-top: 28px;
+	padding-bottom: 50px;
+}
+
+.navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form {
+	border-color: rgba(16, 16, 16, 0);
+}
+
+.navbar-inverse {
+	border-color: rgba(16, 16, 16, 0);
+}
+
+.navbar-fixed-top {
+	top: 0;
+	border-width: 0 0 0px;
+}
+
+.set-links {
+	padding: 15px 20px 10px 20px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+	font-weight: 900;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	color: rgba(20, 152, 152, 1);
+}
+
+.active-menu-item {
+	color: rgba(20, 152, 152, 1) !important;
+}
+
+.navbar-brand small {
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+
+.dropdown:hover .dropbtn {
+	font-weight: 900;
+	background-color: #202020;
+	color: rgba(20, 152, 152, 1);
+	padding: 10px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropbtn:hover,.dropbtn:focus,.caret:hover {
+	color: rgba(20, 152, 152, 1);
+}
+
+.dropbtn {
+	outline: none;
+	font-weight: 900;
+	background-color: #202020;
+	color: #fff;
+}
+
+.dropdown {
+	position: relative;
+	display: block;
+}
+
+.dropdown-content {
+	font-weight: 600;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 180px;
+	box-shadow: 4px 5px #d9d9d9;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 7px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #2EB1D0;
+}
+
+/* =============================================================
+   ABOUT SECTION STYLES -IN HOME / INDEX.HTML 
+ ============================================================ */
+#about-sec {
+	background: url(../img/header.jpg) no-repeat center center;
+	padding: 0;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-moz-background-size: cover;
+	color: #fff;
+}
+
+#about-sec .overlay {
+	min-height: 350px;
+}
+
+#about-sec h1 {
+	padding-top: 150px;
+	font-weight: 900;
+}
+
+#about-sec p {
+	padding: 10px;
+}
+
+/* =============================================================
+   SEARCH GAMES SECTION STYLES  -IN HOME / INDEX.HTML 
+ ============================================================ */
+#searchforgame {
+	margin-right: 100px;
+}
+
+.input-cls {
+	height: 55px;
+	border: 3px solid #2EB1D0;
+	font-size: 20px;
+	padding-left: 20px;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+}
+
+#search-game {
+	padding-bottom: 30px;
+}
+
+#search {
+	color: #b3b3b3;
+}
+
+#search:focus {
+	color: black;
+}
+
+#genre-drop {
+	width: 150px;
+	height: 25px;
+	font-size: 15px;
+	padding-left: 10px;
+	padding-right: auto;
+	margin-left: 10px;
+}
+
+.genre-drop {
+	margin-top: 0px;
+}
+
+.btn-set {
+	font-size: 20px;
+	border: 5px double #fff;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+}
+
+.radio-button {
+	margin-top: 0px;
+	margin-left: 20px;
+}
+
+#new,#preowned {
+	margin-left: 10px;
+}
+
+#submit {
+	margin-top: -95px;
+	margin-right: 20px;
+}
+
+/* =============================================================
+   FEATURED/EDITORS' CHOICE/UPCOMING GAMES  -IN HOME / INDEX.HTML 
+ ============================================================ */
+#feature-sec {
+	background-color: black;
+}
+
+.carousel-indicators .active {
+	width: 25px;
+	height: 25px;
+	background-color: #fff;
+}
+
+.carousel-indicators li {
+	width: 25px;
+	height: 25px;
+	border: 1px solid #fff;
+}
+
+#carousel-example .slide-custom {
+	min-height: 300px;
+	line-height: 30px;
+}
+
+#carousel-example h1,h2 {
+	color: #000;
+}
+
+#carousel-example h4 {
+	line-height: 30px;
+	font-size: 30px;
+	color: #fff;
+	padding-top: 25px;
+}
+
+#carousel-example {
+	margin-top: 50px;
+}
+
+#carousel-example .user-img {
+	border: 5px solid #49CD7D;
+	overflow: hidden;
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+#carousel-example .img-u {
+	max-height: 100%;
+	max-width: 100%;
+	float: right;
+	margin: 0px;
+}
+
+#carousel-example .c-black {
+	color: #49CD7D;
+	font-style: italic;
+	font-size: 20px;
+	padding: 5px;
+}
+
+.slideshow {
+	position: absolute;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+/* =============================================================
+   NEW RELEASES & SALES  -IN HOME / INDEX.HTML 
+ ============================================================ */
+#new-release {
+	padding-left: 100px;
+	font-size: 20px;
+}
+
+a.new-release-font,a.sales-font {
+	color: rgba(20, 152, 152, 0.9);
+	display: inline;
+}
+
+a.new-release-font:hover,a.sales-font:hover {
+	color: #43698E;
+	text-decoration: none;
+}
+
+#sales {
+	padding-left: 100px;
+	font-size: 20px;
+}
+
+#comment-button {
+	float: right;
+	margin-top: -15px;
+}
+
+#nickname:focus,#comment:focus {
+	color: black;
+}
+
+.indeximages {
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 20px;
+}
+
+/* =============================================================
+   LOGIN.HTML 
+ ============================================================ */
+.login {
+	border-right: 1px solid black;
+	width: 250px;
+	margin-left: 350px;
+}
+
+#username {
+	margin-bottom: 10px;
+	width: 200px;
+}
+
+#password {
+	width: 200px;
+}
+
+#submit-button {
+	margin-left: 115px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.signup {
+	margin-left: 655px;
+	margin-top: -186px;
+	width: 200px;
+	margin-bottom: 54px;
+}
+
+/* =============================================================
+   MEMBER
+ ============================================================ */
+ .createacc {
+ 	margin-left: 35%;
+ 	width: 330px;
+ }
+ 
+/* =============================================================
+   ADMINISTRATOR
+ ============================================================ */
+.gamedata {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.radio-button2 {
+	margin-top: 30px;
+}
+
+#add {
+	float: right;
+	margin-top: 30px;
+	margin-right: -70px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+#delete {
+	float: right;
+	margin-top: 20px;
+	margin-right: 300px;
+}
+
+#date:focus,#img:focus,#title:focus,#company:focus,#description:focus,#price:focus
+	{
+	color: black;
+}
+
+th,td {
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding-left: 5px;
+	padding-right: 5px;
+	line-height: 20px;
+	text-align: center;
+}
+
+table {
+	border: 2px solid black;
+	width: 90%;
+	font-size: 12px;
+	margin-left: 60px;
+	margin-bottom: 40px;
+}
+
+.searchgames {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#enter-button {
+	margin-left: 520px;
+	margin-top: -34.5px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+#linkback {
+	float: left;
+	font-size: 15px;
+}
+
+#linkbackbottom {
+	float: left;
+	font-size: 15px;
+	margin-left: 60px;
+	margin-top: -30px;
+}
+
+#genrelink {
+	float: right;
+	margin-right: 10px;
+}
+
+#caption {
+	font-size: 40px;
+	margin-left: 550px;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+.updatedelete {
+	float: right;
+	margin-top: -30px;
+	margin-right: 70px;
+}
+
+/* =============================================================
+   FOOTER SECTION STYLES
+ ============================================================ */
+#footer-sec {
+	background-color: #121212;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	position: absolute;
+	color: #DFD1D1;
+}
+
+.copy-txt {
+	background-color: #202020;
+	padding: 15px;
+	color: #7C7C7C;
+}
+
+.deletecopy-txt {
+	background-color: #202020;
+	padding: 15px;
+	color: #7C7C7C;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.set-foot {
+	text-align: right;
+	padding-right: 50px;
+}
+
+/* =============================================================
+   PAGE HEADLINE STYLES
+ ============================================================ */
+.headline-sec {
+	padding: 0;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-moz-background-size: cover;
+	color: #fff;
+}
+
+.headline-sec .overlay {
+	background-color: rgba(20, 152, 152, 0.9);
+	min-height: 150px;
+}
+
+.headline-sec h3 {
+	padding-top: 87px;
+	font-weight: 900;
+	padding-left: 100px;
+}
+
+/* =============================================================
+   BOX STYLES
+ ============================================================ */
+#box {
+	width: 42em;
+	padding: 1em;
+	margin: 0 auto;
+	background: white;
+	border: 5px solid black;
+}
+
+.insidebox {
+	margin-bottom: 20px;
+	line-height: 30px;
+	width: 75%;
+	margin-left: 220px;
+	margin-top: -180px;
+	display: inline-block;
+}
+
+.boxaround {
+	border: 3px;
+	border-style: solid;
+	width: 75%;
+	height: 300px;
+	margin-left: 150px;
+	display: inline-block;
+}
+
+.boxaround img {
+	margin-left: 15px;
+	margin-top: 10px;
+	display: inline-block;
+}
+
+/* =============================================================
+   HORIZONTAL LINE STYLES
+ ============================================================ */
+.horizontal_line {
+	border-top: medium solid #bdc0ba;
+	padding: 10px 0;
+	width: 100%;
+	margin-top: 20px;
+}
+
+/* =============================================================
+   GAMES
+ ============================================================ */
+ .inside {
+ 	margin-top: -480px;
+	margin-bottom: 20px;
+	width: 60%;
+	margin-left: 430px;
+}
+
+.inside p {
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-top: 20px;
+}
+
+.ingame img {
+	margin-top: 60px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+}
+
+#first {
+	margin-top: 20px;
+	margin-left: 20px;
+}
