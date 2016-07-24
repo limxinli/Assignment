@@ -51,7 +51,7 @@
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
-					<li><a href="shoppingcart.jsp"><span
+					<li><a href="shoppingCart.jsp"><span
 							class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 							Shopping Cart</a></li>
 					<li><a href="login.html"> <span
