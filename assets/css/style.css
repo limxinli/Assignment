@@ -377,18 +377,30 @@ a.new-release-font:hover,a.sales-font:hover {
    LOGIN.HTML 
  ============================================================ */
 .login {
-	width: 200px;
-	margin-left: 800px;
+	border-right: 1px solid black;
+	width: 250px;
+	margin-left: 200px;
 }
 
 #username {
 	margin-bottom: 10px;
+	width: 200px;
+}
+
+#password {
+	width: 200px;
 }
 
 #submit-button {
 	margin-left: 115px;
 	padding-left: 25px;
 	padding-right: 25px;
+}
+
+.signup {
+	margin-left: 500px;
+	margin-top: -190px;
+	width: 200px;
 }
 
 /* =============================================================
