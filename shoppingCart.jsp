@@ -55,8 +55,8 @@
 		</form>
 	</td>
 	<td>
-		<form action="updategame.jsp" method="get">
-			<input type="hidden" name="hiddenID" value="<%=id%>"> <input
+		<form action="UpdateGame" method="get">
+			<input type="hidden" name="hiddenID" value="<%=dbgameid%>"> <input
 				type="submit" value="Update">
 		</form>
 	</td>
