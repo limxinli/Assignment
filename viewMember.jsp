@@ -56,7 +56,7 @@
 	<section class="headline-sec">
 		<div class="overlay ">
 		<%
-		ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)request.getAttribute("results");
+		ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
 	
 		if (viewMembers != null) {
 			for(MemberDetails member:viewMembers) {
@@ -72,7 +72,7 @@
 	<section>
 		Name: <%=member.getName()%><br>
 		Mailing Address: <%=member.getMail()%><br>
-		Email: <%=member.getMail()%><br>
+		Email: <%=member.getEmail()%><br>
 		Contact Number: <%=member.getNumber()%><br>
 		<%
 			}
