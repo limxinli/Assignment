@@ -10,9 +10,9 @@
 <body>
 
 	<%
-		Connection conn = DatabaseConnection.getConnection();
-		
 		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("login-status");
+		
+		Connection conn = DatabaseConnection.getConnection();
 			
 		PreparedStatement pstmt = conn
 			.prepareStatement("SELECT * FROM shopping_cart ORDER BY gameid");
