@@ -6,9 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
-<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link href="Assignment/assets/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
-<link href="assets/css/font-awesome.css" rel="stylesheet" />
+<link href="Assignment/assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
 <link href="Assignment/assets/css/style.css" rel="stylesheet" />
 <!-- Favicon -->
@@ -74,14 +74,16 @@
 
 	<!--TOP SECTION END-->
 	<section>
-		Name: <%=member.getName()%><br>
-		Mailing Address: <%=member.getMail()%><br>
-		Email: <%=member.getEmail()%><br>
-		Contact Number: <%=member.getNumber()%><br>
+		<div class = "member">
+			<b>Name:</b> <%=member.getName()%><br>
+			<b>Mailing Address:</b> <%=member.getMail()%><br>
+			<b>Email:</b> <%=member.getEmail()%><br>
+			<b>Contact Number:</b> <%=member.getNumber()%><br>
 		<%
 			}
 		}
 	%>
+		</div>
 	</section>
 
 	<div class="copy-txt">
