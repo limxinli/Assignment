@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.*, db.*, Model.*"%>
+<%@ page import="java.util.*, db.*, model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,17 +11,18 @@
 
 	<%
 		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("login-status");
-		
-		if (shoppingCart != null) {
-			for(ShoppingCart shopping:shoppingCart) {
-		
-		out.println("<table border='3'>");
+			
+			if (GameArray != null) {
+		for(Games_Data games:GameArray) {
+			
+			out.println("<table border='3'>");
 	%>
 
 	<p id="caption">
-			Shopping Cart of <%=member.getName()%>
+		Shopping Cart of
+		<%=Member.getName()%>
 	</p>
-	
+
 	<tr>
 		<th>Game ID</th>
 		<th>Game Title</th>
@@ -29,19 +30,19 @@
 		<th>Price</th>
 		<th colspan='2'>Actions</th>
 	</tr>
-	
+
 	<%
 		while (rs.next()) {
-			int dbgameid = rs.getInt("game_id");
-			String dbgametitle = rs.getString("game_title");
-			Date dbdate = rs.getDate("release_date");
-			double dbprice = rs.getDouble("price");
+		int dbgameid = rs.getInt("game_id");
+		String dbgametitle = rs.getString("game_title");
+		Date dbdate = rs.getDate("release_date");
+		double dbprice = rs.getDouble("price");
 
-			out.println("<tr>");
-			out.println("<td>" + dbgameid + "</td>");
-			out.println("<td>" + dbgametitle + "</td>");
-			out.println("<td>" + dbdate + "</td>");
-			out.println("<td>" + dbprice + "</td>");
+		out.println("<tr>");
+		out.println("<td>" + dbgameid + "</td>");
+		out.println("<td>" + dbgametitle + "</td>");
+		out.println("<td>" + dbdate + "</td>");
+		out.println("<td>" + dbprice + "</td>");
 	%>
 
 	<td>
@@ -59,11 +60,10 @@
 
 	<%
 		out.println("</tr>");
-
+			}
+			out.println("</table>");
 		}
-		out.println("</table>");
-
-		conn.close();
+			}
 	%>
 
 </body>
