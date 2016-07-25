@@ -5,7 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>SP Game Store</title>
+<!-- BOOTSTRAP CORE STYLE CSS -->
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<!-- FONTAWESOME STYLE CSS -->
+<link href="assets/css/font-awesome.css" rel="stylesheet" />
+<!-- CUSTOM STYLE CSS -->
+<link href="Assignment/assets/css/style.css" rel="stylesheet" />
+<!-- Favicon -->
+<link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
 <body>
 
@@ -14,14 +22,9 @@
 			
 			if (GameArray != null) {
 		for(Games_Data games:GameArray) {
-			
-			out.println("<table border='3'>");
 	%>
 
-	<p id="caption">
-		Shopping Cart of
-		<%=Member.getName()%>
-	</p>
+	<p id="caption">Shopping Cart</p>
 
 	<tr>
 		<th>Game ID</th>
@@ -31,40 +34,49 @@
 		<th colspan='2'>Actions</th>
 	</tr>
 
-	<%
-		while (rs.next()) {
-		int dbgameid = rs.getInt("game_id");
-		String dbgametitle = rs.getString("game_title");
-		Date dbdate = rs.getDate("release_date");
-		double dbprice = rs.getDouble("price");
+	<tr>
+		<td><%=games.getGameid()%></td>
+		<td><%=games.getGametitle()%></td>
+		<td><%=games.getReleasedate()%></td>
+		<td><%=games.getSaleprice()%></td>
 
-		out.println("<tr>");
-		out.println("<td>" + dbgameid + "</td>");
-		out.println("<td>" + dbgametitle + "</td>");
-		out.println("<td>" + dbdate + "</td>");
-		out.println("<td>" + dbprice + "</td>");
-	%>
+		<td>
+			<form action="DeleteGame" method="get">
+				<input type="hidden" name="hiddenID" value="<%=games.getGameid()%>">
+				<input type="submit" value="Delete">
+			</form>
+		</td>
+		<td>
+			<form action="UpdateGame" method="get">
+				<input type="hidden" name="hiddenID" value="<%=games.getGameid()%>">
+				<input type="submit" value="Update">
+			</form>
+		</td>
 
-	<td>
-		<form action="DeleteGame" method="get">
-			<input type="hidden" name="hiddenID" value="<%=dbgameid%>"> <input
-				type="submit" value="Delete">
-		</form>
-	</td>
-	<td>
-		<form action="UpdateGame" method="get">
-			<input type="hidden" name="hiddenID" value="<%=dbgameid%>"> <input
-				type="submit" value="Update">
-		</form>
-	</td>
-
-	<%
-		out.println("</tr>");
+		<%
 			}
-			out.println("</table>");
-		}
 			}
-	%>
+		%>
+	
+<div class="copy-txt">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 set-foot">
+					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
+					All rights reserved | Design by : <a href="http://www.binarytheme.com" target="_blank"
+						style="color: #7C7C7C;">binarytheme.com</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- COPY TEXT SECTION END-->
+	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY  -->
+	<script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  -->
+	<script src="assets/js/bootstrap.js"></script>
+	<!-- CUSTOM SCRIPTS  -->
+	<script src="assets/js/custom.js"></script>
 
 </body>
 </html>
