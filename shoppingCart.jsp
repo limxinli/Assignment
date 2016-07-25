@@ -19,7 +19,7 @@
 	%>
 
 	<p id="caption">
-			Shopping Cart
+			Shopping Cart of <%=member.getName()%>
 	</p>
 	
 	<tr>
