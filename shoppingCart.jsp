@@ -12,6 +12,9 @@
 	<%
 		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("login-status");
 		
+		if (shoppingCart != null) {
+			for(ShoppingCart shopping:shoppingCart) {
+		
 		out.println("<table border='3'>");
 	%>
 
