@@ -27,11 +27,11 @@
 	<p id="caption">Shopping Cart</p>
 
 	<tr>
-		<th>Game ID</th>
-		<th>Game Title</th>
-		<th>Release Date</th>
-		<th>Price</th>
-		<th colspan='2'>Actions</th>
+		<th><b>Game ID</b></th>
+		<th><b>Game Title</b></th>
+		<th><b>Release Date</b></th>
+		<th><b>Price</b></th>
+		<th colspan='2'><b>Actions</b></th>
 	</tr>
 
 	<tr>
