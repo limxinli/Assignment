@@ -18,7 +18,7 @@
 <body>
 
 	<%
-		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("login-status");
+		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("results");
 			
 			if (GameArray != null) {
 		for(Games_Data games:GameArray) {
@@ -39,6 +39,7 @@
 		<td><%=games.getGametitle()%></td>
 		<td><%=games.getReleasedate()%></td>
 		<td><%=games.getSaleprice()%></td>
+		<td><%=games.getQuality()%></td>
 
 		<td>
 			<form action="DeleteGame" method="get">
