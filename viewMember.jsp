@@ -6,11 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
-<link href="Assignment/assets/css/bootstrap.css" rel="stylesheet" />
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
-<link href="Assignment/assets/css/font-awesome.css" rel="stylesheet" />
+<link href="assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
-<link href="Assignment/assets/css/style.css" rel="stylesheet" />
+<link href="assets/css/style.css" rel="stylesheet" />
 <!-- Favicon -->
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
@@ -38,15 +38,11 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp">Horror</a> <a
+								<a href="horror.jsp" class="active-menu-item">Horror</a> <a
 									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
-					<li><a href="about.html">ABOUT</a></li>	
-					<li><a href="login.html"> <span
-							class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-							Shopping Cart
-					</a></li>				
+					<li><a href="about.html">ABOUT</a></li>					
 					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
 							LOGIN
