@@ -42,7 +42,11 @@
 									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
-					<li><a href="about.html">ABOUT</a></li>					
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="displayShoppingCart.jsp"> <span
+							class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+							Shopping Cart
+					</a></li>					
 					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
 							LOGIN
