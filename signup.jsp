@@ -65,7 +65,7 @@
 	<!--TOP SECTION END-->
 	<section>
 		<div class="createacc">
-			<form action="../InsertMemberDetailsServlet" method="post">
+			<form onsubmit="return checkvalue()" action="../InsertMemberDetailsServlet" method="post">
 				Name: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Name is needed to deliver the game to the correct customer. It is recommended to use your real name."></span>
 				<input type="text" name="name" id="name" class="form-control"><br>
 					Mailing Address: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Mailing Address is needed to deliver the game to the correct location. Please ensure that the address is entered correctly."></span>
@@ -82,6 +82,45 @@
 				<input type="submit" class="btn btn-info" id="submit-button"
 					value="Sign Up">
 			</form>
+			<script type="text/javascript">
+				function checkvalue() { 
+					var name = document.getElementById('name').value;
+					var mail = document.getElementById('mail').value;
+					var email = document.getElementById('email').value;
+					var number = document.getElementById('number').value; 
+				    var pass = document.getElementById('pass').value; 
+				    var no = /^[0-9]+$/;
+				    var alp = /^[a-zA-Z]+$/;
+				    if(!name.match(/\S/) || !mail.match(/\S/) || !email.match(/\S/) || !number.match(/\S/) || !pass.match(/\S/)) {
+				        alert ('Empty value is not allowed!');
+				        return false;
+				    }
+				    if (email.indexOf("@")==-1 || email.indexOf(".")==-1) {
+			    		alert ('Not a valid e-mail!');
+			        	return false;
+			    	}
+				    if(number.length != 8) {
+			        	alert ('Contact number must contain 8 digits!');
+			        	return false;
+				    }
+				    if (!no.test(number)) {
+		        		alert ('Contact number must contain only numbers!');
+		        		return false;
+		        	}
+				    if (pass.length < 8 || pass.length > 16) {
+				    	alert ('Password must be of length 8 to 16!');
+		        		return false;
+				    }
+				    if (!no.test(pass) && !alp.test(pass)) {
+				    }
+				    else {
+				    	alert ('Password must contain both alphabets and numbers!');
+				    	return false;
+				    }
+				    
+						return true;
+				}
+			</script>
 		</div>
 	</section>
 

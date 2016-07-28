@@ -10,7 +10,7 @@
 <!-- FONTAWESOME STYLE CSS -->
 <link href="assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
-<link href="assets/css/style.css" rel="stylesheet" />
+<link href="Assignment/assets/css/style.css" rel="stylesheet" />
 <!-- Favicon -->
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
