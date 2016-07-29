@@ -47,15 +47,36 @@
 									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
-					<li><a href="about.html">ABOUT</a></li>
-					<li><a href="displayShoppingCart.jsp"> <span
-							class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-							Shopping Cart
-					</a></li>					
-					<li><a href="login.html"> <span
-							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-							LOGIN
-					</a></li>
+					<li><a href="about.jsp">ABOUT</a></li>
+					<%
+						if (session.getAttribute ("LOGIN-STATUS") == null) {
+					%>
+							<li><a href="login.jsp"> <span
+									class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+									LOGIN
+							</a></li>
+					<%
+						} else { 
+						%>
+							<li><a href="displayShoppingCart.jsp"> <span
+									class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+									Shopping Cart
+							</a></li>
+						<%
+							ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+							
+							if (viewMembers != null) {
+								for(MemberDetails member:viewMembers) {
+						%>
+							<li><a href="viewMember.jsp"> <span
+									class="glyphicon glyphicon-user" aria-hidden="true"></span>
+									<%=member.getName()%>
+							</a></li>
+						<%
+								}
+							}
+						}
+						%>					
 				</ul>
 			</div>
 

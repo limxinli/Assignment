@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -20,7 +24,6 @@
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
 <body>
-
 	<div class="navbar navbar-inverse navbar-fixed-top ">
 		<div class="container">
 			<div class="navbar-header">
@@ -47,11 +50,36 @@
 									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
-					<li><a href="about.html">ABOUT</a></li>					
-					<li><a href="login.html"> <span
-							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-							LOGIN
-					</a></li>
+					<li><a href="about.jsp">ABOUT</a></li>					
+					<%
+						if (session.getAttribute ("LOGIN-STATUS") == null) {
+					%>
+							<li><a href="login.jsp"> <span
+									class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+									LOGIN
+							</a></li>
+					<%
+						} else { 
+						%>
+							<li><a href="displayShoppingCart.jsp"> <span
+									class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+									Shopping Cart
+							</a></li>
+						<%
+							ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+							
+							if (viewMembers != null) {
+								for(MemberDetails member:viewMembers) {
+						%>
+							<li><a href="viewMember.jsp"> <span
+									class="glyphicon glyphicon-user" aria-hidden="true"></span>
+									<%=member.getName()%>
+							</a></li>
+						<%
+								}
+							}
+						}
+						%>
 				</ul>
 			</div>
 
