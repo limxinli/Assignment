@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*,db.*"%>
+<%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
-<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link href="Assignment/assets/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
-<link href="assets/css/font-awesome.css" rel="stylesheet" />
+<link href="Assignment/assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
-<link href="assets/css/style.css" rel="stylesheet" />
+<link href="Assignment/assets/css/style.css" rel="stylesheet" />
 <!-- Favicon -->
-<link rel="shortcut icon" href="assets/img/favicon.ico" />
+<link rel="shortcut icon" href="Assignment/assets/img/favicon.ico" />
 </head>
 <body>
 
@@ -43,10 +43,30 @@
 							</div>
 						</div></li>
 					<li><a href="about.html">ABOUT</a></li>
+					<%
+						if (session.getAttribute ("LOGIN-STATUS") == null) {
+					%>
 					<li><a href="login.html"> <span
 							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
 							LOGIN
 					</a></li>
+					<%
+						}
+						else { 
+							ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+							
+							if (viewMembers != null) {
+								for(MemberDetails member:viewMembers) {
+						%>
+							<li><a href="Assignment/viewMember.jsp"> <span
+									class="glyphicon glyphicon-user" aria-hidden="true"></span>
+									<%=member.getName()%>
+							</a></li>
+						<%
+								}
+							}
+						}
+						%>
 				</ul>
 			</div>
 
@@ -85,7 +105,7 @@
 									<div class="container col-md-offset-3 slide-custom">
 										<h4 class="slideshow">Featured</h4>
 										 <img
-											src="assets/img/featured.jpg"
+											src="Assignment/assets/img/featured.jpg"
 											alt="Featured Game" width="1000" height="500" border="1"
 											class="img-u">
 								
@@ -97,7 +117,7 @@
 									<div class="container col-md-offset-3 slide-custom">
 										<h4 class="slideshow">Upcoming</h4>
 										<img
-											src="assets/img/newgame.jpg"
+											src="Assignment/assets/img/newgame.jpg"
 											alt="New Games" width="1000" height="500" border="1"
 											class="img-u">
 										
@@ -109,7 +129,7 @@
 									<div class="container col-md-offset-3 slide-custom">
 										<h4 class="slideshow">Editors' Choice</h4>
 										<img
-											src="assets/img/editor.jpg"
+											src="Assignment/assets/img/editor.jpg"
 											alt="Editor's Choice" width="1000" height="500" border="1"
 											class="img-u">
 									
@@ -185,7 +205,7 @@
 		<input type="hidden" name="hiddenID"/>
 	
 	<a href="ingame.jsp?hiddenID=<%=dbgameid%>">
-	<img src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
+	<img src="Assignment/<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
 	<% }%>
 	</form>
 	</div>
@@ -213,7 +233,7 @@
 		<input type="hidden" name="hiddenID"/>
 	
 	<a href="ingame.jsp?hiddenID=<%=dbgameid%>">
-	<img src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
+	<img src="Assignment/<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
 	<% }%>
 	</form>
 	</div>
@@ -234,10 +254,10 @@
 	<!-- COPY TEXT SECTION END-->
 	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 	<!-- CORE JQUERY  -->
-	<script src="assets/js/jquery-1.11.1.js"></script>
+	<script src="Assignment/assets/js/jquery-1.11.1.js"></script>
 	<!-- BOOTSTRAP SCRIPTS  -->
-	<script src="assets/js/bootstrap.js"></script>
+	<script src="Assignment/assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
-	<script src="assets/js/custom.js"></script>
+	<script src="Assignment/assets/js/custom.js"></script>
 </body>
 </html>
