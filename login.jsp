@@ -72,8 +72,13 @@
 									</button></a>
 								<div id="myDropdown" class="dropdown-content">
 									<a href="displayShoppingCart.jsp">Shopping Cart</a>
-									<a href="logoutMember.jsp">Logout</a>
+									<a href="logoutMember.jsp" onclick="Logout()">Logout</a>
 								</div>
+								<script>
+									function Logout() {
+										alert ('Successfully logged out!');
+									}
+								</script>
 							</div></li>
 						<%
 								}
@@ -98,13 +103,32 @@
 	<!--TOP SECTION END-->
 	<section>
 		<div class="login">
-			<form action="verification.jsp" method="post">
+			<form name="myform" onsubmit="return checkvalue()" method="post">
 				Email: <input type="text" name="username" id="username" placeholder="Email"
 					class="form-control"> Password: <input type="password" 
 					name="password" id="password" placeholder="Password" class="form-control"><br>
 				<input type="submit" class="btn btn-info" id="submit-button"
-					value="Login">
+					value="Login" onclick="memberform();return true;">
+				<input type="submit" class="btn btn-info" id="submit-button"
+					value="Admin Login" onclick="adminform();return true;">
 			</form>
+			<script>
+			function checkvalue() { 
+				var email = document.getElementById('username').value;
+				var pass = document.getElementById('password').value;
+
+			    if(!email.match(/\S/) || !pass.match(/\S/)) {
+			        alert ('Empty value is not allowed!');
+			        return false;
+			    }
+			}
+				function memberform() {
+				    document.myform.action = "ViewMemberDetailsServlet";
+				}
+				function adminform() {
+				    document.myform.action = "verification.jsp";
+				}
+			</script>
 		</div>
 		<div class="signup">
 			<form action="signup.jsp">

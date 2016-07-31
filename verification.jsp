@@ -25,7 +25,8 @@
 		if (rs.next()) {
 			response.sendRedirect("editall.jsp");
 		} else {
-			response.sendRedirect("login.html");
+			session.setAttribute("LOGIN-STATUS", "NO");
+			response.sendRedirect("login.jsp");
 		}
 		conn.close();
 	%>

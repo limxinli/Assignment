@@ -378,7 +378,7 @@ a.new-release-font:hover,a.sales-font:hover {
  ============================================================ */
 .login {
 	border-right: 1px solid black;
-	width: 250px;
+	width: 270px;
 	margin-left: 350px;
 }
 
@@ -395,13 +395,14 @@ a.new-release-font:hover,a.sales-font:hover {
 	margin-left: 115px;
 	padding-left: 25px;
 	padding-right: 25px;
+	margin-bottom: 10px;
 }
 
 .signup {
-	margin-left: 655px;
-	margin-top: -186px;
+	margin-left: 665px;
+	margin-top: -225px;
 	width: 200px;
-	margin-bottom: 54px;
+	margin-bottom: 29px;
 }
 
 /* =============================================================
