@@ -52,7 +52,7 @@
 						</div></li>
 					<li><a href="about.jsp">ABOUT</a></li>					
 					<%
-						if (session.getAttribute ("LOGIN-STATUS") == null) {
+						if (session.getAttribute ("LOGIN-STATUS") != "YES") {
 					%>
 							<li><a href="login.jsp"> <span
 									class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
@@ -60,21 +60,21 @@
 							</a></li>
 					<%
 						} else { 
-						%>
-							<li><a href="displayShoppingCart.jsp"> <span
-									class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-									Shopping Cart
-							</a></li>
-						<%
 							ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
 							
 							if (viewMembers != null) {
 								for(MemberDetails member:viewMembers) {
 						%>
-							<li><a href="viewMember.jsp"> <span
-									class="glyphicon glyphicon-user" aria-hidden="true"></span>
-									<%=member.getName()%>
-							</a></li>
+							<li><div class="dropdown">
+								<a href="viewMember.jsp"><button class="dropbtn"><span
+									class="glyphicon glyphicon-user"></span>
+										<%=member.getName()%> <span class="caret"></span>
+									</button></a>
+								<div id="myDropdown" class="dropdown-content">
+									<a href="displayShoppingCart.jsp">Shopping Cart</a>
+									<a href="logoutMember.jsp">Logout</a>
+								</div>
+							</div></li>
 						<%
 								}
 							}
@@ -98,7 +98,7 @@
 	<!--TOP SECTION END-->
 	<section>
 		<div class="login">
-			<form action="verification.jsp">
+			<form action="verification.jsp" method="post">
 				Email: <input type="text" name="username" id="username" placeholder="Email"
 					class="form-control"> Password: <input type="password" 
 					name="password" id="password" placeholder="Password" class="form-control"><br>
