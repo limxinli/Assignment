@@ -90,23 +90,14 @@
 
 	<!--TOP SECTION END-->
 	<section>
-		<div class="updateshoppingcart">
+		<div class="updateShoppingCart">
 			<form action="InsertUpdateServlet" method="post">
-				Game ID: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Name is needed to deliver the game to the correct customer. It is recommended to use your real name."></span>
-				<input type="text" name="name" id="name" class="form-control"><br>
-					Game Title: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Mailing Address is needed to deliver the game to the correct location. Please ensure that the address is entered correctly."></span>
-					<input type="text" name="mail" id="mail"
-					class="form-control"><br>
-					Release Date: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Email is needed to log into your account to purchase games. Please ensure it contains one @ symbol and at least one . symbol"></span>
-					<input type="text" name="email" id="email"
-					class="form-control"><br> 
-					Price: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Contact number is needed in case of emergencies. (E.g. Problems with the delivery of items) Please ensure it is 8 digits only."></span>
-					<input type="text" name="number" id="number"
-					class="form-control"><br> 
-					Quality: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="A strong password is needed to log into your account. Please ensure that it contains both alphabets and numbers and have 8-16 characters."></span><input type="password" 
-					name="pass" id="pass" class="form-control"><br>
-				<input type="submit" class="btn btn-info" id="submit-button"
-					value="Update">
+				Game ID: <input type="hidden" name="hiddenID" value="<%=%>"><br>
+				Game Title: <input type=text name="gametitle" value="<%=rs.getString("gametitle")%>"><br>
+				Release Date: <input type="text" name="releasedate" value="<%=rs.getString("releasedate")%>"><br> 
+				Price: <input type="text" name="saleprice" value="<%=rs.getString("releasedate")%>"><br> 
+				Quality:  <input type=text name="quantity" value="<%=rs.getString("quality") %>"><br>  
+				<input type="submit" class="btn btn-info" id="submit-button" value="Update">
 			</form>
 		</div>
 	</section>
