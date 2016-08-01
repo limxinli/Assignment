@@ -435,6 +435,8 @@ a.new-release-font:hover,a.sales-font:hover {
 	border: 3px solid #2EB1D0;
 	font-size: 15px;
 	padding-left: 10px;
+	margin-left: 3px;
+	width: 250px;
 	border-radius: 0px;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
