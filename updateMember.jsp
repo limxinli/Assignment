@@ -100,15 +100,17 @@
 
 	<!--TOP SECTION END-->
 	<section>
-		<div class = "viewmember">
-			<img src="assets/img/MemberDP.jpg" alt="" height="270" width="270" id="memberdp"/>
-			<div id = "memberdetails">
-				<b>Name:</b> <%=member.getName()%><br>
-				<b>Mailing Address:</b> <%=member.getMail()%><br>
-				<b>Email:</b> <%=member.getEmail()%><br>
-				<b>Contact Number:</b> <%=member.getNumber()%><br>
-				<a href="updateMember.jsp">Edit Information</a>
-			</div>
+		<div class = "updatemember">
+			<form action = "UpdateMemberDetailsServlet">
+				<b>Name:</b> <input type="text" name="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
+				<b>Mailing Address:</b> <input type=text name="mail" value="<%=member.getMail()%>" class="inputmember-cls"><br><br>
+				<b>Email:</b> <input type="text" name="email" value="<%=member.getEmail()%>" class="inputmember-cls"><br><br>
+				<b>Contact Number:</b> <input type="text" name="number" value="<%=member.getNumber()%>" class="inputmember-cls"><br><br>
+				<b>Old Password:</b>  <input type=text name="oldpass" class="inputmember-cls"><br><br> 
+				<b>New Password:</b>  <input type=text name="newpass" class="inputmember-cls"><br><br>
+				<b>Re-enter New Password:</b>  <input type=text name="newpass2" class="inputmember-cls"><br><br>
+				<input type="submit" class="btn btn-info" id="submit-button" value="Save Changes">
+			</form>
 		<%
 			}
 		}

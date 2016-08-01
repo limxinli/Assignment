@@ -413,12 +413,35 @@ a.new-release-font:hover,a.sales-font:hover {
  	width: 330px;
  }
  
- .member {
- 	margin-left: 40%;
+ .viewmember {
+ 	margin-left: 25%;
+ 	margin-top: 10px;
+ 	margin-bottom: 34px;
  }
  
+.updatemember {
+	margin-left: 35%;
+ 	margin-top: 10px;
+ 	margin-bottom: 34px;
+}
+ 
+ #memberdetails {
+ 	margin-left: 35%;
+ 	margin-top: -210px;
+ }
+ 
+ .inputmember-cls {
+	height: 35px;
+	border: 3px solid #2EB1D0;
+	font-size: 15px;
+	padding-left: 10px;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+}
+ 
  /* =============================================================
-   UPdate
+   UPDATE
  ============================================================ */
  .updateshoppingcart {
  	margin-left: 35%;
