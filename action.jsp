@@ -150,9 +150,9 @@
 				}
 			%><br> Genre Name: <%=dbgenrename%>
 			
-			<form action="Add2Cart" method="post">
+			<form action="Add2CartServlet" method="post">
 					<input type="submit" class="btn btn-info" id="submit-button"
-						value="Add To Cart">
+						value="Add To Cart" href="action.jsp?value="<%=dbgameid%>">
 				</form>
 			
 		</div>
