@@ -108,9 +108,7 @@
 					class="form-control"> Password: <input type="password" 
 					name="password" id="password" placeholder="Password" class="form-control"><br>
 				<input type="submit" class="btn btn-info" id="submit-button"
-					value="Login" onclick="memberform();return true;">
-				<input type="submit" class="btn btn-info" id="submit-button"
-					value="Admin Login" onclick="adminform();return true;">
+					value="Login">
 			</form>
 			<script>
 			function checkvalue() { 
@@ -121,13 +119,13 @@
 			        alert ('Empty value is not allowed!');
 			        return false;
 			    }
+			    else if (email.indexOf("@")==-1 || email.indexOf(".")==-1) {
+			    	document.myform.action = "verification.jsp";
+			    }
+				else {
+					document.myform.action = "ViewMemberDetailsServlet";
+				}
 			}
-				function memberform() {
-				    document.myform.action = "ViewMemberDetailsServlet";
-				}
-				function adminform() {
-				    document.myform.action = "verification.jsp";
-				}
 			</script>
 		</div>
 		<div class="signup">

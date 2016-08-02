@@ -10,6 +10,7 @@
 <body>
 	<%
 		Connection conn = DatabaseConnection.getConnection();
+		//Connection conn = DBconn.getConnection();
 
 		String inputusername = request.getParameter("username");
 		String inputpassword = request.getParameter("password");
@@ -28,6 +29,7 @@
 			session.setAttribute("LOGIN-STATUS", "NO");
 			response.sendRedirect("login.jsp");
 		}
+		
 		conn.close();
 	%>
 </body>
