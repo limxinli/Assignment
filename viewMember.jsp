@@ -67,10 +67,15 @@
 									class="glyphicon glyphicon-user"></span>
 										<%=member.getName()%> <span class="caret"></span>
 									</button></a>
-								<div id="myDropdown" class="dropdown-content">
+								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
 									<a href="displayShoppingCart.jsp">Shopping Cart</a>
-									<a href="logoutMember.jsp">Logout</a>
+									<a href="logoutMember.jsp" onclick="Logout()">Logout</a>
 								</div>
+								<script>
+									function Logout() {
+										alert ('Successfully logged out!');
+									}
+								</script>
 							</div></li>
 						<%
 								}

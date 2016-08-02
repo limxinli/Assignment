@@ -43,7 +43,7 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp" class="active-menu-item">Horror</a> <a
+								<a href="horror.jsp">Horror</a> <a
 									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
@@ -67,10 +67,15 @@
 									class="glyphicon glyphicon-user"></span>
 										<%=member.getName()%> <span class="caret"></span>
 									</button></a>
-								<div id="myDropdown" class="dropdown-content">
+								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
 									<a href="displayShoppingCart.jsp">Shopping Cart</a>
-									<a href="logoutMember.jsp">Logout</a>
+									<a href="logoutMember.jsp" onclick="Logout()">Logout</a>
 								</div>
+								<script>
+									function Logout() {
+										alert ('Successfully logged out!');
+									}
+								</script>
 							</div></li>
 						<%
 								}
@@ -101,21 +106,47 @@
 	<!--TOP SECTION END-->
 	<section>
 		<div class = "updatemember">
-			<form action = "UpdateMemberDetailsServlet">
-				<b>Name:</b> <input type="text" name="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
-				<b>Mailing Address:</b> <input type=text name="mail" value="<%=member.getMail()%>" class="inputmember-cls"><br><br>
-				<b>Email:</b> <input type="text" name="email" value="<%=member.getEmail()%>" class="inputmember-cls"><br><br>
-				<b>Contact Number:</b> <input type="text" name="number" value="<%=member.getNumber()%>" class="inputmember-cls"><br><br>
-				<b>Old Password:</b>  <input type=text name="oldpass" class="inputmember-cls"><br><br> 
-				<b>New Password:</b>  <input type=text name="newpass" class="inputmember-cls"><br><br>
-				<b>Re-enter New Password:</b>  <input type=text name="newpass2" class="inputmember-cls"><br><br>
+			<form onsubmit="return checkvalue()" action="EditMemberDetailsServlet" method="post">
+				<b>Name:</b> <input type="text" name="name" id="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
+				<b>Mailing Address:</b> <input type="text" name="mail" id="mail" value="<%=member.getMail()%>" class="inputmember-cls"><br><br>
+				<b>Email:</b> <input type="text" name="email" id="email" value="<%=member.getEmail()%>" class="inputmember-cls"><br><br>
+				<b>Contact Number:</b> <input type="text" name="number" id="number" value="<%=member.getNumber()%>" class="inputmember-cls"><br><br>
 				<input type="submit" class="btn btn-info" id="submit-button" value="Save Changes">
 			</form>
+			<form action="updateMemberPass.jsp">
+				<input type="submit" class="btn btn-info" id="submit-button" value="Change Password">
+			</form>
+		</div>
+			<script type="text/javascript">
+				function checkvalue() { 
+					var name = document.getElementById('name').value;
+					var mail = document.getElementById('mail').value;
+					var email = document.getElementById('email').value;
+					var number = document.getElementById('number').value; 
+				    var no = /^[0-9]+$/;
+				    if(!name.match(/\S/) || !mail.match(/\S/) || !email.match(/\S/) || !number.match(/\S/)) {
+				        alert ('Empty value is not allowed!');
+				        return false;
+				    }
+				    if (email.indexOf("@")==-1 || email.indexOf(".")==-1) {
+			    		alert ('Not a valid e-mail!');
+			        	return false;
+			    	}
+				    if(number.length != 8) {
+			        	alert ('Contact number must contain 8 digits!');
+			        	return false;
+				    }
+				    if (!no.test(number)) {
+		        		alert ('Contact number must contain only numbers!');
+		        		return false;
+		        	}  
+						return true;
+				}
+			</script>
 		<%
-			}
+	 		}
 		}
 	%>
-		</div>
 	</section>
 
 	<div class="copy-txt">

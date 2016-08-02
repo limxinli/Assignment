@@ -1,18 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
-<html xmlns="http://www.w3.org/1999/xhtml">
+    pageEncoding="ISO-8859-1" import="controller.*, java.util.*, model.*"%>
+<%
+	if (session.getAttribute ("LOGIN-STATUS") != "YES") {
+		response.sendRedirect("login.jsp");
+	}
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
 <title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -42,14 +38,13 @@
 					<li><a href="index.jsp"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
-							<a href="allgames.jsp" class="active-menu-item"><button
-									class="dropbtn">
+							<a href="allgames.jsp"><button class="dropbtn">
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp" class="active-menu-item">Action</a> <a
-									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
-								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
+								<a href="horror.jsp">Horror</a> <a
+									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.jsp">ABOUT</a></li>
@@ -86,7 +81,7 @@
 								}
 							}
 						}
-						%>
+						%>					
 				</ul>
 			</div>
 
@@ -94,84 +89,69 @@
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-	<div class="overlay ">
-		<h3>
-			NEW RELEASES <i class="fa fa-angle-double-right "></i>
-		</h3>
+		<div class="overlay ">
+		<%
+		ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+	
+		if (viewMembers != null) {
+			for(MemberDetails member:viewMembers) {
+		%>
+			<h3>
+				WELCOME <%=member.getName()%> <i class="fa fa-angle-double-right "></i>
+			</h3>
 
-	</div>
-	</section>
-	<!-- HOME SECTION END -->
-	<!-- BACK TO TOP BUTTON -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript"
-		src="http://arrow.scrolltotop.com/arrow92.js"></script>
-	<noscript>
-		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
-			Button</a>? Go to our FAQ page for more info.
-	</noscript>
-	<!-- BACK TO TOP BUTTON END -->
-
-	<!-- Main Background -->
-	<%
-		Connection conn = DatabaseConnection.getConnection();
-
-		String sql = "select * from game_data gd, genre g, game_genre gg where gd.game_id=gg.game_id and gg.genre_id=g.genre_id group by release_date having datediff(curdate(), release_date) < 180 AND release_date <= curdate()";
-
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-
-		ResultSet rs = pstmt.executeQuery();
-
-		while (rs.next()) {
-			int dbgameid = rs.getInt("game_id");
-			String dbgametitle = rs.getString("game_title");
-			double dbprice = rs.getDouble("price");
-			String newdbprice = String.format("%.2f", dbprice);
-			double dbsprice = rs.getDouble("sale_price");
-			String newdbsprice = String.format("%.2f", dbsprice);
-			String dbimageloc = rs.getString("image_loc");
-			String dbgenrename = rs.getString("genre_name");
-			%>
-			<div class="boxaround">
-	<form action="ingame.jsp" method="get">
-		<input type="hidden" name="hiddenID"/>
-	</form>
-	<a href="ingame.jsp?hiddenID=<%=dbgameid%>">
-			<img
-				src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" />
-		<div class="insidebox">
-			Game Title:
-			<%=dbgametitle%><br> Price:
-			<%
-			if (dbprice == 0) {
-					out.println("<td>TBC</td><br>");
-				} else {
-		%><%="$" + newdbprice%>
-			<%
-				}
-			if (dbsprice != 0){
-				out.println("<b> On sale now! </b>");
-				%><br><%="<b> Price: $" + newdbsprice + "</b>"%>
-			<%
-			}
-			%><br> Genre Name: <%=dbgenrename%>
 		</div>
-		</a>
-			</div>			
-	<% 		
-		}
-		conn.close();
-	%>
+	</section>
 
-	<!-- End Main Background -->
+	<!--TOP SECTION END-->
+	<section>
+		<div class = "updatemember">
+			<form onsubmit="return checkvalue()" action="EditMemberPasswordServlet" method="post">
+				<b>New Password:</b>  <input type="password" name="newpass" id="newpass" class="inputmember-cls"><br><br>
+				<b>Re-enter New Password:</b>  <input type="password" name="newpass2" id="newpass2" class="inputmember-cls"><br><br>
+				<input type="submit" class="btn btn-info" id="submit-button" value="Save Changes">
+			</form>
+		</div>
+			<script type="text/javascript">
+				function checkvalue() { 
+				    var newpass = document.getElementById('newpass').value;
+				    var newpass2 = document.getElementById('newpass2').value;
+				    var no = /^[0-9]+$/;
+				    var alp = /^[a-zA-Z]+$/;
+				    if(!newpass.match(/\S/) || !newpass2.match(/\S/)) {
+				        alert ('Empty value is not allowed!');
+				        return false;
+				    }
+				    if (newpass.length < 8 || newpass.length > 16) {
+				    	alert ('Password must be of length 8 to 16!');
+		        		return false;
+				    }
+				    if (newpass != newpass2) {
+				    	alert ('Please ensure that the new password is re-entered correctly!');
+		        		return false;
+				    }
+				    if (!no.test(newpass) && !alp.test(newpass)) {
+				    }
+				    else {
+				    	alert ('Password must contain both alphabets and numbers!');
+				    	return false;
+				    }
+				    
+						return true;
+				}
+			</script>
+		<%
+	 		}
+		}
+	%>
+	</section>
 
 	<div class="copy-txt">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 set-foot">
-					&copy 2016 Singapore Polytechnic | All rights reserved | Design by
-					: <a href="http://www.binarytheme.com" target="_blank"
+					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
+					All rights reserved | Design by : <a href="http://www.binarytheme.com" target="_blank"
 						style="color: #7C7C7C;">binarytheme.com</a>
 				</div>
 			</div>
@@ -185,5 +165,6 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
+
 </body>
 </html>
