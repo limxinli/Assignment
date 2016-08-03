@@ -90,7 +90,7 @@
 	%>
 
 	<p id="caption">Shopping Cart</p>
-
+	<table border='3'>
 	<tr>
 		<th><b>Game ID</b></th>
 		<th><b>Game Title</b></th>
@@ -118,11 +118,17 @@
 				<input type="submit" value="Update">
 			</form>
 		</td>
+		
 
 		<%
 			}
 			}
 		%>
+		 </table>
+		<form action="checkout.jsp">
+				<br><input type="submit" class="btn btn-info" id="submit-button"
+					value="Checkout">
+			</form>
 
 		<div class="copy-txt">
 			<div class="container">
