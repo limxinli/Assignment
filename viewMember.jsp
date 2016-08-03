@@ -112,7 +112,7 @@
 				<b>Mailing Address:</b> <%=member.getMail()%><br>
 				<b>Email:</b> <%=member.getEmail()%><br>
 				<b>Contact Number:</b> <%=member.getNumber()%><br>
-				<a href="updateMember.jsp">Edit Information</a>
+				<a href="updateMember.jsp?value=<%=member.getId()%>">Edit Information</a>
 			</div>
 		<%
 			}

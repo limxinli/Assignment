@@ -106,7 +106,8 @@
 	<!--TOP SECTION END-->
 	<section>
 		<div class = "updatemember">
-			<form onsubmit="return checkvalue()" action="EditMemberDetailsServlet" method="post">
+			<form onsubmit="return checkvalue()" action="EditMemberDetailsServlet" method="get">
+				<input type="hidden" name="hiddenID" id="hiddenID" value="<%=member.getId()%>">
 				<b>Name:</b> <input type="text" name="name" id="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
 				<b>Mailing Address:</b> <input type="text" name="mail" id="mail" value="<%=member.getMail()%>" class="inputmember-cls"><br><br>
 				<b>Email:</b> <input type="text" name="email" id="email" value="<%=member.getEmail()%>" class="inputmember-cls"><br><br>
