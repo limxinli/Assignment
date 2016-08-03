@@ -104,7 +104,7 @@
 		<td><%=games.getGametitle()%></td>
 		<td><%=games.getReleasedate()%></td>
 		<td><%=games.getPrice()%></td>
-		<td><%=games.getQuality()%></td>
+		<td><%=games.getQuantity()%></td>
 
 		<td>
 			<form action="DeleteGame" method="get">
