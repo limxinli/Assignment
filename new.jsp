@@ -42,12 +42,12 @@
 					<li><a href="index.jsp"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
-							<a href="allgames.jsp" class="active-menu-item"><button
+							<a href="allgames.jsp"><button
 									class="dropbtn">
 									GAMES <span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="action.jsp" class="active-menu-item">Action</a> <a
+								<a href="action.jsp">Action</a> <a
 									href="adventure.jsp">Adventure</a> <a href="horror.jsp">Horror</a>
 								<a href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>

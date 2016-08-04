@@ -107,6 +107,7 @@
 	<section>
 		<div class = "updatemember">
 			<form onsubmit="return checkvalue()" action="EditMemberPasswordServlet" method="get">
+				<b>Old Password:</b>  <input type="password" name="newpass" id="oldpass" class="inputmember-cls"><br><br>
 				<b>New Password:</b>  <input type="password" name="newpass" id="newpass" class="inputmember-cls"><br><br>
 				<b>Re-enter New Password:</b>  <input type="password" name="newpass2" id="newpass2" class="inputmember-cls"><br><br>
 				<input type="submit" class="btn btn-info" id="submit-button" value="Save Changes">

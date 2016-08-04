@@ -43,7 +43,7 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp" class="active-menu-item">Horror</a> <a
+								<a href="horror.jsp">Horror</a> <a
 									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
@@ -91,6 +91,7 @@
 	<section class="headline-sec">
 		<div class="overlay ">
 		<%
+		
 		ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
 	
 		if (viewMembers != null) {
@@ -99,7 +100,6 @@
 			<h3>
 				WELCOME <%=member.getName()%> <i class="fa fa-angle-double-right "></i>
 			</h3>
-
 		</div>
 	</section>
 
@@ -108,11 +108,15 @@
 		<div class = "viewmember">
 			<img src="assets/img/MemberDP.jpg" alt="" height="270" width="270" id="memberdp"/>
 			<div id = "memberdetails">
+			<form action="updateMember.jsp">
+			<input type="hidden" name="emailmember" value="<%=member.getEmail()%>"/>
+			<input type="hidden" name="passmember" value="<%=member.getPassword()%>"/>
 				<b>Name:</b> <%=member.getName()%><br>
 				<b>Mailing Address:</b> <%=member.getMail()%><br>
 				<b>Email:</b> <%=member.getEmail()%><br>
-				<b>Contact Number:</b> <%=member.getNumber()%><br>
-				<a href="updateMember.jsp?value=<%=member.getId()%>">Edit Information</a>
+				<b>Contact Number:</b> <%=member.getNumber()%><br><br>
+				<input type="submit" class="btn btn-info" id="submit-button" name="edit" value="Edit Information"/>
+			</form>
 			</div>
 		<%
 			}

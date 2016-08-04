@@ -91,10 +91,13 @@
 	<section class="headline-sec">
 		<div class="overlay ">
 		<%
-		ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+		String email = request.getParameter("emailmember");
+		String pass = request.getParameter("passmember");
+		
+		ArrayList<MemberDetails> editMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
 	
-		if (viewMembers != null) {
-			for(MemberDetails member:viewMembers) {
+		if (editMembers != null) {
+			for(MemberDetails member:editMembers) {
 		%>
 			<h3>
 				WELCOME <%=member.getName()%> <i class="fa fa-angle-double-right "></i>
@@ -106,8 +109,9 @@
 	<!--TOP SECTION END-->
 	<section>
 		<div class = "updatemember">
+			<input type="hidden" name="emailmember" value="<%=email%>"/>
+			<input type="hidden" name="passmember" value="<%=pass%>"/>
 			<form onsubmit="return checkvalue()" action="EditMemberDetailsServlet" method="get">
-				<input type="hidden" name="hiddenID" id="hiddenID" value="<%=member.getId()%>">
 				<b>Name:</b> <input type="text" name="name" id="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
 				<b>Mailing Address:</b> <input type="text" name="mail" id="mail" value="<%=member.getMail()%>" class="inputmember-cls"><br><br>
 				<b>Email:</b> <input type="text" name="email" id="email" value="<%=member.getEmail()%>" class="inputmember-cls"><br><br>

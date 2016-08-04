@@ -39,10 +39,10 @@
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="index.jsp" class="active-menu-item"><span
+					<li><a href="index.jsp"><span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
-							<a href="allgames.jsp" class="active-menu-item"><button
+							<a href="allgames.jsp"><button
 									class="dropbtn">
 									GAMES <span class="caret"></span>
 								</button></a>

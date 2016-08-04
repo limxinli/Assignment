@@ -118,7 +118,7 @@
 			    if(!email.match(/\S/) || !pass.match(/\S/)) {
 			        alert ('Empty value is not allowed!');
 			        return false;
-			    }
+			    } 
 			    else if (email.indexOf("@")==-1 || email.indexOf(".")==-1) {
 			    	document.myform.action = "verification.jsp";
 			    }
