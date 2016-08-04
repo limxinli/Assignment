@@ -83,7 +83,7 @@
 	</div>
 
  	<%
-		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("results");
+		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
 		
 		if (GameArray != null) {
 			for(Games_Data games:GameArray) {
@@ -98,12 +98,11 @@
 		<th><b>Price</b></th>
 		<th colspan='2'><b>Actions</b></th>
 	</tr>
-
  	<tr>
 		<td><%=games.getGameid()%></td>
 		<td><%=games.getGametitle()%></td>
 		<td><%=games.getReleasedate()%></td>
-		<td><%=games.getPrice()%></td>
+		<td><%=games.getSaleprice()%></td>
 		<td><%=games.getQuantity()%></td>
 
 		<td>
@@ -119,16 +118,16 @@
 			</form>
 		</td>
 		
-
-		<%
-			}
-			}
-		%> 
 		 </table>
 		<form action="checkout.jsp">
 				<br><input type="submit" class="btn btn-info" id="submit-button"
 					value="Checkout">
-			</form>
+		</form>
+		
+		<%
+			}
+		} 
+		%> 
 
 		<div class="copy-txt">
 			<div class="container">
