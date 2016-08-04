@@ -15,7 +15,7 @@
 		String inputusername = request.getParameter("username");
 		String inputpassword = request.getParameter("password");
 
-		String sql = "Select * from administrator where username=? and password=?";
+		String sql = "Select * from admin_member where email=? and password=?";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, inputusername);
