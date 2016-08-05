@@ -89,7 +89,15 @@
 			for(Games_Data games:GameArray) {
 	%> 
 
-	<p id="caption">Shopping Cart</p>
+	<section class="headline-sec">
+	<div class="overlay ">
+		<h3>
+			ACTION GAMES <i class="fa fa-angle-double-right "></i>
+		</h3>
+
+	</div>
+	</section>
+	
 	<table border='3'>
 	<tr>
 		<th><b>Game ID</b></th>
