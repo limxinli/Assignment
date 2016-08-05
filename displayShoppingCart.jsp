@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="controller.*, java.util.*, model.*"%>
+	pageEncoding="ISO-8859-1" import="controller.*, java.util.*, model.*"%>
 <%
 	if (session.getAttribute ("LOGIN-STATUS") != "YES") {
 		response.sendRedirect("login.jsp");
@@ -20,7 +20,7 @@
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top ">
+	<div class="navbar navbar-inverse navbar-fixed-top ">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -50,68 +50,72 @@
 					<%
 						if (session.getAttribute ("LOGIN-STATUS") != "YES") {
 					%>
-							<li><a href="login.jsp"> <span
-									class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-									LOGIN
-							</a></li>
+					<li><a href="login.jsp"> <span
+							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+							LOGIN
+					</a></li>
 					<%
 						} else { 
-							ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
-							
-							if (viewMembers != null) {
-								for(MemberDetails member:viewMembers) {
-						%>
-							<li><div class="dropdown">
-								<a href="viewMember.jsp"><button class="dropbtn"><span
-									class="glyphicon glyphicon-user"></span>
-										<%=member.getName()%> <span class="caret"></span>
-									</button></a>
-								<div id="myDropdown" class="dropdown-content">
-									<a href="displayShoppingCart.jsp">Shopping Cart</a>
-									<a href="logoutMember.jsp">Logout</a>
-								</div>
-							</div></li>
-						<%
-								}
-							}
+													ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+													
+													if (viewMembers != null) {
+														for(MemberDetails member:viewMembers) {
+					%>
+					<li><div class="dropdown">
+							<a href="viewMember.jsp"><button class="dropbtn">
+									<span class="glyphicon glyphicon-user"></span>
+									<%=member.getName()%>
+									<span class="caret"></span>
+								</button></a>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="displayShoppingCart.jsp">Shopping Cart</a> <a
+									href="logoutMember.jsp">Logout</a>
+							</div>
+						</div></li>
+					<%
 						}
-						%>					
+													}
+												}
+					%>
 				</ul>
 			</div>
 
 		</div>
 	</div>
 
- 	<%
-		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
-		
-		if (GameArray != null) {
-			for(Games_Data games:GameArray) {
-	%> 
-
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			ACTION GAMES <i class="fa fa-angle-double-right "></i>
+			SHOPPING CART <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
 	</section>
-	
+
+	<%
+		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
+			
+			if (GameArray != null) {
+		for(Games_Data games:GameArray) {
+	%>
+
+
+
 	<table border='3'>
-	<tr>
-		<th><b>Game ID</b></th>
-		<th><b>Game Title</b></th>
-		<th><b>Release Date</b></th>
-		<th><b>Price</b></th>
-		<th colspan='2'><b>Actions</b></th>
-	</tr>
- 	<tr>
-		<td><%=games.getGameid()%></td>
-		<td><%=games.getGametitle()%></td>
-		<td><%=games.getReleasedate()%></td>
-		<td><%=games.getPrice()%></td>
-		<td><%=games.getQuantity()%></td>
+		<tr>
+			<th><b>Game ID</b></th>
+			<th><b>Game Title</b></th>
+			<th><b>Release Date</b></th>
+			<th><b>Price</b></th>
+			<th colspan='2'><b>Actions</b></th>
+		</tr>
+		<tr>
+			<td><%=games.getGameid()%></td>
+			<td><%=games.getGametitle()%></td>
+			<td><%=games.getReleasedate()%></td>
+			<td><%=games.getPrice()%></td>
+			<td><%=games.getQuantity()%></td>
+		</tr>
 
 		<td>
 			<form action="DeleteGame" method="get">
@@ -125,37 +129,37 @@
 				<input type="submit" value="Update">
 			</form>
 		</td>
-		
-		 </table>
-		<form action="checkout.jsp">
-				<br><input type="submit" class="btn btn-info" id="submit-button"
-					value="Checkout">
-		</form>
-		
-		<%
-			}
-		} 
-		%> 
 
-		<div class="copy-txt">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 set-foot">
-						&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
-						All rights reserved | Design by : <a
-							href="http://www.binarytheme.com" target="_blank"
-							style="color: #7C7C7C;">binarytheme.com</a>
-					</div>
+	</table>
+	<form action="checkout.jsp">
+		<br> <input type="submit" class="btn btn-info" id="submit-button"
+			value="Checkout">
+	</form>
+
+	<%
+		}
+			}
+	%>
+
+	<div class="copy-txt">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 set-foot">
+					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
+					All rights reserved | Design by : <a
+						href="http://www.binarytheme.com" target="_blank"
+						style="color: #7C7C7C;">binarytheme.com</a>
 				</div>
 			</div>
 		</div>
-		<!-- COPY TEXT SECTION END-->
-		<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-		<!-- CORE JQUERY  -->
-		<script src="assets/js/jquery-1.11.1.js"></script>
-		<!-- BOOTSTRAP SCRIPTS  -->
-		<script src="assets/js/bootstrap.js"></script>
-		<!-- CUSTOM SCRIPTS  -->
-		<script src="assets/js/custom.js"></script>
+	</div>
+	<!-- COPY TEXT SECTION END-->
+	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- CORE JQUERY  -->
+	<script src="assets/js/jquery-1.11.1.js"></script>
+	<!-- BOOTSTRAP SCRIPTS  -->
+	<script src="assets/js/bootstrap.js"></script>
+	<!-- CUSTOM SCRIPTS  -->
+	<script src="assets/js/custom.js"></script>
 </body>
 </html>
