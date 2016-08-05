@@ -44,7 +44,7 @@ if (session.getAttribute ("ADMIN-STATUS") != "YES") {
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="editall.jsp" class="active-menu-item"><span
+					<li><a href="editall.jsp"><span
 							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
 					<li><a href="logoutAdmin.jsp"> <span
 							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
@@ -57,67 +57,25 @@ if (session.getAttribute ("ADMIN-STATUS") != "YES") {
 	</div>
 	<!--MENU SECTION END-->
 	<section class="headline-sec">
-	<div class="overlay ">
-		<h3>
-			UPDATE GAME <i class="fa fa-angle-double-right "></i>
-		</h3>
+		<div class="overlay ">
+			<h3>
+				DELETE GENRE <i class="fa fa-angle-double-right "></i>
+			</h3>
 
-	</div>
+		</div>
 	</section>
 	<!--TOP SECTION END-->
+
 	<section>
-	<div class="gamedata">
-		<form action="updategameprocess.jsp">
-			Enter Game ID to update: <input type="text" name="id"
-				class="form-control"> <br> New Game Title: <input
-				type="text" name="title" class="form-control">
-			<br> New Company: <input type="text" name="company"
-				 class="form-control"> <br> New Release
-			Date: <input type="text" name="date"
-				placeholder="Type in this format (yyyy-mm-dd)" class="form-control">
-			<br> New Description:
-			<textarea class="form-control" rows="5"
-				name="description"></textarea>
-			<br> New Price: <input type="text" name="price"
-				 id="price" class="form-control"> <br>
-			New Image Location: <input type="text" name="img"
-				placeholder="Path of the image (assets/img/)" class="form-control">
-			<br> 
-				New Genre:
-			<div class="genre-drop">
-				<select data-placeholder="Select the genre(s)" class="chosen-select"
-					multiple style="width: 350px;" tabindex="4" name="genre-drop"
-					id="genre-drop">
-					<option value=""></option>
-						<%
-				Connection conn = DatabaseConnection.getConnection();
-				String sql = "SELECT genre_name FROM genre";
-
-				PreparedStatement pstmt = conn.prepareStatement(sql);
-
-				ResultSet rs = pstmt.executeQuery();
-				while (rs.next()) {
-					String dbgenrename = rs.getString("genre_name");
-			%>
-			<option><%=dbgenrename%></option>
-			<%
-				}
-				conn.close();
-			%>
-				</select>
+		<form action="deletegenreprocess.jsp">
+			<div class="gamedata">
+				Genre ID: <input type="text" name="genreid" id="genreid" class="form-control">
 			</div>
-			<div class="radio-button2">
-				Is it pre-owned? <br> <input type="radio" id="new" name="type"
-					value="no"> No <input type="radio" id="preowned"
-					value="yes" name="type"> Yes
-			</div>
-			<br>
-			<input type="submit" class="btn btn-info" id="add" value="Update">
+			<input type="submit" class="btn btn-info" id="delete" value="Delete">
 		</form>
-	</div>
 	</section>
 
-	<div class="copy-txt">
+	<div class="deletecopy-txt">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 set-foot">
@@ -137,29 +95,5 @@ if (session.getAttribute ("ADMIN-STATUS") != "YES") {
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
-	<!-- CHOSEN SCRIPTS -->
-	<script src="assets/chosen_v1.5.1/chosen.jquery.js"></script>
-	<script src="assets/chosen_v1.5.1/docsupport/prism.js"
-		type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		var config = {
-			'.chosen-select' : {},
-			'.chosen-select-deselect' : {
-				allow_single_deselect : true
-			},
-			'.chosen-select-no-single' : {
-				disable_search_threshold : 10
-			},
-			'.chosen-select-no-results' : {
-				no_results_text : 'Oops, nothing found!'
-			},
-			'.chosen-select-width' : {
-				width : "95%"
-			}
-		}
-		for ( var selector in config) {
-			$(selector).chosen(config[selector]);
-		}
-	</script>
 </body>
 </html>

@@ -24,6 +24,7 @@
 		ResultSet rs = pstmt.executeQuery();
 
 		if (rs.next()) {
+			session.setAttribute("ADMIN-STATUS", "YES");
 			response.sendRedirect("editall.jsp");
 		} else {
 			session.setAttribute("LOGIN-STATUS", "NO");

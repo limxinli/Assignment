@@ -91,8 +91,7 @@
 	<section class="headline-sec">
 		<div class="overlay ">
 		<%
-		String email = request.getParameter("emailmember");
-		String pass = request.getParameter("passmember");
+		int id = Integer.parseInt(request.getParameter("hiddenID"));
 		
 		ArrayList<MemberDetails> editMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
 	
@@ -109,8 +108,7 @@
 	<!--TOP SECTION END-->
 	<section>
 		<div class = "updatemember">
-			<input type="hidden" name="emailmember" value="<%=email%>"/>
-			<input type="hidden" name="passmember" value="<%=pass%>"/>
+			<input type="hidden" name="hiddenID" value="<%=id%>"/>
 			<form onsubmit="return checkvalue()" action="EditMemberDetailsServlet" method="get">
 				<b>Name:</b> <input type="text" name="name" id="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
 				<b>Mailing Address:</b> <input type="text" name="mail" id="mail" value="<%=member.getMail()%>" class="inputmember-cls"><br><br>

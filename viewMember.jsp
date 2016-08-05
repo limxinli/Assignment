@@ -109,8 +109,7 @@
 			<img src="assets/img/MemberDP.jpg" alt="" height="270" width="270" id="memberdp"/>
 			<div id = "memberdetails">
 			<form action="updateMember.jsp">
-			<input type="hidden" name="emailmember" value="<%=member.getEmail()%>"/>
-			<input type="hidden" name="passmember" value="<%=member.getPassword()%>"/>
+			<input type="hidden" name="hiddenID" value="<%=member.getId()%>"/>
 				<b>Name:</b> <%=member.getName()%><br>
 				<b>Mailing Address:</b> <%=member.getMail()%><br>
 				<b>Email:</b> <%=member.getEmail()%><br>

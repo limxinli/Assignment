@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
+<%
+if (session.getAttribute ("ADMIN-STATUS") != "YES") {
+	response.sendRedirect("index.jsp");
+}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -44,7 +49,7 @@
 				<ul class="nav navbar-nav navbar-right set-links">
 					<li><a href="editall.jsp" class="active-menu-item"><span
 							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
-					<li><a href="login.html"> <span
+					<li><a href="logoutAdmin.jsp"> <span
 							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
 							LOGOUT
 					</a></li>
