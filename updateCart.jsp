@@ -98,8 +98,7 @@
 		<div class="updateShoppingCart">
 			<form action="InsertUpdateServlet" method="post">
 				Game ID: <input type="hidden" name="hiddenID" value="<%=%>"><br>
-				Game Title: <input type=text name="gametitle" value="<%=rs.getString("gametitle")%>"><br>
-				Release Date: <input type="text" name="releasedate" value="<%=rs.getString("releasedate")%>"><br> 
+				Game Title: <input type=text name="gametitle" value="<%=rs.getString("gametitle")%>"><br> 
 				Price: <input type="text" name="saleprice" value="<%=rs.getString("releasedate")%>"><br> 
 				Quality:  <input type=text name="quantity" value="<%=rs.getString("quality") %>"><br>  
 				<input type="submit" class="btn btn-info" id="submit-button" value="Update">
