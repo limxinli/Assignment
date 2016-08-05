@@ -102,7 +102,7 @@
 		<td><%=games.getGameid()%></td>
 		<td><%=games.getGametitle()%></td>
 		<td><%=games.getReleasedate()%></td>
-		<td><%=games.getSaleprice()%></td>
+		<td><%=games.getPrice()%></td>
 		<td><%=games.getQuantity()%></td>
 
 		<td>
