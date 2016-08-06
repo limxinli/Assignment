@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
 <%
-if (session.getAttribute ("ADMIN-STATUS") != "YES") {
+if (session.getAttribute ("ADMIN-STATUS") == null ) {
 	response.sendRedirect("index.jsp");
 }
 %>

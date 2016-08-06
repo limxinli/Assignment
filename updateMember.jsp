@@ -108,16 +108,21 @@
 	<!--TOP SECTION END-->
 	<section>
 		<div class = "updatemember">
-			<input type="hidden" name="hiddenID" value="<%=id%>"/>
-			<form onsubmit="return checkvalue()" action="EditMemberDetailsServlet" method="get">
-				<b>Name:</b> <input type="text" name="name" id="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
-				<b>Mailing Address:</b> <input type="text" name="mail" id="mail" value="<%=member.getMail()%>" class="inputmember-cls"><br><br>
-				<b>Email:</b> <input type="text" name="email" id="email" value="<%=member.getEmail()%>" class="inputmember-cls"><br><br>
-				<b>Contact Number:</b> <input type="text" name="number" id="number" value="<%=member.getNumber()%>" class="inputmember-cls"><br><br>
+			<form onsubmit="return checkvalue()" action="EditMemberDetailsServlet" method="post" id="editform">
+				<input type="hidden" name="hiddenID" value="<%=id%>"/>
+				<hr id="passline">
+				<b>Information</b>
+				<hr id="passline2">
+				Name: <input type="text" name="name" id="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
+				Mailing Address: <input type="text" name="mail" id="mail" value="<%=member.getMail()%>" class="inputmember-cls"><br><br>
+				Email: <input type="text" name="email" id="email" value="<%=member.getEmail()%>" class="inputmember-cls"><br><br>
+				Contact Number: <input type="text" name="number" id="number" value="<%=member.getNumber()%>" class="inputmember-cls"><br><br>
+				<hr id="passline">
+				<b>Password</b> <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="If you would like to change your password, enter your new password, else just enter your old password"></span>
+				<hr id="passline2">
+				New Password:<br><input type="password" name="newpass" id="newpass" class="inputmember-cls"><br><br>
+				Re-enter New Password:<br><input type="password" name="newpass2" id="newpass2" class="inputmember-cls"><br><br>
 				<input type="submit" class="btn btn-info" id="submit-button" value="Save Changes">
-			</form>
-			<form action="updateMemberPass.jsp">
-				<input type="submit" class="btn btn-info" id="submit-button" value="Change Password">
 			</form>
 		</div>
 			<script type="text/javascript">
@@ -126,7 +131,10 @@
 					var mail = document.getElementById('mail').value;
 					var email = document.getElementById('email').value;
 					var number = document.getElementById('number').value; 
+					var newpass = document.getElementById('newpass').value;
+				    var newpass2 = document.getElementById('newpass2').value;
 				    var no = /^[0-9]+$/;
+				    var alp = /^[a-zA-Z]+$/;
 				    if(!name.match(/\S/) || !mail.match(/\S/) || !email.match(/\S/) || !number.match(/\S/)) {
 				        alert ('Empty value is not allowed!');
 				        return false;
@@ -142,7 +150,25 @@
 				    if (!no.test(number)) {
 		        		alert ('Contact number must contain only numbers!');
 		        		return false;
-		        	}  
+		        	}
+				    if(!newpass.match(/\S/) || !newpass2.match(/\S/)) {
+				        alert ('Empty value is not allowed!');
+				        return false;
+				    }
+				    if (newpass.length < 8 || newpass.length > 16) {
+				    	alert ('Password must be of length 8 to 16!');
+		        		return false;
+				    }
+				    if (newpass != newpass2) {
+				    	alert ('Please ensure that the new password is re-entered correctly!');
+		        		return false;
+				    }
+				    if (!no.test(newpass) && !alp.test(newpass)) {
+				    }
+				    else {
+				    	alert ('Password must contain both alphabets and numbers!');
+				    	return false;
+				    }
 						return true;
 				}
 			</script>

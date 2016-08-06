@@ -56,10 +56,10 @@
 					</a></li>
 					<%
 						} else { 
-													ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
-													
-													if (viewMembers != null) {
-														for(MemberDetails member:viewMembers) {
+							ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+		
+								if (viewMembers != null) {
+									for(MemberDetails member:viewMembers) {
 					%>
 					<li><div class="dropdown">
 							<a href="viewMember.jsp"><button class="dropbtn">
@@ -73,9 +73,9 @@
 							</div>
 						</div></li>
 					<%
+								}
+							}
 						}
-													}
-												}
 					%>
 				</ul>
 			</div>
@@ -91,7 +91,9 @@
 
 	</div>
 	</section>
-
+	<form action="transactionHistory.jsp">
+		<input type="submit" class="btn btn-info" id="submit-button" name="history" value="View Transaction History"/><br>
+	</form>
 	<%
 		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
 			
@@ -112,7 +114,6 @@
 		<tr>
 			<td><%=games.getGameid()%></td>
 			<td><%=games.getGametitle()%></td>
-			<td><%=games.getReleasedate()%></td>
 			<td><%=games.getPrice()%></td>
 			<td><%=games.getQuantity()%></td>
 		</tr>

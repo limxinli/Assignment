@@ -119,11 +119,8 @@
 			        alert ('Empty value is not allowed!');
 			        return false;
 			    } 
-			    else if (email.indexOf("@")==-1 || email.indexOf(".")==-1) {
-			    	document.myform.action = "verification.jsp";
-			   }
 				else {
-					document.myform.action = "ViewMemberDetailsServlet";
+					document.myform.action = "AdminMemberVerificationServlet";
 				}
 			}
 			</script>

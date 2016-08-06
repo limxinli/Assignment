@@ -91,14 +91,13 @@
 	<section class="headline-sec">
 		<div class="overlay ">
 		<%
-		
-		ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+		ArrayList<MemberDetails> Members = (ArrayList<MemberDetails>)session.getAttribute("results");
 	
-		if (viewMembers != null) {
-			for(MemberDetails member:viewMembers) {
+		if (Members != null) {
+			for(MemberDetails viewmember:Members) {
 		%>
 			<h3>
-				WELCOME <%=member.getName()%> <i class="fa fa-angle-double-right "></i>
+				WELCOME <%=viewmember.getName()%> <i class="fa fa-angle-double-right "></i>
 			</h3>
 		</div>
 	</section>
@@ -109,12 +108,12 @@
 			<img src="assets/img/MemberDP.jpg" alt="" height="270" width="270" id="memberdp"/>
 			<div id = "memberdetails">
 			<form action="updateMember.jsp">
-			<input type="hidden" name="hiddenID" value="<%=member.getId()%>"/>
-				<b>Name:</b> <%=member.getName()%><br>
-				<b>Mailing Address:</b> <%=member.getMail()%><br>
-				<b>Email:</b> <%=member.getEmail()%><br>
-				<b>Contact Number:</b> <%=member.getNumber()%><br><br>
-				<input type="submit" class="btn btn-info" id="submit-button" name="edit" value="Edit Information"/>
+			<input type="hidden" name="hiddenID" value="<%=viewmember.getId()%>"/>
+				<b>Name:</b> <%=viewmember.getName()%><br>
+				<b>Mailing Address:</b> <%=viewmember.getMail()%><br>
+				<b>Email:</b> <%=viewmember.getEmail()%><br>
+				<b>Contact Number:</b> <%=viewmember.getNumber()%><br><br>
+				<input type="submit" class="btn btn-info" id="submit-button2" name="edit" value="Edit Information"/><br>
 			</form>
 			</div>
 		<%

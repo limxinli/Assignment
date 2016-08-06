@@ -399,6 +399,12 @@ a.new-release-font:hover,a.sales-font:hover {
 	margin-bottom: 10px;
 }
 
+#submit-button2 {
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-bottom: 10px;
+}
+
 .signup {
 	margin-left: 665px;
 	margin-top: -196px;
@@ -428,7 +434,7 @@ a.new-release-font:hover,a.sales-font:hover {
  
  #memberdetails {
  	margin-left: 35%;
- 	margin-top: -210px;
+ 	margin-top: -230px;
  }
  
  .inputmember-cls {
@@ -441,6 +447,24 @@ a.new-release-font:hover,a.sales-font:hover {
 	border-radius: 0px;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
+}
+
+#editform {
+	width: 50%;
+}
+
+#passline {
+	margin-top: 0px;
+	margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+#passline2 {
+	margin-top: 0px;
+	margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ccc;
 }
  
  /* =============================================================
