@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" import="controller.*, java.util.*, model.*"%>
 <%@page import="java.sql.*,db.*"%>
 <%
 if (session.getAttribute ("ADMIN-STATUS") == null) {
@@ -62,7 +62,7 @@ if (session.getAttribute ("ADMIN-STATUS") == null) {
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			EDIT <i class="fa fa-angle-double-right "></i>
+			STOCK REPORT <i class="fa fa-angle-double-right "></i>
 		</h3>
 	</div>
 		<!-- BACK TO TOP BUTTON -->
@@ -74,84 +74,53 @@ if (session.getAttribute ("ADMIN-STATUS") == null) {
 		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
 			Button</a>? Go to our FAQ page for more info.
 	</noscript>
-	<div id="genrelink">
-	<a href="editgenre.jsp">Click here to edit genre</a>
-	</div>
 	</section>
 	<!--TOP SECTION END-->
-	<%
-		Connection conn = DatabaseConnection.getConnection();
-
-		String sql="Select * from game_data order by game_id";
-		
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		
-		ResultSet rs = pstmt.executeQuery();
-
-		out.println("<table border='3'>");
-	%>
 	<p id="caption">
-			Games Data
+			Stock Report
 	</p>
-	<div class="updatedelete">
-		<a href="addgame.jsp">Add</a> |
-		<a href="deletegame.jsp">Delete</a> |
-		<a href="updategame.jsp">Update</a>
-		</div>
-	<tr>
-		<th>Game ID</th>
+	<table border = "1">
+		<tr>
 		<th>Game Title</th>
-		<th>Company</th>
-		<th>Release Date</th>
-		<th>Description</th>
 		<th>Price</th>
-		<th>Image Location</th>
-		<th>Pre-owned</th>
+		<th>Sales Price</th>
+		<th>Quantity</th>
 	</tr>
 	<%
-		while (rs.next()) {
-			int dbgameid = rs.getInt("game_id");
-			String dbgametitle = rs.getString("game_title");
-			String dbcompany = rs.getString("company");
-			Date dbdate = rs.getDate("release_date");
-			String dbdescription = rs.getString("description");
-			double dbprice = rs.getDouble("price");
-			String newdbprice = String.format("%.2f", dbprice);
-			String dbimageloc = rs.getString("image_loc");
-			int dbpreowned = rs.getInt("preowned");
+	ArrayList<StockReportDetails> viewstock = (ArrayList<StockReportDetails>)session.getAttribute("selectresults");
+	
+	if (viewstock != null) {
+		for(StockReportDetails stock:viewstock) {
+
 	%>
 	<tr>
-		<td><%=dbgameid%></td>
-		<td><%=dbgametitle%></td>
-		<td><%=dbcompany%></td>
-		<td><%=dbdate%></td>
-		<td><%=dbdescription%></td>
+		<td><%=stock.getGametitle()%></td>
 		<%
-			if (dbprice == 0) {
-				out.println("<td>TBC</td>");
-			} else {
-				%><td><%="$" + newdbprice%></td>
+		if (stock.getPrice() == 0) { %>
+			<td> TBC </td>
 		<%
-			}
+		} else { %>
+			<td><%=stock.getPrice()%></td>
+		<%
+		}
 		%>
-		<td><%=dbimageloc%></td>
 		<%
-			if (dbpreowned == 1) {
-					out.println("<td>yes</td>");
-				} else {
-					out.println("<td>no</td>");
-				}
-
+		if (stock.getSaleprice() == 0) { %>
+			<td> - </td>
+		<%
+		} else { %>
+			<td><%=stock.getSaleprice()%></td>
+		<%
+		}
 		%>
-
+		<td><%=stock.getQuantity()%></td>
 	</tr>
-
 	<%
 		}
-		out.println("</table>");
-
-		conn.close();
+	}
 	%>
+	</table>
+
 
 	<div class="copy-txt">
 		<div class="container">

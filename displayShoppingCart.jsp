@@ -42,7 +42,7 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp" class="active-menu-item">Horror</a> <a
+								<a href="horror.jsp">Horror</a> <a
 									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
@@ -56,10 +56,10 @@
 					</a></li>
 					<%
 						} else { 
-							ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
-		
-								if (viewMembers != null) {
-									for(MemberDetails member:viewMembers) {
+																ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+													
+																	if (viewMembers != null) {
+																		for(MemberDetails member:viewMembers) {
 					%>
 					<li><div class="dropdown">
 							<a href="viewMember.jsp"><button class="dropbtn">
@@ -73,9 +73,9 @@
 							</div>
 						</div></li>
 					<%
-								}
-							}
 						}
+																}
+															}
 					%>
 				</ul>
 			</div>
@@ -92,10 +92,10 @@
 	</div>
 	</section>
 	<%
-	ArrayList<MemberDetails> Members = (ArrayList<MemberDetails>)session.getAttribute("results");
-	
-	if (Members != null) {
-		for(MemberDetails viewmember:Members) {
+		ArrayList<MemberDetails> Members = (ArrayList<MemberDetails>)session.getAttribute("results");
+		
+		if (Members != null) {
+			for(MemberDetails viewmember:Members) {
 	%>
 	<form action="ViewTransactionHistoryServlet">
 		<input type="hidden" name="hiddenID" value="<%=viewmember.getId()%>"/>

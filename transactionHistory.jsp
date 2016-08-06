@@ -60,11 +60,11 @@
 							</a></li>
 					<%
 						} else { 
-							ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
-							
-							if (viewMembers != null) {
-								for(MemberDetails member:viewMembers) {
-						%>
+																ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+																
+																if (viewMembers != null) {
+																	for(MemberDetails member:viewMembers) {
+					%>
 							<li><div class="dropdown">
 								<a href="viewMember.jsp"><button class="dropbtn"><span
 									class="glyphicon glyphicon-user"></span>
@@ -119,11 +119,10 @@
 				<th><b>Price</b></th>
 			</tr>
 	<%
-					
-	ArrayList<TransactionDetails> viewTrans = (ArrayList<TransactionDetails>)session.getAttribute("transresults");
-					
-	if (viewTrans != null) {
-		for(TransactionDetails trans:viewTrans) {
+		ArrayList<TransactionDetails> viewTrans = (ArrayList<TransactionDetails>)session.getAttribute("transresults");
+		
+		if (viewTrans != null) {
+			for(TransactionDetails trans:viewTrans) {
 	%>
 			<tr>
 				<td><%=trans.getDate()%></td>

@@ -44,12 +44,15 @@ if (session.getAttribute ("ADMIN-STATUS") == null) {
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
-					<li><a href="editall.jsp"><span
-							class="glyphicon glyphicon-edit" aria-hidden="true"></span> EDIT</a></li>
-					<li><a href="logoutAdmin.jsp"> <span
-							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-							LOGOUT
-					</a></li>
+					<li><div class="dropdown">
+						<a><button class="dropbtn"><span class="glyphicon glyphicon-edit"></span> EDIT<span class="caret"></span>
+									</button></a>
+								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
+									<a href="editall.jsp">Games</a>
+									<a href="editgenre.jsp">Genres</a>
+								</div>
+					</div></li>
+			 				<li><a href="logoutAdmin.jsp"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></i>
 				</ul>
 			</div>
 

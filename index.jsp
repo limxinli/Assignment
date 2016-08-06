@@ -52,12 +52,12 @@
 					</a></li>
 					<%
 						}
-						else { 
-							ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
-							
-							if (viewMembers != null) {
-								for(MemberDetails member:viewMembers) {
-						%>	
+															else { 
+																ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+																
+																if (viewMembers != null) {
+																	for(MemberDetails member:viewMembers) {
+					%>	
 							<li><div class="dropdown">
 								<a href="viewMember.jsp"><button class="dropbtn"><span
 									class="glyphicon glyphicon-user"></span>

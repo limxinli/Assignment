@@ -405,6 +405,14 @@ a.new-release-font:hover,a.sales-font:hover {
 	margin-bottom: 10px;
 }
 
+#submit-button3 {
+	margin-left: 500px;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-top: -34px;
+	margin-bottom: 10px;
+}
+
 .signup {
 	margin-left: 665px;
 	margin-top: -196px;
@@ -569,6 +577,17 @@ table {
 	float: right;
 	margin-top: -30px;
 	margin-right: 70px;
+}
+
+#quantity {
+	margin-top: -30px;
+	margin-left: 21%;
+	width: 330px;
+}
+
+#searchstock {
+	margin-left: 28%;
+ 	width: 700px;
 }
 
 /* =============================================================
