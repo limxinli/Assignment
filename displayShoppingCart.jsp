@@ -105,15 +105,6 @@
 		}
 	}
 	%>
-	<%
-		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
-			
-			if (GameArray != null) {
-		for(Games_Data games:GameArray) {
-	%>
-
-
-
 	<table border='3'>
 		<tr>
 			<th><b>Game ID</b></th>
@@ -122,6 +113,13 @@
 			<th><b>Price</b></th>
 			<th colspan='2'><b>Actions</b></th>
 		</tr>
+	<%
+		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
+			
+			if (GameArray != null) {
+		for(Games_Data games:GameArray) {
+	%>
+
 		<tr>
 			<td><%=games.getGameid()%></td>
 			<td><%=games.getGametitle()%></td>
@@ -142,16 +140,14 @@
 			</form>
 		</td>
 
-	</table>
-	<form action="checkout.jsp">
-		<br> <input type="submit" class="btn btn-info" id="submit-button"
-			value="Checkout">
-	</form>
+	
 
 	<%
 		}
 			}
 	%>
+	
+	</table>
 
 	<div class="copy-txt">
 		<div class="container">
