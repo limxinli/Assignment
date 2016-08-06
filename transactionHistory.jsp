@@ -111,7 +111,31 @@
 	</section>
 	<!--TOP SECTION END-->
 	<section>
-
+		<table border='1'>
+			<tr>
+				<th><b>Date</b></th>
+				<th><b>Game Titles</b></th>
+				<th><b>Quantity</b></th>
+				<th><b>Price</b></th>
+			</tr>
+	<%
+					
+	ArrayList<TransactionDetails> viewTrans = (ArrayList<TransactionDetails>)session.getAttribute("transresults");
+					
+	if (viewTrans != null) {
+		for(TransactionDetails trans:viewTrans) {
+	%>
+			<tr>
+				<td><%=trans.getDate()%></td>
+				<td><%=trans.getGametitle()%></td>
+				<td><%=trans.getQuantity()%></td>
+				<td><%=trans.getPrice()%></td>
+			</tr>
+	<%
+		}
+	}
+	%>
+		</table>
 	</section>
 
 	<div class="copy-txt">

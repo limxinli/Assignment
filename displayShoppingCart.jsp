@@ -91,9 +91,20 @@
 
 	</div>
 	</section>
-	<form action="transactionHistory.jsp">
+	<%
+	ArrayList<MemberDetails> Members = (ArrayList<MemberDetails>)session.getAttribute("results");
+	
+	if (Members != null) {
+		for(MemberDetails viewmember:Members) {
+	%>
+	<form action="ViewTransactionHistoryServlet">
+		<input type="hidden" name="hiddenID" value="<%=viewmember.getId()%>"/>
 		<input type="submit" class="btn btn-info" id="submit-button" name="history" value="View Transaction History"/><br>
 	</form>
+	<%
+		}
+	}
+	%>
 	<%
 		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
 			
