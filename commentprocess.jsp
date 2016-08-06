@@ -24,21 +24,23 @@
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 </head>
 <body>
-	<%
+	<%	
 		Connection conn = DatabaseConnection.getConnection();
 
-		String name = request.getParameter("nickname");
+		String name = request.getParameter("name");
+		String rating = request.getParameter("rating");
 		String comment = request.getParameter("comment");
 
-		String sql = "insert into comment_box set name=?,date=curdate(),comment=?";
+		String sql = "insert into comment_box set name=?, rating=?, date=curdate(),comment=?";
 
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		
 		pstmt.setString(1, name);
-		pstmt.setString(2, comment);
+		pstmt.setString(2, rating);
+		pstmt.setString(3, comment);
+		
+		pstmt.executeUpdate();
 
 		conn.close();
 	%>
-
 </body>
 </html>

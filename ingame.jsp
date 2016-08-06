@@ -16,6 +16,7 @@
 <title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link href="assets/css/star-rating.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
 <link href="assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
@@ -104,7 +105,8 @@
 
 		ResultSet rs = pstmt.executeQuery();
 
-		if (rs.next()) {
+		while (rs.next()) {
+			int dbgameid = rs.getInt("game_id");
 			String dbgametitle = rs.getString("game_title");
 			String dbcompany = rs.getString("company");
 			Date dbdate = rs.getDate("release_date");
@@ -182,6 +184,26 @@
 		<img src="<%=dbimageloc%>/img5.jpg" alt="" height="230" width="230" />
 		<img src="<%=dbimageloc%>/img6.jpg" alt="" height="230" width="230" />
 	</div>
+	<hr>
+	<div id="commentarea">
+	<form action="commentprocess.jsp">
+		Name: <input type="text" name="name" id="name" class="form-control"/>
+		<div id="rating">
+		Ratings: <br/>
+    	5<span class="glyphicon glyphicon-star"/><input type="radio" id="star5" value="5" name="rating" title="Rocks!"/>
+    	4<span class="glyphicon glyphicon-star"/><input type="radio" id="star4" value="4" name="rating" title="Pretty good"/>
+    	3<span class="glyphicon glyphicon-star"/><input type="radio" id="star3" value="3" name="rating" title="Meh"/>
+    	2<span class="glyphicon glyphicon-star"/><input type="radio" id="star2" value="2" name="rating" title="Kinda bad"/>
+    	1<span class="glyphicon glyphicon-star"/><input type="radio" id="star1" value="1" name="rating" title="Sucks big time"/>
+		</div>
+		Comment:
+		<textarea name="comment" id="comment" class="form-control"></textarea><br/>
+		<input type="submit" class="btn btn-info" id="submit-button4" value="Submit"> 
+	</form>
+	<form action="viewcomment.jsp">
+		<input type="hidden" name="hiddenID" value="<%=dbgameid%>"/>
+	</form>
+	</div>
 	<%
 		}
 		conn.close();
@@ -205,6 +227,7 @@
 	<script src="assets/js/jquery-1.11.1.js"></script>
 	<!-- BOOTSTRAP SCRIPTS  -->
 	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/star-rating.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
 </body>

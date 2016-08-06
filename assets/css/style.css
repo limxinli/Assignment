@@ -359,15 +359,6 @@ a.new-release-font:hover,a.sales-font:hover {
 	font-size: 20px;
 }
 
-#comment-button {
-	float: right;
-	margin-top: -15px;
-}
-
-#nickname:focus,#comment:focus {
-	color: black;
-}
-
 .indeximages {
 	margin-left: 100px;
 	margin-right: 100px;
@@ -410,6 +401,13 @@ a.new-release-font:hover,a.sales-font:hover {
 	padding-left: 25px;
 	padding-right: 25px;
 	margin-top: -34px;
+	margin-bottom: 10px;
+}
+
+#submit-button4 {
+	margin-left: 550px;
+	padding-left: 25px;
+	padding-right: 25px;
 	margin-bottom: 10px;
 }
 
@@ -713,4 +711,22 @@ table {
 #first {
 	margin-top: 20px;
 	margin-left: 20px;
+}
+
+#commentarea {
+	background: #202020;
+	color: #7C7C7C;
+	width: 62%;
+	margin-left: 20%;
+	padding-left: 62px;
+	padding-top: 10px;
+	margin-bottom: 30px;
+}
+
+#name, #date, #comment {
+	width: 90%;
+}
+
+#comment {
+	height: 120px;
 }

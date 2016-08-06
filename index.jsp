@@ -95,7 +95,6 @@
 	</noscript>
 
 	<!--MENU SECTION END-->
-
 	<div id="feature-sec">
 		<div class="container">
 			<div class="row ">
@@ -109,7 +108,6 @@
 							<li data-target="#carousel-example" data-slide-to="1"></li>
 							<li data-target="#carousel-example" data-slide-to="2"></li>
 						</ol>
-
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="container center">
@@ -131,7 +129,6 @@
 											src="assets/img/newgame.jpg"
 											alt="New Games" width="1000" height="500" border="1"
 											class="img-u">
-										
 									</div>
 								</div>
 							</div>
@@ -200,7 +197,7 @@
 	<div class="indeximages">
 	<%
 	Connection conn = DatabaseConnection.getConnection();
-
+	
 	String sql = "select * from game_data gd, genre g, game_genre gg where gd.game_id=gg.game_id and gg.genre_id=g.genre_id group by release_date having datediff(curdate(), release_date) < 180 AND release_date <= curdate()";
 
 	PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -245,7 +242,9 @@
 	
 	<a href="ingame.jsp?hiddenID=<%=dbgameid%>">
 	<img src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
-	<% }%>
+	<% }
+	conn.close();
+	%>
 	</form>
 	</div>
 
