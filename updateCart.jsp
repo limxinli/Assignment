@@ -92,15 +92,33 @@
 
 		</div>
 	</section>
+	
+	<%
+		Connection conn = DBConnection.getConnection();
+
+		//int id = Integer.parseInt(request.getParameter("hiddenID"));
+		String id = request.getParameter("hiddenID");
+		
+		PreparedStatement pstmt = conn
+				.prepareStatement("SELECT * FROM shopping_cart WHERE gameid=?");
+		
+		/* pstmt.setInt(1, id); */
+		pstmt.setString(1, id);
+		
+		ResultSet rs = pstmt.executeQuery();
+		
+		
+		if (rs.next()) {
+	%>
 
 	<!--TOP SECTION END-->
 	<section>
 		<div class="updateShoppingCart">
-			<form action="InsertUpdateServlet" method="post">
-				Game ID: <input type="hidden" name="hiddenID" value="<%=%>"><br>
+			<form action="updateSCgameprocess.jsp" method="post">
+				Game ID: <input type="hidden" name="hiddenID" value="<%=id%>"><br>
 				Game Title: <input type=text name="gametitle" value="<%=rs.getString("gametitle")%>"><br> 
-				Price: <input type="text" name="saleprice" value="<%=rs.getString("releasedate")%>"><br> 
-				Quality:  <input type=text name="quantity" value="<%=rs.getString("quality") %>"><br>  
+				Price: <input type="text" name="price" value="<%=rs.getDouble("price")%>"><br> 
+				Quality:  <input type=text name="quantity" value="<%=rs.getInt("quantity") %>"><br>  
 				<input type="submit" class="btn btn-info" id="submit-button" value="Update">
 			</form>
 		</div>
