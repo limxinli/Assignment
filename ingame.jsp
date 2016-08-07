@@ -185,13 +185,18 @@
 				value="Add to Cart" /><br>
 		</form> --%>
 		
+		<%
+			if (session.getAttribute ("LOGIN-STATUS") == "YES") {
+		%>
 		<form action="Add2CartServlet" method="post">
     		<input type="hidden" name="hiddenID" value=<%=dbgameid%> />
 			<input type="hidden" name="hiddenQty" value=1 />
 			<input type="hidden" name="action" value="add" />
 			<input type="submit" class="btn btn-info" id="submit-button" value="Add To Cart" />
 				</form>		
-
+		<%
+			}
+		%>
 	</div>
 	<div class="ingame">
 		<img src="<%=dbimageloc%>/img2.jpg" alt="" height="230" width="230" />
