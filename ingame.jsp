@@ -181,7 +181,7 @@
     		<input type="hidden" name="hiddenID" value=<%=dbgameid%> />
 			<input type="hidden" name="hiddenQty" value=1 />
 			<input type="hidden" name="action" value="add" />
-			<input id="text" class="btn btn-info" id="submit-button" name="value"
+			<input type=submit class="btn btn-info" id="submit-button" name="value"
 						value="Add To Cart" />
 				</form>
 		
