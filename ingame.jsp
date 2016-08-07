@@ -16,7 +16,6 @@
 <title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
-<link href="assets/css/star-rating.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLE CSS -->
 <link href="assets/css/font-awesome.css" rel="stylesheet" />
 <!-- CUSTOM STYLE CSS -->
@@ -72,7 +71,7 @@
 										<%=member.getName()%> <span class="caret"></span>
 									</button></a>
 								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
-									<a href="displayShoppingCart.jsp">Shopping Cart</a>
+									<a href="ViewShoppingCartServlet?hiddenID=<%=member.getId()%>">Shopping Cart</a>
 									<a href="logoutMember.jsp" onclick="Logout()">Logout</a>
 								</div>
 								<script>
@@ -176,15 +175,6 @@
 					}
 			%>
 		</p>
-		
-		<form action="Add2CartServlet" method="post">
-    		<input type="hidden" name="hiddenID" value=<%=dbgameid%> />
-			<input type="hidden" name="hiddenQty" value=1 />
-			<input type="hidden" name="action" value="add" />
-			<input type=submit class="btn btn-info" id="submit-button" name="value"
-						value="Add To Cart" />
-				</form>
-		
 	</div>
 	<div class="ingame">
 		<img src="<%=dbimageloc%>/img2.jpg" alt="" height="230" width="230" />
@@ -236,7 +226,6 @@
 	<script src="assets/js/jquery-1.11.1.js"></script>
 	<!-- BOOTSTRAP SCRIPTS  -->
 	<script src="assets/js/bootstrap.js"></script>
-	<script src="assets/js/star-rating.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
 </body>
