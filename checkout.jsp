@@ -19,20 +19,6 @@
 <!-- Favicon -->
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 
-<script type="text/javascript">
-
-	function confSubmit(form) {
-		if (confirm("Are you sure you want to submit the form?")) {
-			form.submit();
-		}
-
-		else {
-			alert("You decided not to submit the form!");
-		}
-		
-	}
-</script>
-
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top ">
@@ -187,9 +173,21 @@
 	</div>
 	
 	<form onsubmit="return checkvalue()" />
-	<input type="button" class="btn btn-info" id="submit-button5" onClick="{return confirmComplete();}" value="Submit Form">
-	<br>
+	<input type="button" class="btn btn-info" id="submit-button5" onClick="{return confSubmit();}" value="Checkout">
 	</form>
+	<script type="text/javascript">
+
+	function confSubmit(form) {
+		if (confirm("Are you sure you want to submit the form?")) {
+			form.submit();
+		}
+
+		else {
+			alert("You decided not to submit the form!");
+		}
+		
+	}
+</script>
 
 
 	<div class="copy-txt">
