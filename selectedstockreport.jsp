@@ -96,20 +96,20 @@ if (session.getAttribute ("ADMIN-STATUS") == null) {
 	<tr>
 		<td><%=stock.getGametitle()%></td>
 		<%
-		if (stock.getPrice() == 0) { %>
+		if (stock.getNewprice().equals("0.00")) { %>
 			<td> TBC </td>
 		<%
 		} else { %>
-			<td><%=stock.getPrice()%></td>
+			<td><%=stock.getNewprice()%></td>
 		<%
 		}
 		%>
 		<%
-		if (stock.getSaleprice() == 0) { %>
+		if (stock.getNewsaleprice().equals("0.00")) { %>
 			<td> - </td>
 		<%
 		} else { %>
-			<td><%=stock.getSaleprice()%></td>
+			<td><%=stock.getNewsaleprice()%></td>
 		<%
 		}
 		%>

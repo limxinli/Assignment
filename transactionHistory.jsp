@@ -111,7 +111,7 @@
 	</section>
 	<!--TOP SECTION END-->
 	<section>
-		<table border='1'>
+		<table border='1' id="displayhis">
 			<tr>
 				<th><b>Date</b></th>
 				<th><b>Game Titles</b></th>

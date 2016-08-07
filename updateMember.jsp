@@ -113,7 +113,7 @@
 				<hr id="passline">
 				<b>Information</b>
 				<hr id="passline2">
-				Name: <input type="text" name="name" id="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
+				Name: <input type="text" name="name" value="<%=member.getName()%>" class="inputmember-cls"><br><br>
 				Mailing Address: <input type="text" name="mail" id="mail" value="<%=member.getMail()%>" class="inputmember-cls"><br><br>
 				Email: <input type="text" name="email" id="email" value="<%=member.getEmail()%>" class="inputmember-cls"><br><br>
 				Contact Number: <input type="text" name="number" id="number" value="<%=member.getNumber()%>" class="inputmember-cls"><br><br>

@@ -105,7 +105,7 @@
 		}
 	}
 	%>
-	<table border='1'>
+	<table border='1' id="displaysc">
 		<tr>
 			<th><b>Game Title</b></th>
 			<th><b>Price</b></th>
@@ -137,6 +137,7 @@
 				<input type="hidden" name="gameID" value="<%=games.getGameid()%>">
 				<input type="hidden" name="gametitle" value="<%=games.getGametitle()%>">
 				<input type="hidden" name="price" value="<%=games.getPrice()%>">
+				<input type="hidden" name="quantity" value="<%=games.getQuantity()%>">
 				<input type="submit" value="Update">
 			</form>
 		</td>

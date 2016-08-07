@@ -1,10 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
 <title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -27,7 +35,6 @@
 				</button>
 				<a class="navbar-brand" href="index.jsp"><strong style=""></strong>Game
 					Store<small> Singapore Polytechnic</small></a>
-
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
@@ -39,11 +46,11 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp">Horror</a> <a
-									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
+									href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
-					<li><a href="about.jsp">ABOUT</a></li>					
+					<li><a href="about.jsp">ABOUT</a></li>
 					<%
 						if (session.getAttribute ("LOGIN-STATUS") != "YES") {
 					%>
@@ -84,50 +91,33 @@
 		</div>
 	</div>
 	<!--MENU SECTION END-->
+		<!-- BACK TO TOP BUTTON -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://arrow.scrolltotop.com/arrow92.js"></script>
+	<noscript>
+		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
+			Button</a>? Go to our FAQ page for more info.
+	</noscript>
+	<!-- BACK TO TOP BUTTON END -->
 	<section class="headline-sec">
 		<div class="overlay ">
 			<h3>
-				UPDATE QUANTITY <i class="fa fa-angle-double-right "></i>
+				UPDATE ITEM <i class="fa fa-angle-double-right "></i>
 			</h3>
 
 		</div>
 	</section>
-
 	<!--TOP SECTION END-->
-	<%
-		int mid = Integer.parseInt(request.getParameter("memberID"));
-		int gid = Integer.parseInt(request.getParameter("gameID"));
-		String gametitle = request.getParameter("gametitle");
-		double price = Double.parseDouble(request.getParameter("price"));
-		int quantity = Integer.parseInt(request.getParameter("quantity"));
-	%>
 	<section>
-		<div class="updategame">
-			<form onsubmit="return checkvalue()" action="UpdateGameServlet" method="post">
-				<input type="hidden" name="memberID" value="<%=mid%>">
-				<input type="hidden" name="gameID" value="<%=gid%>">
-				<input type="hidden" name="gametitle" value="<%=gametitle%>">
-				<input type="hidden" name="price" value="<%=price%>">
-				Quantity: <input type="text" name="quantity" id="quantity" class="form-control" value="<%=quantity%>"><br>
-				<input type="submit" class="btn btn-info" id="submit-button6"
-					value="Confirm">
-			</form>
-			<script type="text/javascript">
-				function checkvalue() { 
-					var quantity = document.getElementById('quantity').value;
-				    var no = /^[0-9]+$/;
-				    if(!quantity.match(/\S/)) {
-				        alert ('Empty value is not allowed!');
-				        return false;
-				    }
-				    if (!no.test(number)) {
-		        		alert ('Quantity must contain only numbers!');
-		        		return false;
-		        	}
-						return true;
-				}
-			</script>
-		</div>
+	<div id="deleteitem">
+		<form action="index.jsp">
+			<div id="deleted"><b>Item has been updated!</b></div>
+			<input type="submit" class="btn btn-info" id="submit-button"
+					value="Return">
+		</form>
+	</div>
 	</section>
 
 	<div class="copy-txt">
@@ -149,6 +139,5 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
-
 </body>
 </html>
