@@ -172,7 +172,22 @@
 		</form>
 	</div>
 	
-	<form onclick="return confSubmit(this)" action="">
+	<form onclick="return confSubmit(this)" action="InsertShoppingCartServlet" method="post">
+			<%
+			ArrayList<Games_Data> GameArrays = (ArrayList<Games_Data>)session.getAttribute("gameresults");
+				
+			if (GameArrays != null) {
+				for(Games_Data games:GameArrays) {
+		%>
+		<input type="hidden" name="memberID" value="<%=games.getMemberid()%>"> 
+		<input type="hidden" name="gameID" value="<%=games.getGameid()%>"> 
+		<input type="hidden" name="gametitle" value="<%=games.getGametitle()%>">
+		<input type="hidden" name="price" value="<%=games.getNewprice()%>">
+		<input type="hidden" name="quantity" value="<%=games.getQuantity()%>">
+					<%
+				}
+			}
+	%>
 	<input type="button" class="btn btn-info" id="submit-button5" value="Checkout">
 	</form>
 	<script type="text/javascript">
