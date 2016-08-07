@@ -87,73 +87,56 @@
 	<section class="headline-sec">
 		<div class="overlay ">
 			<h3>
-				SIGNUP <i class="fa fa-angle-double-right "></i>
+				UPDATE QUANTITY <i class="fa fa-angle-double-right "></i>
 			</h3>
 
 		</div>
 	</section>
 
 	<!--TOP SECTION END-->
+	<%
+		int mid = Integer.parseInt(request.getParameter("memberID"));
+		int gid = Integer.parseInt(request.getParameter("gameID"));
+		String gametitle = request.getParameter("gametitle");
+		double price = Double.parseDouble(request.getParameter("price"));
+	
+		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
+			
+		if (GameArray != null) {
+			for(Games_Data games:GameArray) {
+	%>
 	<section>
-		<div class="createacc">
-			<form onsubmit="return checkvalue()" action="InsertMemberDetailsServlet" method="post">
-				Name: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Name is needed to deliver the game to the correct customer. It is recommended to use your real name."></span>
-				<input type="text" name="name" id="name" class="form-control"><br>
-					Mailing Address: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Mailing Address is needed to deliver the game to the correct location. Please ensure that the address is entered correctly."></span>
-					<input type="text" name="mail" id="mail"
-					class="form-control"><br>
-					Email: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Email is needed to log into your account to purchase games. Please ensure it contains one @ symbol and at least one . symbol"></span>
-					<input type="text" name="email" id="email"
-					class="form-control"><br> 
-					Contact Number: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Contact number is needed in case of emergencies. (E.g. Problems with the delivery of items) Please ensure it is 8 digits only."></span>
-					<input type="text" name="number" id="number"
-					class="form-control"><br> 
-					Password: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="A strong password is needed to log into your account. Please ensure that it contains both alphabets and numbers and have 8-16 characters."></span><input type="password" 
-					name="pass" id="pass" class="form-control"><br>
-				<input type="submit" class="btn btn-info" id="submit-button"
-					value="Sign Up">
+		<div class="updategame">
+			<form onsubmit="return checkvalue()" action="UpdateGameServlet" method="post">
+				<input type="hidden" name="memberID" value="<%=mid%>">
+				<input type="hidden" name="gameID" value="<%=gid%>">
+				<input type="hidden" name="gametitle" value="<%=gametitle%>">
+				<input type="hidden" name="price" value="<%=price%>">
+				Quantity: <input type="text" name="quantity" id="quantity" class="form-control" value="<%=games.getQuantity()%>"><br>
+				<input type="submit" class="btn btn-info" id="submit-button6"
+					value="Confirm">
 			</form>
 			<script type="text/javascript">
 				function checkvalue() { 
-					var name = document.getElementById('name').value;
-					var mail = document.getElementById('mail').value;
-					var email = document.getElementById('email').value;
-					var number = document.getElementById('number').value; 
-				    var pass = document.getElementById('pass').value; 
+					var quantity = document.getElementById('quantity').value;
 				    var no = /^[0-9]+$/;
-				    var alp = /^[a-zA-Z]+$/;
-				    if(!name.match(/\S/) || !mail.match(/\S/) || !email.match(/\S/) || !number.match(/\S/) || !pass.match(/\S/)) {
+				    if(!quantity.match(/\S/)) {
 				        alert ('Empty value is not allowed!');
 				        return false;
 				    }
-				    if (email.indexOf("@")==-1 || email.indexOf(".")==-1) {
-			    		alert ('Not a valid e-mail!');
-			        	return false;
-			    	}
-				    if(number.length != 8) {
-			        	alert ('Contact number must contain 8 digits!');
-			        	return false;
-				    }
 				    if (!no.test(number)) {
-		        		alert ('Contact number must contain only numbers!');
+		        		alert ('Quantity must contain only numbers!');
 		        		return false;
 		        	}
-				    if (pass.length < 8 || pass.length > 16) {
-				    	alert ('Password must be of length 8 to 16!');
-		        		return false;
-				    }
-				    if (!no.test(pass) && !alp.test(pass)) {
-				    }
-				    else {
-				    	alert ('Password must contain both alphabets and numbers!');
-				    	return false;
-				    }
-				    
 						return true;
 				}
 			</script>
 		</div>
 	</section>
+	<%
+			}
+		}
+	%>
 
 	<div class="copy-txt">
 		<div class="container">

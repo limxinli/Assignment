@@ -68,7 +68,7 @@
 									<span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="displayShoppingCart.jsp">Shopping Cart</a> <a
+								<a href="ViewShoppingCartServlet?hiddenID=<%=member.getId()%>">Shopping Cart</a> <a
 									href="logoutMember.jsp">Logout</a>
 							</div>
 						</div></li>
@@ -99,52 +99,51 @@
 	%>
 	<form action="ViewTransactionHistoryServlet">
 		<input type="hidden" name="hiddenID" value="<%=viewmember.getId()%>"/>
-		<input type="submit" class="btn btn-info" id="submit-button" name="history" value="View Transaction History"/><br>
+		<input type="submit" class="btn btn-info" id="submit-button5" name="history" value="View Transaction History"/><br>
 	</form>
 	<%
 		}
 	}
 	%>
-	<table border='3'>
+	<table border='1'>
 		<tr>
-			<th><b>Game ID</b></th>
 			<th><b>Game Title</b></th>
-			<th><b>Release Date</b></th>
 			<th><b>Price</b></th>
+			<th><b>Quantity</b></th>
 			<th colspan='2'><b>Actions</b></th>
 		</tr>
 	<%
 		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
-			
-			if (GameArray != null) {
-		for(Games_Data games:GameArray) {
-	%>
+		
+		if (GameArray != null) {
+			for(Games_Data games:GameArray) {
+	%>	
 
 		<tr>
-			<td><%=games.getGameid()%></td>
 			<td><%=games.getGametitle()%></td>
 			<td><%=games.getPrice()%></td>
 			<td><%=games.getQuantity()%></td>
-		</tr>
 
 		<td>
-			<form action="DeleteGame" method="get">
-				<input type="hidden" name="hiddenID" value="<%=games.getGameid()%>">
+			<form action="DeleteGameServlet" method="get">
+				<input type="hidden" name="memberID" value="<%=games.getMemberid()%>">
+				<input type="hidden" name="gameID" value="<%=games.getGameid()%>">
 				<input type="submit" value="Delete">
 			</form>
 		</td>
 		<td>
-			<form action="UpdateGame" method="get">
-				<input type="hidden" name="hiddenID" value="<%=games.getGameid()%>">
+			<form action="updateshoppingcart.jsp" method="post">
+				<input type="hidden" name="memberID" value="<%=games.getMemberid()%>">
+				<input type="hidden" name="gameID" value="<%=games.getGameid()%>">
+				<input type="hidden" name="gametitle" value="<%=games.getGametitle()%>">
+				<input type="hidden" name="price" value="<%=games.getPrice()%>">
 				<input type="submit" value="Update">
 			</form>
 		</td>
-
-	
-
+		</tr>
 	<%
-		}
 			}
+		}
 	%>
 	
 	</table>

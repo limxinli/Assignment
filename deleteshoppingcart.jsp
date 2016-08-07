@@ -1,10 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
 <title>SP Game Store</title>
 <!-- BOOTSTRAP CORE STYLE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -27,7 +35,6 @@
 				</button>
 				<a class="navbar-brand" href="index.jsp"><strong style=""></strong>Game
 					Store<small> Singapore Polytechnic</small></a>
-
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
@@ -39,11 +46,11 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp">Horror</a> <a
-									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
+									href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
-					<li><a href="about.jsp">ABOUT</a></li>					
+					<li><a href="about.jsp">ABOUT</a></li>
 					<%
 						if (session.getAttribute ("LOGIN-STATUS") != "YES") {
 					%>
@@ -84,75 +91,33 @@
 		</div>
 	</div>
 	<!--MENU SECTION END-->
+		<!-- BACK TO TOP BUTTON -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://arrow.scrolltotop.com/arrow92.js"></script>
+	<noscript>
+		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
+			Button</a>? Go to our FAQ page for more info.
+	</noscript>
+	<!-- BACK TO TOP BUTTON END -->
 	<section class="headline-sec">
 		<div class="overlay ">
 			<h3>
-				SIGNUP <i class="fa fa-angle-double-right "></i>
+				DELETE ITEM <i class="fa fa-angle-double-right "></i>
 			</h3>
 
 		</div>
 	</section>
-
 	<!--TOP SECTION END-->
 	<section>
-		<div class="createacc">
-			<form onsubmit="return checkvalue()" action="InsertMemberDetailsServlet" method="post">
-				Name: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Name is needed to deliver the game to the correct customer. It is recommended to use your real name."></span>
-				<input type="text" name="name" id="name" class="form-control"><br>
-					Mailing Address: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Mailing Address is needed to deliver the game to the correct location. Please ensure that the address is entered correctly."></span>
-					<input type="text" name="mail" id="mail"
-					class="form-control"><br>
-					Email: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Email is needed to log into your account to purchase games. Please ensure it contains one @ symbol and at least one . symbol"></span>
-					<input type="text" name="email" id="email"
-					class="form-control"><br> 
-					Contact Number: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="Contact number is needed in case of emergencies. (E.g. Problems with the delivery of items) Please ensure it is 8 digits only."></span>
-					<input type="text" name="number" id="number"
-					class="form-control"><br> 
-					Password: <span class="glyphicon glyphicon-question-sign" style="cursor:help" aria-hidden="true" title="A strong password is needed to log into your account. Please ensure that it contains both alphabets and numbers and have 8-16 characters."></span><input type="password" 
-					name="pass" id="pass" class="form-control"><br>
-				<input type="submit" class="btn btn-info" id="submit-button"
-					value="Sign Up">
-			</form>
-			<script type="text/javascript">
-				function checkvalue() { 
-					var name = document.getElementById('name').value;
-					var mail = document.getElementById('mail').value;
-					var email = document.getElementById('email').value;
-					var number = document.getElementById('number').value; 
-				    var pass = document.getElementById('pass').value; 
-				    var no = /^[0-9]+$/;
-				    var alp = /^[a-zA-Z]+$/;
-				    if(!name.match(/\S/) || !mail.match(/\S/) || !email.match(/\S/) || !number.match(/\S/) || !pass.match(/\S/)) {
-				        alert ('Empty value is not allowed!');
-				        return false;
-				    }
-				    if (email.indexOf("@")==-1 || email.indexOf(".")==-1) {
-			    		alert ('Not a valid e-mail!');
-			        	return false;
-			    	}
-				    if(number.length != 8) {
-			        	alert ('Contact number must contain 8 digits!');
-			        	return false;
-				    }
-				    if (!no.test(number)) {
-		        		alert ('Contact number must contain only numbers!');
-		        		return false;
-		        	}
-				    if (pass.length < 8 || pass.length > 16) {
-				    	alert ('Password must be of length 8 to 16!');
-		        		return false;
-				    }
-				    if (!no.test(pass) && !alp.test(pass)) {
-				    }
-				    else {
-				    	alert ('Password must contain both alphabets and numbers!');
-				    	return false;
-				    }
-				    
-						return true;
-				}
-			</script>
-		</div>
+	<div id="deleteitem">
+		<form action="index.jsp">
+			<div id="deleted"><b>Item has been deleted!</b></div>
+			<input type="submit" class="btn btn-info" id="submit-button"
+					value="Return">
+		</form>
+	</div>
 	</section>
 
 	<div class="copy-txt">
@@ -174,6 +139,5 @@
 	<script src="assets/js/bootstrap.js"></script>
 	<!-- CUSTOM SCRIPTS  -->
 	<script src="assets/js/custom.js"></script>
-
 </body>
 </html>
