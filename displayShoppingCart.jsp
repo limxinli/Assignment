@@ -42,8 +42,8 @@
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
 								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
-								<a href="horror.jsp">Horror</a> <a
-									href="rpg.jsp">RPG</a> <a href="shooter.jsp">Shooter</a>
+								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
+									href="shooter.jsp">Shooter</a>
 							</div>
 						</div></li>
 					<li><a href="about.jsp">ABOUT</a></li>
@@ -56,10 +56,10 @@
 					</a></li>
 					<%
 						} else { 
-																ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
-													
-																	if (viewMembers != null) {
-																		for(MemberDetails member:viewMembers) {
+																									ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+																						
+																										if (viewMembers != null) {
+																											for(MemberDetails member:viewMembers) {
 					%>
 					<li><div class="dropdown">
 							<a href="viewMember.jsp"><button class="dropbtn">
@@ -68,14 +68,14 @@
 									<span class="caret"></span>
 								</button></a>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="ViewShoppingCartServlet?hiddenID=<%=member.getId()%>">Shopping Cart</a> <a
-									href="logoutMember.jsp">Logout</a>
+								<a href="ViewShoppingCartServlet?hiddenID=<%=member.getId()%>">Shopping
+									Cart</a> <a href="logoutMember.jsp">Logout</a>
 							</div>
 						</div></li>
 					<%
 						}
-																}
-															}
+																									}
+																								}
 					%>
 				</ul>
 			</div>
@@ -93,17 +93,18 @@
 	</section>
 	<%
 		ArrayList<MemberDetails> Members = (ArrayList<MemberDetails>)session.getAttribute("results");
-		
-		if (Members != null) {
-			for(MemberDetails viewmember:Members) {
+			
+			if (Members != null) {
+		for(MemberDetails viewmember:Members) {
 	%>
 	<form action="ViewTransactionHistoryServlet">
-		<input type="hidden" name="hiddenID" value="<%=viewmember.getId()%>"/>
-		<input type="submit" class="btn btn-info" id="submit-button5" name="history" value="View Transaction History"/><br>
+		<input type="hidden" name="hiddenID" value="<%=viewmember.getId()%>" />
+		<input type="submit" class="btn btn-info" id="submit-button5"
+			name="history" value="View Transaction History" /><br>
 	</form>
 	<%
 		}
-	}
+		}
 	%>
 	<table border='1' id="displaysc">
 		<tr>
@@ -112,42 +113,50 @@
 			<th><b>Quantity</b></th>
 			<th colspan='2'><b>Actions</b></th>
 		</tr>
-	<%
-		ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
-		
-		if (GameArray != null) {
+		<%
+			ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
+				
+				if (GameArray != null) {
 			for(Games_Data games:GameArray) {
-	%>	
+		%>
 
 		<tr>
 			<td><%=games.getGametitle()%></td>
 			<td><%=games.getNewprice()%></td>
 			<td><%=games.getQuantity()%></td>
 
-		<td>
-			<form action="DeleteGameServlet" method="get">
-				<input type="hidden" name="memberID" value="<%=games.getMemberid()%>">
-				<input type="hidden" name="gameID" value="<%=games.getGameid()%>">
-				<input type="submit" value="Delete">
-			</form>
-		</td>
-		<td>
-			<form action="updateshoppingcart.jsp" method="post">
-				<input type="hidden" name="memberID" value="<%=games.getMemberid()%>">
-				<input type="hidden" name="gameID" value="<%=games.getGameid()%>">
-				<input type="hidden" name="gametitle" value="<%=games.getGametitle()%>">
-				<input type="hidden" name="price" value="<%=games.getPrice()%>">
-				<input type="hidden" name="quantity" value="<%=games.getQuantity()%>">
-				<input type="submit" value="Update">
-			</form>
-		</td>
+			<td>
+				<form action="DeleteGameServlet" method="get">
+					<input type="hidden" name="memberID"
+						value="<%=games.getMemberid()%>"> <input type="hidden"
+						name="gameID" value="<%=games.getGameid()%>"> <input
+						type="submit" value="Delete">
+				</form>
+			</td>
+			<td>
+				<form action="updateshoppingcart.jsp" method="post">
+					<input type="hidden" name="memberID"
+						value="<%=games.getMemberid()%>"> <input type="hidden"
+						name="gameID" value="<%=games.getGameid()%>"> <input
+						type="hidden" name="gametitle" value="<%=games.getGametitle()%>">
+					<input type="hidden" name="price" value="<%=games.getPrice()%>">
+					<input type="hidden" name="quantity"
+						value="<%=games.getQuantity()%>"> <input type="submit"
+						value="Update">
+				</form>
+			</td>
 		</tr>
-	<%
+		<%
 			}
-		}
-	%>
-	
+				}
+		%>
+
 	</table>
+
+	<form action="checkout.jsp" method="post">
+		<input type="submit" class="btn btn-info" id="submit-button5"
+			value="Check Out" /> <br />
+	</form>
 
 	<div class="copy-txt">
 		<div class="container">
