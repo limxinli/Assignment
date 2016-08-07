@@ -475,6 +475,12 @@ a.new-release-font:hover,a.sales-font:hover {
 	-moz-border-radius: 0px;
 }
 
+.checkout {
+	margin-left: 35%;
+ 	width: 330px;
+ 	margin-bottom: 166px;
+}
+
 #editform {
 	width: 50%;
 }

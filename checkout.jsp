@@ -157,26 +157,22 @@
 				}
 		%>
 	</table>
-
+	
+	<div class="checkout">
+		<form>
+			<b>Credit Cart Details</b>
+			<hr id="passline2">
+			Credit Card Name: <input type="text" name="ccName" class="inputmember-cls"><br>
+			<br>Credit Card Number: <input type="text" name="ccNumber" class="inputmember-cls"><br>
+			<br>Credit Card Expiry Date: <input type="text" name="ccExpiryDate" class="inputmember-cls"><br>
+		</form>
+	</div>
+	
 	<form onsubmit="return checkvalue()" />
 	<input type="button" class="btn btn-info" id="submit-button5" onClick="{return confirmComplete();}" value="Submit Form">
 	<br>
 	</form>
 
-	<script type="text/javascript">
-		function checkvalue() {
-			var name = document.getElementById('checkout').value;
-
-			if (checkout == null) {
-				alert('INVALID! Empty Shopping Cart!');
-				return false;
-			} else {
-				alert('Submited Order Successfully!');
-				return false;
-			}
-			return true;
-		}
-	</script>
 
 
 	<div class="copy-txt">
