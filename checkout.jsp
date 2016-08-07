@@ -18,6 +18,21 @@
 <link href="assets/css/style.css" rel="stylesheet" />
 <!-- Favicon -->
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
+
+<script type="text/javascript">
+
+	function confSubmit(form) {
+		if (confirm("Are you sure you want to submit the form?")) {
+			form.submit();
+		}
+
+		else {
+			alert("You decided to not submit the form!");
+		}
+		
+	}
+</script>
+
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top ">
@@ -56,10 +71,10 @@
 					</a></li>
 					<%
 						} else { 
-																						ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
-																			
-																							if (viewMembers != null) {
-																								for(MemberDetails member:viewMembers) {
+																									ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+																						
+																										if (viewMembers != null) {
+																											for(MemberDetails member:viewMembers) {
 					%>
 					<li><div class="dropdown">
 							<a href="viewMember.jsp"><button class="dropbtn">
@@ -74,8 +89,8 @@
 						</div></li>
 					<%
 						}
-																						}
-																					}
+																									}
+																								}
 					%>
 				</ul>
 			</div>
@@ -86,38 +101,37 @@
 	<section class="headline-sec">
 	<div class="overlay ">
 		<%
-				
-				ArrayList<MemberDetails> editMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+			ArrayList<MemberDetails> editMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
 			
 				if (editMembers != null) {
 			for(MemberDetails member:editMembers) {
 		%>
 		<h3>
-			<%=member.getName()%> Check Out
-			<i class="fa fa-angle-double-right "></i>
+			<%=member.getName()%>
+			Check Out <i class="fa fa-angle-double-right "></i>
 		</h3>
 
 	</div>
 	</section>
-	
-	<div class = "checkout">
-	<form>
-		<b>Information</b>
-		<hr id="passline2">
-		Name: <input type="text" name="name" id="name"
-			value="<%=member.getName()%>" class="inputmember-cls"><br>
-		<br> Mailing Address: <input type="text" name="mail" id="mail"
-			value="<%=member.getMail()%>" class="inputmember-cls"><br>
-		<br> Email: <input type="text" name="email" id="email"
-			value="<%=member.getEmail()%>" class="inputmember-cls"><br>
-		<br> Contact Number: <input type="text" name="number" id="number"
-			value="<%=member.getNumber()%>" class="inputmember-cls"><br>
-		<br>
-	</form>
+
+	<div class="checkout">
+		<form>
+			<b>Information</b>
+			<hr id="passline2">
+			Name: <input type="text" name="name" id="name"
+				value="<%=member.getName()%>" class="inputmember-cls"><br>
+			<br> Mailing Address: <input type="text" name="mail" id="mail"
+				value="<%=member.getMail()%>" class="inputmember-cls"><br>
+			<br> Email: <input type="text" name="email" id="email"
+				value="<%=member.getEmail()%>" class="inputmember-cls"><br>
+			<br> Contact Number: <input type="text" name="number"
+				id="number" value="<%=member.getNumber()%>" class="inputmember-cls"><br>
+			<br>
+		</form>
 	</div>
 	<%
 		}
-		}
+			}
 	%>
 
 	<table border='1'>
@@ -143,27 +157,27 @@
 				}
 		%>
 	</table>
-	
-	<form onsubmit="return checkvalue()"/>
-		<input type="submit" class="btn btn-info" id="submit-button5" name="checkout" value="Submit"/><br>
-	</form>
-	
-	<script type="text/javascript">
-				function checkvalue() { 
-					var name = document.getElementById('checkout').value;
 
-				    if(checkout == null) {
-				        alert ('INVALID! Empty Shopping Cart!');
-				        return false;
-				    }
-				    else {
-				    	alert ('Submited Order Successfully!');
-				    	return false;
-				    }
-						return true;
-				}
-			</script>
-	
+	<form onsubmit="return checkvalue()" />
+	<input type="button" class="btn btn-info" id="submit-button5" onClick="{return confirmComplete();}" value="Submit Form">
+	<br>
+	</form>
+
+	<script type="text/javascript">
+		function checkvalue() {
+			var name = document.getElementById('checkout').value;
+
+			if (checkout == null) {
+				alert('INVALID! Empty Shopping Cart!');
+				return false;
+			} else {
+				alert('Submited Order Successfully!');
+				return false;
+			}
+			return true;
+		}
+	</script>
+
 
 	<div class="copy-txt">
 		<div class="container">
