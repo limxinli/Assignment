@@ -487,6 +487,12 @@ a.new-release-font:hover,a.sales-font:hover {
     border: 0;
     border-top: 1px solid #ccc;
 }
+
+.checkout {
+	margin-left: 35%;
+ 	margin-top: 10px;
+ 	margin-bottom: 34px;
+}
  
  /* =============================================================
    UPDATE
