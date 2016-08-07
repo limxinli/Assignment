@@ -172,20 +172,19 @@
 		</form>
 	</div>
 	
-	<form onsubmit="return checkvalue()" />
-	<input type="button" class="btn btn-info" id="submit-button5" onClick="{return confSubmit();}" value="Checkout">
+	<form onclick="return confSubmit(this)" action="InsertShoppingCartServlet">
+	<input type="button" class="btn btn-info" id="submit-button5" value="Checkout">
 	</form>
 	<script type="text/javascript">
 
 	function confSubmit(form) {
 		if (confirm("Are you sure you want to submit the form?")) {
 			form.submit();
-		}
 
+		}
 		else {
 			alert("You decided not to submit the form!");
 		}
-		
 	}
 </script>
 
