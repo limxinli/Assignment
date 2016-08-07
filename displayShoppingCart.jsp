@@ -121,7 +121,7 @@
 
 		<tr>
 			<td><%=games.getGametitle()%></td>
-			<td><%=games.getPrice()%></td>
+			<td><%=games.getNewprice()%></td>
 			<td><%=games.getQuantity()%></td>
 
 		<td>

@@ -217,36 +217,6 @@
 	<% }%>
 	</form>
 	</div>
-	
-	<div class="horizontal_line"></div>
-	<div id="sales">
-		<span class="glyphicon glyphicon-usd" aria-hidden="true"></span><class="sales-font"> On Sale Now
-	</div>
-
-	<div class="indeximages">
-	<%
-	String sql2 = "select * from game_data where sale_price != '0'";
-
-	pstmt = conn.prepareStatement(sql2);
-
-	rs = pstmt.executeQuery();
-
-	while (rs.next()) {
-		int dbgameid = rs.getInt("game_id");
-		double dbsprice = rs.getDouble("sale_price");
-		String dbimageloc = rs.getString("image_loc");
-			
-	%>
-	<form action="ingame.jsp" method="get">
-		<input type="hidden" name="hiddenID"/>
-	
-	<a href="ingame.jsp?hiddenID=<%=dbgameid%>">
-	<img src="<%=dbimageloc%>/img1.jpg" alt="" height="270" width="190" /></a>
-	<% }
-	conn.close();
-	%>
-	</form>
-	</div>
 
 	<div class="copy-txt">
 		<div class="container">

@@ -1,12 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="controller.*, java.util.*, model.*"%>
-<%@page import="java.sql.*,db.*"%>
-<%
-if (session.getAttribute ("ADMIN-STATUS") == null) {
-	response.sendRedirect("index.jsp");
-}
-%>
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,db.*,controller.*, java.util.*, model.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -38,33 +33,64 @@ if (session.getAttribute ("ADMIN-STATUS") == null) {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand"><strong style=""></strong>Game Store<small>
-						Singapore Polytechnic</small></a>
-
+				<a class="navbar-brand" href="index.jsp"><strong style=""></strong>Game
+					Store<small> Singapore Polytechnic</small></a>
 			</div>
 			<div class="navbar-collapse collapse move-me">
 				<ul class="nav navbar-nav navbar-right set-links">
+					<li><a href="index.jsp"><span
+							class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a></li>
 					<li><div class="dropdown">
-						<a><button class="dropbtn"><span class="glyphicon glyphicon-edit"></span> EDIT<span class="caret"></span>
+							<a href="allgames.jsp"><button class="dropbtn">
+									GAMES <span class="caret"></span>
+								</button></a>
+							<div id="myDropdown" class="dropdown-content">
+								<a href="action.jsp">Action</a> <a href="adventure.jsp">Adventure</a>
+								<a href="horror.jsp">Horror</a> <a href="rpg.jsp">RPG</a> <a
+									href="shooter.jsp">Shooter</a>
+							</div>
+						</div></li>
+					<li><a href="about.jsp">ABOUT</a></li>
+					<%
+						if (session.getAttribute ("LOGIN-STATUS") != "YES") {
+					%>
+							<li><a href="login.jsp"> <span
+									class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+									LOGIN
+							</a></li>
+					<%
+						} else { 
+																ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+																
+																if (viewMembers != null) {
+																	for(MemberDetails member:viewMembers) {
+					%>
+							<li><div class="dropdown">
+								<a href="viewMember.jsp"><button class="dropbtn"><span
+									class="glyphicon glyphicon-user"></span>
+										<%=member.getName()%> <span class="caret"></span>
 									</button></a>
 								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
-									<a href="editall.jsp">Games</a>
-									<a href="editgenre.jsp">Genres</a>
+									<a href="ViewShoppingCartServlet?hiddenID=<%=member.getId()%>">Shopping Cart</a>
+									<a href="logoutMember.jsp" onclick="Logout()">Logout</a>
 								</div>
-					</div></li>
-			 				<li><a href="logoutAdmin.jsp"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></i>
+								<script>
+									function Logout() {
+										alert ('Successfully logged out!');
+									}
+								</script>
+							</div></li>
+						<%
+								}
+							}
+						}
+						%>
 				</ul>
 			</div>
 
 		</div>
 	</div>
 	<!--MENU SECTION END-->
-	<section class="headline-sec">
-	<div class="overlay ">
-		<h3>
-			STOCK REPORT <i class="fa fa-angle-double-right "></i>
-		</h3>
-	</div>
 		<!-- BACK TO TOP BUTTON -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -74,56 +100,32 @@ if (session.getAttribute ("ADMIN-STATUS") == null) {
 		Not seeing a <a href="http://www.scrolltotop.com/">Scroll to Top
 			Button</a>? Go to our FAQ page for more info.
 	</noscript>
+	<!-- BACK TO TOP BUTTON END -->
+	<section class="headline-sec">
+		<div class="overlay ">
+			<h3>
+				ADD ITEM <i class="fa fa-angle-double-right "></i>
+			</h3>
+
+		</div>
 	</section>
 	<!--TOP SECTION END-->
-	<p id="caption">
-			Stock Report
-	</p>
-	<form action="ViewSelectedStockReportServlet" id="searchstock">
-		Search by quantity: <input type="text" name="quantity" id="quantity" class="form-control">
-		<input type="submit" class="btn btn-info" id="submit-button3" value="Search">
-	</form>
-	<br>
-	<table border = "1">
-		<tr>
-		<th>Game Title</th>
-		<th>Price</th>
-		<th>Quantity</th>
-	</tr>
-	<%
-	ArrayList<StockReportDetails> viewstock = (ArrayList<StockReportDetails>)session.getAttribute("stockresults");
-	
-	if (viewstock != null) {
-		for(StockReportDetails stock:viewstock) {
-
-	%>
-	<tr>
-		<td><%=stock.getGametitle()%></td>
-		<%
-		if (stock.getNewprice().equals("0.00")) { %>
-			<td> TBC </td>
-		<%
-		} else { %>
-			<td><%=stock.getNewprice()%></td>
-		<%
-		}
-		%>
-		<td><%=stock.getQuantity()%></td>
-	</tr>
-	<%
-		}
-	}
-	%>
-	</table>
-
+	<section>
+	<div id="deleteitem">
+		<form action="index.jsp">
+			<div id="deleted"><b>Item has been added!</b></div>
+			<input type="submit" class="btn btn-info" id="submit-button"
+					value="Return">
+		</form>
+	</div>
+	</section>
 
 	<div class="copy-txt">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 set-foot">
 					&copy 2016 Singapore Polytechnic | LIM XIN LI & BAVANI D/O RAMAN |
-					All rights reserved | Design by : <a
-						href="http://www.binarytheme.com" target="_blank"
+					All rights reserved | Design by : <a href="http://www.binarytheme.com" target="_blank"
 						style="color: #7C7C7C;">binarytheme.com</a>
 				</div>
 			</div>

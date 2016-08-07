@@ -128,8 +128,6 @@
 			String dbgametitle = rs.getString("game_title");
 			double dbprice = rs.getDouble("price");
 			String newdbprice = String.format("%.2f", dbprice);
-			double dbsprice = rs.getDouble("sale_price");
-			String newdbsprice = String.format("%.2f", dbsprice);
 			String dbimageloc = rs.getString("image_loc");
 			String dbgenrename = rs.getString("genre_name");
 			%>
@@ -150,11 +148,6 @@
 		%><%="$" + newdbprice%>
 			<%
 				}
-			if (dbsprice != 0){
-				out.println("<b> On sale now! </b>");
-				%><br><%="<b> Price: $" + newdbsprice + "</b>"%>
-			<%
-			}
 			%><br> Genre Name: <%=dbgenrename%>
 		</div>
 		</a>

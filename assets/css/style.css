@@ -426,6 +426,11 @@ a.new-release-font:hover,a.sales-font:hover {
 	margin-bottom: 10px;
 }
 
+#submit-button7 {
+	margin-left: 1px;
+	margin-top: 10px;
+}
+
 .signup {
 	margin-left: 665px;
 	margin-top: -196px;
@@ -487,12 +492,14 @@ a.new-release-font:hover,a.sales-font:hover {
     border: 0;
     border-top: 1px solid #ccc;
 }
-
-.checkout {
-	margin-left: 35%;
- 	margin-top: 10px;
- 	margin-bottom: 34px;
-}
+ 
+ #displaysc {
+ 	margin-bottom: 311px;
+ }
+ 
+ #displayhis {
+ 	margin-bottom: 230px;
+ }
  
  /* =============================================================
    UPDATE
@@ -765,4 +772,10 @@ table {
 
 #deleted {
 	margin-left: 9%;
+}
+
+#buycopies {
+	width: 100px;
+	margin-top: -100px;
+	margin-left: 550px;
 }

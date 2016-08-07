@@ -83,7 +83,6 @@ if (session.getAttribute ("ADMIN-STATUS") == null) {
 		<tr>
 		<th>Game Title</th>
 		<th>Price</th>
-		<th>Sales Price</th>
 		<th>Quantity</th>
 	</tr>
 	<%
@@ -101,15 +100,6 @@ if (session.getAttribute ("ADMIN-STATUS") == null) {
 		<%
 		} else { %>
 			<td><%=stock.getNewprice()%></td>
-		<%
-		}
-		%>
-		<%
-		if (stock.getNewsaleprice().equals("0.00")) { %>
-			<td> - </td>
-		<%
-		} else { %>
-			<td><%=stock.getNewsaleprice()%></td>
 		<%
 		}
 		%>

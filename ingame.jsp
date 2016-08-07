@@ -1,8 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page
-	import="java.sql.*,db.*,controller.*, java.util.ArrayList, model.*"%>
+<%@page import="java.sql.*,db.*,controller.*, java.util.ArrayList, model.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -106,7 +105,7 @@
 
 			ResultSet rs = pstmt.executeQuery();
 
-			while (rs.next()) {
+		if (rs.next()) {
 		int dbgameid = rs.getInt("game_id");
 		String dbgametitle = rs.getString("game_title");
 		String dbcompany = rs.getString("company");
@@ -114,11 +113,10 @@
 		String dbdescription = rs.getString("description");
 		double dbprice = rs.getDouble("price");
 		String newdbprice = String.format("%.2f", dbprice);
-		double dbsprice = rs.getDouble("sale_price");
-		String newdbsprice = String.format("%.2f", dbsprice);
 		String dbimageloc = rs.getString("image_loc");
 		String dbgenrename = rs.getString("genre_name");
 		int dbpreowned = rs.getInt("preowned");
+		int dbquantity = rs.getInt("quantity");
 	%>
 	<section class="headline-sec">
 	<div class="overlay ">
@@ -157,12 +155,6 @@
 		%><%="$" + newdbprice%><br>
 			<%
 				}
-					
-				if (dbsprice != 0){
-					out.println("<b> On sale now! </b>");
-			%><br><%="<b> Price: $" + newdbsprice + "</b>"%>
-			<%
-				}
 			%>
 		</p>
 		<p>
@@ -186,14 +178,28 @@
 		</form> --%>
 		
 		<%
-			if (session.getAttribute ("LOGIN-STATUS") == "YES") {
+			if (session.getAttribute ("LOGIN-STATUS") == "YES" && (dbprice != 0)) {
 		%>
-		<form action="Add2CartServlet" method="post">
-    		<input type="hidden" name="hiddenID" value=<%=dbgameid%> />
-			<input type="hidden" name="hiddenQty" value=1 />
-			<input type="hidden" name="action" value="add" />
-			<input type="submit" class="btn btn-info" id="submit-button" value="Add To Cart" />
-				</form>		
+		<form action="Add2CartServlet" method="get">
+    		<input type="hidden" name="gameid" value="<%=dbgameid%>"/>
+    		<input type="hidden" name="gametitle" value="<%=dbgametitle%>"/>
+    		<input type="hidden" name="price" value="<%=newdbprice%>"/>
+    		<% 
+    		ArrayList<MemberDetails> Members = (ArrayList<MemberDetails>)session.getAttribute("results");
+			
+			if (Members != null) {
+				for(MemberDetails viewmember:Members) {
+			%>		
+			<input type="hidden" name="memberid" value="<%=viewmember.getId()%>"/>
+			<%
+					}
+				}
+			%>
+			<div id="buycopies">
+			<br><input type="number" name="quantity" min="1" max="<%=dbquantity%>" class="form-control">
+			<input type="submit" class="btn btn-info" id="submit-button7" value="Add To Cart" />
+			</div>
+			</form>		
 		<%
 			}
 		%>
