@@ -20,7 +20,6 @@
 <link rel="shortcut icon" href="assets/img/favicon.ico" />
 
 <script type="text/javascript">
-
 	function confSubmit(form) {
 		if (confirm("Are you sure you want to submit the form?")) {
 			form.submit();
@@ -29,7 +28,7 @@
 		else {
 			alert("You decided not to submit the form!");
 		}
-		
+
 	}
 </script>
 
@@ -71,10 +70,10 @@
 					</a></li>
 					<%
 						} else { 
-																									ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
-																						
-																										if (viewMembers != null) {
-																											for(MemberDetails member:viewMembers) {
+																												ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+																									
+																													if (viewMembers != null) {
+																														for(MemberDetails member:viewMembers) {
 					%>
 					<li><div class="dropdown">
 							<a href="viewMember.jsp"><button class="dropbtn">
@@ -89,14 +88,25 @@
 						</div></li>
 					<%
 						}
-																									}
-																								}
+																												}
+																											}
 					%>
 				</ul>
 			</div>
 
 		</div>
 	</div>
+	
+	<%
+		Connection conn = DatabaseConnection.getConnection();
+
+		String sql="SELECT sum(price) AS 'Total' FROM shopping_cart WHERE member_id=?";
+		
+		PreparedStatement pstmt=conn.prepareStatement(sql);
+
+		int recsModified = pstmt.executeUpdate();
+
+	%>
 
 	<section class="headline-sec">
 	<div class="overlay ">
@@ -119,16 +129,16 @@
 			<hr id="passline">
 			<b>Information</b>
 			<hr id="passline2">
-			Name: <%=member.getName()%><br>
-			<br> Mailing Address:<%=member.getMail()%><br>
-			<br> Email: <%=member.getEmail()%><br>
-			<br> Contact Number: <%=member.getNumber()%><br>
-			<br>
+			Name:
+			<%=member.getName()%><br> <br> Mailing Address:<%=member.getMail()%><br>
+			<br> Email:
+			<%=member.getEmail()%><br> <br> Contact Number:
+			<%=member.getNumber()%><br> <br>
 		</form>
 	</div>
 	<%
 		}
-			}
+		}
 	%>
 
 	<table border='1'>
@@ -159,16 +169,22 @@
 		<form>
 			<b>Credit Cart Details</b>
 			<hr id="passline2">
-			Card Number: <input type="text" name="ccNumber" class="inputmember-cls"><br>
-			<br>Expiration Date: <input type="text" name="ccExpiryDate" class="inputmember-cls"><br>
-			<br>Security Code: <input type="text" name="ccSecurityCode" class="inputmember-cls"><br>
+			Card Number: <input type="text" name="ccNumber"
+				class="inputmember-cls"><br> <br>Expiration Date:
+			<input type="text" name="ccExpiryDate" class="inputmember-cls"><br>
+			<br>Security Code: <input type="text" name="ccSecurityCode"
+				class="inputmember-cls"><br>
 		</form>
 	</div>
-	
-	<form onsubmit="return checkvalue()" />
-	<input type="button" class="btn btn-info" id="submit-button5" onClick="{return confirmComplete();}" value="Submit Form">
-	<br>
+
+	<form>
+		<input type="button" class="btn btn-info" id="submit-button5"
+			onClick="{return confirmComplete();}" value="Submit Form"> <br>
 	</form>
+	
+	<%
+	conn.close();
+	%>
 
 
 	<div class="copy-txt">
