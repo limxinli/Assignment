@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*,db.*,controller.*, java.util.ArrayList, model.*"%>
+<%@page
+	import="java.sql.*,db.*,controller.*, java.util.ArrayList, model.*"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -54,37 +55,38 @@
 					<%
 						if (session.getAttribute ("LOGIN-STATUS") != "YES") {
 					%>
-							<li><a href="login.jsp"> <span
-									class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-									LOGIN
-							</a></li>
+					<li><a href="login.jsp"> <span
+							class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+							LOGIN
+					</a></li>
 					<%
 						} else { 
-																ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
-																
-																if (viewMembers != null) {
-																	for(MemberDetails member:viewMembers) {
+																			ArrayList<MemberDetails> viewMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
+																			
+																			if (viewMembers != null) {
+																				for(MemberDetails member:viewMembers) {
 					%>
-							<li><div class="dropdown">
-								<a href="viewMember.jsp"><button class="dropbtn"><span
-									class="glyphicon glyphicon-user"></span>
-										<%=member.getName()%> <span class="caret"></span>
-									</button></a>
-								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
-									<a href="ViewShoppingCartServlet?hiddenID=<%=member.getId()%>">Shopping Cart</a>
-									<a href="logoutMember.jsp" onclick="Logout()">Logout</a>
-								</div>
-								<script>
-									function Logout() {
-										alert ('Successfully logged out!');
-									}
-								</script>
-							</div></li>
-						<%
+					<li><div class="dropdown">
+							<a href="viewMember.jsp"><button class="dropbtn">
+									<span class="glyphicon glyphicon-user"></span>
+									<%=member.getName()%>
+									<span class="caret"></span>
+								</button></a>
+							<div id="myDropdown" class="dropdown-content dropdown-menu-right">
+								<a href="ViewShoppingCartServlet?hiddenID=<%=member.getId()%>">Shopping
+									Cart</a> <a href="logoutMember.jsp" onclick="Logout()">Logout</a>
+							</div>
+							<script>
+								function Logout() {
+									alert('Successfully logged out!');
 								}
-							}
+							</script>
+						</div></li>
+					<%
 						}
-						%>
+										}
+									}
+					%>
 				</ul>
 			</div>
 
@@ -94,34 +96,35 @@
 	<!--MENU SECTION END-->
 	<%
 		String id = request.getParameter("hiddenID");
-	
-		Connection conn = DatabaseConnection.getConnection();
+		
+			Connection conn = DatabaseConnection.getConnection();
 
-		String sql = "Select *,genre_name from game_data gd, genre g, game_genre gg WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id AND gd.game_id=?";
+			String sql = "Select *,genre_name from game_data gd, genre g, game_genre gg WHERE g.genre_id = gg.genre_id AND gg.game_id = gd.game_id AND gd.game_id=?";
 
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, id);
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
 
-		ResultSet rs = pstmt.executeQuery();
+			ResultSet rs = pstmt.executeQuery();
 
-		while (rs.next()) {
-			int dbgameid = rs.getInt("game_id");
-			String dbgametitle = rs.getString("game_title");
-			String dbcompany = rs.getString("company");
-			Date dbdate = rs.getDate("release_date");
-			String dbdescription = rs.getString("description");
-			double dbprice = rs.getDouble("price");
-			String newdbprice = String.format("%.2f", dbprice);
-			double dbsprice = rs.getDouble("sale_price");
-			String newdbsprice = String.format("%.2f", dbsprice);
-			String dbimageloc = rs.getString("image_loc");
-			String dbgenrename = rs.getString("genre_name");
-			int dbpreowned = rs.getInt("preowned");
+			while (rs.next()) {
+		int dbgameid = rs.getInt("game_id");
+		String dbgametitle = rs.getString("game_title");
+		String dbcompany = rs.getString("company");
+		Date dbdate = rs.getDate("release_date");
+		String dbdescription = rs.getString("description");
+		double dbprice = rs.getDouble("price");
+		String newdbprice = String.format("%.2f", dbprice);
+		double dbsprice = rs.getDouble("sale_price");
+		String newdbsprice = String.format("%.2f", dbsprice);
+		String dbimageloc = rs.getString("image_loc");
+		String dbgenrename = rs.getString("genre_name");
+		int dbpreowned = rs.getInt("preowned");
 	%>
 	<section class="headline-sec">
 	<div class="overlay ">
 		<h3>
-			<%=dbgametitle%> <i class="fa fa-angle-double-right"></i>
+			<%=dbgametitle%>
+			<i class="fa fa-angle-double-right"></i>
 	</div>
 	</section>
 	<!-- HOME SECTION END -->
@@ -154,12 +157,12 @@
 		%><%="$" + newdbprice%><br>
 			<%
 				}
-		
-			if (dbsprice != 0){
-				out.println("<b> On sale now! </b>");
-				%><br><%="<b> Price: $" + newdbsprice + "</b>"%>
+					
+				if (dbsprice != 0){
+					out.println("<b> On sale now! </b>");
+			%><br><%="<b> Price: $" + newdbsprice + "</b>"%>
 			<%
-			}
+				}
 			%>
 		</p>
 		<p>
@@ -169,12 +172,26 @@
 		<p>
 			<%
 				if (dbpreowned == 1) {
-						out.println("<td>Pre-owned</td>");
-					} else {
-						out.println("<td>Brand new</td>");
-					}
+							out.println("<td>Pre-owned</td>");
+						} else {
+							out.println("<td>Brand new</td>");
+						}
 			%>
 		</p>
+
+		<%-- <form action="Add2CartServlet" method="post">
+			<input type="hidden" name="hiddenID" value="<%=dbgameid%>" /> <input
+				type="submit" class="btn btn-info" id="submit-button5" name="cart"
+				value="Add to Cart" /><br>
+		</form> --%>
+		
+		<form action="Add2CartServlet" method="post">
+    		<input type="hidden" name="hiddenID" value=<%=dbgameid%> />
+			<input type="hidden" name="hiddenQty" value=1 />
+			<input type="hidden" name="action" value="add" />
+			<input type="submit" class="btn btn-info" id="submit-button" value="Add To Cart" />
+				</form>		
+
 	</div>
 	<div class="ingame">
 		<img src="<%=dbimageloc%>/img2.jpg" alt="" height="230" width="230" />
@@ -185,27 +202,32 @@
 	</div>
 	<hr>
 	<div id="commentarea">
-	<form action="commentprocess.jsp">
-		Name: <input type="text" name="name" id="name" class="form-control"/>
-		<div id="rating">
-		Ratings: <br/>
-    	5<span class="glyphicon glyphicon-star"/><input type="radio" id="star5" value="5" name="rating" title="Rocks!"/>
-    	4<span class="glyphicon glyphicon-star"/><input type="radio" id="star4" value="4" name="rating" title="Pretty good"/>
-    	3<span class="glyphicon glyphicon-star"/><input type="radio" id="star3" value="3" name="rating" title="Meh"/>
-    	2<span class="glyphicon glyphicon-star"/><input type="radio" id="star2" value="2" name="rating" title="Kinda bad"/>
-    	1<span class="glyphicon glyphicon-star"/><input type="radio" id="star1" value="1" name="rating" title="Sucks big time"/>
-		</div>
-		Comment:
-		<textarea name="comment" id="comment" class="form-control"></textarea><br/>
-		<input type="submit" class="btn btn-info" id="submit-button4" value="Submit"> 
-	</form>
-	<form action="viewcomment.jsp">
-		<input type="hidden" name="hiddenID" value="<%=dbgameid%>"/>
-	</form>
+		<form action="commentprocess.jsp">
+			Name: <input type="text" name="name" id="name" class="form-control" />
+			<div id="rating">
+				Ratings: <br /> 5<span class="glyphicon glyphicon-star" /><input
+					type="radio" id="star5" value="5" name="rating" title="Rocks!" /> 4<span
+					class="glyphicon glyphicon-star" /><input type="radio" id="star4"
+					value="4" name="rating" title="Pretty good" /> 3<span
+					class="glyphicon glyphicon-star" /><input type="radio" id="star3"
+					value="3" name="rating" title="Meh" /> 2<span
+					class="glyphicon glyphicon-star" /><input type="radio" id="star2"
+					value="2" name="rating" title="Kinda bad" /> 1<span
+					class="glyphicon glyphicon-star" /><input type="radio" id="star1"
+					value="1" name="rating" title="Sucks big time" />
+			</div>
+			Comment:
+			<textarea name="comment" id="comment" class="form-control"></textarea>
+			<br /> <input type="submit" class="btn btn-info" id="submit-button4"
+				value="Submit">
+		</form>
+		<form action="viewcomment.jsp">
+			<input type="hidden" name="hiddenID" value="<%=dbgameid%>" />
+		</form>
 	</div>
 	<%
 		}
-		conn.close();
+			conn.close();
 	%>
 	<div class="copy-txt">
 		<div class="container">
