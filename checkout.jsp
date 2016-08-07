@@ -85,15 +85,6 @@
 
 	<section class="headline-sec">
 	<div class="overlay ">
-		<h3>
-			CHECK OUT SHOPPING CART <i class="fa fa-angle-double-right "></i>
-		</h3>
-
-	</div>
-	</section>
-
-	<section class="headline-sec">
-	<div class="overlay ">
 		<%
 				
 				ArrayList<MemberDetails> editMembers = (ArrayList<MemberDetails>)session.getAttribute("results");
@@ -102,8 +93,7 @@
 			for(MemberDetails member:editMembers) {
 		%>
 		<h3>
-			WELCOME
-			<%=member.getName()%>
+			<%=member.getName()%> Check Out
 			<i class="fa fa-angle-double-right "></i>
 		</h3>
 
