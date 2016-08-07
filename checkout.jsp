@@ -114,39 +114,40 @@
 	</div>
 	</section>
 
-	<div class="checkout">
+	<div class="checkout info">
 		<form>
 			<hr id="passline">
 			<b>Information</b>
 			<hr id="passline2">
 			Name: <%=member.getName()%><br>
-			<br> Mailing Address:<%=member.getMail()%><br>
-			<br> Email: <%=member.getEmail()%><br>
-			<br> Contact Number: <%=member.getNumber()%><br>
-			<br>
+			Mailing Address:<%=member.getMail()%><br>
+			Email: <%=member.getEmail()%><br>
+			Contact Number: <%=member.getNumber()%><br>
 		</form>
 	</div>
 	<%
 		}
 			}
 	%>
-
-	<table border='1'>
+	<div class="checkout table">
+	<hr id="passline">
+		<b>Items confirmed buying</b>
+	<hr id="passline2">
+	<table border='1' id="confirmed">
 		<tr>
 			<th><b>Game Title</b></th>
-			<th><b>Price</b></th>
+			<th><b>Price($)</b></th>
 			<th><b>Quantity</b></th>
 		</tr>
 		<%
 			ArrayList<Games_Data> GameArray = (ArrayList<Games_Data>)session.getAttribute("gameresults");
 				
-				if (GameArray != null) {
-			for(Games_Data games:GameArray) {
+			if (GameArray != null) {
+				for(Games_Data games:GameArray) {
 		%>
-
 		<tr>
 			<td><%=games.getGametitle()%></td>
-			<td><%=games.getPrice()%></td>
+			<td class="price"><%=games.getNewprice()%></td>
 			<td><%=games.getQuantity()%></td>
 		</tr>
 		<%
@@ -154,14 +155,34 @@
 				}
 		%>
 	</table>
+	<button onclick="findTotal()" id="viewtotal" class="btn btn-info btn-lg btn-set">View Total</button>
+	<div id = "result"></div>
+	<script type="text/javascript">
+			function findTotal(){
+				var sum = 0;
+				// iterate through each td based on class and add the values
+				$(".price").each(function() {
 
-	<div class="checkout">
+				    var value = $(this).text();
+				    // add only if the value is number
+				    if(!isNaN(value) && value.length != 0) {
+				        sum += parseFloat(value);
+				        sum2 = sum.toFixed(2);
+				    }
+			    });
+				$('#result').text(sum2);
+			}
+    	</script>
+	</div>
+
+	<div class="checkout credit">
 		<form>
+			<hr id="passline">
 			<b>Credit Cart Details</b>
 			<hr id="passline2">
-			Card Number: <input type="text" name="ccNumber" class="inputmember-cls"><br>
-			<br>Expiration Date: <input type="text" name="ccExpiryDate" class="inputmember-cls"><br>
-			<br>Security Code: <input type="text" name="ccSecurityCode" class="inputmember-cls"><br>
+			Card Number: <input type="text" maxlength="16" name="ccNumber" class="inputmember-cls"><br>
+			<br>Expiration Date: <input type="text" maxlength="2" name="ccExpiryDate" id="expirydate" placeholder="MM" class="inputmember-cls"><input type="text" maxlength="2" name="ccSecurityCode" id="expirydate" placeholder="YY" class="inputmember-cls"><br>
+			<br>Security Code: <input type="text" maxlength="3" name="ccSecurityCode" id="securitycode" class="inputmember-cls"><br>
 		</form>
 	</div>
 	

@@ -128,7 +128,7 @@
 				<td><%=trans.getDate()%></td>
 				<td><%=trans.getGametitle()%></td>
 				<td><%=trans.getQuantity()%></td>
-				<td><%=trans.getNewprice()%></td>
+				<td>$<%=trans.getNewprice()%></td>
 			</tr>
 	<%
 		}

@@ -106,7 +106,7 @@
 		}
 		}
 	%>
-	<table border='1' id="displaysc">
+	<table border='1'>
 		<tr>
 			<th><b>Game Title</b></th>
 			<th><b>Price</b></th>
@@ -122,7 +122,7 @@
 
 		<tr>
 			<td><%=games.getGametitle()%></td>
-			<td><%=games.getNewprice()%></td>
+			<td>$<%=games.getNewprice()%></td>
 			<td><%=games.getQuantity()%></td>
 
 			<td>
@@ -152,11 +152,12 @@
 		%>
 
 	</table>
-
+	<div id="checkout">
 	<form action="checkout.jsp" method="post">
-		<input type="submit" class="btn btn-info" id="submit-button5"
+		<input type="submit" class="btn btn-info" id="submit-button8"
 			value="Check Out" /> <br />
 	</form>
+	</div>
 
 	<div class="copy-txt">
 		<div class="container">

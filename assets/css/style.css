@@ -431,6 +431,13 @@ a.new-release-font:hover,a.sales-font:hover {
 	margin-top: 10px;
 }
 
+#submit-button8 {
+	margin-left: 1090px;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-top: -20px;
+}
+
 .signup {
 	margin-left: 665px;
 	margin-top: -196px;
@@ -481,6 +488,22 @@ a.new-release-font:hover,a.sales-font:hover {
  	margin-bottom: 166px;
 }
 
+.info {
+	margin-left: 10%;
+}
+
+.table {
+	width: 600px;
+	margin-left: 40%;
+	margin-top: -348px;
+}
+
+.credit {
+	margin-left: 10%;
+	margin-top: -140px;
+	margin-bottom: 30px;
+}
+
 #editform {
 	width: 50%;
 }
@@ -499,12 +522,36 @@ a.new-release-font:hover,a.sales-font:hover {
     border-top: 1px solid #ccc;
 }
  
- #displaysc {
+ #checkout {
  	margin-bottom: 311px;
  }
  
  #displayhis {
  	margin-bottom: 230px;
+ }
+ 
+ #expirydate {
+ 	width: 49px;
+ }
+ 
+ #securitycode {
+ 	width: 50px;
+ }
+ 
+ #confirmed {
+ 	margin-left: 16px;
+ }
+ 
+ #viewtotal {
+ 	margin-left: 60%;
+ 	margin-top: -20px;
+ 	width: 18%;
+ 	font-size: 12px;
+ }
+ 
+ #result {
+ 	margin-left: 80%;
+ 	margin-top: -40px;
  }
  
  /* =============================================================
