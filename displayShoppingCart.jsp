@@ -122,7 +122,7 @@
 
 		<tr>
 			<td><%=games.getGametitle()%></td>
-			<td>$<%=games.getNewprice()%></td>
+			<td><%="$" + games.getNewprice()%></td>
 			<td><%=games.getQuantity()%></td>
 
 			<td>
@@ -139,7 +139,7 @@
 						value="<%=games.getMemberid()%>"> <input type="hidden"
 						name="gameID" value="<%=games.getGameid()%>"> <input
 						type="hidden" name="gametitle" value="<%=games.getGametitle()%>">
-					<input type="hidden" name="price" value="<%=games.getPrice()%>">
+					<input type="hidden" name="price" value="<%=games.getNewprice()%>">
 					<input type="hidden" name="quantity"
 						value="<%=games.getQuantity()%>"> <input type="submit"
 						value="Update">

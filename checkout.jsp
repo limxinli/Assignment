@@ -172,7 +172,7 @@
 		</form>
 	</div>
 	
-	<form onclick="return confSubmit(this)" action="InsertShoppingCartServlet">
+	<form onclick="return confSubmit(this)" action="">
 	<input type="button" class="btn btn-info" id="submit-button5" value="Checkout">
 	</form>
 	<script type="text/javascript">
