@@ -176,6 +176,15 @@
 					}
 			%>
 		</p>
+		
+		<form action="Add2CartServlet" method="post">
+    		<input type="hidden" name="hiddenID" value=<%=dbgameid%> />
+			<input type="hidden" name="hiddenQty" value=1 />
+			<input type="hidden" name="action" value="add" />
+			<input id="text" class="btn btn-info" id="submit-button" name="value"
+						value="Add To Cart" />
+				</form>
+		
 	</div>
 	<div class="ingame">
 		<img src="<%=dbimageloc%>/img2.jpg" alt="" height="230" width="230" />
