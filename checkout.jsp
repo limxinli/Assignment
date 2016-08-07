@@ -195,10 +195,12 @@
 	function confSubmit(form) {
 		if (confirm("Are you sure you want to submit the form?")) {
 			form.submit();
+			window.location="index.jsp";
 
 		}
 		else {
 			alert("You decided not to submit the form!");
+			window.location="checkout.jsp";
 		}
 	}
 </script>
