@@ -27,7 +27,7 @@
 		}
 
 		else {
-			alert("You decided to not submit the form!");
+			alert("You decided not to submit the form!");
 		}
 		
 	}
@@ -116,16 +116,13 @@
 
 	<div class="checkout">
 		<form>
+			<hr id="passline">
 			<b>Information</b>
 			<hr id="passline2">
-			Name: <input type="text" name="name" id="name"
-				value="<%=member.getName()%>" class="inputmember-cls"><br>
-			<br> Mailing Address: <input type="text" name="mail" id="mail"
-				value="<%=member.getMail()%>" class="inputmember-cls"><br>
-			<br> Email: <input type="text" name="email" id="email"
-				value="<%=member.getEmail()%>" class="inputmember-cls"><br>
-			<br> Contact Number: <input type="text" name="number"
-				id="number" value="<%=member.getNumber()%>" class="inputmember-cls"><br>
+			Name: <%=member.getName()%><br>
+			<br> Mailing Address:<%=member.getMail()%><br>
+			<br> Email: <%=member.getEmail()%><br>
+			<br> Contact Number: <%=member.getNumber()%><br>
 			<br>
 		</form>
 	</div>
@@ -157,14 +154,14 @@
 				}
 		%>
 	</table>
-	
+
 	<div class="checkout">
 		<form>
 			<b>Credit Cart Details</b>
 			<hr id="passline2">
-			Credit Card Name: <input type="text" name="ccName" class="inputmember-cls"><br>
-			<br>Credit Card Number: <input type="text" name="ccNumber" class="inputmember-cls"><br>
-			<br>Credit Card Expiry Date: <input type="text" name="ccExpiryDate" class="inputmember-cls"><br>
+			Card Number: <input type="text" name="ccNumber" class="inputmember-cls"><br>
+			<br>Expiration Date: <input type="text" name="ccExpiryDate" class="inputmember-cls"><br>
+			<br>Security Code: <input type="text" name="ccSecurityCode" class="inputmember-cls"><br>
 		</form>
 	</div>
 	
@@ -172,7 +169,6 @@
 	<input type="button" class="btn btn-info" id="submit-button5" onClick="{return confirmComplete();}" value="Submit Form">
 	<br>
 	</form>
-
 
 
 	<div class="copy-txt">
