@@ -144,10 +144,25 @@
 		%>
 	</table>
 	
-	<form action="endofcheckout" method="post"/>
-		<input type="submit" class="btn btn-info" id="submit-button5" value="Submit"/><br>
+	<form onsubmit="return checkvalue()"/>
+		<input type="submit" class="btn btn-info" id="submit-button5" name="checkout" value="Submit"/><br>
 	</form>
 	
+	<script type="text/javascript">
+				function checkvalue() { 
+					var name = document.getElementById('checkout').value;
+
+				    if(checkout == null) {
+				        alert ('INVALID! Empty Shopping Cart!');
+				        return false;
+				    }
+				    else {
+				    	alert ('Submited Order Successfully!');
+				    	return false;
+				    }
+						return true;
+				}
+			</script>
 	
 
 	<div class="copy-txt">
